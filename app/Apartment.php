@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 class Apartment extends Model
 {
     protected $table = 'apartments';
+    
     public function user(){
       return $this->belongsTo('App\User', 'user_id', 'id');
     }
@@ -27,5 +28,9 @@ class Apartment extends Model
 
     public function sponsors(){
       return $this->hasMany('App\Sponsor', 'apartment_id', 'id');
+    }
+    public function services()
+    {
+      return $this->belongsToMany('App\Service', 'apartments_services',  'service_id', 'apartment_id');
     }
 }
