@@ -2,26 +2,24 @@
 
 namespace App;
 
-use App\Apartment
+
+
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-
-class User extends Model
-{
-  protected $table = 'users';
-
-  public function apartments(){
-    return $this->hasMany('App\Apartment', 'user_id', 'id');
-
-  }
-}
 
 
 class User extends Authenticatable
 {
     use Notifiable;
 
+    protected $table = 'users';
+
+    public function apartments()
+    {
+      return $this->hasMany('App\Apartment', 'user_id', 'id');
+    }
     /**
      * The attributes that are mass assignable.
      *
