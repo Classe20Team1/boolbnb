@@ -20,6 +20,12 @@ class User extends Authenticatable
     {
       return $this->hasMany('App\Apartment', 'user_id', 'id');
     }
+
+    public function info(){
+      return $this->hasOne('App\UserInfo', 'user_id', 'id');
+    }
+
+
     /**
      * The attributes that are mass assignable.
      *

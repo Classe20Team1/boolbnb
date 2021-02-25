@@ -14,7 +14,18 @@ class Apartment extends Model
     }
 
     public function imgs(){
-      return $this->hasMany('App\img', 'apartment_id', 'id');
+      return $this->hasMany('App\Img', 'apartment_id', 'id');
+    }
 
+    public function messages(){
+      return $this->hasMany('App\Message', 'apartment_id', 'id');
+    }
+
+    public function position(){
+      return $this->hasOne('App\Position', 'apartment_id', 'id');
+    }
+
+    public function sponsors(){
+      return $this->hasMany('App\Sponsor', 'apartment_id', 'id');
     }
 }
