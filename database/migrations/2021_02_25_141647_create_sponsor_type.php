@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateImgs extends Migration
+class CreateSponsorType extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CreateImgs extends Migration
      */
     public function up()
     {
-        Schema::create('images', function (Blueprint $table) {
+        Schema::create('sponsor_type', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('apartment_id')->nullable();
-            $table->foreign('apartment_id')->references('id')->on('apartments');
-            $table->string('path');
-            $table->timestamps();
+            $table->integer('price');
+            $table->text('description');
         });
     }
 
@@ -29,6 +27,6 @@ class CreateImgs extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('imgs');
+        Schema::dropIfExists('sponsor_type');
     }
 }
