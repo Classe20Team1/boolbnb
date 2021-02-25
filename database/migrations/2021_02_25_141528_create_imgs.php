@@ -15,6 +15,9 @@ class CreateImgs extends Migration
     {
         Schema::create('imgs', function (Blueprint $table) {
             $table->id();
+            $table->unisgnedBigInteger('aparments_id');
+            $table->foreign('apartments_id')->references('id')->on('apartments');
+            $table->string('path');
             $table->timestamps();
         });
     }

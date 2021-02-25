@@ -15,6 +15,11 @@ class CreateMessages extends Migration
     {
         Schema::create('messages', function (Blueprint $table) {
             $table->id();
+            $table->unisgnedBigInteger('apartment_id');
+            $table->foreign('apartment_id')->references('id')->on('apartments');
+            $table->longText('description');
+            $table->string('customer_email');
+            $table->boolean('readed');
             $table->timestamps();
         });
     }
