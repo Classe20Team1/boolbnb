@@ -15,6 +15,11 @@ class CreatePositions extends Migration
     {
         Schema::create('positions', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('apartments_id');
+            $table->foreign('apartments_id')->references('id')->on('apartments');
+            $table->decimal('latitudine', 10, 6);
+            $table->decimal('longitudine', 10, 6);
+            $table->string('address');
             $table->timestamps();
         });
     }
