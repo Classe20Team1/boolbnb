@@ -15,6 +15,13 @@ class CreateUsersInfo extends Migration
     {
         Schema::create('users_info', function (Blueprint $table) {
             $table->id();
+            $table->string('fullname');
+            $table->string('sex');
+            $table->string('p_iva');
+            $table->date('birthdate');
+            $table->string('phone_number');
+            $table->string('address');
+            $table->string('fiscal_code');
             $table->timestamps();
         });
     }
