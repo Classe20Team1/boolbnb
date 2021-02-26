@@ -17,7 +17,7 @@ $factory->define(UserInfo::class, function (Faker $faker) {
       'fullname'=>$faker->name,
       'sex'=>$faker->randomElement(['M', 'F', 'Not Defined', 'Fluid']),
       'p_iva'=>$faker->creditCardNumber,
-      'birthdate'=>$faker->dateTimeBetween('01-01-1900', '31-12-2013')->format('d/m/Y'),
+      'birthdate'=>$faker->dateTimeBetween('1900-01-01', '2013-12-31')->format('Y-m-d'),
       'phone_number'=>$faker->phoneNumber,
       'address'=> $faker->streetAddress,
       'fiscal_code'=>$faker->creditCardNumber,
