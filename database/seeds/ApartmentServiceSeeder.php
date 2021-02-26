@@ -19,10 +19,10 @@ class ApartmentServiceSeeder extends Seeder
       $services = Service::all();
 
       foreach ($apartments as $apartment){
-        for ($i = 0; $i < $faker->numberBetween(1, $services->count()); $i++){
+        for ($i = 1; $i < $faker->numberBetween(1, $services->count()); $i++){
           DB::table('apartments_services')->insert([
             'apartment_id' => $apartment->id,
-            'service_id' => $i
+            'service_id' => $i,
           ]);
         }
       }
