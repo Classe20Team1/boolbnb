@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facade\DB;
+use Illuminate\Support\Facades\DB;
 
 class ServiceSeeder extends Seeder
 {
@@ -15,7 +15,7 @@ class ServiceSeeder extends Seeder
       $services = ['Wi-Fi', 'Animali Permessi', 'Posto Macchina', 'Piscina', 'Portineria', 'Sauna', 'Vista Mare'];
       foreach($services as $service){
         DB::table('services')->insert([
-          'name' => $service;
+          'name' => $service,
         ]);
       }
     }

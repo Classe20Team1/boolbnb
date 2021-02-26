@@ -12,9 +12,9 @@ $factory->define(Message::class, function (Faker $faker) {
 
     return [
 
-        'apart_id'=>$faker->numberBetween(1, $apartments->count()),
+        'apartment_id'=>$faker->numberBetween(1, $apartments->count()),
         'description'=>$faker->text,
-        'user_email'=>$faker->email,
+        'customer_email'=>$faker->email,
         'readed'=>$faker->boolean,
     ];
 });

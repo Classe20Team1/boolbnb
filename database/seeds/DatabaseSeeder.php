@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
             PositionSeeder::class,
             ImgSeeder::class,
             ServiceSeeder::class,
-            ApartmentService::class,
+            ApartmentServiceSeeder::class,
         ]);
     }
 }

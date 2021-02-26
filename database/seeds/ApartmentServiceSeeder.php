@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facade\DB;
+use Illuminate\Support\Facades\DB;
 use App\Apartment;
 use App\Service;
 use Faker\Generator as Faker;

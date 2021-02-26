@@ -12,7 +12,7 @@ $factory->define(Img::class, function (Faker $faker) {
 
     return [
 
-          'apart_id'=>$faker->numberBetween(1, $apartments->count()),
+          'apartment_id'=>$faker->numberBetween(1, $apartments->count()),
           'path'=>$faker->url,
     ];
 });

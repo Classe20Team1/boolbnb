@@ -7,7 +7,7 @@ use App\Apartment;
 
 class Img extends Model
 {
-    protected $table = 'imgs';
+    protected $table = 'images';
 
     public function apartment(){
       return $this->belongsTo('App\Apartment', 'apartment_id', 'id');

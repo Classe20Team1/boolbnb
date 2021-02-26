@@ -13,12 +13,13 @@ $factory->define(Apartment::class, function (Faker $faker) {
     return [
         'user_id' => $faker->numberBetween(1, $users->count()),
         'title' => $faker->sentence(4),
+        'description' => $faker->text,
         'rooms' => $num_rooms,
         'beds' => $faker->numberBetween($num_rooms, $num_rooms*2),
         'bathrooms' => $faker->numberBetween(1, 3),
         'metri_quadrati' => $num_rooms*70,
         'active' => true,
-        'view_count' => 0,
+        'views_count' => 0,
         'price' => $faker->numberBetween(4600, 11900),
         'cover_img' => $faker->url,
     ];
