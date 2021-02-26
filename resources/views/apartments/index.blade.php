@@ -12,6 +12,8 @@
     
         <li>
             <h1>
+
+                https://a0.muscache.com/im/pictures/80ac6baf-ea77-4d14-bbb7-c91a4230b20a.jpg
                 {{ $apartment->title }}
             </h1>
             <h4>
