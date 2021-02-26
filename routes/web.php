@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,13 +19,6 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
-
-<<<<<<< Updated upstream
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-=======
 Route::resource('apartments', 'ApartmentsController');
->>>>>>> Stashed changes
+
