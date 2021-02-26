@@ -13,7 +13,7 @@ $factory->define(UserInfo::class, function (Faker $faker) {
     $users = User::all();
 
     return [
-      'user_id'=>$faker->numberBetween(1, $users->count()),
+      'user_id'=> $faker->unique()->numberBetween(1, $users->count()),
       'fullname'=>$faker->name,
       'sex'=>$faker->randomElement(['M', 'F', 'Not Defined', 'Fluid']),
       'p_iva'=>$faker->creditCardNumber,

@@ -21,6 +21,10 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+<<<<<<< Updated upstream
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+=======
+Route::resource('apartments', 'ApartmentsController');
+>>>>>>> Stashed changes
