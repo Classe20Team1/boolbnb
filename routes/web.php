@@ -21,4 +21,5 @@ Route::get('/', function () {
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('apartments', 'ApartmentsController');
-
+Route::get('/user/edit', 'UserInfoController@edit')->name('user.info');
+Route::patch('/user/update', 'UserInfoController@update')->name('user.update');
