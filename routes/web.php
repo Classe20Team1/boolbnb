@@ -15,10 +15,9 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('layouts.boolbnb');
 });
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('apartments', 'ApartmentsController');
-
