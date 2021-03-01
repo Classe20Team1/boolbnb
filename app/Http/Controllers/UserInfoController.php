@@ -9,6 +9,10 @@ use Illuminate\Support\Facades\Auth;
 
 class UserInfoController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -77,8 +81,8 @@ class UserInfoController extends Controller
         $user->update([
             'username' => $request['username'],
         ]);
-
-        $user->info()->update([
+        $info = UserInfo::find(Auth::user()->info->id);
+        $info->update([
            'fullname' => $request['fullname'],
            'sex' => $request['sex'],
            'p_iva' => $request['p_iva'],

@@ -7,8 +7,8 @@
                 <div class="card-header">Modifica dati Utente</div>
 
                 <div class="card-body">
-                                         
-                    <form method="POST" action="{{ route('user.update', $user) }}">
+         
+                    <form method="post" action="{{ route('user.update', $user ) }}">
 
                         @csrf
                         @method('PATCH')
