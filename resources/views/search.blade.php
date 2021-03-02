@@ -27,7 +27,7 @@
         </div>
         <div class="apartment-features">
           <div class="font-helper-1">Intero appartamento a Bologna</div>
-          <div class="font-helper-2">Bettola della madonna in centro vista condotto fognario</div>
+          <div class="font-helper-2">Appartamento in centro a Bologna vista torri</div>
           <div class="font-helper-1">
             1 ospite • 1 camera da letto • 1 letto 1 bagno
           </div>
@@ -45,7 +45,7 @@
         </div>
         <div class="apartment-features">
           <div class="font-helper-1">Intero appartamento a Bologna</div>
-          <div class="font-helper-2">Bettola della madonna in centro vista condotto fognario</div>
+          <div class="font-helper-2">Appartamento in centro a Bologna vista torri</div>
           <div class="font-helper-1">
             1 ospite • 1 camera da letto • 1 letto 1 bagno
           </div>
@@ -63,7 +63,7 @@
         </div>
         <div class="apartment-features">
           <div class="font-helper-1">Intero appartamento a Bologna</div>
-          <div class="font-helper-2">Bettola della madonna in centro vista condotto fognario</div>
+          <div class="font-helper-2">Appartamento in centro a Bologna vista torri</div>
           <div class="font-helper-1">
             1 ospite • 1 camera da letto • 1 letto 1 bagno
           </div>
@@ -81,7 +81,7 @@
         </div>
         <div class="apartment-features">
           <div class="font-helper-1">Intero appartamento a Bologna</div>
-          <div class="font-helper-2">Bettola della madonna in centro vista condotto fognario</div>
+          <div class="font-helper-2">Appartamento in centro a Bologna vista torri</div>
           <div class="font-helper-1">
             1 ospite • 1 camera da letto • 1 letto 1 bagno
           </div>
@@ -99,7 +99,7 @@
         </div>
         <div class="apartment-features">
           <div class="font-helper-1">Intero appartamento a Bologna</div>
-          <div class="font-helper-2">Bettola della madonna in centro vista condotto fognario</div>
+          <div class="font-helper-2">Appartamento in centro a Bologna vista torri</div>
           <div class="font-helper-1">
             1 ospite • 1 camera da letto • 1 letto 1 bagno
           </div>
@@ -111,6 +111,7 @@
           </div>
         </div>
       </div>
+
     </div>
     <div class="map-box">
 
