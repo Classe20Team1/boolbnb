@@ -81,6 +81,8 @@ class UserInfoController extends Controller
         $user->update([
             'username' => $request['username'],
         ]);
+        
+
         $info = UserInfo::find(Auth::user()->info->id);
         $info->update([
            'fullname' => $request['fullname'],
@@ -91,8 +93,8 @@ class UserInfoController extends Controller
            'address' => $request['address'],
            'fiscal_code' => $request['fiscal_code'],
         ]);
-
-        return view('users.detail', compact('user'));  
+        
+        return view('users.detail', compact('user', 'info'));  
 
     }
 
