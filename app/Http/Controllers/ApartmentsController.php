@@ -7,9 +7,18 @@ use App\Apartment;
 use App\Service;
 use App\User;
 Use App\UserInfo;
+use Illuminate\Support\Facades\Auth;
 
 class ApartmentsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth', [
+            'except' => [
+                'index', 'show'
+            ]
+        ]);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -17,6 +26,7 @@ class ApartmentsController extends Controller
      */
     public function index()
     {
+
         $apartments = Apartment::all();
 
         return view('apartments.index', compact('apartments'));
@@ -29,7 +39,10 @@ class ApartmentsController extends Controller
      */
     public function create()
     {
-        //
+        $services = Service::all();
+        $user = Auth::user();
+
+        return view('apartments.create', compact('services', 'user'));
     }
 
     /**
@@ -40,7 +53,35 @@ class ApartmentsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $user = Auth::user();
+        $newApartment = new Apartment;
+
+        $newApartment->title = $data['title'];
+        $newApartment->user_id = $user->id;
+        $newApartment->description = $data['description'];
+        $newApartment->rooms = $data['rooms'];
+        $newApartment->beds = $data['beds'];
+        $newApartment->bathrooms = $data['bathrooms'];
+        $newApartment->metri_quadrati = $data['metri_quadrati'];
+        $newApartment->active = true;
+        $newApartment->views_count = $data['view_count'];
+        $newApartment->price = $data['price'];
+        if ($request->hasFile('image')) {
+            $request->file('image')->store('public/images');
+
+            // ensure every image has a different name
+            $file_name = $request->file('image')->hashName();
+
+            // save new image $file_name to database
+            $newApartment->cover_img = $file_name;
+        }
+
+        $newApartment->save();
+
+        $newApartment->services()->attach($data['services']);
+
+        return redirect()->route('posts.index');
     }
 
     /**
@@ -49,9 +90,20 @@ class ApartmentsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Apartment $apartment)
     {
-        //
+        $user = Auth::user();
+        if($user){
+            if ($apartment->user->id == Auth::user()->id){
+                // ritorno la view del user admin del proprio apartment
+                return view('admin.show', compact('apartment', 'user'));
+            } else {
+                return view('apartments.show', compact('apartment', 'user'));
+            }
+        } else {
+            return view('apartments.show', compact('apartment'));
+        }
+
     }
 
     /**
