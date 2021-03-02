@@ -7,7 +7,7 @@
 body {
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
-  padding-top: 116px;
+  padding-top: 94px;
 }
 
 header {
@@ -17,7 +17,7 @@ header {
 
 nav {
   border: 1px solid black;
-  padding: 1.4em 3em;
+  padding: 1em 3em;
   display: flex;
   color: white;
   justify-content: space-between;
