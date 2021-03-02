@@ -283,6 +283,88 @@ footer {
 }
 
 /* Ricerca avanzata */
-.pippo {
-  background-color: lime;
+.advanced-search {
+  display: flex;
+}
+
+.search-results,
+.map-box {
+  height: 81vh;
+}
+
+.search-results {
+  width: 55%;
+  padding: 3em;
+  padding-right: 1em;
+  overflow-y: scroll;
+}
+
+.search-results h5 {
+  margin-bottom: 1em;
+}
+
+.search-results h1 {
+  margin-bottom: 1.1em;
+}
+
+.search-results .search-filters ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 1em;
+}
+
+.search-results .search-filters ul li {
+  border: 1px solid lightgrey;
+  border-radius: 1em;
+  cursor: pointer;
+  margin-right: 1em;
+  margin-bottom: .5em;
+  padding: .5em;
+}
+.search-results .search-filters ul li:hover {
+  border: 1px solid black;
+}
+
+.apartments-card {
+  border-top: 1px solid lightgrey;
+  border-bottom: 1px solid lightgrey;
+  padding: 1em;
+  padding-left: 0;
+  display: flex;
+  height: 225px;
+}
+
+.apartments-card .apartment-img-box {
+  width: 43%;
+  padding: .4em;
+}
+.apartments-card .apartment-features {
+  width: 57%;
+  padding: .4em;
+}
+
+.apartments-card .apartment-img-box img {
+  width: 100%;
+  height: 100%;
+  border-radius: 1em;
+}
+
+.font-helper-1 {
+  font-size: .8em;
+  color: grey;
+  margin-bottom: 1em;
+}
+
+.font-helper-2 {
+  margin-bottom: 1em;
+}
+
+.price-tag {
+  float: right;
+}
+
+.map-box {
+  width: 45%;
+  background-image: url("/img/map-example.png");
 }
