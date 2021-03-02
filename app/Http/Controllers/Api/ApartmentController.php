@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Position;
+use App\Http\Resources\ApartmentResource;
 use App\Apartment;
 
 class ApartmentController extends Controller
@@ -26,7 +27,7 @@ class ApartmentController extends Controller
         foreach ($filtered as $position) {
             array_push($arrayId, $position->apartment_id);
         }
-        $apartments = json_encode(Apartment::find($arrayId)->where('beds', '>=', $request->guests));
-        return $apartments;
+        $apartments = Apartment::find($arrayId)->where('beds', '>=', $request->guests)->where('active', '=', true);
+        return ApartmentResource::collection($apartments);
     }
 }

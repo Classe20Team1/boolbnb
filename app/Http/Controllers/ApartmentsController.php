@@ -159,11 +159,11 @@ class ApartmentsController extends Controller
         foreach ($filtered as $position){
             array_push($arrayId, $position->apartment_id);
         }
-
+        $services = Service::all();
         $apartments = Apartment::find($arrayId)
             ->where('beds', '>=', $request->guests)
             ->where('active', '=', 1);
         dd($apartments);
-        return view('search', compact('apartments'));
+        return view('search', compact('apartments', 'services'));
     }
 }

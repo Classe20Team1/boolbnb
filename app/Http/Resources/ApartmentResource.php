@@ -23,7 +23,7 @@ class ApartmentResource extends JsonResource
             'beds' => $this->beds,
             'bathrooms' => $this->bathrooms,
             'metri_quadrati' => $this->metri_quadrati,
-            'price' => $this->price,
+            'price' => number_format($this->price / 100 , 2),
             'cover_img' => $this->cover_img,
         ];
     }
