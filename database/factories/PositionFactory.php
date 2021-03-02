@@ -12,8 +12,8 @@ $factory->define(Position::class, function (Faker $faker) {
 
     return [
         'apartment_id'=>$faker->numberBetween(1, $apartments->count()),
-        'latitude'=>$faker->latitude(41, 42),
-        'longitude'=>$faker->longitude(12, 13),
+        'latitude'=>$faker->latitude(41, 41.5),
+        'longitude'=>$faker->longitude(12, 12.5),
         'address'=> $faker->streetAddress,
     ];
 });

@@ -4,8 +4,66 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "23d0dee649885b8f4f572df4b44d346c",
+    "content-hash": "407a2d1646cd56f54f02fc9c75f55142",
     "packages": [
+        {
+            "name": "akuechler/laravel-geoly",
+            "version": "v1.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/akuechler/laravel-geoly.git",
+                "reference": "843bc09e8260216916c2c18a7ea66f463ef964bf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/akuechler/laravel-geoly/zipball/843bc09e8260216916c2c18a7ea66f463ef964bf",
+                "reference": "843bc09e8260216916c2c18a7ea66f463ef964bf",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^6.0@dev",
+                "phpunit/phpunit": "^9.2@dev"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Akuechler\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alexsander Küchler",
+                    "email": "composer@alexsander-kuechler.com"
+                }
+            ],
+            "description": "Perform fast and efficient radius searches on your Laravel Eloquent models.",
+            "keywords": [
+                "distance",
+                "framework",
+                "geo",
+                "laravel",
+                "lat",
+                "latitude",
+                "lng",
+                "lon",
+                "longitude",
+                "models",
+                "radius",
+                "search"
+            ],
+            "support": {
+                "issues": "https://github.com/akuechler/laravel-geoly/issues",
+                "source": "https://github.com/akuechler/laravel-geoly/tree/v1.0.5"
+            },
+            "time": "2020-05-21T17:52:12+00:00"
+        },
         {
             "name": "asm89/stack-cors",
             "version": "1.3.0",

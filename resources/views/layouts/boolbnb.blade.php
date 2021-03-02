@@ -50,7 +50,10 @@
         </div>
         <h1>Grazie agli host puoi.</h1>
         <div class="search-bar">
-          <form class="search-bar-form" action="index.html" method="post">
+          <?php $num = 2 ?>
+          <form class="search-bar-form" action="{{ route('apartment.search')}}" method="post">
+            @csrf
+            @method('post')            
             <div class="left-input">
               <label for="">Dove</label><br>
               <input type="text" name="city" value="" placeholder="Dove vuoi andare?" required>

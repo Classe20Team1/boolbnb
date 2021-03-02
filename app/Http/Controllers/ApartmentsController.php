@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 use App\Apartment;
 use App\Service;
 use App\User;
+use App\Position;
 Use App\UserInfo;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Auth;
 
 class ApartmentsController extends Controller
@@ -15,7 +17,7 @@ class ApartmentsController extends Controller
     {
         $this->middleware('auth', [
             'except' => [
-                'index', 'show'
+                'index', 'show', 'search'
             ]
         ]);
     }
@@ -26,7 +28,7 @@ class ApartmentsController extends Controller
      */
     public function index()
     {
-
+        
         $apartments = Apartment::all();
 
         return view('apartments.index', compact('apartments'));
@@ -138,5 +140,26 @@ class ApartmentsController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function search(Request $request)
+    {
+        $response = file_get_contents('https://api.tomtom.com/search/2/geocode/'. $request->city .'.json?limit=1&key=' . env('TOMTOM_KEY'));
+
+
+        $response = json_decode($response, true);
+        $position = [
+            'latit' => $response['results'][0]['position']['lat'],
+            'longit' => $response['results'][0]['position']['lon'],
+        ];
+        $radius = 100;
+        
+
+        $filtered = Position::radius($position['latit'], $position['longit'],$radius);
+
+        dd($filtered);
+        $apartments = Apartment::where('beds', '>=', $request->guests)->get();
+
+        return view('apartments.search', compact('apartments'));
     }
 }

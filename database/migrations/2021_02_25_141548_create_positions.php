@@ -17,8 +17,8 @@ class CreatePositions extends Migration
             $table->id();
             $table->unsignedBigInteger('apartment_id');
             $table->foreign('apartment_id')->references('id')->on('apartments');
-            $table->decimal('latitude', 10, 6);
-            $table->decimal('longitude', 10, 6);
+            $table->decimal('latitude', 10,6);
+            $table->decimal('longitude',10,6);
             $table->string('address');
             $table->timestamps();
         });
