@@ -7,6 +7,7 @@
 body {
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
+  padding-top: 116px;
 }
 
 header {
@@ -18,8 +19,15 @@ nav {
   border: 1px solid black;
   padding: 1.4em 3em;
   display: flex;
+  color: white;
   justify-content: space-between;
   padding-bottom: 2em;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background-color: black;
 }
 
 nav > div {
@@ -27,7 +35,7 @@ nav > div {
 }
 
 nav .nav-logo-box {
-  margin-right: 5em;
+  margin-right: 12em;
   display: flex;
   align-items: center;
 }
@@ -119,7 +127,7 @@ header .hero {
   padding: 3em 2em;
   text-align: center;
   padding-bottom: 2.3em;
-  padding-top: 0em;
+  /* padding-top: 125px; */
   padding-bottom: 3.5em;
   position: relative;
 }
@@ -138,11 +146,12 @@ header .hero {
   background-color: white;
   width: 40%;
   position: absolute;
-  top: -6%;
+  top: 2%;
   left: 50%;
   transform: translateX(-50%);
   border: 1px solid grey;
   border-radius: 2em;
+  z-index: 2;
 }
 
 .hero .search-bar-form {
@@ -271,4 +280,9 @@ footer {
   background-color: #DCDCDC;
   padding: 1em 3em;
   font-size: .8em;
+}
+
+/* Ricerca avanzata */
+.pippo {
+  background-color: lime;
 }
