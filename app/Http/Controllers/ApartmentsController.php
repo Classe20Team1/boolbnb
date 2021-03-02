@@ -148,18 +148,22 @@ class ApartmentsController extends Controller
 
 
         $response = json_decode($response, true);
-        $position = [
+        $positionSearched = [
             'latit' => $response['results'][0]['position']['lat'],
             'longit' => $response['results'][0]['position']['lon'],
         ];
-        $radius = 100;
-        
+        $radius = 70;
 
-        $filtered = Position::radius($position['latit'], $position['longit'],$radius);
+        $filtered = Position::radius($positionSearched['latit'], $positionSearched['longit'],$radius);
+        $arrayId= [];
+        foreach ($filtered as $position){
+            array_push($arrayId, $position->apartment_id);
+        }
 
-        dd($filtered);
-        $apartments = Apartment::where('beds', '>=', $request->guests)->get();
-
-        return view('apartments.search', compact('apartments'));
+        $apartments = Apartment::find($arrayId)
+            ->where('beds', '>=', $request->guests)
+            ->where('active', '=', 1);
+        dd($apartments);
+        return view('search', compact('apartments'));
     }
 }

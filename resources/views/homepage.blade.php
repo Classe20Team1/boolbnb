@@ -13,7 +13,7 @@
       <h1>Grazie agli host puoi.</h1>
 
       <div class="search-bar">
-        <form class="search-bar-form" action="{{ route('apartment.search')}}" method="post">
+        <form class="search-bar-form" action="{{ route('search')}}" method="post">
             @csrf
             @method('post')
           <div class="left-input">
