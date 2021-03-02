@@ -15,7 +15,10 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', function () {
-    return view('layouts.boolbnb');
+    return view('homepage');
+});
+Route::get('/search', function () {
+    return view('search');
 });
 
 Auth::routes();
@@ -24,4 +27,3 @@ Route::resource('apartments', 'ApartmentsController');
 Route::get('/user/edit', 'UserInfoController@edit')->name('user.edit');
 Route::post('/search', 'ApartmentsController@search')->name('apartment.search');
 Route::patch('user', 'UserInfoController@update')->name('user.update');
-
