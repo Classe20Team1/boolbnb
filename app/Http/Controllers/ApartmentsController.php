@@ -8,8 +8,12 @@ use App\Service;
 use App\User;
 use App\Position;
 Use App\UserInfo;
+use App\File;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Str;
 
 class ApartmentsController extends Controller
 {
@@ -67,23 +71,14 @@ class ApartmentsController extends Controller
         $newApartment->bathrooms = $data['bathrooms'];
         $newApartment->metri_quadrati = $data['metri_quadrati'];
         $newApartment->active = true;
-        $newApartment->views_count = $data['view_count'];
+        $newApartment->views_count = 0;
         $newApartment->price = $data['price'];
-        if ($request->hasFile('image')) {
-            $request->file('image')->store('public/images');
-
-            // ensure every image has a different name
-            $file_name = $request->file('image')->hashName();
-
-            // save new image $file_name to database
-            $newApartment->cover_img = $file_name;
-        }
-
+        $newApartment->cover_img = $request->file('image')->store('images');
         $newApartment->save();
 
-        $newApartment->services()->attach($data['services']);
+        // $newApartment->services()->attach($data['services']);
 
-        return redirect()->route('posts.index');
+        return redirect()->route('apartments.index');
     }
 
     /**
