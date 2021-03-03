@@ -27,7 +27,7 @@
                            </div>
                            </div>
 
-                            <input v-model='searchEl' type="text" name="" value="" placeholder="Cerca...">
+                            <input class="searchinput" v-model='searchEl' type="text" name="" value="" placeholder="Cerca...">
 
 
                                 <ListContainer />
@@ -99,17 +99,14 @@
   display: flex;
 }
 
-.search-results,
-.map-box {
-  height: 81vh;
+.searchinput {
+  margin-left: 40px;
 }
 
 .search-results {
   width: 55%;
-  height:150px;
   padding: 3em;
   padding-right: 1em;
-  overflow-y: scroll;
 }
 
 .search-results h5 {
@@ -139,10 +136,5 @@
 .search-results .search-filters ul button:hover {
   border: 1px solid black;
 }
-
-
-
-
-
 
 </style>

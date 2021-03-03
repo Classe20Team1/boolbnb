@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Str;
+use App\Http\Resources\ApartmentResource;
 
 class ApartmentsController extends Controller
 {
@@ -126,7 +127,7 @@ class ApartmentsController extends Controller
         //
     }
 
-    /**
+    /*
      * Remove the specified resource from storage.
      *
      * @param  int  $id
@@ -158,6 +159,7 @@ class ApartmentsController extends Controller
         $apartments = Apartment::find($arrayId)
             ->where('beds', '>=', $request->guests)
             ->where('active', '=', 1);
+
         return view('search', compact('apartments', 'services'));
     }
 }

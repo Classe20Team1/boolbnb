@@ -287,16 +287,11 @@ footer {
   display: flex;
 }
 
-.search-results,
-.map-box {
-  height: 81vh;
-}
 
 .search-results {
   width: 55%;
   padding: 3em;
   padding-right: 1em;
-  overflow-y: scroll;
 }
 
 .search-results h5 {

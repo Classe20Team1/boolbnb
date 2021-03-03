@@ -6603,7 +6603,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\nul[data-v-4fd7a0b0]{\n  display:flex;\n  flex-direction: column;\n  list-style: none;\n  margin:0;\n  padding:0;\n}\n\n", ""]);
+exports.push([module.i, "\nul[data-v-4fd7a0b0]{\r\n  display:flex;\r\n  flex-direction: column;\r\n  list-style: none;\r\n  margin:0;\r\n  padding:0;\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -6622,7 +6622,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.apartments-card[data-v-be0f3488] {\n  width:50%;\n  border-top: 1px solid lightgrey;\n  border-bottom: 1px solid lightgrey;\n  padding: 1em;\n  padding-left: 0;\n  display: flex;\n  height: 225px;\n}\n.apartments-card .apartment-img-box[data-v-be0f3488] {\n  width: 43%;\n  padding: .4em;\n}\n.apartments-card .apartment-features[data-v-be0f3488] {\n  width: 57%;\n  padding: .4em;\n  display:flex;\n  flex-direction: column;\n  justify-content: space-between;\n}\n.apartments-card .apartment-img-box img[data-v-be0f3488] {\n  width: 100%;\n  height: 100%;\n  border-radius: 1em;\n}\n.font-helper-1[data-v-be0f3488] {\n  font-size: .8em;\n  color: grey;\n  margin-bottom: 1em;\n}\n.font-helper-2[data-v-be0f3488] {\n  margin-bottom: 1em;\n}\n.tinies-container[data-v-be0f3488]{\n  list-style: none;\n  display: flex;\n  justify-content: space-between;\n}\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n.apartments-card[data-v-be0f3488] {\r\n  width:50%;\r\n  border-top: 1px solid lightgrey;\r\n  border-bottom: 1px solid lightgrey;\r\n  padding: 1em;\r\n  padding-left: 0;\r\n  display: flex;\r\n  height: 225px;\n}\n.apartments-card .apartment-img-box[data-v-be0f3488] {\r\n  width: 43%;\r\n  padding: .4em;\n}\n.apartments-card .apartment-features[data-v-be0f3488] {\r\n  width: 57%;\r\n  padding: .4em;\r\n  display:flex;\r\n  flex-direction: column;\r\n  justify-content: space-between;\n}\n.apartments-card .apartment-img-box img[data-v-be0f3488] {\r\n  width: 100%;\r\n  height: 100%;\r\n  border-radius: 1em;\n}\n.font-helper-1[data-v-be0f3488] {\r\n  font-size: .8em;\r\n  color: grey;\r\n  margin-bottom: 1em;\n}\n.font-helper-2[data-v-be0f3488] {\r\n  margin-bottom: 1em;\n}\n.tinies-container[data-v-be0f3488]{\r\n  list-style: none;\r\n  display: flex;\r\n  justify-content: space-between;\n}\r\n\r\n\r\n\r\n\r\n\r\n\r\n", ""]);
 
 // exports
 
@@ -6641,7 +6641,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.advanced-search {\n  display: flex;\n}\n.search-results,\n.map-box {\n  height: 81vh;\n}\n.search-results {\n  width: 55%;\n  height:150px;\n  padding: 3em;\n  padding-right: 1em;\n  overflow-y: scroll;\n}\n.search-results h5 {\n  margin-bottom: 1em;\n}\n.search-results h1 {\n  margin-bottom: 1.1em;\n}\n.search-results .search-filters ul {\n  list-style: none;\n  display: flex;\n  flex-wrap: wrap;\n  margin-bottom: 1em;\n}\n.search-results .search-filters ul button {\n  background-color: white;\n  border: 1px solid lightgrey;\n  border-radius: 1em;\n  cursor: pointer;\n  margin-right: 1em;\n  margin-bottom: .5em;\n  padding: .5em;\n}\n.search-results .search-filters ul button:hover {\n  border: 1px solid black;\n}\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n.advanced-search {\r\n  display: flex;\n}\n.searchinput {\r\n  margin-left: 40px;\n}\n.search-results {\r\n  width: 55%;\r\n  padding: 3em;\r\n  padding-right: 1em;\n}\n.search-results h5 {\r\n  margin-bottom: 1em;\n}\n.search-results h1 {\r\n  margin-bottom: 1.1em;\n}\n.search-results .search-filters ul {\r\n  list-style: none;\r\n  display: flex;\r\n  flex-wrap: wrap;\r\n  margin-bottom: 1em;\n}\n.search-results .search-filters ul button {\r\n  background-color: white;\r\n  border: 1px solid lightgrey;\r\n  border-radius: 1em;\r\n  cursor: pointer;\r\n  margin-right: 1em;\r\n  margin-bottom: .5em;\r\n  padding: .5em;\n}\n.search-results .search-filters ul button:hover {\r\n  border: 1px solid black;\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -38700,6 +38700,7 @@ var render = function() {
                 expression: "searchEl"
               }
             ],
+            staticClass: "searchinput",
             attrs: {
               type: "text",
               name: "",
@@ -51403,8 +51404,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/aj/Desktop/Courses/repository/bool-airbnb/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/aj/Desktop/Courses/repository/bool-airbnb/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Boolean\BackEnd\boolbnb\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Boolean\BackEnd\boolbnb\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
