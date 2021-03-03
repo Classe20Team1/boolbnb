@@ -158,7 +158,6 @@ class ApartmentsController extends Controller
         $apartments = Apartment::find($arrayId)
             ->where('beds', '>=', $request->guests)
             ->where('active', '=', 1);
-        dd($apartments);
         return view('search', compact('apartments', 'services'));
     }
 }
