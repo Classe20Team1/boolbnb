@@ -20,6 +20,7 @@ class ApartmentController extends Controller
             'latit' => $response['results'][0]['position']['lat'],
             'longit' => $response['results'][0]['position']['lon'],
         ];
+
         $radius = 70;
 
         $filtered = Position::radius($positionSearched['latit'], $positionSearched['longit'], $radius);
@@ -28,6 +29,8 @@ class ApartmentController extends Controller
             array_push($arrayId, $position->apartment_id);
         }
         $apartments = Apartment::find($arrayId)->where('beds', '>=', $request->guests)->where('active', '=', true);
+        
+
         return ApartmentResource::collection($apartments);
     }
 }

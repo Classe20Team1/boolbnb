@@ -25,6 +25,10 @@ class ApartmentResource extends JsonResource
             'metri_quadrati' => $this->metri_quadrati,
             'price' => number_format($this->price / 100 , 2),
             'cover_img' => $this->cover_img,
+            'images' => $this->imgs,
+            'messages' => $this->messages,
+            'position' => $this->position,
+            'services' => $this->services,
         ];
     }
 }
