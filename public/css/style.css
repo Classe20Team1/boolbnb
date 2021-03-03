@@ -640,3 +640,67 @@ footer {
 .dashboard-card h3 {
   margin-bottom: .5em;
 }
+
+.myapt-list-container {
+  padding: 3em 7.5em;
+  padding-right: 9em;
+}
+
+.myapt-list-container h2 {
+  color: #484848;
+  margin-bottom: 1.5em;
+}
+
+.my-apt-card {
+  padding: 1em;
+  display: flex;
+  border-radius: 1em;
+  box-shadow: 0 0 1px 1px lightgrey;
+  margin-bottom: 1em;
+}
+
+.my-apt-card > div {
+  height: 100px;
+}
+
+.my-apt-img-box {
+  height: 100px;
+  width: 120px;
+  margin-right: 1em;
+}
+
+.my-apt-img-box img {
+  width: 100%;
+  height: 100%;
+}
+
+.my-apt-infos {
+  padding: .5em .8em;
+  width: 650px;
+}
+.my-apt-infos h4 {
+  color: #484848;
+}
+.my-apt-infos p {
+  margin-top: .6em;
+  font-size: .8em;
+}
+
+.my-apt-actions {
+  padding: .5em 0;
+  padding-left: 1em;
+  padding-right: 3em;
+}
+.my-apt-actions ul {
+  list-style: none;
+}
+
+.my-apt-actions ul li {
+  margin-bottom: .5em;
+}
+
+.card-separator {
+  height: 100%;
+  border: 1px solid lightgrey;
+  margin: 0 1em;
+}

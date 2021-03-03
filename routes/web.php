@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', function () {
-    return view('dashboard');
+    return view('my-apartments');
 });
 Route::get('/search', function () {
     return view('search');
