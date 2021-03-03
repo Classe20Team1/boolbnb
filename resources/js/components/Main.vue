@@ -1,57 +1,55 @@
 <template>
-          <div id = "app" class="container">
+  <div id = "app" class="container">
 
-                 <div class="row">
+    <div class="row">
 
-                     <div class="col">
+      <div class="col">
 
-                       <div class="advanced-search">
-                         <div class="search-results">
-                           <h5>Oltre 300 alloggi</h5>
-                           <h1>Roma: alloggi</h1>
-                           <div class="search-filters">
+        <div class="advanced-search">
+          <div class="search-results">
+            <h5>Oltre 300 alloggi</h5>
+            <h1>Alloggi: {{filteredArray.length}}</h1>
+            <div class="search-filters">
+                <ul>
 
-                               <ul>
+                  <li> <button type="button" name="button"> WiFi </button> </li>
+                  <li> <button type="button" name="button"> Animali Ammessi </button> </li>
+                  <li> <button type="button" name="button"> Posto Macchina </button> </li>
+                  <li> <button type="button" name="button"> Piscina </button> </li>
+                  <li> <button type="button" name="button"> Portineria </button> </li>
+                  <li> <button type="button" name="button"> Sauna </button> </li>
+                  <li> <button type="button" name="button"> Vista mare </button> </li>
 
-                                     <li> <button type="button" name="button"> WiFi </button> </li>
-                                     <li> <button type="button" name="button"> Animali Ammessi </button> </li>
-                                     <li> <button type="button" name="button"> Posto Macchina </button> </li>
-                                     <li> <button type="button" name="button"> Piscina </button> </li>
-                                     <li> <button type="button" name="button"> Portineria </button> </li>
-                                     <li> <button type="button" name="button"> Sauna </button> </li>
-                                     <li> <button type="button" name="button"> Vista mare </button> </li>
-
-                                </ul>
-
-                           </div>
-                           </div>
-                           </div>
-
-                            <input class="searchinput" v-model='searchEl' type="text" name="" value="" placeholder="Cerca...">
-
-
-                                <ListContainer />
-
-
-                              <ListItem v-for="(data, index) in filteredArray "
-
-
-                                        :title = "data.title"
-                                        :rooms = "data.rooms"
-                                        :beds = "data.beds"
-                                        :bathrooms = "data.bathrooms"
-                                        :metri_quadrati = "data.metri_quadrati"
-                                        :price ="data.price"
-                                        :cover_img ="data.cover_img"
-                                        :key = "index"
-                                        slot = "items"
-                                        />
-
-                     </div>
-
-                 </div>
-
+                </ul>
             </div>
+          </div>
+        </div>
+
+            <input class="searchinput" v-model='searchEl' type="text" name="" value="" placeholder="Cerca...">
+
+
+                <ListContainer />
+
+
+              <ListItem v-for="(data, index) in filteredArray "
+
+
+                        :title = "data.title"
+                        :rooms = "data.rooms"
+                        :beds = "data.beds"
+                        :bathrooms = "data.bathrooms"
+                        :metri_quadrati = "data.metri_quadrati"
+                        :price ="data.price"
+                        :cover_img ="data.cover_img"
+                        :key = "index"
+                        slot = "items"
+                        />
+
+      </div>
+
+    </div>
+
+  </div>
 
 </template>
 
@@ -62,10 +60,9 @@
         import ListContainer from './ListContainer'
 
         export default{
+          name: "Main",
 
           props:['ciccio'],
-
-          name: "Main",
 
           components:{
             ListItem,

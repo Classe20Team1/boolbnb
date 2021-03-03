@@ -2120,13 +2120,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['ciccio'],
   name: "Main",
+  props: ['ciccio'],
   components: {
     ListItem: _ListItem__WEBPACK_IMPORTED_MODULE_0__["default"],
     ListContainer: _ListContainer__WEBPACK_IMPORTED_MODULE_1__["default"]
@@ -38689,7 +38687,17 @@ var render = function() {
         "div",
         { staticClass: "col" },
         [
-          _vm._m(0),
+          _c("div", { staticClass: "advanced-search" }, [
+            _c("div", { staticClass: "search-results" }, [
+              _c("h5", [_vm._v("Oltre 300 alloggi")]),
+              _vm._v(" "),
+              _c("h1", [
+                _vm._v("Alloggi: " + _vm._s(_vm.filteredArray.length))
+              ]),
+              _vm._v(" "),
+              _vm._m(0)
+            ])
+          ]),
           _vm._v(" "),
           _c("input", {
             directives: [
@@ -38747,55 +38755,47 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "advanced-search" }, [
-      _c("div", { staticClass: "search-results" }, [
-        _c("h5", [_vm._v("Oltre 300 alloggi")]),
+    return _c("div", { staticClass: "search-filters" }, [
+      _c("ul", [
+        _c("li", [
+          _c("button", { attrs: { type: "button", name: "button" } }, [
+            _vm._v(" WiFi ")
+          ])
+        ]),
         _vm._v(" "),
-        _c("h1", [_vm._v("Roma: alloggi")]),
+        _c("li", [
+          _c("button", { attrs: { type: "button", name: "button" } }, [
+            _vm._v(" Animali Ammessi ")
+          ])
+        ]),
         _vm._v(" "),
-        _c("div", { staticClass: "search-filters" }, [
-          _c("ul", [
-            _c("li", [
-              _c("button", { attrs: { type: "button", name: "button" } }, [
-                _vm._v(" WiFi ")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("button", { attrs: { type: "button", name: "button" } }, [
-                _vm._v(" Animali Ammessi ")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("button", { attrs: { type: "button", name: "button" } }, [
-                _vm._v(" Posto Macchina ")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("button", { attrs: { type: "button", name: "button" } }, [
-                _vm._v(" Piscina ")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("button", { attrs: { type: "button", name: "button" } }, [
-                _vm._v(" Portineria ")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("button", { attrs: { type: "button", name: "button" } }, [
-                _vm._v(" Sauna ")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("button", { attrs: { type: "button", name: "button" } }, [
-                _vm._v(" Vista mare ")
-              ])
-            ])
+        _c("li", [
+          _c("button", { attrs: { type: "button", name: "button" } }, [
+            _vm._v(" Posto Macchina ")
+          ])
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c("button", { attrs: { type: "button", name: "button" } }, [
+            _vm._v(" Piscina ")
+          ])
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c("button", { attrs: { type: "button", name: "button" } }, [
+            _vm._v(" Portineria ")
+          ])
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c("button", { attrs: { type: "button", name: "button" } }, [
+            _vm._v(" Sauna ")
+          ])
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c("button", { attrs: { type: "button", name: "button" } }, [
+            _vm._v(" Vista mare ")
           ])
         ])
       ])
