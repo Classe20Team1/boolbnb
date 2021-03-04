@@ -9,6 +9,7 @@ use App\User;
 use App\Position;
 Use App\UserInfo;
 use App\File;
+use App\Img;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -73,12 +74,30 @@ class ApartmentsController extends Controller
         $newApartment->active = true;
         $newApartment->views_count = 0;
         $newApartment->price = $data['price'];
-        $newApartment->cover_img = $request->file('image')->store('images');
-        $newApartment->save();
+        $newApartment->cover_img = $request->file('cover')->store('covers');
+        $newApartment->save(); //salva
+
+        $files = $newApartment->imgs; //salvo il file in variabile 
+        $arrayImgApartment = $request->file('image'); // prendo il file     
+
+        if($request->hasFile('image'))
+        { //ciclo per salvarlo 
+            foreach ($arrayImgApartment as $file) {
+                $newImg = new Img; // collego la varibile alla tabella img
+                $name = Str::random(25); // creo nome random di 25 caratteri 
+                $file->move(public_path().'/images/', $name);  //salva l'img nella cartella di destinazione
+                $newImg->path = 'images/' . $name;  //aggiungo path
+                $newImg->apartment_id = $newApartment->id; // aggangio all'appartamento tramite id 
+                $newImg->save();             // salvo tutto 
+            }
+            
+        }
+        
+        return redirect()->route('apartments.index');
 
         // $newApartment->services()->attach($data['services']);
 
-        return redirect()->route('apartments.index');
+       
     }
 
     /**
