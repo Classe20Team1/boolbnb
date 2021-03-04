@@ -175,7 +175,8 @@ class ApartmentsController extends Controller
             array_push($arrayId, $position->apartment_id);
         }
         $services = Service::all();
-        $apartments = Apartment::find($arrayId)
+        $apartments = Apartment::with('services', 'position', 'imgs')
+            ->find($arrayId)
             ->where('beds', '>=', $request->guests)
             ->where('active', '=', 1);
 

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Position;
 use App\Apartment;
+use App\Http\Resources\ServiceResource;
 
 class ApiApartmentController extends Controller
 {
@@ -29,13 +30,10 @@ class ApiApartmentController extends Controller
             array_push($arrayId, $position->apartment_id);
         }
 
-        $apartments = Apartment::find($arrayId)->where('beds', '>=', $request->guests)->where('active', '=', true);
 
-
-        // $data = Restaurant::with("getTypes", "getDishes", "getRestaurateur")->whereHas('getTypes', function ($q) use ($query) {
-        //     $q->where('name', 'LIKE', '%' . $query . '%');
-        // })->get();
-
-        return response()->json(Apartment::with('services', 'position', 'imgs')->find($arrayId)->where('beds', '>=', $request->guests)->where('active', '=', true));
+        return response()->json(Apartment::with('services', 'position', 'imgs')
+        ->find($arrayId)
+        ->where('beds', '>=', $request->guests)
+        ->where('active', '=', true));
     }
 }
