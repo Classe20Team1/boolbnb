@@ -36,6 +36,6 @@ class ApiApartmentController extends Controller
         //     $q->where('name', 'LIKE', '%' . $query . '%');
         // })->get();
 
-        return response()->json(Apartment::with('services', 'position', 'imgs')->find($arrayId)->find($arrayId)->where('beds', '>=', $request->guests)->where('active', '=', true));
+        return response()->json(Apartment::with('services', 'position', 'imgs')->find($arrayId)->where('beds', '>=', $request->guests)->where('active', '=', true));
     }
 }
