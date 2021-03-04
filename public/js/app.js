@@ -2058,9 +2058,124 @@ __webpack_require__.r(__webpack_exports__);
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Main.vue?vue&type=script&lang=js& ***!
   \***************************************************************************************************************************************************************/
 /*! exports provided: default */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/aj/Desktop/Courses/repository/bool-airbnb/resources/js/components/Main.vue: Unexpected token (130:0)\n\n\u001b[0m \u001b[90m 128 |\u001b[39m             \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mgetServices()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 129 |\u001b[39m             \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mgetApartments()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 130 |\u001b[39m \u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<\u001b[39m \u001b[33mUpdated\u001b[39m upstream\u001b[0m\n\u001b[0m \u001b[90m     |\u001b[39m \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 131 |\u001b[39m             }\u001b[0m\n\u001b[0m \u001b[90m 132 |\u001b[39m \u001b[33m===\u001b[39m\u001b[33m===\u001b[39m\u001b[33m=\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 133 |\u001b[39m           }\u001b[33m,\u001b[39m\u001b[0m\n    at Parser._raise (/Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:776:17)\n    at Parser.raiseWithData (/Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:769:17)\n    at Parser.raise (/Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:737:17)\n    at Parser.unexpected (/Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:9675:16)\n    at Parser.parseExprAtom (/Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:11069:20)\n    at Parser.parseExprSubscripts (/Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:10644:23)\n    at Parser.parseUpdate (/Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:10624:21)\n    at Parser.parseMaybeUnary (/Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:10602:23)\n    at Parser.parseExprOps (/Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:10463:23)\n    at Parser.parseMaybeConditional (/Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:10437:23)\n    at Parser.parseMaybeAssign (/Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:10400:21)\n    at Parser.parseExpressionBase (/Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:10345:23)\n    at /Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:10339:39\n    at Parser.allowInAnd (/Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:12037:16)\n    at Parser.parseExpression (/Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:10339:17)\n    at Parser.parseStatementContent (/Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:12326:23)\n    at Parser.parseStatement (/Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:12195:17)\n    at Parser.parseBlockOrModuleBlockBody (/Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:12777:25)\n    at Parser.parseBlockBody (/Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:12768:10)\n    at Parser.parseBlock (/Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:12752:10)\n    at Parser.parseFunctionBody (/Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:11715:24)\n    at Parser.parseFunctionBodyAndFinish (/Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:11699:10)\n    at Parser.parseMethod (/Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:11649:10)\n    at Parser.parseObjectMethod (/Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:11578:19)\n    at Parser.parseObjPropValue (/Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:11611:23)\n    at Parser.parsePropertyDefinition (/Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:11535:10)\n    at Parser.parseObjectLike (/Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:11425:25)\n    at Parser.parseExprAtom (/Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:10985:23)\n    at Parser.parseExprSubscripts (/Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:10644:23)\n    at Parser.parseUpdate (/Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:10624:21)\n    at Parser.parseMaybeUnary (/Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:10602:23)\n    at Parser.parseExprOps (/Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:10463:23)\n    at Parser.parseMaybeConditional (/Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:10437:23)\n    at Parser.parseMaybeAssign (/Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:10400:21)\n    at /Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:10367:39\n    at Parser.allowInAnd (/Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:12037:16)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _ListItem__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ListItem */ "./resources/js/components/ListItem.vue");
+/* harmony import */ var _ListContainer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ListContainer */ "./resources/js/components/ListContainer.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "Main",
+  props: ['ciccio', 'services', 'usersearch'],
+  components: {
+    ListItem: _ListItem__WEBPACK_IMPORTED_MODULE_0__["default"],
+    ListContainer: _ListContainer__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
+  data: function data() {
+    return {
+      anArray: this.ciccio,
+      userSearch: this.usersearch,
+      anotherArray: this.services,
+      searchEl: ''
+    };
+  },
+  computed: {
+    filteredArray: function filteredArray() {
+      var vm = this;
+      return this.anArray.filter(function (element) {
+        return element.title.toLowerCase().includes(vm.searchEl.toLowerCase());
+      });
+    }
+  },
+  methods: {
+    getServices: function getServices() {
+      axios.get("http://localhost:8000/api/services").then(function (response) {
+        console.log(response);
+      });
+    },
+    getApartments: function getApartments() {
+      axios.post("http://localhost:8000/api/search/apartments", {
+        city: this.usersearch,
+        guests: 2
+      }, {
+        headers: {
+          "Content-type": "application/json; charset=UTF-8"
+        }
+      }).then(function (response) {
+        console.log(response);
+      });
+    },
+    printArray: function printArray() {
+      console.log(this.anotherArray);
+    }
+  },
+  mounted: function mounted() {
+    this.getServices();
+    this.getApartments();
+  }
+});
 
 /***/ }),
 

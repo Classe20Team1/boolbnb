@@ -127,15 +127,15 @@
           mounted() {
             this.getServices();
             this.getApartments();
-<<<<<<< Updated upstream
-            }
-=======
+
           },
 
+    };
 
 
->>>>>>> Stashed changes
-        }
+
+
+
 
 </script>
 
