@@ -78,27 +78,27 @@ class ApartmentsController extends Controller
         $newApartment->cover_img = $request->file('cover')->store('covers');
         $newApartment->save(); //salva
 
-        $files = $newApartment->imgs; //salvo il file in variabile 
-        $arrayImgApartment = $request->file('image'); // prendo il file     
+        $files = $newApartment->imgs; //salvo il file in variabile
+        $arrayImgApartment = $request->file('image'); // prendo il file
 
         if($request->hasFile('image'))
-        { //ciclo per salvarlo 
+        { //ciclo per salvarlo
             foreach ($arrayImgApartment as $file) {
                 $newImg = new Img; // collego la varibile alla tabella img
-                $name = Str::random(25); // creo nome random di 25 caratteri 
+                $name = Str::random(25); // creo nome random di 25 caratteri
                 $file->move(public_path().'/images/', $name);  //salva l'img nella cartella di destinazione
                 $newImg->path = 'images/' . $name;  //aggiungo path
-                $newImg->apartment_id = $newApartment->id; // aggangio all'appartamento tramite id 
-                $newImg->save();             // salvo tutto 
+                $newImg->apartment_id = $newApartment->id; // aggangio all'appartamento tramite id
+                $newImg->save();             // salvo tutto
             }
-            
+
         }
-        
+
         return redirect()->route('apartments.index');
 
         // $newApartment->services()->attach($data['services']);
 
-       
+
     }
 
     /**
@@ -197,10 +197,13 @@ class ApartmentsController extends Controller
             array_push($arrayId, $position->apartment_id);
         }
         $services = Service::all();
-        $apartments = Apartment::find($arrayId)
+        $apartments = Apartment::with('services', 'position', 'imgs')
+            ->find($arrayId)
             ->where('beds', '>=', $request->guests)
             ->where('active', '=', 1);
 
-        return view('search', compact('apartments', 'services', 'usersearch'));
+        $data = json_encode($usersearch);
+
+        return view('search', compact('apartments', 'services','data'));
     }
 }

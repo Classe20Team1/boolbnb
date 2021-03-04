@@ -20,7 +20,7 @@ class ApartmentServiceSeeder extends Seeder
 
       foreach ($apartments as $apartment){
         for ($i = 1; $i <= $faker->numberBetween(1, $services->count()); $i++){
-          DB::table('apartments_services')->insert([
+          DB::table('apartment_service')->insert([
             'apartment_id' => $apartment->id,
             'service_id' => $i,
           ]);

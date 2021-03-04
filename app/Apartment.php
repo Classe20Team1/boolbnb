@@ -31,6 +31,6 @@ class Apartment extends Model
     }
     public function services()
     {
-      return $this->belongsToMany('App\Service', 'apartments_services',  'service_id', 'apartment_id');
+      return $this->belongsToMany('App\Service', 'apartment_service');
     }
 }
