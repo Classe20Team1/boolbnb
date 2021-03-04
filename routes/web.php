@@ -22,7 +22,7 @@ Route::get('/search', function () {
 });
 
 Route::get('/test', function (){
-  return view('add');
+  return view('register-bnb');
 });
 
 
