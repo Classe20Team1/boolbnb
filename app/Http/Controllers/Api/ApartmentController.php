@@ -12,6 +12,7 @@ class ApartmentController extends Controller
 {
     public function search(Request $request)
     {
+        
         $response = file_get_contents('https://api.tomtom.com/search/2/geocode/' . $request->city . '.json?limit=1&key=' . env('TOMTOM_KEY'));
 
 
@@ -31,6 +32,6 @@ class ApartmentController extends Controller
         $apartments = Apartment::find($arrayId)->where('beds', '>=', $request->guests)->where('active', '=', true);
         
 
-        return ApartmentResource::collection($apartments);
+        return ApartmentResource::collection(Apartment::find($arrayId)->where('beds', '>=', $request->guests)->where('active', '=', true));
     }
 }

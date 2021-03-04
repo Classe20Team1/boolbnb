@@ -2142,6 +2142,29 @@ __webpack_require__.r(__webpack_exports__);
         return element.title.toLowerCase().includes(vm.searchEl.toLowerCase());
       });
     }
+  },
+  methods: {
+    getServices: function getServices() {
+      axios.get("http://localhost:8000/api/services").then(function (response) {
+        console.log(response);
+      });
+    },
+    getApartments: function getApartments() {
+      axios.post("http://localhost:8000/api/search/apartments", {
+        city: 'Fiumicino',
+        guests: 2
+      }, {
+        headers: {
+          "Content-type": "application/json; charset=UTF-8"
+        }
+      }).then(function (response) {
+        console.log(response);
+      });
+    }
+  },
+  mounted: function mounted() {
+    this.getServices();
+    this.getApartments();
   }
 });
 

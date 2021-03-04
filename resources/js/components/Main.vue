@@ -84,6 +84,36 @@
                       });
                     },
           },
+          methods:{
+                getServices(){
+                  axios.get("http://localhost:8000/api/services")
+                  .then(response => {
+                    console.log(response);
+                  })
+                },
+                
+                getApartments(){
+                  axios.post(
+                    "http://localhost:8000/api/search/apartments",
+                    {
+                      city: 'Fiumicino',
+                      guests: 2,
+                    },
+                    {
+                      headers: {
+                      "Content-type": "application/json; charset=UTF-8",
+                      }
+                    }
+                  )
+                  .then(response => {
+                    console.log(response);
+                  })                
+                }
+          },
+            mounted() {
+            this.getServices();
+            this.getApartments();
+            }
 
         }
 
