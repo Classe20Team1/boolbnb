@@ -12,13 +12,9 @@
             <div class="search-filters">
                 <ul>
 
-                  <li> <button type="button" name="button"> WiFi </button> </li>
-                  <li> <button type="button" name="button"> Animali Ammessi </button> </li>
-                  <li> <button type="button" name="button"> Posto Macchina </button> </li>
-                  <li> <button type="button" name="button"> Piscina </button> </li>
-                  <li> <button type="button" name="button"> Portineria </button> </li>
-                  <li> <button type="button" name="button"> Sauna </button> </li>
-                  <li> <button type="button" name="button"> Vista mare </button> </li>
+                  @foreach($services as $service)
+                  <li> <button type="button" name="button"> {{ $service }}</button> </li>
+                  @endforeach
 
                 </ul>
             </div>
@@ -66,30 +62,29 @@
         export default{
           name: "Main",
 
-          props:['ciccio','services', 'usersearch'],
+          props:['ciccio','searchedcity',"services"],
 
 
           components:{
             ListItem,
             ListContainer
           },
+
           data(){
                   return{
                       anArray: this.ciccio,
-                      userSearch:this.usersearch,
-                      anotherArray:this.services,
+                      userSearch:this.searchedcity,
                       searchEl:'',
                   }
           },
           computed:{
                     filteredArray: function() {
-                      var vm = this;
+                      let vm = this;
                       return this.anArray.filter(function(element){
                         return element.title.toLowerCase().includes(vm.searchEl.toLowerCase())
                       });
                     },
           },
-
 
           methods:{
                 getServices(){
@@ -100,11 +95,13 @@
                 },
 
                 getApartments(){
+                  let vim = this;
+
                   axios.post(
                     "http://localhost:8000/api/search/apartments",
                     {
-                      city: this.usersearch,
-                      guests: 2,
+                      "city":this.userSearch,
+                      "guests": 2,
                     },
 
                     {
@@ -119,7 +116,7 @@
                 },
 
                 printArray:function(){
-                  console.log(this.anotherArray)
+                  console.log(this.userSearch);
                 },
           },
 
