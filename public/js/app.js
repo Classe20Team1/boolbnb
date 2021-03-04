@@ -2058,115 +2058,9 @@ __webpack_require__.r(__webpack_exports__);
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Main.vue?vue&type=script&lang=js& ***!
   \***************************************************************************************************************************************************************/
 /*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _ListItem__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ListItem */ "./resources/js/components/ListItem.vue");
-/* harmony import */ var _ListContainer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ListContainer */ "./resources/js/components/ListContainer.vue");
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  name: "Main",
-  props: ['ciccio'],
-  components: {
-    ListItem: _ListItem__WEBPACK_IMPORTED_MODULE_0__["default"],
-    ListContainer: _ListContainer__WEBPACK_IMPORTED_MODULE_1__["default"]
-  },
-  data: function data() {
-    return {
-      anArray: this.ciccio,
-      searchEl: ''
-    };
-  },
-  computed: {
-    filteredArray: function filteredArray() {
-      var vm = this;
-      return this.anArray.filter(function (element) {
-        return element.title.toLowerCase().includes(vm.searchEl.toLowerCase());
-      });
-    }
-  },
-  methods: {
-    getServices: function getServices() {
-      axios.get("http://localhost:8000/api/services").then(function (response) {
-        console.log(response);
-      });
-    },
-    getApartments: function getApartments() {
-      axios.post("http://localhost:8000/api/search/apartments", {
-        city: 'Fiumicino',
-        guests: 2
-      }, {
-        headers: {
-          "Content-type": "application/json; charset=UTF-8"
-        }
-      }).then(function (response) {
-        console.log(response);
-      });
-    }
-  },
-  mounted: function mounted() {
-    this.getServices();
-    this.getApartments();
-  }
-});
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/aj/Desktop/Courses/repository/bool-airbnb/resources/js/components/Main.vue: Unexpected token (130:0)\n\n\u001b[0m \u001b[90m 128 |\u001b[39m             \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mgetServices()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 129 |\u001b[39m             \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mgetApartments()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 130 |\u001b[39m \u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<\u001b[39m \u001b[33mUpdated\u001b[39m upstream\u001b[0m\n\u001b[0m \u001b[90m     |\u001b[39m \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 131 |\u001b[39m             }\u001b[0m\n\u001b[0m \u001b[90m 132 |\u001b[39m \u001b[33m===\u001b[39m\u001b[33m===\u001b[39m\u001b[33m=\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 133 |\u001b[39m           }\u001b[33m,\u001b[39m\u001b[0m\n    at Parser._raise (/Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:776:17)\n    at Parser.raiseWithData (/Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:769:17)\n    at Parser.raise (/Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:737:17)\n    at Parser.unexpected (/Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:9675:16)\n    at Parser.parseExprAtom (/Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:11069:20)\n    at Parser.parseExprSubscripts (/Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:10644:23)\n    at Parser.parseUpdate (/Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:10624:21)\n    at Parser.parseMaybeUnary (/Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:10602:23)\n    at Parser.parseExprOps (/Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:10463:23)\n    at Parser.parseMaybeConditional (/Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:10437:23)\n    at Parser.parseMaybeAssign (/Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:10400:21)\n    at Parser.parseExpressionBase (/Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:10345:23)\n    at /Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:10339:39\n    at Parser.allowInAnd (/Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:12037:16)\n    at Parser.parseExpression (/Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:10339:17)\n    at Parser.parseStatementContent (/Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:12326:23)\n    at Parser.parseStatement (/Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:12195:17)\n    at Parser.parseBlockOrModuleBlockBody (/Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:12777:25)\n    at Parser.parseBlockBody (/Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:12768:10)\n    at Parser.parseBlock (/Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:12752:10)\n    at Parser.parseFunctionBody (/Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:11715:24)\n    at Parser.parseFunctionBodyAndFinish (/Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:11699:10)\n    at Parser.parseMethod (/Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:11649:10)\n    at Parser.parseObjectMethod (/Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:11578:19)\n    at Parser.parseObjPropValue (/Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:11611:23)\n    at Parser.parsePropertyDefinition (/Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:11535:10)\n    at Parser.parseObjectLike (/Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:11425:25)\n    at Parser.parseExprAtom (/Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:10985:23)\n    at Parser.parseExprSubscripts (/Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:10644:23)\n    at Parser.parseUpdate (/Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:10624:21)\n    at Parser.parseMaybeUnary (/Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:10602:23)\n    at Parser.parseExprOps (/Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:10463:23)\n    at Parser.parseMaybeConditional (/Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:10437:23)\n    at Parser.parseMaybeAssign (/Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:10400:21)\n    at /Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:10367:39\n    at Parser.allowInAnd (/Users/aj/Desktop/Courses/repository/bool-airbnb/node_modules/@babel/parser/lib/index.js:12037:16)");
 
 /***/ }),
 
@@ -6624,7 +6518,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\nul[data-v-4fd7a0b0]{\r\n  display:flex;\r\n  flex-direction: column;\r\n  list-style: none;\r\n  margin:0;\r\n  padding:0;\n}\r\n\r\n", ""]);
+exports.push([module.i, "\nul[data-v-4fd7a0b0]{\n  display:flex;\n  flex-direction: column;\n  list-style: none;\n  margin:0;\n  padding:0;\n}\n\n", ""]);
 
 // exports
 
@@ -6643,7 +6537,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.apartments-card[data-v-be0f3488] {\r\n  width:50%;\r\n  border-top: 1px solid lightgrey;\r\n  border-bottom: 1px solid lightgrey;\r\n  padding: 1em;\r\n  padding-left: 0;\r\n  display: flex;\r\n  height: 225px;\n}\n.apartments-card .apartment-img-box[data-v-be0f3488] {\r\n  width: 43%;\r\n  padding: .4em;\n}\n.apartments-card .apartment-features[data-v-be0f3488] {\r\n  width: 57%;\r\n  padding: .4em;\r\n  display:flex;\r\n  flex-direction: column;\r\n  justify-content: space-between;\n}\n.apartments-card .apartment-img-box img[data-v-be0f3488] {\r\n  width: 100%;\r\n  height: 100%;\r\n  border-radius: 1em;\n}\n.font-helper-1[data-v-be0f3488] {\r\n  font-size: .8em;\r\n  color: grey;\r\n  margin-bottom: 1em;\n}\n.font-helper-2[data-v-be0f3488] {\r\n  margin-bottom: 1em;\n}\n.tinies-container[data-v-be0f3488]{\r\n  list-style: none;\r\n  display: flex;\r\n  justify-content: space-between;\n}\r\n\r\n\r\n\r\n\r\n\r\n\r\n", ""]);
+exports.push([module.i, "\n.apartments-card[data-v-be0f3488] {\n  width:50%;\n  border-top: 1px solid lightgrey;\n  border-bottom: 1px solid lightgrey;\n  padding: 1em;\n  padding-left: 0;\n  display: flex;\n  height: 225px;\n}\n.apartments-card .apartment-img-box[data-v-be0f3488] {\n  width: 43%;\n  padding: .4em;\n}\n.apartments-card .apartment-features[data-v-be0f3488] {\n  width: 57%;\n  padding: .4em;\n  display:flex;\n  flex-direction: column;\n  justify-content: space-between;\n}\n.apartments-card .apartment-img-box img[data-v-be0f3488] {\n  width: 100%;\n  height: 100%;\n  border-radius: 1em;\n}\n.font-helper-1[data-v-be0f3488] {\n  font-size: .8em;\n  color: grey;\n  margin-bottom: 1em;\n}\n.font-helper-2[data-v-be0f3488] {\n  margin-bottom: 1em;\n}\n.tinies-container[data-v-be0f3488]{\n  list-style: none;\n  display: flex;\n  justify-content: space-between;\n}\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -6662,7 +6556,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.advanced-search {\r\n  display: flex;\n}\n.searchinput {\r\n  margin-left: 40px;\n}\n.search-results {\r\n  width: 55%;\r\n  padding: 3em;\r\n  padding-right: 1em;\n}\n.search-results h5 {\r\n  margin-bottom: 1em;\n}\n.search-results h1 {\r\n  margin-bottom: 1.1em;\n}\n.search-results .search-filters ul {\r\n  list-style: none;\r\n  display: flex;\r\n  flex-wrap: wrap;\r\n  margin-bottom: 1em;\n}\n.search-results .search-filters ul button {\r\n  background-color: white;\r\n  border: 1px solid lightgrey;\r\n  border-radius: 1em;\r\n  cursor: pointer;\r\n  margin-right: 1em;\r\n  margin-bottom: .5em;\r\n  padding: .5em;\n}\n.search-results .search-filters ul button:hover {\r\n  border: 1px solid black;\n}\r\n\r\n", ""]);
+exports.push([module.i, "\n.advanced-search {\n  display: flex;\n}\n.searchinput {\n  margin-left: 40px;\n}\n.search-results {\n  width: 55%;\n  padding: 3em;\n  padding-right: 1em;\n}\n.search-results h5 {\n  margin-bottom: 1em;\n}\n.search-results h1 {\n  margin-bottom: 1.1em;\n}\n.search-results .search-filters ul {\n  list-style: none;\n  display: flex;\n  flex-wrap: wrap;\n  margin-bottom: 1em;\n}\n.search-results .search-filters ul button {\n  background-color: white;\n  border: 1px solid lightgrey;\n  border-radius: 1em;\n  cursor: pointer;\n  margin-right: 1em;\n  margin-bottom: .5em;\n  padding: .5em;\n}\n.search-results .search-filters ul button:hover {\n  border: 1px solid black;\n}\n\n", ""]);
 
 // exports
 
@@ -38749,6 +38643,15 @@ var render = function() {
             }
           }),
           _vm._v(" "),
+          _c(
+            "button",
+            {
+              attrs: { type: "button", name: "button" },
+              on: { click: _vm.printArray }
+            },
+            [_vm._v("schiacciami")]
+          ),
+          _vm._v(" "),
           _c("ListContainer"),
           _vm._v(" "),
           _vm._l(_vm.filteredArray, function(data, index) {
@@ -51427,8 +51330,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Boolean\BackEnd\boolbnb\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Boolean\BackEnd\boolbnb\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/aj/Desktop/Courses/repository/bool-airbnb/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/aj/Desktop/Courses/repository/bool-airbnb/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

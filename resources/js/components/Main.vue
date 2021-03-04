@@ -25,14 +25,18 @@
           </div>
         </div>
 
+
             <input class="searchinput" v-model='searchEl' type="text" name="" value="" placeholder="Cerca...">
+
+
+                            <button v-on:click='printArray' type="button" name="button">schiacciami</button>
+
 
 
                 <ListContainer />
 
 
               <ListItem v-for="(data, index) in filteredArray "
-
 
                         :title = "data.title"
                         :rooms = "data.rooms"
@@ -62,7 +66,8 @@
         export default{
           name: "Main",
 
-          props:['ciccio'],
+          props:['ciccio','services', 'usersearch'],
+
 
           components:{
             ListItem,
@@ -71,6 +76,8 @@
           data(){
                   return{
                       anArray: this.ciccio,
+                      userSearch:this.usersearch,
+                      anotherArray:this.services,
                       searchEl:'',
                   }
           },
@@ -82,6 +89,8 @@
                       });
                     },
           },
+
+
           methods:{
                 getServices(){
                   axios.get("http://localhost:8000/api/services")
@@ -89,14 +98,15 @@
                     console.log(response);
                   })
                 },
-                
+
                 getApartments(){
                   axios.post(
                     "http://localhost:8000/api/search/apartments",
                     {
-                      city: 'Fiumicino',
+                      city: this.usersearch,
                       guests: 2,
                     },
+
                     {
                       headers: {
                       "Content-type": "application/json; charset=UTF-8",
@@ -105,13 +115,26 @@
                   )
                   .then(response => {
                     console.log(response);
-                  })                
-                }
+                  })
+                },
+
+                printArray:function(){
+                  console.log(this.anotherArray)
+                },
           },
-            mounted() {
+
+
+          mounted() {
             this.getServices();
             this.getApartments();
+<<<<<<< Updated upstream
             }
+=======
+          },
+
+
+
+>>>>>>> Stashed changes
         }
 
 </script>

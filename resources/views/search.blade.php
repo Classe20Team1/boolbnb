@@ -6,9 +6,12 @@
 
 @section('content')
 
+      
+
       <div id="app">
 
       <my-main :ciccio= "{{ $apartments }}" :usersearch= "{{ $usersearch }}" ></my-main>
+
 
       <div class="map-box">
 
