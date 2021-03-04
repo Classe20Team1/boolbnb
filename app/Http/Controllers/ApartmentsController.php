@@ -203,7 +203,7 @@ class ApartmentsController extends Controller
             ->find($arrayId)
             ->where('beds', '>=', $request->guests)
             ->where('active', '=', 1);
-        dd($apartments);
+            
         $data = json_encode($usersearch);
         $guests = json_encode($request->guests);
         return view('search', compact('apartments', 'services','data','guests'));
