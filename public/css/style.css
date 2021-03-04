@@ -190,11 +190,16 @@ header .hero {
   outline: none;
 }
 
+
 .search-bar-form .right-input {
   display: flex;
   justify-content: space-between;
   padding: .5em .5em;
   padding-left: 1.2em;
+}
+
+.search-bar-form .right-input input {
+  width: 30px;
 }
 
 .search-bar-form .right-input button {
@@ -204,6 +209,7 @@ header .hero {
   font-size: 1em;
   border: 1px solid white;
   border-radius: 50%;
+  cursor: pointer;
 }
 .search-bar-form .right-input button:hover {
   background-color: #DC143C;
@@ -217,7 +223,7 @@ main {
   display: flex;
   margin-top: 2em;
   width: 100%;
-  margin-bottom: 4em;
+  margin-bottom: 2em;
 }
 .city-card {
   width: 25%;
@@ -241,6 +247,49 @@ main {
 .city-card h3 {
   font-weight: normal;
 }
+
+.sponsored-apt-container {
+  margin-bottom: 2em;
+  margin-top: 2em;
+  padding: 1em 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.sponsored-card {
+  padding: .5em;
+  height: 300px;
+  width: calc(100% / 6.5);
+  margin-bottom: 1em;
+  position: relative;
+  cursor: pointer;
+}
+
+.sponsored-card img {
+  height: 180px;
+  width: 100%;
+  margin-bottom: .5em;
+  border-radius: .5em;
+}
+
+.sponsored-card:not(:last-child){
+  margin-right: 1em;
+}
+
+.sponsored-card .sponsored-price {
+  margin-top: .5em;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.sponsored-icon {
+  color: #FF385C;
+  font-size: 1.6em;
+  position: absolute;
+  top: 5%;
+  right: 8%;
+}
+
 
 .host-poster-box {
   background-image: url("/img/host.png");
@@ -287,16 +336,11 @@ footer {
   display: flex;
 }
 
-.search-results,
-.map-box {
-  height: 81vh;
-}
 
 .search-results {
   width: 55%;
   padding: 3em;
   padding-right: 1em;
-  overflow-y: scroll;
 }
 
 .search-results h5 {
@@ -314,16 +358,39 @@ footer {
   margin-bottom: 1em;
 }
 
-.search-results .search-filters ul li {
+.search-filters h5 {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.search-results .basic-filters li {
   border: 1px solid lightgrey;
   border-radius: 1em;
   cursor: pointer;
-  margin-right: 1em;
+  margin-right: 2em;
   margin-bottom: .5em;
   padding: .5em;
 }
-.search-results .search-filters ul li:hover {
+.search-results .basic-filters li:hover {
   border: 1px solid black;
+} */
+
+.basic-filters li label {
+  margin-right: .5em;
+}
+
+.basic-filters li input {
+  width: 35px;
+  border: 1px solid lightgrey;
+  padding-left: .5em;
+}
+.basic-filters li select option {
+  border: 1px solid lightgrey;
+  padding: 0 .3em;
+}
+
+.services-filters li {
+  margin-right: 1.5em;
 }
 
 .apartments-card {
@@ -362,6 +429,8 @@ footer {
 
 .price-tag {
   float: right;
+  display:flex;
+  justify-content: flex-end;
 }
 
 .map-box {
@@ -439,7 +508,7 @@ footer {
 .line-separator {
   height: 1px;
   border: 1px solid lightgrey;
-  width: 48.5%;
+  width: 100%;
 }
 
 .margin-2-helper {
@@ -447,8 +516,12 @@ footer {
 }
 
 .apartment-description {
-  padding: 1.5em 0;
+  padding: 2em 0;
   padding-right: 2em;
+}
+
+.apartment-description p {
+  margin-bottom: 2em;
 }
 
 .host-msg {
@@ -456,28 +529,175 @@ footer {
 }
 
 .services-list {
-  padding: 1.5em 0;
+  padding-top: 2em;
 }
 
-.service-box {
+.services-list h4 {
+  margin-bottom: 1em;
+}
+
+.apt-basics-list {
+  list-style: none;
+  padding-left: .5em;
   display: flex;
-  justify-content: flex-start;
+  margin-bottom: 2em;
+}
+
+.apt-basics-list li {
+  display: flex;
   align-items: center;
-  padding: .5em 0;
+  width: calc(100%/6);
 }
-.services-icons-box {
+
+.apt-basics-list li i {
   margin-right: .5em;
-  width: 50px;
 }
 
-.services-list h3 {
+.apt-position {
+  padding: 2em 0;
+}
+
+.apt-map-box {
+  border: 2px solid black;
+  height: 480px;
+  width: 100%;
+}
+.apt-map-box img {
+  height: 100%;
+  width: 100%;
+}
+
+.apt-position h3 {
+  margin-bottom: 2em;
+}
+
+.host-btn {
+  border: 1px solid black;
+  color: black;
+  cursor: pointer;
+  padding: .5em;
+  border-radius: .5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 170px;
+}
+.host-btn:hover{
+  background-color:#0000;
+    opacity:.7;
+}
+.host-btn a {
+  text-decoration: none;
+  color: black;
+}
+
+.dashboard-container {
+  color: grey;
+  padding: 3em 7.5em;
+  padding-right: 9em;
+}
+
+.dashboard-container h2 {
+  margin-bottom: .5em;
+  color: #484848;
+  font-weight: bold;
+}
+
+.dashboard-font-helper {
+  color: #484848;
+  font-weight: bold;
+}
+
+.dashboard-username {
+  margin-bottom: 4em;
+}
+
+.dashboard-sections {
+  padding: 1em 0;
+  display: flex;
+  margin-bottom: 45px;
+}
+
+.dashboard-card {
+  padding: 1.5em 1em;
+  width: calc(100% / 3);
+  cursor: pointer;
+  border-radius: .5em;
+  box-shadow: 0px 0px 1px 1px lightgrey;
+}
+.dashboard-card:not(:last-child){
+  margin-right: 1em;
+}
+
+.dashboard-card i {
+  font-size: 1.5em;
   margin-bottom: 1em;
 }
 
-.service-box i {
-  font-size: 2em;
+.dashboard-card h3 {
+  margin-bottom: .5em;
 }
 
-.mg-bottom-1 {
+.myapt-list-container {
+  padding: 3em 7.5em;
+  padding-right: 9em;
+}
+
+.myapt-list-container h2 {
+  color: #484848;
+  margin-bottom: 1.5em;
+}
+
+.my-apt-card {
+  padding: 1em;
+  display: flex;
+  border-radius: 1em;
+  box-shadow: 0 0 1px 1px lightgrey;
   margin-bottom: 1em;
+}
+
+.my-apt-card > div {
+  height: 100px;
+}
+
+.my-apt-img-box {
+  height: 100px;
+  width: 120px;
+  margin-right: 1em;
+}
+
+.my-apt-img-box img {
+  width: 100%;
+  height: 100%;
+}
+
+.my-apt-infos {
+  padding: .5em .8em;
+  width: 650px;
+}
+.my-apt-infos h4 {
+  color: #484848;
+}
+.my-apt-infos p {
+  margin-top: .6em;
+  font-size: .8em;
+}
+
+.my-apt-actions {
+  padding: .5em 0;
+  padding-left: 1em;
+  padding-right: 3em;
+}
+.my-apt-actions ul {
+  list-style: none;
+}
+
+.my-apt-actions ul li {
+  margin-bottom: .5em;
+}
+
+.card-separator {
+  height: 100%;
+  border: 1px solid lightgrey;
+  margin: 0 1em;
 }

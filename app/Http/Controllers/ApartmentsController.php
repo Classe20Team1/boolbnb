@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Str;
+use App\Http\Resources\ApartmentResource;
 
 class ApartmentsController extends Controller
 {
@@ -145,7 +146,7 @@ class ApartmentsController extends Controller
         //
     }
 
-    /**
+    /*
      * Remove the specified resource from storage.
      *
      * @param  int  $id
@@ -158,8 +159,8 @@ class ApartmentsController extends Controller
 
     public function search(Request $request)
     {
-        $response = file_get_contents('https://api.tomtom.com/search/2/geocode/'. $request->city .'.json?limit=1&key=' . env('TOMTOM_KEY'));
-
+        $usersearch = $request->city;
+        $response = file_get_contents('https://api.tomtom.com/search/2/geocode/'. $usersearch .'.json?limit=1&key=' . env('TOMTOM_KEY'));
 
         $response = json_decode($response, true);
         $positionSearched = [
@@ -177,7 +178,7 @@ class ApartmentsController extends Controller
         $apartments = Apartment::find($arrayId)
             ->where('beds', '>=', $request->guests)
             ->where('active', '=', 1);
-        dd($apartments);
-        return view('search', compact('apartments', 'services'));
+
+        return view('search', compact('apartments', 'services', 'usersearch'));
     }
 }

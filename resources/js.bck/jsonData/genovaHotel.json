@@ -1,0 +1,732 @@
+{
+  "summary": {
+    "query": "hotel",
+    "queryType": "NON_NEAR",
+    "queryTime": 28,
+    "numResults": 10,
+    "offset": 0,
+    "totalResults": 184,
+    "fuzzyLevel": 1,
+    "geoBias": {
+      "lat": 44.40757,
+      "lon": 8.93413
+    }
+  },
+  "results": [
+    {
+      "type": "POI",
+      "id": "g6JpZK8zODAwMDkwMDk3NTUwNDShY6NJVEGhdqdVbmlmaWVk",
+      "score": 2.5745239258,
+      "dist": 111.6487147906747,
+      "info": "search:ta:380009009755044-IT",
+      "poi": {
+        "name": "Il Chiostro",
+        "phone": "+39 010 247 7664",
+        "categorySet": [
+          {
+            "id": 7314002
+          }
+        ],
+        "categories": [
+          "bed breakfast guest houses",
+          "hotel/motel"
+        ],
+        "classifications": [
+          {
+            "code": "HOTEL_MOTEL",
+            "names": [
+              {
+                "nameLocale": "en-US",
+                "name": "hotel/motel"
+              },
+              {
+                "nameLocale": "en-US",
+                "name": "bed breakfast guest houses"
+              }
+            ]
+          }
+        ]
+      },
+      "address": {
+        "streetNumber": "18",
+        "streetName": "Piazza San Matteo",
+        "municipality": "Genova",
+        "countrySecondarySubdivision": "Genova",
+        "countrySubdivision": "Liguria",
+        "postalCode": "16123",
+        "countryCode": "IT",
+        "country": "Italia",
+        "countryCodeISO3": "ITA",
+        "freeformAddress": "Piazza San Matteo 18, 16123 Genova",
+        "localName": "Genova"
+      },
+      "position": {
+        "lat": 44.40841,
+        "lon": 8.93336
+      },
+      "viewport": {
+        "topLeftPoint": {
+          "lat": 44.40931,
+          "lon": 8.9321
+        },
+        "btmRightPoint": {
+          "lat": 44.40751,
+          "lon": 8.93462
+        }
+      },
+      "entryPoints": [
+        {
+          "type": "main",
+          "position": {
+            "lat": 44.40836,
+            "lon": 8.93301
+          }
+        }
+      ]
+    },
+    {
+      "type": "POI",
+      "id": "g6JpZK8zODAwMDkwNDIyMjY3ODahY6NJVEGhdqdVbmlmaWVk",
+      "score": 2.5745205879,
+      "dist": 150.62226220296637,
+      "info": "search:ta:380009042226786-IT",
+      "poi": {
+        "name": "La Terrazza",
+        "phone": "+39 010 247 6437",
+        "categorySet": [
+          {
+            "id": 7314002
+          }
+        ],
+        "url": "www.bblaterrazza.net",
+        "categories": [
+          "bed breakfast guest houses",
+          "hotel/motel"
+        ],
+        "classifications": [
+          {
+            "code": "HOTEL_MOTEL",
+            "names": [
+              {
+                "nameLocale": "en-US",
+                "name": "hotel/motel"
+              },
+              {
+                "nameLocale": "en-US",
+                "name": "bed breakfast guest houses"
+              }
+            ]
+          }
+        ]
+      },
+      "address": {
+        "streetNumber": "1/6",
+        "streetName": "Piazza Giacomo Matteotti",
+        "municipality": "Genova",
+        "countrySecondarySubdivision": "Genova",
+        "countrySubdivision": "Liguria",
+        "postalCode": "16123",
+        "countryCode": "IT",
+        "country": "Italia",
+        "countryCodeISO3": "ITA",
+        "freeformAddress": "Piazza Giacomo Matteotti 1/6, 16123 Genova",
+        "localName": "Genova"
+      },
+      "position": {
+        "lat": 44.4068,
+        "lon": 8.93257
+      },
+      "viewport": {
+        "topLeftPoint": {
+          "lat": 44.4077,
+          "lon": 8.93131
+        },
+        "btmRightPoint": {
+          "lat": 44.4059,
+          "lon": 8.93383
+        }
+      },
+      "entryPoints": [
+        {
+          "type": "main",
+          "position": {
+            "lat": 44.40682,
+            "lon": 8.93265
+          }
+        }
+      ]
+    },
+    {
+      "type": "POI",
+      "id": "g6JpZK8zODAwMDkwMDk1ODg0NDehY6NJVEGhdqdVbmlmaWVk",
+      "score": 2.5745201111,
+      "dist": 156.14523963493733,
+      "info": "search:ta:380009009588447-IT",
+      "poi": {
+        "name": "Porta Soprana",
+        "phone": "+39 010 247 5586",
+        "categorySet": [
+          {
+            "id": 7314002
+          }
+        ],
+        "categories": [
+          "bed breakfast guest houses",
+          "hotel/motel"
+        ],
+        "classifications": [
+          {
+            "code": "HOTEL_MOTEL",
+            "names": [
+              {
+                "nameLocale": "en-US",
+                "name": "hotel/motel"
+              },
+              {
+                "nameLocale": "en-US",
+                "name": "bed breakfast guest houses"
+              }
+            ]
+          }
+        ]
+      },
+      "address": {
+        "streetNumber": "1/4",
+        "streetName": "Via di Porta Soprana",
+        "municipality": "Genova",
+        "countrySecondarySubdivision": "Genova",
+        "countrySubdivision": "Liguria",
+        "postalCode": "16123",
+        "countryCode": "IT",
+        "country": "Italia",
+        "countryCodeISO3": "ITA",
+        "freeformAddress": "Via di Porta Soprana 1/4, 16123 Genova",
+        "localName": "Genova"
+      },
+      "position": {
+        "lat": 44.40657,
+        "lon": 8.93275
+      },
+      "viewport": {
+        "topLeftPoint": {
+          "lat": 44.40747,
+          "lon": 8.93149
+        },
+        "btmRightPoint": {
+          "lat": 44.40567,
+          "lon": 8.93401
+        }
+      },
+      "entryPoints": [
+        {
+          "type": "main",
+          "position": {
+            "lat": 44.40653,
+            "lon": 8.93272
+          }
+        }
+      ]
+    },
+    {
+      "type": "POI",
+      "id": "g6JpZK8zODAwMDkwMDI1NDY0MjShY6NJVEGhdqdVbmlmaWVk",
+      "score": 2.574518919,
+      "dist": 166.23006235735275,
+      "info": "search:ta:380009002546424-IT",
+      "poi": {
+        "name": "Doria",
+        "phone": "+39 010 247 4278",
+        "categorySet": [
+          {
+            "id": 7314003
+          }
+        ],
+        "categories": [
+          "hotel",
+          "hotel/motel"
+        ],
+        "classifications": [
+          {
+            "code": "HOTEL_MOTEL",
+            "names": [
+              {
+                "nameLocale": "en-US",
+                "name": "hotel"
+              },
+              {
+                "nameLocale": "en-US",
+                "name": "hotel/motel"
+              }
+            ]
+          }
+        ]
+      },
+      "address": {
+        "streetNumber": "3",
+        "streetName": "Vico dei Garibaldi",
+        "municipality": "Genova",
+        "countrySecondarySubdivision": "Genova",
+        "countrySubdivision": "Liguria",
+        "postalCode": "16123",
+        "countryCode": "IT",
+        "country": "Italia",
+        "countryCodeISO3": "ITA",
+        "freeformAddress": "Vico dei Garibaldi 3, 16123 Genova",
+        "localName": "Genova"
+      },
+      "position": {
+        "lat": 44.40906,
+        "lon": 8.9343
+      },
+      "viewport": {
+        "topLeftPoint": {
+          "lat": 44.40996,
+          "lon": 8.93304
+        },
+        "btmRightPoint": {
+          "lat": 44.40816,
+          "lon": 8.93556
+        }
+      },
+      "entryPoints": [
+        {
+          "type": "main",
+          "position": {
+            "lat": 44.40907,
+            "lon": 8.93431
+          }
+        }
+      ]
+    },
+    {
+      "type": "POI",
+      "id": "g6JpZK8zODAwMDkwMDk2NzMxNDOhY6NJVEGhdqdVbmlmaWVk",
+      "score": 2.574518919,
+      "dist": 164.97325243983892,
+      "info": "search:ta:380009009673143-IT",
+      "poi": {
+        "name": "A L'Opera",
+        "phone": "+39 010 893 3759",
+        "categorySet": [
+          {
+            "id": 7314002
+          }
+        ],
+        "url": "www.bb-opera.com",
+        "categories": [
+          "bed breakfast guest houses",
+          "hotel/motel"
+        ],
+        "classifications": [
+          {
+            "code": "HOTEL_MOTEL",
+            "names": [
+              {
+                "nameLocale": "en-US",
+                "name": "hotel/motel"
+              },
+              {
+                "nameLocale": "en-US",
+                "name": "bed breakfast guest houses"
+              }
+            ]
+          }
+        ]
+      },
+      "address": {
+        "streetNumber": "8/18",
+        "streetName": "Via 25 Aprile",
+        "municipality": "Genova",
+        "countrySecondarySubdivision": "Genova",
+        "countrySubdivision": "Liguria",
+        "postalCode": "16123",
+        "countryCode": "IT",
+        "country": "Italia",
+        "countryCodeISO3": "ITA",
+        "freeformAddress": "Via 25 Aprile 8/18, 16123 Genova",
+        "localName": "Genova"
+      },
+      "position": {
+        "lat": 44.40901,
+        "lon": 8.93463
+      },
+      "viewport": {
+        "topLeftPoint": {
+          "lat": 44.40991,
+          "lon": 8.93337
+        },
+        "btmRightPoint": {
+          "lat": 44.40811,
+          "lon": 8.93589
+        }
+      },
+      "entryPoints": [
+        {
+          "type": "main",
+          "position": {
+            "lat": 44.40899,
+            "lon": 8.93469
+          }
+        }
+      ]
+    },
+    {
+      "type": "POI",
+      "id": "g6JpZK8zODAwMDEwMDIxNDk1MzmhY6NJVEGhdqdVbmlmaWVk",
+      "score": 2.5745182037,
+      "dist": 172.22029338626223,
+      "info": "search:ta:380001002149539-IT",
+      "poi": {
+        "name": "Bed & Breakfast La Torre",
+        "phone": "+39 347 132 7755",
+        "categorySet": [
+          {
+            "id": 7314002
+          }
+        ],
+        "categories": [
+          "bed breakfast guest houses",
+          "hotel/motel"
+        ],
+        "classifications": [
+          {
+            "code": "HOTEL_MOTEL",
+            "names": [
+              {
+                "nameLocale": "en-US",
+                "name": "hotel/motel"
+              },
+              {
+                "nameLocale": "en-US",
+                "name": "bed breakfast guest houses"
+              }
+            ]
+          }
+        ]
+      },
+      "address": {
+        "streetNumber": "5",
+        "streetName": "Via di Porta Soprana",
+        "municipality": "Genova",
+        "countrySecondarySubdivision": "Genova",
+        "countrySubdivision": "Liguria",
+        "postalCode": "16123",
+        "countryCode": "IT",
+        "country": "Italia",
+        "countryCodeISO3": "ITA",
+        "freeformAddress": "Via di Porta Soprana 5, 16123 Genova",
+        "localName": "Genova"
+      },
+      "position": {
+        "lat": 44.40607,
+        "lon": 8.93359
+      },
+      "viewport": {
+        "topLeftPoint": {
+          "lat": 44.40697,
+          "lon": 8.93233
+        },
+        "btmRightPoint": {
+          "lat": 44.40517,
+          "lon": 8.93485
+        }
+      },
+      "entryPoints": [
+        {
+          "type": "main",
+          "position": {
+            "lat": 44.4064,
+            "lon": 8.93303
+          }
+        }
+      ]
+    },
+    {
+      "type": "POI",
+      "id": "g6JpZK8zODAwMDkwMDk3MjIyMzehY6NJVEGhdqdVbmlmaWVk",
+      "score": 2.5745172501,
+      "dist": 182.5125059147466,
+      "info": "search:ta:380009009722237-IT",
+      "poi": {
+        "name": "Al Garibaldi",
+        "categorySet": [
+          {
+            "id": 7314002
+          }
+        ],
+        "url": "www.bbgaribaldi.it",
+        "categories": [
+          "bed breakfast guest houses",
+          "hotel/motel"
+        ],
+        "classifications": [
+          {
+            "code": "HOTEL_MOTEL",
+            "names": [
+              {
+                "nameLocale": "en-US",
+                "name": "hotel/motel"
+              },
+              {
+                "nameLocale": "en-US",
+                "name": "bed breakfast guest houses"
+              }
+            ]
+          }
+        ]
+      },
+      "address": {
+        "streetNumber": "7/12",
+        "streetName": "Vico Carmagnola",
+        "municipality": "Genova",
+        "countrySecondarySubdivision": "Genova",
+        "countrySubdivision": "Liguria",
+        "postalCode": "16123",
+        "countryCode": "IT",
+        "country": "Italia",
+        "countryCodeISO3": "ITA",
+        "freeformAddress": "Vico Carmagnola 7/12, 16123 Genova",
+        "localName": "Genova"
+      },
+      "position": {
+        "lat": 44.4092,
+        "lon": 8.9344
+      },
+      "viewport": {
+        "topLeftPoint": {
+          "lat": 44.4101,
+          "lon": 8.93314
+        },
+        "btmRightPoint": {
+          "lat": 44.4083,
+          "lon": 8.93566
+        }
+      },
+      "entryPoints": [
+        {
+          "type": "main",
+          "position": {
+            "lat": 44.40917,
+            "lon": 8.93445
+          }
+        }
+      ]
+    },
+    {
+      "type": "POI",
+      "id": "g6JpZK8zODAwMDkwMzk0MjUzMzehY6NJVEGhdqdVbmlmaWVk",
+      "score": 2.5745167732,
+      "dist": 184.87446036759587,
+      "info": "search:ta:380009039425337-IT",
+      "poi": {
+        "name": "Bristol Palace",
+        "phone": "+39 010 592541",
+        "categorySet": [
+          {
+            "id": 7314003
+          }
+        ],
+        "url": "www.hotelbristolpalace.it",
+        "categories": [
+          "hotel",
+          "hotel/motel"
+        ],
+        "classifications": [
+          {
+            "code": "HOTEL_MOTEL",
+            "names": [
+              {
+                "nameLocale": "en-US",
+                "name": "hotel"
+              },
+              {
+                "nameLocale": "en-US",
+                "name": "hotel/motel"
+              }
+            ]
+          }
+        ]
+      },
+      "address": {
+        "streetNumber": "35",
+        "streetName": "Via 20 Settembre",
+        "municipality": "Genova",
+        "countrySecondarySubdivision": "Genova",
+        "countrySubdivision": "Liguria",
+        "postalCode": "16121",
+        "countryCode": "IT",
+        "country": "Italia",
+        "countryCodeISO3": "ITA",
+        "freeformAddress": "Via 20 Settembre 35, 16121 Genova",
+        "localName": "Genova"
+      },
+      "position": {
+        "lat": 44.4069,
+        "lon": 8.93626
+      },
+      "viewport": {
+        "topLeftPoint": {
+          "lat": 44.4078,
+          "lon": 8.935
+        },
+        "btmRightPoint": {
+          "lat": 44.406,
+          "lon": 8.93752
+        }
+      },
+      "entryPoints": [
+        {
+          "type": "main",
+          "position": {
+            "lat": 44.40674,
+            "lon": 8.9362
+          }
+        }
+      ]
+    },
+    {
+      "type": "POI",
+      "id": "g6JpZK8zODAwMDkwMDk1MTY5MjShY6NJVEGhdqdVbmlmaWVk",
+      "score": 2.5745165348,
+      "dist": 187.57086485465,
+      "info": "search:ta:380009009516924-IT",
+      "poi": {
+        "name": "Panson",
+        "phone": "+39 010 246 8903",
+        "categorySet": [
+          {
+            "id": 7314003
+          }
+        ],
+        "url": "www.ristorantepanson.com",
+        "categories": [
+          "hotel",
+          "hotel/motel"
+        ],
+        "classifications": [
+          {
+            "code": "HOTEL_MOTEL",
+            "names": [
+              {
+                "nameLocale": "en-US",
+                "name": "hotel"
+              },
+              {
+                "nameLocale": "en-US",
+                "name": "hotel/motel"
+              }
+            ]
+          }
+        ]
+      },
+      "address": {
+        "streetNumber": "13/3",
+        "streetName": "Salita Pollaiuoli",
+        "municipality": "Genova",
+        "countrySecondarySubdivision": "Genova",
+        "countrySubdivision": "Liguria",
+        "postalCode": "16123",
+        "countryCode": "IT",
+        "country": "Italia",
+        "countryCodeISO3": "ITA",
+        "freeformAddress": "Salita Pollaiuoli 13/3, 16123 Genova",
+        "localName": "Genova"
+      },
+      "position": {
+        "lat": 44.40664,
+        "lon": 8.93216
+      },
+      "viewport": {
+        "topLeftPoint": {
+          "lat": 44.40754,
+          "lon": 8.9309
+        },
+        "btmRightPoint": {
+          "lat": 44.40574,
+          "lon": 8.93342
+        }
+      },
+      "entryPoints": [
+        {
+          "type": "main",
+          "position": {
+            "lat": 44.40666,
+            "lon": 8.93219
+          }
+        }
+      ]
+    },
+    {
+      "type": "POI",
+      "id": "g6JpZK8zODAwMDEwMDAyNDI4NzShY6NJVEGhdqdVbmlmaWVk",
+      "score": 2.574516058,
+      "dist": 190.7416560843071,
+      "info": "search:ta:380001000242874-IT",
+      "poi": {
+        "name": "Cristoforo Colombo",
+        "phone": "+39 010 251 3643",
+        "categorySet": [
+          {
+            "id": 7314003
+          }
+        ],
+        "url": "www.hotelcolombo.it",
+        "categories": [
+          "hotel",
+          "hotel/motel"
+        ],
+        "classifications": [
+          {
+            "code": "HOTEL_MOTEL",
+            "names": [
+              {
+                "nameLocale": "en-US",
+                "name": "hotel"
+              },
+              {
+                "nameLocale": "en-US",
+                "name": "hotel/motel"
+              }
+            ]
+          }
+        ]
+      },
+      "address": {
+        "streetNumber": "27",
+        "streetName": "Via di Porta Soprana",
+        "municipality": "Genova",
+        "countrySecondarySubdivision": "Genova",
+        "countrySubdivision": "Liguria",
+        "postalCode": "16123",
+        "countryCode": "IT",
+        "country": "Italia",
+        "countryCodeISO3": "ITA",
+        "freeformAddress": "Via di Porta Soprana 27, 16123 Genova",
+        "localName": "Genova"
+      },
+      "position": {
+        "lat": 44.40586,
+        "lon": 8.93394
+      },
+      "viewport": {
+        "topLeftPoint": {
+          "lat": 44.40676,
+          "lon": 8.93268
+        },
+        "btmRightPoint": {
+          "lat": 44.40496,
+          "lon": 8.9352
+        }
+      },
+      "entryPoints": [
+        {
+          "type": "main",
+          "position": {
+            "lat": 44.4059,
+            "lon": 8.93397
+          }
+        }
+      ]
+    }
+  ]
+}
