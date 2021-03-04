@@ -26,7 +26,7 @@ class CreateApartments extends Migration
             $table->boolean('active');
             $table->bigInteger('views_count');
             $table->integer('price');
-            $table->string('cover_img');            
+            $table->string('cover_img');          
             $table->timestamps();
         });
     }

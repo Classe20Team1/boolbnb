@@ -11,6 +11,8 @@
         @foreach($apartments as $apartment)
     
         <li>
+        
+            <img src="{{ $apartment->cover_img }}" alt="cover">
             <h1>
 
                 {{ $apartment->title }}
