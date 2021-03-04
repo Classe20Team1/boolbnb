@@ -26,8 +26,13 @@
             <p>
                 {{ $apartment->description }}
             </p>
-
+            <form method="post" class="d-inline"action="{{route('apartment.destroy', $apartment->id)}}">
+                @csrf
+                @method('delete')
+                <input type="submit" class="btn btn-outline-danger" value="Elimina">
+            </form>
         </li>
+        
     
         @endforeach
 
