@@ -687,6 +687,7 @@ footer {
   padding: .5em 0;
   padding-left: 1em;
   padding-right: 3em;
+  font-size: .8em;
 }
 .my-apt-actions ul {
   list-style: none;
@@ -700,4 +701,107 @@ footer {
   height: 100%;
   border: 1px solid lightgrey;
   margin: 0 1em;
+}
+
+.add-edit-container {
+  padding: 3em 7.5em;
+  padding-right: 9em;
+}
+
+.add-form-container {
+  border: 2px solid black;
+  border-radius: 1em;
+  background-color: #DCDCDC;
+  padding: 3em;
+}
+
+.add-edit-container h2 {
+  color: #484848;
+  margin-bottom: 1em;
+}
+
+.add-edit-container label {
+  font-size: .9em;
+}
+
+.add-edit-container h4 {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.add-basics-info {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  margin-bottom: 2em;
+  margin-top: 2em;
+}
+.add-basics-info li {
+  /* margin-right: 5em; */
+}
+
+.add-services {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2em;
+}
+
+.add-form-element {
+  margin-bottom: 1em;
+}
+.add-form-element input {
+  margin-top: 1em;
+  border: 1px solid #696969;
+  border-radius: .5em;
+  padding: 1em;
+  width: 100%;
+}
+.add-form-element .add-basics-info input {
+  padding: .5em;
+  padding-left: 8px;
+  width: 50px;
+}
+
+.add-form-element textarea {
+  margin-top: 1em;
+  border-radius: 1em;
+  padding: 1em;
+  width: 100%;
+}
+
+.add-services {
+  display: flex;
+  list-style: none;
+  margin-bottom: 4em;
+}
+
+.add-services li input {
+  width: auto;
+  margin: 0;
+  margin-right: .4em;
+}
+
+.add-services li {
+  /* width: calc(100% / 6); */
+  padding: .5em 0;
+}
+
+.submit-form-btn {
+  display: flex;
+  justify-content: center;
+}
+
+.submit-form-btn input {
+  width: 30%;
+  padding: 1em;
+  font-weight: bold;
+  background-color: white;
+  border: 1px solid #FF385C;
+  color: #FF385C;
+  font-size: 1.1em;
+  border-radius: .5em;
+}
+.submit-form-btn input:hover {
+  color: white;
+  background-color: #FF385C;
 }
