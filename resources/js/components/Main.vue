@@ -68,14 +68,12 @@
             ListItem,
             ListContainer
           },
-
           data(){
                   return{
                       anArray: this.ciccio,
                       searchEl:'',
                   }
           },
-
           computed:{
                     filteredArray: function() {
                       var vm = this;
@@ -114,7 +112,6 @@
             this.getServices();
             this.getApartments();
             }
-
         }
 
 </script>
