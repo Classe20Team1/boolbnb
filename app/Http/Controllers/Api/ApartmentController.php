@@ -5,14 +5,13 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Position;
-use App\Http\Resources\ApartmentResource;
 use App\Apartment;
 
-class ApartmentController extends Controller
+class ApiApartmentController extends Controller
 {
     public function search(Request $request)
     {
-        
+
         $response = file_get_contents('https://api.tomtom.com/search/2/geocode/' . $request->city . '.json?limit=1&key=' . env('TOMTOM_KEY'));
 
 
@@ -29,9 +28,14 @@ class ApartmentController extends Controller
         foreach ($filtered as $position) {
             array_push($arrayId, $position->apartment_id);
         }
-        $apartments = Apartment::find($arrayId)->where('beds', '>=', $request->guests)->where('active', '=', true);
-        
 
-        return ApartmentResource::collection(Apartment::find($arrayId)->where('beds', '>=', $request->guests)->where('active', '=', true));
+        $apartments = Apartment::find($arrayId)->where('beds', '>=', $request->guests)->where('active', '=', true);
+
+
+        // $data = Restaurant::with("getTypes", "getDishes", "getRestaurateur")->whereHas('getTypes', function ($q) use ($query) {
+        //     $q->where('name', 'LIKE', '%' . $query . '%');
+        // })->get();
+
+        return response()->json(Apartment::with('services', 'position', 'imgs')->find($arrayId)->find($arrayId)->where('beds', '>=', $request->guests)->where('active', '=', true));
     }
 }
