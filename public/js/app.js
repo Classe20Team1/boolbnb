@@ -2157,7 +2157,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     getApartments: function getApartments() {
       axios.post("http://localhost:8000/api/search/apartments", {
-        city: this.usersearch,
+        city: 'fiumicino',
         guests: 2
       }, {
         headers: {

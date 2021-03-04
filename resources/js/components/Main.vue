@@ -103,7 +103,7 @@
                   axios.post(
                     "http://localhost:8000/api/search/apartments",
                     {
-                      city: this.usersearch,
+                      city: 'fiumicino',
                       guests: 2,
                     },
 
