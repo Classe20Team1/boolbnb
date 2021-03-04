@@ -154,7 +154,29 @@ class ApartmentsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        
+        $elimina = Apartment::find($id);// prendo appartmento per ID
+        
+        $elimina->position()->delete(); //prendo la posizioneo 
+        
+        $elimina->messages()->delete();// prendo i messaggi
+        $elimina->imgs()->delete(); //prendo le immagini 
+        
+        $spon = $elimina->sponsors; //prendo solo i sponsor inerenti a questo id
+        foreach($spon as $sponsors){
+            $elimina->sponsors()->detach($sponsors->id);
+        }
+
+        $serv = $elimina->services; //prendo solo i servizi inerenti a questo id
+        foreach($serv as $services){
+            $elimina->servicess()->detach($services->id);
+        }
+       
+        //dd($elimina);
+
+        $elimina->delete();
+        
+        return redirect()->back();
     }
 
     public function search(Request $request)
