@@ -15,11 +15,12 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', function () {
-    return view('homepage');
+    return view('search');
 });
 Route::get('/search', function () {
     return view('search');
 });
+
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
