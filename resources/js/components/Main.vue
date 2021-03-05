@@ -27,7 +27,7 @@
 
                             <button v-on:click='printArray' type="button" name="button">schiacciami</button>
 
-
+                <Map />
 
                 <ListContainer />
 
@@ -55,7 +55,7 @@
 
 
 <script>
-
+        import Map from './Map'
         import ListItem from './ListItem'
         import ListContainer from './ListContainer'
 
@@ -67,7 +67,8 @@
 
           components:{
             ListItem,
-            ListContainer
+            ListContainer,
+            Map,
           },
 
           data(){
