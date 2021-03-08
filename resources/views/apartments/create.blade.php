@@ -64,30 +64,16 @@
 
         <div class="add-form-element">
           <ul class="add-services">
-            <li>
-              <input id="wifi" type="checkbox" name="wifi" value="wifi">
-              <label for="wifi">Wi-Fi</label>
-            </li>
-            <li>
-              <input id="posto_macchina" type="checkbox" name="posto_macchina" value="posto_macchina">
-              <label for="posto_macchina">Posto macchina</label>
-            </li>
-            <li>
-              <input id="piscina" type="checkbox" name="piscina" value="piscina">
-              <label for="piscina">Piscina</label>
-            </li>
-            <li>
-              <input id="portineria" type="checkbox" name="portineria" value="portineria">
-              <label for="portineria">Portineria</label>
-            </li>
-            <li>
-              <input id="sauna" type="checkbox" name="sauna" value="sauna">
-              <label for="sauna">Sauna</label>
-            </li>
-            <li>
-              <input id="vista_mare" type="checkbox" name="vista_mare" value="vista_mare">
-              <label for="vista_mare">Vista mare</label>
-            </li>
+            @foreach($services as $service)
+                <div class="add-form-element">
+                  <ul class="add-services">
+                    <li>
+                      <input type="checkbox" name="services[]" value="{{$service->id}}">
+                      <label for="services[]">{{$service->name}}</label>
+                    </li>   
+                  </ul>
+                </div>
+            @endforeach
           </ul>
         </div>
         <div class="add-img">

@@ -86,7 +86,6 @@ class ApartmentsController extends Controller
 
 
         $newApartment->save(); //salva
-
         // services
         $newApartment->services()->attach($data['services']);
 
@@ -222,23 +221,26 @@ class ApartmentsController extends Controller
 
 
         // locations
+        // dd($apartment->position()->address);
+        if($request->city <> ''){
+            $newApAddress = $request->city . ', ' . $request->address;
 
-        $newApAddress = $request->city . ', ' . $request->address;
+            $response = file_get_contents('https://api.tomtom.com/search/2/geocode/' . $newApAddress . '.json?limit=1&key=' . env('TOMTOM_KEY'));
 
-        $response = file_get_contents('https://api.tomtom.com/search/2/geocode/' . $newApAddress . '.json?limit=1&key=' . env('TOMTOM_KEY'));
+            $response = json_decode(
+                $response,
+                true
+            );
+            $latit = $response['results'][0]['position']['lat'];
+            $longit = $response['results'][0]['position']['lon'];
 
-        $response = json_decode($response,
-            true
-        );
-        $latit = $response['results'][0]['position']['lat'];
-        $longit = $response['results'][0]['position']['lon'];
-
-        $apartment->position()->update([
-            'apartment_id' => $apartment->id,
-            'latitude' => $latit,
-            'longitude' => $longit,
-            'address' => $newApAddress,
-        ]);
+            $apartment->position()->update([
+                'apartment_id' => $apartment->id,
+                'latitude' => $latit,
+                'longitude' => $longit,
+                'address' => $newApAddress,
+            ]);
+        }
 
         // $files = $apartment->imgs; //salvo il file in variabile
         // $arrayImgApartment = $request->file('image'); // prendo i file
@@ -259,7 +261,7 @@ class ApartmentsController extends Controller
  
         
        
-        return view('apartments.detail', compact('apartment'));
+        return view('apartments.show', compact('apartment'));
         
       
 
