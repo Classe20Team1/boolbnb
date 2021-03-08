@@ -1013,3 +1013,43 @@ footer {
   text-decoration: underline;
   filter: brightness(85%)
 }
+
+/* User Details */
+
+.user-details-container {
+  padding: 2em 1em;
+  padding-top: 100px;
+  padding-bottom: 5em;
+}
+
+.user-details-tab {
+  width: 450px;
+  margin: auto;
+  display: flex;
+}
+
+.user-details-tab > div {
+  border: 1px solid lightgrey;
+}
+
+.user-details-tab > div ul {
+  list-style: none;
+}
+.user-details-tab > div ul li {
+  height: 50px;
+  font-size: .9em;
+  padding: 1em;
+  display: flex;
+  align-items: center;
+}
+.user-details-tab > div ul li i {
+  font-size: 1.5em;
+  margin-right: .4em;
+}
+
+.user-details-tab .user-details-left {
+  width: 40%;
+}
+.user-details-tab .user-details-right {
+  width: 60%;
+}
