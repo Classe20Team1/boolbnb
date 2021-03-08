@@ -1,7 +1,7 @@
 @extends('layouts.boolbnb')
 
 @section('title')
-  Login
+  Registrazione Utente
 @endsection
 
 @section('content')

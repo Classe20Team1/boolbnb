@@ -62,9 +62,9 @@ class UserInfoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit()
-    {    
+    {
         $user = Auth::user();
-        
+
         return view('users.edit', compact('user'));
     }
 
@@ -77,11 +77,11 @@ class UserInfoController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        
+
         $user->update([
             'username' => $request['username'],
         ]);
-        
+
 
         $info = UserInfo::find(Auth::user()->info->id);
         $info->update([
@@ -93,8 +93,8 @@ class UserInfoController extends Controller
            'address' => $request['address'],
            'fiscal_code' => $request['fiscal_code'],
         ]);
-        
-        return view('users.detail', compact('user', 'info'));  
+
+        return view('users.detail', compact('user', 'info'));
 
     }
 
