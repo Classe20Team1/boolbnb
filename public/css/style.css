@@ -684,11 +684,33 @@ footer {
 }
 
 .my-apt-actions {
-  padding: .5em 0;
-  padding-left: 1em;
-  padding-right: 3em;
+  padding: .5em 2em;
   font-size: .8em;
+  display: flex;
 }
+
+.my-apt-actions .actions-left {
+  margin-right: 2em;
+}
+.my-apt-actions > div button {
+  padding: .3em;
+  cursor: pointer;
+  border: 1px solid #FF385C;
+  background-color: #FF385C;
+  color: white;
+  border-radius: .5em;
+}
+.my-apt-actions > div button:hover {
+  background-color: white;
+  color: #FF385C;
+}
+.my-apt-actions .actions-right button {
+  width: 86px;
+}
+.my-apt-actions .actions-left button {
+  width: 63px;
+}
+
 .my-apt-actions ul {
   list-style: none;
 }
@@ -756,6 +778,24 @@ footer {
   padding: 1em;
   width: 100%;
 }
+
+.add-form-element.add-title {
+  display: flex;
+}
+
+.add-form-element.add-title .title-element {
+  margin-right: 90px;
+}
+
+.add-form-element input.title-box {
+  width: 400px;
+}
+
+.add-form-element.add-title div.price-element input {
+  width: 100px;
+}
+
+
 .add-form-element .add-basics-info input {
   padding: .5em;
   padding-left: 8px;
@@ -772,7 +812,7 @@ footer {
 .add-services {
   display: flex;
   list-style: none;
-  margin-bottom: 4em;
+  margin-bottom: 3em;
 }
 
 .add-services li input {
@@ -786,6 +826,19 @@ footer {
   padding: .5em 0;
 }
 
+.add-img {
+  margin-bottom: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.add-img > div {
+  margin-bottom: 1em;
+}
+.add-img div input {
+  margin-top: .5em;
+}
+
 .submit-form-btn {
   display: flex;
   justify-content: center;
@@ -795,13 +848,108 @@ footer {
   width: 30%;
   padding: 1em;
   font-weight: bold;
-  background-color: white;
+  background-color: #FF385C;
   border: 1px solid #FF385C;
-  color: #FF385C;
+  color: white;
   font-size: 1.1em;
   border-radius: .5em;
+  cursor: pointer;
 }
 .submit-form-btn input:hover {
-  color: white;
+  color: #FF385C;
+  background-color: white;
+}
+
+/* Login e Register */
+.login-form {
+  display: flex;
+  justify-content: center;
+  padding: 4.5em 0;
+}
+.login-form-container {
+  width: 57%;
+  border: 1px solid #696969;
+}
+
+.login-form-header {
+  background-color: #DCDCDC;
+  padding: 1em 2em;
+  font-size: .9em;
+  border-bottom: 1px solid #696969;
+}
+
+.login-card {
+  display: flex;
+  justify-content: center;
+  font-size: .9em;
+  width: 100%;
+  padding: 2em 0;
+}
+
+.login-form-element {
+  width: 400px;
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.login-form-element label {
+  width: 30%;
+  text-align: right;
+  margin-right: 1.5em;
+}
+
+.login-form-element input,
+.login-form-element select {
+  width: 70%;
+  padding: .5em 1em;
+}
+
+.login-form-btn {
+  width: 400px;
+  padding: 1em;
+  padding-left: 140px;
+}
+.login-form-btn input.form-check-input {
+  margin-right: .5em;
+}
+
+.login-form-btn > div:not(:last-child){
+  margin-bottom: 1em;
+}
+
+.login-form-btn button {
   background-color: #FF385C;
+  border: 1px solid #FF385C;
+  font-size: 1.05em;
+  padding: .5em 1em;
+  color: white;
+  border-radius: .5em;
+  margin-right: .5em;
+  margin-top: 1em;
+}
+
+.login-form-btn button.register-btn {
+  background-color: #FF385C;
+  border: 1px solid #FF385C;
+  font-size: 1.05em;
+  padding: 1em 1.5em;
+  color: white;
+  border-radius: .5em;
+  margin-right: .5em;
+  margin-top: 2em;
+}
+.login-form-btn button:hover {
+  filter: brightness(85%);
+}
+
+.login-form-btn a {
+  text-decoration: none;
+  color: #FF385C;
+  font-weight: bold;
+}
+.login-form-btn a:hover {
+  text-decoration: underline;
+  filter: brightness(85%)
 }

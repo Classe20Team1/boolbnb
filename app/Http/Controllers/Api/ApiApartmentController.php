@@ -22,14 +22,13 @@ class ApiApartmentController extends Controller
             'longit' => $response['results'][0]['position']['lon'],
         ];
 
-        $radius = 70;
+        $radius = 10;
 
         $filtered = Position::radius($positionSearched['latit'], $positionSearched['longit'], $radius);
         $arrayId = [];
         foreach ($filtered as $position) {
             array_push($arrayId, $position->apartment_id);
         }
-
 
         return response()->json(Apartment::with('services', 'position', 'imgs')
         ->find($arrayId)
