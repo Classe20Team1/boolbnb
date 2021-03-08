@@ -46,44 +46,32 @@
       <ul class="apt-basics-list">
         <li>
           <i class="fas fa-bed fa-2x"></i>
-          <div><b>Letti</b>{{$apartment->beds}} </div>
+          <div><b>Letti:</b> {{$apartment->beds}} </div>
         </li>
         <li>
           <i class="fas fa-door-open fa-2x"></i>
-          <div><b>Camere</b> {{$apartment->rooms}}</div>
+          <div><b>Camere:</b> {{$apartment->rooms}}</div>
         </li>
         <li>
           <i class="fas fa-bath fa-2x"></i>
-          <div><b>Bagni</b> {{$apartment->bathrooms}}</div>
+          <div><b>Bagni:</b> {{$apartment->bathrooms}}</div>
         </li>
       </ul>
       <h4>Servizi e altre opzioni</h4>
-      
+
       <ul class="apt-basics-list">
+        <?php
+        $array = array("fa-wifi", "fa-dog", "fa-car", "fa-swimmer", "fa-concierge-bell", "fa-hot-tub", "fa-water");
+        ?>
+        @foreach ($services as $service)
+
         <li>
-          <i class="fas fa-wifi fa-2x" ></i>
-          <div>Wi-Fi</div>
+          <i class="fas {{ $array[$service->id -1] }} fa-2x {{ $apartment->services->contains($service) ? 'colorblue' : 'colorgrey' }}"></i>
+          <div>{{$service->name}}</div>
         </li>
-        <li>
-          <i class="fas fa-car fa-2x"></i>
-          <div>Posto Macchina</div>
-        </li>
-        <li>
-          <i class="fas fa-swimmer fa-2x"></i>
-          <div>Piscina</div>
-        </li>
-        <li>
-          <i class="fas fa-concierge-bell fa-2x"></i>
-          <div>Portineria</div>
-        </li>
-        <li>
-          <i class="fas fa-hot-tub fa-2x"></i>
-          <div>Sauna</div>
-        </li>
-        <li>
-          <i class="fas fa-water fa-2x"></i>
-          <div>Vista mare</div>
-        </li>
+
+        @endforeach
+
       </ul>
 
       </ul>

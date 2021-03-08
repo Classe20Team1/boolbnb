@@ -315,6 +315,12 @@ main {
   margin-bottom: 1.6em;
 }
 
+.colorblue{
+  color: blue;
+}
+.colorgrey{
+  color:gray;
+}
 .host-poster-box button {
   color: #696969;
   background-color: #DCDCDC;

@@ -65,7 +65,7 @@
               <div class="add-form-element">
                 <ul class="add-services">
                   <li>
-                    <input type="checkbox" name="services[]" value="{{$service->id}}" {{ $apartment->services->contains($service) ? 'checked' : '' }} >
+                    <input type="checkbox" name="services[]" value="{{$service->id}}" {{ $apartment->services->contains($service) ? 'checked' : '' }}>
                     <label for="services[]">{{$service->name}}</label>
                   </li>   
                 </ul>
