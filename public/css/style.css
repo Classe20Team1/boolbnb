@@ -17,7 +17,7 @@ header {
 
 nav {
   border: 1px solid black;
-  padding: 1em 3em;
+  padding: 2em 3em;
   display: flex;
   color: white;
   justify-content: space-between;
@@ -35,7 +35,7 @@ nav > div {
 }
 
 nav .nav-logo-box {
-  margin-right: 12em;
+  margin-right: 8em;
   display: flex;
   align-items: center;
 }
@@ -80,9 +80,9 @@ nav .nav-contents ul li:hover::after {
 }
 
 nav .nav-user {
-  width: 25%;
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 .nav-right-list-1 {
@@ -104,14 +104,61 @@ nav .nav-user {
 .nav-right-list-2 {
   list-style: none;
   color: #696969;
+  display: flex;
 }
 .nav-right-list-2 li {
-  background-color: #DCDCDC;
+  background-color: white;
   display: flex;
   align-items: center;
   padding: .5em .8em;
   border-radius: 2em;
   cursor: pointer;
+}
+.nav-right-list-2 li:hover {
+  filter:brightness(95%);
+}
+
+.nav-right-list-2 li a {
+  text-decoration: none;
+  font-weight: bold;
+}
+.nav-right-list-2 li a:visited{
+  color: black;
+}
+
+.mg-nav-1 {
+  margin-right: .5em;
+}
+
+.nav-right-list-2 li.logged {
+  /* position: relative; */
+}
+
+.nav-right-list-2 li.logged:hover .nav-dropdown {
+  display: block;
+}
+
+.nav-dropdown {
+  width: 130px;
+  font-weight: bold;
+  background-color: white;
+  position: absolute;
+  bottom: -207%;
+  right: 0%;
+  display: none;
+  border: 1px solid black;
+}
+.nav-dropdown ul {
+  list-style: none;
+}
+
+.nav-dropdown ul li {
+  padding: .5em;
+  border-radius: 0;
+}
+.dropdown-helper {
+  padding-bottom: 1.5em;
+  border-bottom: 1px solid black;
 }
 
 .nav-right-list-2 .bars-icon {
@@ -126,7 +173,6 @@ header .hero {
   width: 100%;
   padding: 3em 2em;
   text-align: center;
-  padding-bottom: 2.3em;
   /* padding-top: 125px; */
   padding-bottom: 3.5em;
   position: relative;
@@ -212,7 +258,7 @@ header .hero {
   cursor: pointer;
 }
 .search-bar-form .right-input button:hover {
-  background-color: #DC143C;
+  filter: brightness(85%);
 }
 
 main {
@@ -623,6 +669,18 @@ footer {
 }
 .dashboard-card:not(:last-child){
   margin-right: 1em;
+}
+
+.dashboard-card a {
+  text-decoration: none;
+}
+
+.dashboard-card:hover {
+  filter:brightness(85%);
+}
+
+.dashboard-card a:link, .dashboard-card a:visited {
+  color: black;
 }
 
 .dashboard-card i {
