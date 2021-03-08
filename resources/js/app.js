@@ -4,7 +4,11 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
+
+
+
 require('./bootstrap');
+
 window.Vue = require('vue');
 
 /**
@@ -22,7 +26,7 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 Vue.component('my-main', require('./components/Main.vue').default);
 Vue.component('list-container', require('./components/ListContainer.vue').default);
 Vue.component('list-item', require('./components/ListItem.vue').default);
-Vue.component('map-apartments', require('./components/Map.vue').default);
+Vue.component('my-map', require('./components/Mapp.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

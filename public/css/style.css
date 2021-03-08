@@ -343,15 +343,15 @@ footer {
   padding-right: 1em;
 }
 
-.search-results h5 {
+/* .search-results h5 {
   margin-bottom: 1em;
 }
 
 .search-results h1 {
   margin-bottom: 1.1em;
-}
+} */
 
-.search-results .search-filters ul {
+/* .search-results .search-filters ul {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
@@ -361,39 +361,35 @@ footer {
 .search-filters h5 {
   text-transform: uppercase;
   font-weight: bold;
-}
+} */
 
-.search-results .basic-filters li {
+/* .search-results .basic-filters li {
   border: 1px solid lightgrey;
+
   border-radius: 1em;
   cursor: pointer;
-  margin-right: 2em;
-  margin-bottom: .5em;
-  padding: .5em;
-}
-.search-results .basic-filters li:hover {
+} */
+
+/* .search-results .basic-filters li:hover {
   border: 1px solid black;
 } */
 
-.basic-filters li label {
-  margin-right: .5em;
-}
 
-.basic-filters li input {
-  width: 35px;
+
+/* .basic-filters li input {
+  width: 30px;
   border: 1px solid lightgrey;
-  padding-left: .5em;
 }
 .basic-filters li select option {
   border: 1px solid lightgrey;
   padding: 0 .3em;
-}
+} */
 
-.services-filters li {
+/* .services-filters li {
   margin-right: 1.5em;
-}
+} */
 
-.apartments-card {
+/* .apartments-card {
   border-top: 1px solid lightgrey;
   border-bottom: 1px solid lightgrey;
   padding: 1em;
@@ -415,7 +411,7 @@ footer {
   width: 100%;
   height: 100%;
   border-radius: 1em;
-}
+} */
 
 .font-helper-1 {
   font-size: .8em;

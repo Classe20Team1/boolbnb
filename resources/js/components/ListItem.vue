@@ -4,13 +4,13 @@
 
                   <div class="apartment-img-box">
 
-                      <img src="http://rndimg.com/ImageStore/OilPaintingGreen/400x300_OilPaintingGreen_57a67ca7deb041b2813a2d8562c8dac6.jpg" alt="logo">
+                      <img src="" alt="img">
 
                   </div>
 
                   <div class="apartment-features">
 
-                        <div class="font-helper-1">{{ title}}</div>
+                        <div class="font-helper-1">{{ title }}</div>
 
                         <ul class="tinies-container" >
 
@@ -42,7 +42,7 @@
                    'bathrooms',
                    'metri_quadrati',
                    'price',
-                   'cover_img'],
+                   ],
             };
 
 </script>
@@ -50,23 +50,27 @@
 <style scoped>
 
 .apartments-card {
-  width:50%;
+  display:flex;
+  justify-content: space-between;
   border-top: 1px solid lightgrey;
   border-bottom: 1px solid lightgrey;
   padding: 1em;
   padding-left: 0;
   display: flex;
-  height: 225px;
+  height: 200px;
 }
 
 .apartments-card .apartment-img-box {
-  width: 43%;
-  padding: .4em;
+  width: 200px;
+  padding:10px;
+  border:1px solid pink;
+
 }
 
 .apartments-card .apartment-features {
-  width: 57%;
-  padding: .4em;
+
+
+  padding: 10px;
   display:flex;
   flex-direction: column;
   justify-content: space-between;
@@ -75,6 +79,7 @@
 .apartments-card .apartment-img-box img {
   width: 100%;
   height: 100%;
+
   border-radius: 1em;
 }
 
