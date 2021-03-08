@@ -7,39 +7,44 @@
 @section('content')
   <div class="myapt-list-container">
     <h2>I miei appartamenti</h2>
+  @foreach($apartments as $apartment)
     <div class="my-apt-card">
       <div class="my-apt-img-box">
-        <img src="" alt="apartment-preview">
+     
+        <img src="{{asset($apartment->cover_img)}}" alt="apartment-preview">
       </div>
       <div class="my-apt-infos">
-        <h4>Grazioso appartamento in centro a Bologna</h4>
-        <p>In pieno centro, solo 3 minuti a piedi dalla fermata dell' aerobus. 10 minuti a piedi dalla stazione, dalle Due Torri e piazza Maggiore.
-        5 minuti a piedi da via indipendenza, museo Mambo, la piccola Venezia,
-        dal teatro Arena del sole e dal parcheggio privato di piazza XIII agosto, (mercato la Montagnola). Parcheggio sotto casa a pagamento.</p>
+        <h4>Titolo: {{$apartment->title}}</h4>
+        <p>Descrizione: {{$apartment->description}}</p>
+        <span>price: {{$apartment->price}}</span> <br>
+        <span>rooms: {{$apartment->rooms}}</span> <br>
+        <span>bathrooms: {{$apartment->bathrooms}} - </span> 
+        <span> M.quadrati: {{$apartment->metri_quadrati}}</span>
       </div>
       <div class="card-separator"></div>
       <div class="my-apt-actions">
         <div class="actions-left">
           <ul>
             <li>
-              <a href="#">
+              <a href="{{route('apartments.show', $apartment->id) }}">
                 <button type="button" name="button">
                   Dettagli
                 </button>
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="{{route('apartments.edit', $apartment->id)}}">
                 <button type="button" name="button">
                   Modifica
                 </button>
               </a>
             </li>
             <li>
-              <a href="#">
-                <button type="button" name="button">
-                  Elimina
-                </button>
+                <form method="post" class="d-inline"action="{{route('apartments.destroy', $apartment->id)}}">
+                  @csrf
+                  @method('delete')
+                   <button type="submit" class="btn btn-outline-danger" value="Elimina">Elimina</button>
+                </form>
               </a>
             </li>
           </ul>
@@ -63,6 +68,9 @@
           </ul>
         </div>
       </div>
+    
     </div>
+  @endforeach
   </div>
+  <br>
 @endsection
