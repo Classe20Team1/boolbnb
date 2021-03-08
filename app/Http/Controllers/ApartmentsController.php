@@ -78,6 +78,21 @@ class ApartmentsController extends Controller
         $newApartment->cover_img = 'covers/' . $name . '.' . $imgEst; //$request->file('cover')->store('covers');
         $newApartment->save(); //salva
 
+        $newApAddress = $request->city . ', ' . $request->address;
+
+        $response = file_get_contents('https://api.tomtom.com/search/2/geocode/' . $newApAddress . '.json?limit=1&key=' . env('TOMTOM_KEY'));
+
+        $response = json_decode($response, true);
+        $latit = $response['results'][0]['position']['lat'];
+        $longit = $response['results'][0]['position']['lat'];
+
+        $newPosition = new Position;
+        $newPosition->apartment_id = $newApartment->id;
+        $newPosition->latitude = $latit;
+        $newPosition->longitude = $longit;
+
+        $newPosition->save();
+
         // $files = $newApartment->imgs; //salvo il file in variabile
         // $arrayImgApartment = $request->file('image'); // prendo il file
 
