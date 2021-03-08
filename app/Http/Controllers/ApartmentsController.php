@@ -203,7 +203,7 @@ class ApartmentsController extends Controller
             'metri_quadrati' => $request['metri_quadrati'],
             'active' => true,
             'price' => $request['price'],
-
+            'cover_img' => $apartment->cover_img,
         ]);
         
         if($request['cover']){
@@ -212,7 +212,8 @@ class ApartmentsController extends Controller
             $name = Str::random(25);
             $path = $name . '.' . $imgEst;
             $ImgApartament = $request->file('cover')->move(public_path().'/images/', $path);
-            $apartment->update(['cover_img' => 'image/' . $name . '.' . $imgEst]);
+            $apartment->cover_img = 'image/' . $name . '.' . $imgEst;
+            $apartment->save();
         }
 
 
