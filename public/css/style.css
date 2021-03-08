@@ -381,6 +381,10 @@ footer {
   background-color: #DCDCDC;
   padding: 1em 3em;
   font-size: .8em;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 /* Ricerca avanzata */
@@ -735,9 +739,17 @@ footer {
   padding: .5em .8em;
   width: 650px;
 }
-.my-apt-infos h4 {
+
+.my-apt-infos .apt-details-list ul {
+  list-style: none;
+  display: flex;
+  font-size: .8em;
   color: #484848;
 }
+.my-apt-infos .apt-details-list ul li {
+  margin-right: 2em;
+}
+
 .my-apt-infos p {
   margin-top: .6em;
   font-size: .8em;
