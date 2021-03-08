@@ -9,7 +9,7 @@
     <h2>I miei appartamenti</h2>
     <div class="my-apt-card">
       <div class="my-apt-img-box">
-        <img src="{{ asset($apartments[3]->cover_img) }}" alt="apartment-preview">
+        <img src="" alt="apartment-preview">
       </div>
       <div class="my-apt-infos">
         <h4>Grazioso appartamento in centro a Bologna</h4>

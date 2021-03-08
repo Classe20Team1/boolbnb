@@ -24,7 +24,7 @@ Route::get('/search', function () {
 });
 
 Route::get('/test', function (){
-  return view('auth.login-layout');
+  return view('apartments.create-layout');
 });
 
 

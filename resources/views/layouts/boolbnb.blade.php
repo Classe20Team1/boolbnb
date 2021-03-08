@@ -42,7 +42,7 @@
       <div class="nav-user">
         <ul class="nav-right-list-1">
           <li>
-            <a href="{{ route('auth.register') }} ">
+            <a href="#">
               Diventa un host
             </a>
           </li>
@@ -52,7 +52,7 @@
         </ul>
         <ul class="nav-right-list-2">
           <li>
-            <a href="{{ route('home') }}">
+            <a href="#">
               <i class="fas fa-bars bars-icon"></i>
               <i class="fas fa-user-circle user-icon"></i>
             </a>

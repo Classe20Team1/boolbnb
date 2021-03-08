@@ -25,6 +25,16 @@
             <input id="price" type="text" name="price" value="">
           </div>
         </div>
+        <div class="add-form-element add-title">
+          <div class="title-element">
+            <label for="city">Città</label><br>
+            <input class="title-box" type="city" id="city" name="city" value="" placeholder="">
+          </div>
+          <div class="title-element">
+            <label for="address">Indirizzo</label><br>
+            <input class="title-box" type="address" id="address" name="address" value="" placeholder="Via Risorgimento 1">
+          </div>
+        </div>
 
         <div class="add-form-element">
           <label for="description">Descrizione</label><br>
