@@ -25,7 +25,9 @@
   <body>
     <nav>
       <div class="nav-logo-box">
-        <img src="{{ asset('img/logo.png') }}" alt="logo">
+        <a href="/">
+          <img src="{{ asset('img/logo.png') }}" alt="logo">
+        </a>
       </div>
       <div class="nav-contents">
         <ul>
@@ -42,7 +44,7 @@
       <div class="nav-user">
         <ul class="nav-right-list-1">
           <li>
-            <a href="#">
+            <a href="{{ route('register') }}">
               Diventa un host
             </a>
           </li>
@@ -52,7 +54,7 @@
         </ul>
         <ul class="nav-right-list-2">
           <li>
-            <a href="#">
+            <a href="{{ route('login') }}">
               <i class="fas fa-bars bars-icon"></i>
               <i class="fas fa-user-circle user-icon"></i>
             </a>
