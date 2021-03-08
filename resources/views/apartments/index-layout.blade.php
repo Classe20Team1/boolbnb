@@ -8,7 +8,7 @@
   <div class="myapt-list-container">
     <h2>I miei appartamenti</h2>
   @foreach($apartments as $apartment)
-    <div class="my-apt-card">
+    <div class="my-apt-card mt-5"  style='height:190px'>
       <div class="my-apt-img-box">
      
         <img src="{{asset($apartment->cover_img)}}" alt="apartment-preview">
