@@ -10,14 +10,20 @@
 
     </div>
     <div class="add-form-container">
-      <form class="" action="" method="post">
+      <form class="" action="{{route('apartments.store')}}" method="post" enctype="multipart/form-data">
       @csrf
       @method('Post')
 
         <h2>Nuovo appartamento</h2>
-        <div class="add-form-element">
-          <label for="title">Nome</label><br>
-          <input type="text" id="title" name="title" value="" placeholder="">
+        <div class="add-form-element add-title">
+          <div class="title-element">
+            <label for="title">Nome</label><br>
+            <input class="title-box" type="text" id="title" name="title" value="" placeholder="">
+          </div>
+          <div class="price-element">
+            <label for="price">Prezzo</label>
+            <input id="price" type="text" name="price" value="">
+          </div>
         </div>
 
         <div class="add-form-element">
@@ -73,6 +79,16 @@
               <label for="vista_mare">Vista mare</label>
             </li>
           </ul>
+        </div>
+        <div class="add-img">
+          <div class="">
+            <label for="cover">Carica immagina di anteprima</label><br>
+            <input id="cover" type="file" name="cover" value="">
+          </div>
+          <div class="">
+            <label for="image">Carica immagini</label><br>
+            <input id="image" type="file" name="image[]" multiple>
+          </div>
         </div>
         <div class="submit-form-btn">
           <input type="submit" name="submit" value="Aggiungi">
