@@ -22,7 +22,7 @@ class ApiApartmentController extends Controller
             'longit' => $response['results'][0]['position']['lon'],
         ];
 
-        $radius = 10;
+        $radius = 100;
 
         $filtered = Position::radius($positionSearched['latit'], $positionSearched['longit'], $radius);
         $arrayId = [];
