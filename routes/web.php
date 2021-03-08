@@ -19,14 +19,16 @@ use App\User;
 Route::get('/', function () {
     return view('homepage');
 });
+Route::get('/search', function () {
+    return view('search');
+});
 
 Route::get('/test', function (){
-  return view('apartments.index-layout');
+  return view('auth.login-layout');
 });
 
 
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('apartments', 'ApartmentsController');
 Route::get('/user/edit', 'UserInfoController@edit')->name('user.edit');
