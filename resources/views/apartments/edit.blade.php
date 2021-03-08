@@ -28,7 +28,7 @@
 
         <div class="add-form-element">
           <label for="description">Descrizione</label><br>
-          <textarea id="description" value='{{$apartment->description}}' name="description" rows="8" cols="60"></textarea>
+          <textarea id="description" value='{{$apartment->description}}' name="description" rows="8" cols="60">{{$apartment->description}}</textarea>
         </div>
 
         <div class="add-form-element">
@@ -43,7 +43,7 @@
             </li>
             <li class="">
               <label for="Bathrooms">Bagni</label>
-              <input id="Bathrooms" type="number" name="Bathrooms" value="{{$apartment->bathrooms}}">
+              <input id="Bathrooms" type="number" name="bathrooms" value="{{$apartment->bathrooms}}">
             </li>
             <li class="">
               <label for="metri_quadrati">Metri quadrati (&#13217;)</label>
@@ -51,7 +51,7 @@
             </li>
           </ul>
         </div>
-    @foreach($services as service)
+    @foreach($services as $service)
         <div class="add-form-element">
           <ul class="add-services">
             <li>

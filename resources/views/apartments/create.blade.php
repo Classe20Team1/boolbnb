@@ -53,7 +53,7 @@
             </li>
             <li class="">
               <label for="Bathrooms">Bagni</label>
-              <input id="Bathrooms" type="number" name="Bathrooms" value="1">
+              <input id="Bathrooms" type="number" name="bathrooms" value="1">
             </li>
             <li class="">
               <label for="metri_quadrati">Metri quadrati (&#13217;)</label>
