@@ -146,7 +146,7 @@ class ApartmentsController extends Controller
         if($user){
             if ($apartment->user->id == Auth::user()->id){
                 // ritorno la view del user admin del proprio apartment
-                return view('admin.show', compact('apartment', 'user'));
+                return view('apartments.show', compact('apartment', 'user'));
             } else {
                 return view('apartments.show', compact('apartment', 'user'));
             }
