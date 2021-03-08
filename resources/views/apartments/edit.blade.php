@@ -10,11 +10,11 @@
 
     </div>
     <div class="add-form-container">
-      <form class="" action="{{route('apartments.store')}}" method="post" enctype="multipart/form-data">
+      <form class="" action="{{route('apartments.update', $apartment->id)}}" method="post" enctype="multipart/form-data">
       @csrf
-      @method('Post')
+      @method('Put')
 
-        <h2>Nuovo appartamento</h2>
+        <h2>Modifica appartamento</h2>
         <div class="add-form-element add-title">
           <div class="title-element">
             <label for="title">Nome</label><br>
@@ -29,6 +29,16 @@
         <div class="add-form-element">
           <label for="description">Descrizione</label><br>
           <textarea id="description" value='{{$apartment->description}}' name="description" rows="8" cols="60">{{$apartment->description}}</textarea>
+        </div>
+        <div class="add-form-element add-title">
+          <div class="title-element">
+            <label for="city">Città</label><br>
+            <input class="title-box" type="city" id="city" name="city" value="" placeholder="">
+          </div>
+          <div class="title-element">
+            <label for="address">Indirizzo</label><br>
+            <input class="title-box" type="address" id="address" name="address" value="" placeholder="Via Risorgimento 1">
+          </div>
         </div>
 
         <div class="add-form-element">

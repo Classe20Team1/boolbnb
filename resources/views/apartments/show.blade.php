@@ -6,13 +6,15 @@
 
 @section('content')
   <section class="apartment-details">
-    <h2>Via San Carlo, bilocale in the city centre</h2>
+ 
+  
+    <h2>{{$apartment->title}}</h2>
     <div class="text-box">
-      Roma, Lazio, Italia
+      
     </div>
     <div class="apartment-imgs">
       <div class="apartment-imgs-left">
-        <img src="{{ asset('img/apt-1.png') }}" alt="main-img" class="left-border-radius-helper">
+        <img src="{{ asset('$apartment->cover_img') }}" alt="main-img" class="left-border-radius-helper">
       </div>
       {{-- <div class="apartment-imgs-right">
         <div class="apartment-imgs-box margin-right-helper margin-bottom-helper">
@@ -29,13 +31,11 @@
         </div>
       </div> --}}
     </div>
-    <h3>Intero appartamento - Host: Pippo Pluto</h3>
-    <div class="margin-2-helper">1 camera da letto · 2 letti · 1 bagno · 50&#13217; </div>
+    <h3>Intero appartamento - Host: {{ Auth::user()->username }}</h3>
+    <div class="margin-2-helper"> {{$apartment->metri_quadrati}}&#13217; </div>
     <div class="line-separator"></div>
     <div class="apartment-description">
-      <p>In pieno centro, solo 3 minuti a piedi dalla fermata dell' aerobus. 10 minuti a piedi dalla stazione, dalle Due Torri e piazza Maggiore.
-      5 minuti a piedi da via indipendenza, museo Mambo, la piccola Venezia,
-      dal teatro Arena del sole e dal parcheggio privato di piazza XIII agosto, (mercato la Montagnola). Parcheggio sotto casa a pagamento.</p>
+      <p>{{$apartment->description}}</p>
       <div class="host-btn">
         <a href="#">Contatta l'host</a>
       </div>
@@ -46,15 +46,15 @@
       <ul class="apt-basics-list">
         <li>
           <i class="fas fa-bed fa-2x"></i>
-          <div><b>Letti</b> 1</div>
+          <div><b>Letti</b>{{$apartment->beds}} </div>
         </li>
         <li>
           <i class="fas fa-door-open fa-2x"></i>
-          <div><b>Camere</b> 1</div>
+          <div><b>Camere</b> {{$apartment->rooms}}</div>
         </li>
         <li>
           <i class="fas fa-bath fa-2x"></i>
-          <div><b>Bagni</b> 1</div>
+          <div><b>Bagni</b> {{$apartment->bathrooms}}</div>
         </li>
       </ul>
       <h4>Servizi e altre opzioni</h4>
@@ -92,5 +92,6 @@
         <img src="{{ asset('img/map-example-2.png') }}" alt="apartment-map">
       </div>
     </div>
+
   </section>
 @endsection
