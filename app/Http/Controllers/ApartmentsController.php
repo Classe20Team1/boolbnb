@@ -74,11 +74,13 @@ class ApartmentsController extends Controller
         $newApartment->price = $data['price'];
 
         // cover_img
-        $name = Str::random(25);
-        $imgEst = $request->file('cover')->extension();
-        $path = $name . '.' . $imgEst;
-        $ImgApartament = $request->file('cover')->move(public_path().'/covers/', $path);
-        $newApartment->cover_img = 'covers/' . $name . '.' . $imgEst; 
+        if($request->file('cover')){
+            $name = Str::random(25);
+            $imgEst = $request->file('cover')->extension();
+            $path = $name . '.' . $imgEst;
+            $ImgApartament = $request->file('cover')->move(public_path().'/covers/', $path);
+            $newApartment->cover_img = 'covers/' . $name . '.' . $imgEst; 
+        }
         //$request->file('cover')->store('covers');
 
 
