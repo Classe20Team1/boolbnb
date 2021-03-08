@@ -72,6 +72,7 @@ class ApartmentsController extends Controller
         $newApartment->active = true;
         $newApartment->views_count = 0;
         $newApartment->price = $data['price'];
+        
 
         // cover_img
         if($request->file('cover')){
@@ -192,16 +193,18 @@ class ApartmentsController extends Controller
                
         $user = Auth::user();
 
-        $apartment->title = $request['title'];
-        $apartment->user_id = $user->id;
-        $apartment->description = $request['description'];
-        $apartment->rooms = $request['rooms'];
-        $apartment->beds = $request['beds'];
-        $apartment->bathrooms = $request['bathrooms'];
-        $apartment->metri_quadrati = $request['metri_quadrati'];
-        $apartment->active = true;
-        $apartment->views_count = 0;
-        $apartment->price = $request['price'];
+        $apartment->update([
+            'title' => $request['title'],
+            'user_id' => $user->id,
+            'description' => $request['description'],
+            'rooms' => $request['rooms'],
+            'beds' => $request['beds'],
+            'bathrooms' => $request['bathrooms'],
+            'metri_quadrati' => $request['metri_quadrati'],
+            'active' => true,
+            'price' => $request['price'],
+
+        ]);
         
         if($request['cover']){
             //cancellazione foto cover vecchia
@@ -209,10 +212,9 @@ class ApartmentsController extends Controller
             $name = Str::random(25);
             $path = $name . '.' . $imgEst;
             $ImgApartament = $request->file('cover')->move(public_path().'/images/', $path);
-            $apartment->cover_img = 'image/' . $name . '.' . $imgEst;
-
+            $apartment->update(['cover_img' => 'image/' . $name . '.' . $imgEst]);
         }
-        $apartment->save();
+
 
         // update services
         $apartment->services()->sync($request['services']);
