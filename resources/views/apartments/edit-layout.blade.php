@@ -18,7 +18,7 @@
         <div class="add-form-element add-title">
           <div class="title-element">
             <label for="title">Nome</label><br>
-            <input class="title-box" type="text" id="title" name="title" value="" placeholder="">
+            <input class="title-box" type="text" id="title" name="title" value="{{ $apartment->title }}" placeholder="">
           </div>
           <div class="price-element">
             <label for="price">Prezzo</label>
