@@ -20,7 +20,7 @@ class ApartmentsController extends Controller
     {
         $this->middleware('auth', [
             'except' => [
-                'index', 'show', 'search'
+                'show', 'search'
             ]
         ]);
     }
@@ -31,10 +31,9 @@ class ApartmentsController extends Controller
      */
     public function index()
     {
-
-        $apartments = Apartment::all();
-
-        return view('apartments.index', compact('apartments'));
+        $user = Auth::user();
+        $apartments = $user->apartments;
+        return view('apartments.index-layout', compact('apartments'));    
     }
 
     /**
@@ -74,26 +73,27 @@ class ApartmentsController extends Controller
         $newApartment->price = $data['price'];
         $name = Str::random(25);
         $imgEst = $request->file('cover')->extension();
-        $ImgApartament = $request->file('cover')->move(public_path().'/covers/', $name);
+        $path = $name . '.' . $imgEst;
+        $ImgApartament = $request->file('cover')->move(public_path().'/covers/', $path);
         $newApartment->cover_img = 'covers/' . $name . '.' . $imgEst; //$request->file('cover')->store('covers');
         $newApartment->save(); //salva
 
-        $files = $newApartment->imgs; //salvo il file in variabile
-        $arrayImgApartment = $request->file('image'); // prendo il file
+        // $files = $newApartment->imgs; //salvo il file in variabile
+        // $arrayImgApartment = $request->file('image'); // prendo il file
 
-        if($request->hasFile('image'))
-        { //ciclo per salvarlo
-            foreach ($arrayImgApartment as $file) {
-                $newImg = new Img; // collego la varibile alla tabella img
-                $name = Str::random(25); // creo nome random di 25 caratteri
-                $imgEst = $file->extension();
-                $file->move(public_path().'/images/', $name);  //salva l'img nella cartella di destinazione
-                $newImg->path = 'images/' . $name . '.' . $imgEst;  //aggiungo path
-                $newImg->apartment_id = $newApartment->id; // aggangio all'appartamento tramite id
-                $newImg->save();             // salvo tutto
-            }
+        // if($request->hasFile('image'))
+        // { //ciclo per salvarlo
+        //     foreach ($arrayImgApartment as $file) {
+        //         $newImg = new Img; // collego la varibile alla tabella img
+        //         $name = Str::random(25); // creo nome random di 25 caratteri
+        //         $imgEst = $file->extension();
+        //         $file->move(public_path().'/images/', $name);  //salva l'img nella cartella di destinazione
+        //         $newImg->path = 'images/' . $name . '.' . $imgEst;  //aggiungo path
+        //         $newImg->apartment_id = $newApartment->id; // aggangio all'appartamento tramite id
+        //         $newImg->save();             // salvo tutto
+        //     }
 
-        }
+        // }
 
         return redirect()->route('apartments.index');
 
@@ -175,28 +175,29 @@ class ApartmentsController extends Controller
             //cancellazione foto cover vecchia
             $imgEst = $request->file('cover')->extension();
             $name = Str::random(25);
-            $ImgApartament = $request->file('cover')->move(public_path().'/images/', $name);
+            $path = $name . '.' . $imgEst;
+            $ImgApartament = $request->file('cover')->move(public_path().'/images/', $path);
             $apartment->cover_img = 'image/' . $name . '.' . $imgEst;
 
         }
         $apartment->save();
 
-        $files = $apartment->imgs; //salvo il file in variabile
-        $arrayImgApartment = $request->file('image'); // prendo i file
-        //cancellazione imgs vecchie
-        if($request->hasFile('image'))
-        { //ciclo per salvarlo
-            foreach ($arrayImgApartment as $file) {
-                $newImg = new Img; // collego la varibile alla tabella img
-                $imgEst = $file->extension();
-                $name = Str::random(25); // creo nome random di 25 caratteri
-                $file->move(public_path().'/images/', $name);  //salva l'img nella cartella di destinazione
-                $newImg->path = 'images/' . $name . '.' . $imgEst;  //aggiungo path
-                $newImg->apartment_id = $apartment->id; // aggangio all'appartamento tramite id
-                $newImg->save();             // salvo tutto
-            }
+        // $files = $apartment->imgs; //salvo il file in variabile
+        // $arrayImgApartment = $request->file('image'); // prendo i file
+        // //cancellazione imgs vecchie
+        // if($request->hasFile('image'))
+        // { //ciclo per salvarlo
+        //     foreach ($arrayImgApartment as $file) {
+        //         $newImg = new Img; // collego la varibile alla tabella img
+        //         $imgEst = $file->extension();
+        //         $name = Str::random(25); // creo nome random di 25 caratteri
+        //         $file->move(public_path().'/images/', $name);  //salva l'img nella cartella di destinazione
+        //         $newImg->path = 'images/' . $name . '.' . $imgEst;  //aggiungo path
+        //         $newImg->apartment_id = $apartment->id; // aggangio all'appartamento tramite id
+        //         $newImg->save();             // salvo tutto
+        //     }
 
-        }
+        // }
  
         
        
@@ -220,7 +221,7 @@ class ApartmentsController extends Controller
         $elimina->position()->delete(); //prendo la posizioneo 
         
         $elimina->messages()->delete();// prendo i messaggi
-        $elimina->imgs()->delete(); //prendo le immagini 
+        // $elimina->imgs()->delete(); //prendo le immagini 
         
         $spon = $elimina->sponsors; //prendo solo i sponsor inerenti a questo id
         foreach($spon as $sponsors){

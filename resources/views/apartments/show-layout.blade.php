@@ -14,7 +14,7 @@
       <div class="apartment-imgs-left">
         <img src="{{ asset('img/apt-1.png') }}" alt="main-img" class="left-border-radius-helper">
       </div>
-      <div class="apartment-imgs-right">
+      {{-- <div class="apartment-imgs-right">
         <div class="apartment-imgs-box margin-right-helper margin-bottom-helper">
           <img src="{{ asset('img/apt-2.png') }}" alt="apartment-img">
         </div>
@@ -27,7 +27,7 @@
         <div class="apartment-imgs-box">
           <img src="{{ asset('img/apt-5.png') }}" alt="apartment-img" class="bottom-right-border-radius-helper">
         </div>
-      </div>
+      </div> --}}
     </div>
     <h3>Intero appartamento - Host: Pippo Pluto</h3>
     <div class="margin-2-helper">1 camera da letto · 2 letti · 1 bagno · 50&#13217; </div>
