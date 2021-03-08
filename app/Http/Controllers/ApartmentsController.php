@@ -258,7 +258,7 @@ class ApartmentsController extends Controller
  
         
        
-        return view('apartments.detail', compact('apartment'));
+        return view('apartments.show', compact('apartment'));
         
       
 

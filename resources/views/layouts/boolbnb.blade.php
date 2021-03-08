@@ -5,6 +5,7 @@
   <head>
     <meta charset="utf-8">
     <title>BoolBnb - @yield('title')</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
     <!-- Scripts -->
 
@@ -43,7 +44,7 @@
       </div>
       <div class="nav-user">
         <ul class="nav-right-list-2">
-          <li>
+          
               @guest
                   <li class="nav-item">
                       <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -71,7 +72,7 @@
                   </li>
               @endguest
             </a>
-          </li>
+          
         </ul>
       </div>
     </nav>

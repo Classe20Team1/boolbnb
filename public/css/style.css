@@ -33,7 +33,9 @@ nav {
 nav > div {
   padding: .5em;
 }
-
+.nav-item {
+  
+}
 nav .nav-logo-box {
   margin-right: 12em;
   display: flex;

@@ -58,9 +58,11 @@
         </li>
       </ul>
       <h4>Servizi e altre opzioni</h4>
+     
       <ul class="apt-basics-list">
         <li>
-          <i class="fas fa-wifi fa-2x"></i>
+          <i class="fas fa-wifi fa-2x" ></i>
+         
           <div>Wi-Fi</div>
         </li>
         <li>
@@ -84,6 +86,7 @@
           <div>Vista mare</div>
         </li>
       </ul>
+ 
     </div>
     <div class="line-separator"></div>
     <div class="apt-position">
