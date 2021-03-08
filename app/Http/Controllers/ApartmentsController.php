@@ -57,6 +57,7 @@ class ApartmentsController extends Controller
      */
     public function store(Request $request)
     {
+        
         $data = $request->all();
         $user = Auth::user();
         $newApartment = new Apartment;
@@ -71,28 +72,42 @@ class ApartmentsController extends Controller
         $newApartment->active = true;
         $newApartment->views_count = 0;
         $newApartment->price = $data['price'];
+
+        // cover_img
         $name = Str::random(25);
         $imgEst = $request->file('cover')->extension();
         $path = $name . '.' . $imgEst;
         $ImgApartament = $request->file('cover')->move(public_path().'/covers/', $path);
-        $newApartment->cover_img = 'covers/' . $name . '.' . $imgEst; //$request->file('cover')->store('covers');
+        $newApartment->cover_img = 'covers/' . $name . '.' . $imgEst; 
+        //$request->file('cover')->store('covers');
+
+
         $newApartment->save(); //salva
 
+        // services
+        $newApartment->services()->attach($data['services']);
+
+
+        // locations
+        
         $newApAddress = $request->city . ', ' . $request->address;
-
+        
         $response = file_get_contents('https://api.tomtom.com/search/2/geocode/' . $newApAddress . '.json?limit=1&key=' . env('TOMTOM_KEY'));
-
+        
         $response = json_decode($response, true);
         $latit = $response['results'][0]['position']['lat'];
-        $longit = $response['results'][0]['position']['lat'];
+        $longit = $response['results'][0]['position']['lon'];
+
 
         $newPosition = new Position;
-        $newPosition->apartment_id = $newApartment->id;
-        $newPosition->latitude = $latit;
-        $newPosition->longitude = $longit;
+        $newPosition->create([
+            'apartment_id' => $newApartment->id,
+            'latitude' => $latit,
+            'longitude' => $longit,
+            'address' => $newApAddress,
+        ]);
 
-        $newPosition->save();
-
+        
         // $files = $newApartment->imgs; //salvo il file in variabile
         // $arrayImgApartment = $request->file('image'); // prendo il file
 
@@ -112,7 +127,6 @@ class ApartmentsController extends Controller
 
         return redirect()->route('apartments.index');
 
-        // $newApartment->services()->attach($data['services']);
 
 
     }
@@ -148,7 +162,8 @@ class ApartmentsController extends Controller
     public function edit($id)
     {
         $apartment = Apartment::find($id);
-        return view('apartments.edit', compact('apartment'));
+        $services = Service::all();
+        return view('apartments.edit', compact('apartment','services'));
     }
 
     /**
@@ -196,6 +211,29 @@ class ApartmentsController extends Controller
 
         }
         $apartment->save();
+
+        // update services
+        $apartment->services()->sync($request['services']);
+
+
+        // locations
+
+        $newApAddress = $request->city . ', ' . $request->address;
+
+        $response = file_get_contents('https://api.tomtom.com/search/2/geocode/' . $newApAddress . '.json?limit=1&key=' . env('TOMTOM_KEY'));
+
+        $response = json_decode($response,
+            true
+        );
+        $latit = $response['results'][0]['position']['lat'];
+        $longit = $response['results'][0]['position']['lon'];
+
+        $apartment->position()->update([
+            'apartment_id' => $apartment->id,
+            'latitude' => $latit,
+            'longitude' => $longit,
+            'address' => $newApAddress,
+        ]);
 
         // $files = $apartment->imgs; //salvo il file in variabile
         // $arrayImgApartment = $request->file('image'); // prendo i file

@@ -9,9 +9,21 @@ use Illuminate\Database\Eloquent\Model;
 class Apartment extends Model
 {
     protected $table = 'apartments';
+
     protected $fillable = [
+      'title',
+      'description',
+      'bathrooms',
+      'price',
+      'beds',
+      'rooms',
+      'metri_quadrati',
+      'services',
       '_token',
-  ];
+      'address',
+      'city',
+    ];
+
     public function user(){
       return $this->belongsTo('App\User', 'user_id', 'id');
     }

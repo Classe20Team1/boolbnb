@@ -8,6 +8,23 @@ class Position extends Model
 {
   
   protected $table = 'positions';
+
+  protected $fillable = [
+    'title',
+    'apartment_id',
+    'description',
+    'bathrooms',
+    'price',
+    'beds',
+    'rooms',
+    'longitude',
+    'latitude',
+    'metri_quadrati',
+    'services',
+    '_token',
+    'address',
+    'city',
+  ];
   
   public function apartment(){
       return $this->belongsTo('App\Apartment', 'apartment_id', 'id');
