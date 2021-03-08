@@ -75,7 +75,10 @@ class ApartmentsController extends Controller
         $newApartment->active = true;
         $newApartment->views_count = 0;
         $newApartment->price = $data['price'];
-        $newApartment->cover_img = $request->file('cover')->store('covers');
+        $name = Str::random(25);
+        $imgEst = $request->file('cover')->extension();
+        $ImgApartament = $request->file('cover')->move(public_path().'/covers/', $name);
+        $newApartment->cover_img = 'covers/' . $name . '.' . $imgEst; //$request->file('cover')->store('covers');
         $newApartment->save(); //salva
 
         $files = $newApartment->imgs; //salvo il file in variabile
@@ -86,8 +89,9 @@ class ApartmentsController extends Controller
             foreach ($arrayImgApartment as $file) {
                 $newImg = new Img; // collego la varibile alla tabella img
                 $name = Str::random(25); // creo nome random di 25 caratteri
+                $imgEst = $file->extension();
                 $file->move(public_path().'/images/', $name);  //salva l'img nella cartella di destinazione
-                $newImg->path = 'images/' . $name;  //aggiungo path
+                $newImg->path = 'images/' . $name . '.' . $imgEst;  //aggiungo path
                 $newImg->apartment_id = $newApartment->id; // aggangio all'appartamento tramite id
                 $newImg->save();             // salvo tutto
             }
@@ -131,7 +135,8 @@ class ApartmentsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $apartment = Apartment::find($id);
+        return view('apartments.edit', compact('apartment'));
     }
 
     /**
@@ -141,9 +146,67 @@ class ApartmentsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Apartment $apartment)
     {
-        //
+        // $validator = Apartment::make($request->all(), [
+        //     'title' => 'required',
+        //     'description' => 'required',
+        //     'rooms' => 'required',
+        //     'beds' =>  'required',
+        //     'bathrooms' =>  'required',
+        //     'metri_quadri'  => 'required',
+        //     'active' => '',
+        //     'price' => 'required',
+        //     'cover_img' => '',
+        //     'image'=> '',
+        // ]);
+               
+        $user = Auth::user();
+
+        $apartment->title = $request['title'];
+        $apartment->user_id = $user->id;
+        $apartment->description = $request['description'];
+        $apartment->rooms = $request['rooms'];
+        $apartment->beds = $request['beds'];
+        $apartment->bathrooms = $request['bathrooms'];
+        $apartment->metri_quadrati = $request['metri_quadrati'];
+        $apartment->active = true;
+        $apartment->views_count = 0;
+        $apartment->price = $request['price'];
+        
+        if($request['cover']){
+            //cancellazione foto cover vecchia
+            $imgEst = $request->file('cover')->extension();
+            $name = Str::random(25);
+            $ImgApartament = $request->file('cover')->move(public_path().'/images/', $name);
+            $apartment->cover_img = 'image/' . $name . '.' . $imgEst;
+
+        }
+        $apartment->save();
+
+        $files = $apartment->imgs; //salvo il file in variabile
+        $arrayImgApartment = $request->file('image'); // prendo i file
+        //cancellazione imgs vecchie
+        if($request->hasFile('image'))
+        { //ciclo per salvarlo
+            foreach ($arrayImgApartment as $file) {
+                $newImg = new Img; // collego la varibile alla tabella img
+                $imgEst = $file->extension();
+                $name = Str::random(25); // creo nome random di 25 caratteri
+                $file->move(public_path().'/images/', $name);  //salva l'img nella cartella di destinazione
+                $newImg->path = 'images/' . $name . '.' . $imgEst;  //aggiungo path
+                $newImg->apartment_id = $apartment->id; // aggangio all'appartamento tramite id
+                $newImg->save();             // salvo tutto
+            }
+
+        }
+ 
+        
+       
+        return view('apartments.detail', compact('apartment'));
+        
+      
+
     }
 
     /*

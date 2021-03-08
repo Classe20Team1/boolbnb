@@ -30,6 +30,4 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('apartments', 'ApartmentsController');
 Route::get('/user/edit', 'UserInfoController@edit')->name('user.edit');
-Route::post('/search', 'ApartmentsController@search')->name('search');
 Route::patch('user', 'UserInfoController@update')->name('user.update');
-Route::delete('/apartments/{id}', 'ApartmentsController@destroy')->name('apartment.destroy');
