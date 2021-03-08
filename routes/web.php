@@ -24,7 +24,7 @@ Route::get('/search', function () {
 });
 
 Route::get('/test', function (){
-  return view('apartments.create-layout');
+  return view('users.edit-layout');
 });
 
 

@@ -14,7 +14,7 @@
       <div class="dashboard-card">
         <a href="{{route('user.edit')}}">
           <i class="far fa-id-card"></i>
-          <h3 class="dashboard-font-helper">Modifica Informazioni personali</h3>
+          <h3 class="dashboard-font-helper">Modifica informazioni personali</h3>
           <div class="">
             Comunicaci i tuoi dati personali e le modalità per contattarti
           </div>

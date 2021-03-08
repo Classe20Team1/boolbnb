@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8">
     <title>BoolBnb - @yield('title')</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous"> -->
 
     <!-- Scripts -->
 
@@ -44,9 +44,9 @@
       </div>
       <div class="nav-user">
         <ul class="nav-right-list-2">
-          
+
               @guest
-                  <li class="nav-item">
+                  <li class="nav-item mg-nav-1">
                       <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                   </li>
                   @if (Route::has('register'))
@@ -55,11 +55,31 @@
                       </li>
                   @endif
                   @else
-                  <li class="nav-item dropdown">
-                      <a id="navbarDropdown" class="nav-link dropdown-toggle" href="/admin" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
-                          {{ Auth::user()->username }}
+                  <li class="nav-item logged dropdown">
+                      <a class="nav-link dropdown-toggle mg-nav-1" href="/admin" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
+                          {{ Auth::user()->username }} &dtrif;
                       </a>
-                      <a class="dropdown-item" href="{{ route('logout') }}"
+                      <div class="nav-dropdown">
+                        <ul>
+                          <li class="dropdown-helper">
+                            <a href="/admin">
+                              Dashboard
+                            </a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                          </li>
+                        </ul>
+                      </div>
+                      <!-- <a class="dropdown-item" href="{{ route('logout') }}"
                           onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">
                           {{ __('Logout') }}
@@ -67,12 +87,12 @@
 
                       <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                           @csrf
-                      </form>
+                      </form> -->
 
                   </li>
               @endguest
             </a>
-          
+
         </ul>
       </div>
     </nav>
