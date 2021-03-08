@@ -33,7 +33,7 @@ class ApartmentsController extends Controller
     {
         $user = Auth::user();
         $apartments = $user->apartments;
-        return view('apartments.index-layout', compact('apartments'));    
+        return view('apartments.index', compact('apartments'));    
     }
 
     /**
@@ -140,17 +140,19 @@ class ApartmentsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Apartment $apartment)
-    {
+    {   
+        $services = Service::all();
+        $arrayFa = ['fa-wifi', 'fa-car','fa-swimmer', 'fa-concierge-bell','fa-hot-tub','fa-water'];
         $user = Auth::user();
         if($user){
             if ($apartment->user->id == Auth::user()->id){
                 // ritorno la view del user admin del proprio apartment
-                return view('apartments.show', compact('apartment', 'user'));
+                return view('apartments.show', compact('apartment', 'user', 'services'));
             } else {
-                return view('apartments.show', compact('apartment', 'user'));
+                return view('apartments.show', compact('apartment', 'user', 'services'));
             }
         } else {
-            return view('apartments.show', compact('apartment'));
+            return view('apartments.show', compact('apartment', 'services'));
         }
 
     }
