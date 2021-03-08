@@ -10,9 +10,9 @@
 
     </div>
     <div class="add-form-container">
-      <form class="" action="{{route('apartments.store')}}" method="post" enctype="multipart/form-data">
+      <form class="" action="{{route('apartments.update', $apartment->id)}}" method="post" enctype="multipart/form-data">
       @csrf
-      @method('Post')
+      @method('Put')
 
         <h2>Nuovo appartamento</h2>
         <div class="add-form-element add-title">

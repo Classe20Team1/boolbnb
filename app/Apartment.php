@@ -22,6 +22,7 @@ class Apartment extends Model
       '_token',
       'address',
       'city',
+      'cover_img'
     ];
 
     public function user(){
