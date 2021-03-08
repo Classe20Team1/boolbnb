@@ -12,10 +12,7 @@ use App\File;
 use App\Img;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Str;
-use App\Http\Resources\ApartmentResource;
 
 class ApartmentsController extends Controller
 {
@@ -232,7 +229,7 @@ class ApartmentsController extends Controller
 
         $serv = $elimina->services; //prendo solo i servizi inerenti a questo id
         foreach($serv as $services){
-            $elimina->servicess()->detach($services->id);
+            $elimina->services()->detach($services->id);
         }
        
         //dd($elimina);

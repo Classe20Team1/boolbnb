@@ -29,7 +29,7 @@ class ApiApartmentController extends Controller
         foreach ($filtered as $position) {
             array_push($arrayId, $position->apartment_id);
         }
-
+        
         return response()->json(Apartment::with('services', 'position', 'imgs')
         ->find($arrayId)
         ->where('beds', '>=', $request->guests)
