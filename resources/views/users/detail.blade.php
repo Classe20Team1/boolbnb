@@ -1,7 +1,7 @@
-@extends('layouts.app')
+@extends('layouts.boolbnb')
 @section('content')
 
-<div class='row'>
+<div class='row mt-5 mb-5 '>
 <div class='col-4 offset-md-4 mt-5'>
 <div class="card">
   <div class="card-body">
