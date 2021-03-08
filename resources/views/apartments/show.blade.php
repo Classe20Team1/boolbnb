@@ -14,7 +14,7 @@
     </div>
     <div class="apartment-imgs">
       <div class="apartment-imgs-left">
-        <img src="{{ asset('$apartment->cover_img') }}" alt="main-img" class="left-border-radius-helper">
+        <img src="{{asset($apartment->cover_img)}}" alt="main-img" class="left-border-radius-helper">
       </div>
       {{-- <div class="apartment-imgs-right">
         <div class="apartment-imgs-box margin-right-helper margin-bottom-helper">
@@ -58,11 +58,10 @@
         </li>
       </ul>
       <h4>Servizi e altre opzioni</h4>
-     
+      
       <ul class="apt-basics-list">
         <li>
           <i class="fas fa-wifi fa-2x" ></i>
-         
           <div>Wi-Fi</div>
         </li>
         <li>
@@ -85,6 +84,8 @@
           <i class="fas fa-water fa-2x"></i>
           <div>Vista mare</div>
         </li>
+      </ul>
+
       </ul>
  
     </div>
