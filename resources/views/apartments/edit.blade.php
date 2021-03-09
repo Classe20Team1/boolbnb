@@ -7,7 +7,7 @@
 @section('content')
   <section class="add-edit-container">
     <div class="add-title-container">
-
+    <a href="/admin">Torna alla DashBoard</a>
     </div>
     <div class="add-form-container">
       <form class="" action="{{route('apartments.update', $apartment->id)}}" method="post" enctype="multipart/form-data">
