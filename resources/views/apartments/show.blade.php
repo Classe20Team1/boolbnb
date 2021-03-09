@@ -6,15 +6,15 @@
 
 @section('content')
   <section class="apartment-details">
- 
-  
+
+
     <h2>{{$apartment->title}}</h2>
     <div class="text-box">
-      
+
     </div>
     <div class="apartment-imgs">
       <div class="apartment-imgs-left">
-        <img src="{{asset($apartment->cover_img)}}" alt="main-img" class="left-border-radius-helper">
+        <img src="{{asset($apartment->cover_img)}}" alt="apartment cover img" class="left-border-radius-helper">
       </div>
       {{-- <div class="apartment-imgs-right">
         <div class="apartment-imgs-box margin-right-helper margin-bottom-helper">
@@ -75,13 +75,19 @@
       </ul>
 
       </ul>
- 
+
     </div>
     <div class="line-separator"></div>
     <div class="apt-position">
       <h3>Posizione</h3>
-      <div class="apt-map-box">
-        <img src="{{ asset('img/map-example-2.png') }}" alt="apartment-map">
+      <div class="apt-map-box" id="showMap">
+
+        <div id="map-container">
+
+            <show-map :apartmentinfo= "{{$apartment}}" :position="{{$apartment->position}}"></show-map>
+
+        </div>
+        <!-- <img src="{{ asset('img/map-example-2.png') }}" alt="apartment-map"> -->
       </div>
     </div>
 
