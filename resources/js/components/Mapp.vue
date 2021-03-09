@@ -44,7 +44,7 @@ export default {
                 key:'biGZFmMrEVJLLaCv4NrzRwGycnhKG2Fz',
                 container:'myMap',
                 center:{lng: centerLng, lat: centerLat},
-                zoom: 10,
+                zoom: 13,
 
         });
 

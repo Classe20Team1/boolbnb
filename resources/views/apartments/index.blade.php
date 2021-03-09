@@ -5,7 +5,9 @@
 @endsection
 
 @section('content')
+
   <div class="myapt-list-container">
+  <a href="/admin">Torna alla DashBoard</a>
     <h2>I miei appartamenti</h2>
   @foreach($apartments as $apartment)
     <div class="my-apt-card mt-5">
@@ -56,7 +58,7 @@
         <div class="actions-right">
           <ul>
             <li>
-              <a href="#">
+              <a href="{{route('sponsors.create', $apartment)}}">
                 <button type="button" name="button">
                   Sponsorizza
                 </button>

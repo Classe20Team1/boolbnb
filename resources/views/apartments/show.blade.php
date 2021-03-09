@@ -6,15 +6,15 @@
 
 @section('content')
   <section class="apartment-details">
-
-
+  <a href="/admin">Torna alla DashBoard</a>
+  
     <h2>{{$apartment->title}}</h2>
     <div class="text-box">
 
     </div>
     <div class="apartment-imgs">
       <div class="apartment-imgs-left">
-        <img src="{{asset($apartment->cover_img)}}" alt="main-img" class="left-border-radius-helper">
+        <img src="{{asset($apartment->cover_img)}}" alt="apartment cover img" class="left-border-radius-helper">
       </div>
       {{-- <div class="apartment-imgs-right">
         <div class="apartment-imgs-box margin-right-helper margin-bottom-helper">
@@ -44,11 +44,11 @@
     <div class="services-list">
       <h4>Sistemazione</h4>
       <ul class="apt-basics-list">
-        <li>
+        <li class="show-mg-helper">
           <i class="fas fa-bed fa-2x"></i>
           <div><b>Letti:</b> {{$apartment->beds}} </div>
         </li>
-        <li>
+        <li class=show-mg-helper-2>
           <i class="fas fa-door-open fa-2x"></i>
           <div><b>Camere:</b> {{$apartment->rooms}}</div>
         </li>
@@ -59,7 +59,7 @@
       </ul>
       <h4>Servizi e altre opzioni</h4>
 
-      <ul class="apt-basics-list">
+      <ul class="apt-basics-list services-edit">
         <?php
         $array = array("fa-wifi", "fa-dog", "fa-car", "fa-swimmer", "fa-concierge-bell", "fa-hot-tub", "fa-water");
         ?>

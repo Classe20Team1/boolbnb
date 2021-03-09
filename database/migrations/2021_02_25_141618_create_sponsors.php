@@ -18,7 +18,7 @@ class CreateSponsors extends Migration
             $table->unsignedBigInteger('apartment_id');
             $table->foreign('apartment_id')->references('id')->on('apartments')->onDelete('cascade');
             $table->unsignedBigInteger('type_id');
-            $table->foreign('type_id')->references('id')->on('sponsors_type')->onDelete('cascade');
+            $table->foreign('type_id')->references('id')->on('sponsortypes')->onDelete('cascade');
             $table->date('date_start');
             $table->date('date_end');
         });
