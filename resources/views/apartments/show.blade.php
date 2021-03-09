@@ -31,7 +31,7 @@
         </div>
       </div> --}}
     </div>
-    <h3>Intero appartamento - Host: {{ Auth::user()->username }}</h3>
+    <h3>Intero appartamento - Host: {{ $apartment->user->username }}</h3>
     <div class="margin-2-helper"> {{$apartment->metri_quadrati}}&#13217; </div>
     <div class="line-separator"></div>
     <div class="apartment-description">
