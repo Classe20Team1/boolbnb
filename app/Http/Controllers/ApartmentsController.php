@@ -144,15 +144,9 @@ class ApartmentsController extends Controller
         $services = Service::all();
         $arrayFa = ['fa-wifi', 'fa-car','fa-swimmer', 'fa-concierge-bell','fa-hot-tub','fa-water'];
         $user = Auth::user();
-        if($user){
-            if ($apartment->user->id == Auth::user()->id){
-                // ritorno la view del user admin del proprio apartment
-                return view('apartments.show', compact('apartment', 'user', 'services'));
-            } else {
-                return view('apartments.show', compact('apartment', 'user', 'services'));
-            }
 
-        }
+            return view('apartments.show', compact('apartment', 'user', 'services'));
+            
     }
     /**
      * Show the form for editing the specified resource.
@@ -189,7 +183,7 @@ class ApartmentsController extends Controller
         //     'cover_img' => '',
         //     'image'=> '',
         // ]);
-               
+        $services = Service::all();  
         $user = Auth::user();
 
         $apartment->update([
@@ -261,7 +255,7 @@ class ApartmentsController extends Controller
  
         
        
-        return view('apartments.show', compact('apartment'));
+        return view('apartments.show', compact('apartment', 'services'));
         
       
 
