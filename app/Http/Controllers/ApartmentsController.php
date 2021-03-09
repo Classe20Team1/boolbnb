@@ -195,7 +195,7 @@ class ApartmentsController extends Controller
             'bathrooms' => $request['bathrooms'],
             'metri_quadrati' => $request['metri_quadrati'],
             'active' => true,
-            'price' => $request['price'],
+            'price' => $request['price'] * 100,
             'cover_img' => $apartment->cover_img,
         ]);
         
@@ -215,7 +215,6 @@ class ApartmentsController extends Controller
 
 
         // locations
-        // dd($apartment->position()->address);
         if($request->city <> ''){
             $newApAddress = $request->city . ', ' . $request->address;
 
