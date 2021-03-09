@@ -44,11 +44,11 @@
     <div class="services-list">
       <h4>Sistemazione</h4>
       <ul class="apt-basics-list">
-        <li>
+        <li class="show-mg-helper">
           <i class="fas fa-bed fa-2x"></i>
           <div><b>Letti:</b> {{$apartment->beds}} </div>
         </li>
-        <li>
+        <li class=show-mg-helper-2>
           <i class="fas fa-door-open fa-2x"></i>
           <div><b>Camere:</b> {{$apartment->rooms}}</div>
         </li>
@@ -59,7 +59,7 @@
       </ul>
       <h4>Servizi e altre opzioni</h4>
 
-      <ul class="apt-basics-list">
+      <ul class="apt-basics-list services-edit">
         <?php
         $array = array("fa-wifi", "fa-dog", "fa-car", "fa-swimmer", "fa-concierge-bell", "fa-hot-tub", "fa-water");
         ?>

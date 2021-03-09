@@ -362,7 +362,7 @@ main {
 }
 
 .colorblue{
-  color: blue;
+  color: #FF385C;
 }
 .colorgrey{
   color:gray;
@@ -590,6 +590,7 @@ footer {
 
 .apt-basics-list {
   list-style: none;
+  font-size: .8em;
   padding-left: .5em;
   display: flex;
   margin-bottom: 2em;
@@ -598,7 +599,17 @@ footer {
 .apt-basics-list li {
   display: flex;
   align-items: center;
-  width: calc(100%/6);
+}
+
+.show-mg-helper {
+  margin-right: 5.5em;
+}
+.show-mg-helper-2 {
+  margin-right: 9.5em;
+}
+
+.apt-basics-list.services-edit {
+  justify-content: space-between;
 }
 
 .apt-basics-list li i {
