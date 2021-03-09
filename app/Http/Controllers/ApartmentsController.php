@@ -145,21 +145,22 @@ class ApartmentsController extends Controller
         $arrayFa = ['fa-wifi', 'fa-car','fa-swimmer', 'fa-concierge-bell','fa-hot-tub','fa-water'];
         $user = Auth::user();
         if($user){
+            if ($apartment->user->id == Auth::user()->id){
                 // ritorno la view del user admin del proprio apartment
                 return view('apartments.show', compact('apartment', 'user', 'services'));
             } else {
-                return view('apartments.show', compact('apartment', 'services'));
+                return view('apartments.show', compact('apartment', 'user', 'services'));
             }
 
+        }
     }
-
     /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-
+    
     public function edit($id)
     {
         $apartment = Apartment::find($id);
@@ -209,7 +210,7 @@ class ApartmentsController extends Controller
             $imgEst = $request->file('cover')->extension();
             $name = Str::random(25);
             $path = $name . '.' . $imgEst;
-            $ImgApartament = $request->file('cover')->move(public_path().'/images/', $path);
+            $ImgApartament = $request->file('cover')->move(public_path().'/image/', $path);
             $apartment->cover_img = 'image/' . $name . '.' . $imgEst;
             $apartment->save();
         }

@@ -14,7 +14,7 @@
     </div>
     <div class="apartment-imgs">
       <div class="apartment-imgs-left">
-        <img src="{{asset($apartment->cover_img)}}" alt="main-img" class="left-border-radius-helper">
+        <img src="{{asset($apartment->cover_img)}}" alt="apartment cover img" class="left-border-radius-helper">
       </div>
       {{-- <div class="apartment-imgs-right">
         <div class="apartment-imgs-box margin-right-helper margin-bottom-helper">
