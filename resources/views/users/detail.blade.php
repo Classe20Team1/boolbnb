@@ -1,25 +1,70 @@
 @extends('layouts.boolbnb')
+
+@section('title')
+  Info Utente
+@endsection
+
 @section('content')
 
-<div class='row mt-5 mb-5 '>
-<div class='col-4 offset-md-4 mt-5'>
-<div class="card">
-  <div class="card-body">
-  <h3 class='mb-4' style='text-align: center; color: black'>Aggiornamento dati Utente</h3>
-  
-  <a class="btn btn-dark mb-5" href='/'><i class="fas fa-arrow-circle-left"> Indietro</i></a>
-
-    <h5 class="card-title"><i class="far fa-address-card"> Nome e Cognome: {{ $info->fullname }}</i></h5> <br>
-    <h6 class="card-subtitle mb-2 text-muted"><i class="far fa-address-card"> P:Iva {{ $info->p_iva  }}</i></h6>
-    <h6 class="card-subtitle mb-2 text-muted"><i class="fas fa-genderless"> Sesso: {{ $info->sex }}</i></h6>
-    <p class="card-text"><i class="fas fa-phone-alt"> Numero di Telefono: {{ $info->phone_number }}</i></p>
-    <h6 class="card-subtitle mb-2 text-muted"><i class="far fa-address-card"> Data di nascita: {{ $info->birthdate }}</i></h6>
-    <h6 class='card-subtitle mt-2 mb-2 text-muted'><i class="far fa-address-card"> Codice Fiscale: {{ $info->fiscal_code }}</i></h6>
-    <h6 class='card-subtitle mt-2 mb-2 text-muted'><i class="fas fa-home"> Indirizzo: {{ $info->address }}</i></h6>
-   
+<section class="user-details-container">
+  <div class="user-details-tab">
+    <div class="user-details-left">
+      <ul>
+        <li>
+          <i class="far fa-id-card"></i>
+          <span>Full Name</span>
+        </li>
+        <li>
+          <i class="fas fa-birthday-cake"></i>
+          <span>Birthdate</span>
+        </li>
+        <li>
+          <i class="fas fa-venus-mars"></i>
+          <span>Sex</span>
+        </li>
+        <li>
+          <i class="fas fa-phone"></i>
+          <span>Phone Number</span>
+        </li>
+        <li>
+          <i class="far fa-id-card"></i>
+          <span>Fiscal Code</span>
+        </li>
+        <li>
+          <i class="far fa-credit-card"></i>
+          <span>VAT Number</span>
+        </li>
+        <li>
+          <i class="fas fa-home"></i>
+          <span>Address</span>
+        </li>
+      </ul>
+    </div>
+    <div class="user-details-right">
+      <ul>
+        <li>
+          {{ $info->fullname }}
+        </li>
+        <li>
+          {{ $info->birthdate }}
+        </li>
+        <li>
+          {{ $info->sex  }}
+        </li>
+        <li>
+          {{ $info->phone_number }}
+        </li>
+        <li>
+          {{ $info->fiscal_code }}
+        </li>
+        <li>
+          {{ $info->p_iva }}
+        </li>
+        <li>
+          {{ $info->address }}
+        </li>
+      </ul>
+    </div>
   </div>
-</div>
-</div>
-</div>
-
+</section>
 @endsection

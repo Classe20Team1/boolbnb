@@ -8,18 +8,22 @@
   <div class="myapt-list-container">
     <h2>I miei appartamenti</h2>
   @foreach($apartments as $apartment)
-    <div class="my-apt-card mt-5"  style='height:190px'>
+    <div class="my-apt-card mt-5">
       <div class="my-apt-img-box">
-     
+
         <img src="{{asset($apartment->cover_img)}}" alt="apartment-preview">
       </div>
       <div class="my-apt-infos">
         <h4>Titolo: {{$apartment->title}}</h4>
-        <p>Descrizione: {{$apartment->description}}</p>
-        <span>price: {{$apartment->price}}</span> <br>
-        <span>rooms: {{$apartment->rooms}}</span> <br>
-        <span>bathrooms: {{$apartment->bathrooms}} - </span> 
-        <span> M.quadrati: {{$apartment->metri_quadrati}}</span>
+        <div class="apt-details-list">
+          <ul>
+            <li>price: {{$apartment->price}}</li>
+            <li>rooms: {{$apartment->rooms}}</li>
+            <li>bathrooms: {{$apartment->bathrooms}}</li>
+            <li>M.quadrati: {{$apartment->metri_quadrati}}</li>
+          </ul>
+        </div>
+        <p>{{$apartment->description}}</p>
       </div>
       <div class="card-separator"></div>
       <div class="my-apt-actions">
@@ -68,7 +72,7 @@
           </ul>
         </div>
       </div>
-    
+
     </div>
   @endforeach
   </div>
