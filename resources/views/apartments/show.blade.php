@@ -81,9 +81,10 @@
     <div class="apt-position">
       <h3>Posizione</h3>
       <div class="apt-map-box" id="showMap">
+
         <div id="map-container">
 
-            <show-map :apartmentinfo= "{{$apartment}}" ></show-map>
+            <show-map :apartmentinfo= "{{$apartment}}" :position="{{$apartment->position}}"></show-map>
 
         </div>
         <!-- <img src="{{ asset('img/map-example-2.png') }}" alt="apartment-map"> -->

@@ -2046,11 +2046,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "ListItem",
-  props: ['title', 'description', 'rooms', 'beds', 'bathrooms', 'metri_quadrati', 'price', 'link']
+  props: ['title', 'description', 'rooms', 'beds', 'bathrooms', 'metri_quadrati', 'price', 'link', 'coverimg']
 });
 
 /***/ }),
@@ -2225,12 +2223,12 @@ __webpack_require__.r(__webpack_exports__);
         }
       }).then(function (response) {
         _this.tryArray = response.data;
+        console.log(_this.tryArray);
       });
     }
   },
   created: function created() {
     this.getApartments();
-    console.log(this.tryArray);
   }
 });
 
@@ -2350,7 +2348,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'ShowMap',
-  props: ['apartmentinfo'],
+  props: ['apartmentinfo', 'position'],
   data: function data() {
     return {
       centerLng: null,
@@ -2371,28 +2369,30 @@ __webpack_require__.r(__webpack_exports__);
           lng: centerLng,
           lat: centerLat
         },
-        zoom: 10
+        zoom: 12
       });
       this.mapObj.addControl(new window.tt.FullscreenControl());
       this.mapObj.addControl(new window.tt.NavigationControl());
     },
     //FUNZIONE TT aggiunta del singolo marker
-    addMarker: function addMarker(map, markerLng, markerLat, title) {
+    addMarker: function addMarker(map, markerLng, markerLat) {
       var tt = window.tt;
       var location = [markerLng, markerLat];
       var popupOffset = 25;
       var marker = new tt.Marker().setLngLat(location).addTo(map);
       var popup = new tt.Popup({
         offset: popupOffset
-      }).setHTML(title);
+      });
       marker.setPopup(popup).togglePopup();
       this.currentMarkers.push(marker);
     }
   },
   mounted: function mounted() {
-    this.centerLng = 0;
-    this.centerLat = 0;
+    console.log(this.position);
+    this.centerLng = this.position.longitude;
+    this.centerLat = this.position.latitude;
     this.getMap(this.centerLng, this.centerLat);
+    this.addMarker(this.mapObj, this.centerLng, this.centerLat);
   }
 });
 
@@ -6871,7 +6871,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.apartments-card[data-v-be0f3488] {\n  display:flex;\n  justify-content: space-between;\n  border-top: 1px solid lightgrey;\n  border-bottom: 1px solid lightgrey;\n  padding: 1em;\n  padding-left: 0;\n  display: flex;\n  height: 200px;\n}\n.apartments-card .apartment-img-box[data-v-be0f3488] {\n  width: 200px;\n  padding:10px;\n  border:1px solid pink;\n}\n.apartments-card .apartment-features[data-v-be0f3488] {\n\n\n  padding: 10px;\n  display:flex;\n  flex-direction: column;\n  justify-content: space-between;\n}\n.apartments-card .apartment-img-box img[data-v-be0f3488] {\n  width: 100%;\n  height: 100%;\n\n  border-radius: 1em;\n}\n.font-helper-1[data-v-be0f3488] {\n  font-size: .8em;\n  color: grey;\n  margin-bottom: 1em;\n}\n.font-helper-2[data-v-be0f3488] {\n  margin-bottom: 1em;\n}\n.tinies-container[data-v-be0f3488]{\n  list-style: none;\n  display: flex;\n  justify-content: space-between;\n}\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n.apartments-card[data-v-be0f3488] {\n  display:flex;\n  justify-content: space-between;\n  border-top: 1px solid lightgrey;\n  border-bottom: 1px solid lightgrey;\n  padding: 1em;\n  padding-left: 0;\n  display: flex;\n  height: 200px;\n}\n.apartments-card[data-v-be0f3488]:hover{\n  cursor:pointer;\n  border:1px solid grey;\n}\n.apartments-card .apartment-img-box[data-v-be0f3488] {\n  width: 200px;\n  padding:10px;\n  border:1px solid pink;\n}\n.apartments-card .apartment-features[data-v-be0f3488] {\n\n\n  padding: 10px;\n  display:flex;\n  flex-direction: column;\n  justify-content: space-between;\n}\n.apartments-card .apartment-img-box img[data-v-be0f3488] {\n  width: 100%;\n  height: 100%;\n\n  border-radius: 1em;\n}\n.font-helper-1[data-v-be0f3488] {\n  font-size: .8em;\n  color: grey;\n  margin-bottom: 1em;\n}\n.font-helper-2[data-v-be0f3488] {\n  margin-bottom: 1em;\n}\n.tinies-container[data-v-be0f3488]{\n  list-style: none;\n  display: flex;\n  justify-content: space-between;\n}\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -38922,49 +38922,46 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("li", { staticClass: "apartments-card" }, [
-    _vm._m(0),
-    _vm._v(" "),
-    _c("div", { staticClass: "apartment-features" }, [
-      _c("div", { staticClass: "font-helper-1" }, [_vm._v(_vm._s(_vm.title))]),
-      _vm._v(" "),
-      _c("ul", { staticClass: "tinies-container" }, [
-        _c("li", { staticClass: "font-helper-1 tiny" }, [
-          _vm._v(" Stanze: " + _vm._s(_vm.rooms))
-        ]),
-        _vm._v(" "),
-        _c("li", { staticClass: "font-helper-1 tiny" }, [
-          _vm._v(" Letti: " + _vm._s(_vm.beds))
-        ]),
-        _vm._v(" "),
-        _c("li", { staticClass: "font-helper-1 tiny" }, [
-          _vm._v(" Bagni: " + _vm._s(_vm.bathrooms))
-        ]),
-        _vm._v(" "),
-        _c("li", { staticClass: "font-helper-1 tiny" }, [
-          _vm._v(" Mq: " + _vm._s(_vm.metri_quadrati))
-        ])
+  return _c(
+    "li",
+    { staticClass: "apartments-card", attrs: { onclick: _vm.link } },
+    [
+      _c("div", { staticClass: "apartment-img-box" }, [
+        _c("img", { attrs: { src: _vm.coverimg, alt: "img" } })
       ]),
       _vm._v(" "),
-      _c("a", { attrs: { href: _vm.link } }, [_vm._v(_vm._s(_vm.link))]),
-      _vm._v(" "),
-      _c("div", { staticClass: "price-tag" }, [
-        _c("b", [_vm._v(" " + _vm._s(_vm.price / 100) + " Euro ")]),
-        _vm._v(" / notte ")
+      _c("div", { staticClass: "apartment-features" }, [
+        _c("div", { staticClass: "font-helper-1" }, [
+          _vm._v(_vm._s(_vm.title))
+        ]),
+        _vm._v(" "),
+        _c("ul", { staticClass: "tinies-container" }, [
+          _c("li", { staticClass: "font-helper-1 tiny" }, [
+            _vm._v(" Stanze: " + _vm._s(_vm.rooms))
+          ]),
+          _vm._v(" "),
+          _c("li", { staticClass: "font-helper-1 tiny" }, [
+            _vm._v(" Letti: " + _vm._s(_vm.beds))
+          ]),
+          _vm._v(" "),
+          _c("li", { staticClass: "font-helper-1 tiny" }, [
+            _vm._v(" Bagni: " + _vm._s(_vm.bathrooms))
+          ]),
+          _vm._v(" "),
+          _c("li", { staticClass: "font-helper-1 tiny" }, [
+            _vm._v(" Mq: " + _vm._s(_vm.metri_quadrati))
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "price-tag" }, [
+          _c("b", [_vm._v(" " + _vm._s(_vm.price / 100) + " Euro ")]),
+          _vm._v(" / notte ")
+        ])
       ])
-    ])
-  ])
+    ]
+  )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "apartment-img-box" }, [
-      _c("img", { attrs: { src: "", alt: "img" } })
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -39141,7 +39138,10 @@ var render = function() {
                 key: index,
                 attrs: {
                   slot: "items",
-                  link: "apartments/".concat(data.id),
+                  coverimg: data.cover_img,
+                  link: "window.location=`apartments/"
+                    .concat(data.id)
+                    .concat("`;"),
                   title: data.title,
                   rooms: data.rooms,
                   beds: data.beds,

@@ -77,8 +77,8 @@
 
                               <ListItem v-for="(data, index) in filterByServices "
 
-
-                                          :link= "'apartments/'.concat(data.id)"
+                                          :coverimg="data.cover_img"
+                                          :link="'window.location=`apartments/'.concat(data.id).concat('`;')"
                                           :title = "data.title"
                                           :rooms = "data.rooms"
                                           :beds = "data.beds"
@@ -173,6 +173,7 @@
                   .then(response => {
 
                     this.tryArray = response.data;
+                    console.log(this.tryArray)
 
                   })
                 },
@@ -182,7 +183,7 @@
           created() {
 
             this.getApartments();
-            console.log(this.tryArray)
+
 
           },
 

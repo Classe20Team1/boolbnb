@@ -10,7 +10,7 @@ export default {
 name: 'ShowMap',
 
 props:
-  ['apartmentinfo'],
+  ['apartmentinfo', 'position'],
 
   data(){
           return{
@@ -33,7 +33,7 @@ props:
                 key:'biGZFmMrEVJLLaCv4NrzRwGycnhKG2Fz',
                 container:'map-container',
                 center:{lng: centerLng, lat: centerLat},
-                zoom: 10,
+                zoom: 12,
 
         });
 
@@ -42,14 +42,14 @@ props:
       },
 
       //FUNZIONE TT aggiunta del singolo marker
-      addMarker: function(map, markerLng, markerLat, title) {
+      addMarker: function(map, markerLng, markerLat) {
 
             const tt = window.tt;
             var location = [markerLng, markerLat];
             var popupOffset = 25;
 
             var marker = new tt.Marker().setLngLat(location).addTo(map);
-            var popup = new tt.Popup({ offset: popupOffset }).setHTML(title);
+            var popup = new tt.Popup({ offset: popupOffset });
                   marker.setPopup(popup).togglePopup();
                   this.currentMarkers.push(marker);
 
@@ -57,17 +57,16 @@ props:
 
     },
 
-
     mounted(){
-
-      this.centerLng=0;
-      this.centerLat=0;
+      console.log(this.position)
+      this.centerLng=this.position.longitude;
+      this.centerLat=this.position.latitude;
       this.getMap(this.centerLng, this.centerLat);
+      this.addMarker(this.mapObj, this.centerLng, this.centerLat)
+
     }
 
    }
-
-
 
 </script>
 

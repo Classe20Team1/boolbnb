@@ -1,10 +1,10 @@
 <template >
 
-              <li class="apartments-card">
+              <li :onclick="link" class="apartments-card">
 
                   <div class="apartment-img-box">
 
-                      <img src="" alt="img">
+                      <img :src="coverimg" alt="img">
 
                   </div>
 
@@ -20,8 +20,6 @@
                               <li class="font-helper-1 tiny"> Mq: {{ metri_quadrati }}</li>
 
                         </ul>
-
-                        <a :href="link">{{link}}</a>
 
                         <div class="price-tag"> <b> {{ price / 100}} Euro </b> / notte </div>
 
@@ -45,6 +43,7 @@
                    'metri_quadrati',
                    'price',
                    'link',
+                   'coverimg',
 
                    ],
             };
@@ -62,6 +61,11 @@
   padding-left: 0;
   display: flex;
   height: 200px;
+}
+
+.apartments-card:hover{
+  cursor:pointer;
+  border:1px solid grey;
 }
 
 .apartments-card .apartment-img-box {
