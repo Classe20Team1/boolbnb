@@ -1,75 +1,161 @@
 <template>
-  <div id = "payments">
 
-
-
-        <h1>payments</h1>
-        <div id="dropin-container"></div>
-
-  <button id="submit-button" class="button button--small button--green">Purchase</button>
-</div>
+     <div id="payments" class="container">
+        <div class="col-6 offset-3">
+            <div class="card bg-light">
+                <div class="card-header">Payment Information</div>
+                <div class="card-body">
+                    <div class="alert alert-success" v-if="nonce">
+                        Successfully generated nonce.
+                    </div>
+                    <div class="alert alert-danger" v-if="error">
+                        {{ error }}
+                    </div>
+                    <form>
+                        <div class="form-group">
+                            <label for="amount">Amount</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend"><span class="input-group-text">$</span></div>
+                                <input type="number" id="amount" v-model="amount" class="form-control" placeholder="Enter Amount">
+                            </div>
+                        </div>
+                         <hr />
+                        <div class="form-group">
+                            <label>Credit Card Number</label>
+                            <div id="creditCardNumber" class="form-control"></div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-6">
+                                    <label>Expire Date</label>
+                                    <div id="expireDate" class="form-control"></div>
+                                </div>
+                                <div class="col-6">
+                                    <label>CVV</label>
+                                    <div id="cvv" class="form-control"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary btn-block" @click.prevent="payWithCreditCard">Pay with Credit Card</button>
+                        <hr />
+                        <div id="paypalButton"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </template>
-
-
 <script>
-export default{
-  name: "Payments",
-
-  props:[],
-
-  mounted(){
-    var button = document.querySelector('#submit-button');
-
-    braintree.dropin.create({
-      authorization: 'sandbox_g42y39zw_348pk9cgf3bgyw2b',
-      selector: '#dropin-container'
-    }, function (err, instance) {
-      button.addEventListener('click', function () {
-        instance.requestPaymentMethod(function (err, payload) {
-          // Submit payload.nonce to your server
+import braintree from 'braintree-web';
+import paypal from 'paypal-checkout';
+export default {
+    data() {
+        return {
+            hostedFieldInstance: false,
+            nonce: "",
+            error: "",
+            amount: 10
+        }
+    },
+    methods: {
+        payWithCreditCard() {
+            if(this.hostedFieldInstance)
+            {
+                this.error = "";
+                this.nonce = "";
+                this.hostedFieldInstance.tokenize().then(payload => {
+                    console.log(payload);
+                    this.nonce = payload.nonce;
+                })
+                .catch(err => {
+                    console.error(err);
+                    this.error = err.message;
+                })
+            }
+        }
+    },
+    mounted() {
+        braintree.client.create({
+            authorization: "sandbox_8hq8w8sr_vkn2vxs66h9rkmbw"
+        })
+        .then(clientInstance => {
+            let options = {
+                client: clientInstance,
+                styles: {
+                    input: {
+                        'font-size': '14px',
+                        'font-family': 'Open Sans'
+                    }
+                },
+                fields: {
+                    number: {
+                        selector: '#creditCardNumber',
+                        placeholder: 'Enter Credit Card'
+                    },
+                    cvv: {
+                        selector: '#cvv',
+                        placeholder: 'Enter CVV'
+                    },
+                    expirationDate: {
+                        selector: '#expireDate',
+                        placeholder: '00 / 0000'
+                    }
+                }
+            }
+            return Promise.all([
+                braintree.hostedFields.create(options),
+                braintree.paypalCheckout.create({ client: clientInstance })
+            ])
+        })
+        .then(instances => {
+            const hostedFieldInstance    = instances[0];
+            const paypalCheckoutInstance = instances[1];
+            // Use hostedFieldInstance to send data to Braintree
+            this.hostedFieldInstance = hostedFieldInstance;
+            // Setup PayPal Button
+                return paypal.Button.render({
+                    env: 'sandbox',
+                    style: {
+                        label: 'paypal',
+                        size: 'responsive',
+                        shape: 'rect'
+                    },
+                    payment: () => {
+                        return paypalCheckoutInstance.createPayment({
+                                flow: 'checkout',
+                                intent: 'sale',
+                                amount: parseFloat(this.amount) > 0 ? this.amount : 10,
+                                displayName: 'Braintree Testing',
+                                currency: 'USD'
+                        })
+                    },
+                    onAuthorize: (data, options) => {
+                        return paypalCheckoutInstance.tokenizePayment(data).then(payload => {
+                            console.log(payload);
+                            this.error = "";
+                            this.nonce = payload.nonce;
+                        })
+                    },
+                    onCancel: (data) => {
+                        console.log(data);
+                        console.log("Payment Cancelled");
+                    },
+                    onError: (err) => {
+                        console.error(err);
+                        this.error = "An error occurred while processing the paypal payment.";
+                    }
+                }, '#paypalButton')
+        })
+        .catch(err => {
         });
-      })
-    });
-
-  }
-
+    }
 }
-
 </script>
-
-<style scoped>
-
-.button {
-cursor: pointer;
-font-weight: 500;
-left: 3px;
-line-height: inherit;
-position: relative;
-text-decoration: none;
-text-align: center;
-border-style: solid;
-border-width: 1px;
-border-radius: 3px;
--webkit-appearance: none;
--moz-appearance: none;
-display: inline-block;
-}
-
-.button--small {
-padding: 10px 20px;
-font-size: 0.875rem;
-}
-
-.button--green {
-outline: none;
-background-color: #64d18a;
-border-color: #64d18a;
-color: white;
-transition: all 200ms ease;
-}
-
-.button--green:hover {
-background-color: #8bdda8;
-color: white;
-}
+<style>
+    body {
+        padding: 20px;
+    }
+    #payments{
+      margin-top: 250px;
+    }
 </style>
