@@ -145,15 +145,11 @@ class ApartmentsController extends Controller
         $arrayFa = ['fa-wifi', 'fa-car','fa-swimmer', 'fa-concierge-bell','fa-hot-tub','fa-water'];
         $user = Auth::user();
         if($user){
-            if ($apartment->user->id == Auth::user()->id){
                 // ritorno la view del user admin del proprio apartment
                 return view('apartments.show', compact('apartment', 'user', 'services'));
             } else {
-                return view('apartments.show', compact('apartment', 'user', 'services'));
+                return view('apartments.show', compact('apartment', 'services'));
             }
-        } else {
-            return view('apartments.show', compact('apartment', 'services'));
-        }
 
     }
 
@@ -163,6 +159,7 @@ class ApartmentsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function edit($id)
     {
         $apartment = Apartment::find($id);
