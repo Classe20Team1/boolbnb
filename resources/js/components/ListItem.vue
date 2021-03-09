@@ -1,10 +1,10 @@
 <template >
 
-              <li class="apartments-card">
+              <li :onclick="link" class="apartments-card">
 
                   <div class="apartment-img-box">
 
-                      <img src="" alt="img">
+                      <img :src="coverimg" alt="img">
 
                   </div>
 
@@ -42,6 +42,9 @@
                    'bathrooms',
                    'metri_quadrati',
                    'price',
+                   'link',
+                   'coverimg',
+
                    ],
             };
 
@@ -58,6 +61,11 @@
   padding-left: 0;
   display: flex;
   height: 200px;
+}
+
+.apartments-card:hover{
+  cursor:pointer;
+  border:1px solid grey;
 }
 
 .apartments-card .apartment-img-box {

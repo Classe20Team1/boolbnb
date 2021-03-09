@@ -77,6 +77,8 @@
 
                               <ListItem v-for="(data, index) in filterByServices "
 
+                                          :coverimg="data.cover_img"
+                                          :link="'window.location=`apartments/'.concat(data.id).concat('`;')"
                                           :title = "data.title"
                                           :rooms = "data.rooms"
                                           :beds = "data.beds"
@@ -131,7 +133,6 @@
                       requestedChambres:"",
                       requestedBeds:"",
                       tryArray:[],
-
                   }
           },
 
@@ -172,6 +173,7 @@
                   .then(response => {
 
                     this.tryArray = response.data;
+                    console.log(this.tryArray)
 
                   })
                 },
@@ -181,6 +183,7 @@
           created() {
 
             this.getApartments();
+
 
           },
 
@@ -270,10 +273,6 @@ ul li label{
   width: 55%;
   padding: 3em;
   padding-right: 1em;
-}
-
-.search-results h5 {
-
 }
 
 .search-results h1 {

@@ -144,22 +144,19 @@ class ApartmentsController extends Controller
         $services = Service::all();
         $arrayFa = ['fa-wifi', 'fa-car','fa-swimmer', 'fa-concierge-bell','fa-hot-tub','fa-water'];
         $user = Auth::user();
-        if($user){
-                // ritorno la view del user admin del proprio apartment
-                return view('apartments.show', compact('apartment', 'user', 'services'));
-            } else {
-                return view('apartments.show', compact('apartment', 'services'));
-            }
+        $apartment
+            ->increment('views_count', 1);
 
+            return view('apartments.show', compact('apartment', 'user', 'services'));
+            
     }
-
     /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-
+    
     public function edit($id)
     {
         $apartment = Apartment::find($id);
@@ -188,7 +185,7 @@ class ApartmentsController extends Controller
         //     'cover_img' => '',
         //     'image'=> '',
         // ]);
-               
+        $services = Service::all();  
         $user = Auth::user();
 
         $apartment->update([
@@ -200,7 +197,7 @@ class ApartmentsController extends Controller
             'bathrooms' => $request['bathrooms'],
             'metri_quadrati' => $request['metri_quadrati'],
             'active' => true,
-            'price' => $request['price'],
+            'price' => $request['price'] * 100,
             'cover_img' => $apartment->cover_img,
         ]);
         
@@ -209,7 +206,7 @@ class ApartmentsController extends Controller
             $imgEst = $request->file('cover')->extension();
             $name = Str::random(25);
             $path = $name . '.' . $imgEst;
-            $ImgApartament = $request->file('cover')->move(public_path().'/images/', $path);
+            $ImgApartament = $request->file('cover')->move(public_path().'/image/', $path);
             $apartment->cover_img = 'image/' . $name . '.' . $imgEst;
             $apartment->save();
         }
@@ -220,7 +217,6 @@ class ApartmentsController extends Controller
 
 
         // locations
-        // dd($apartment->position()->address);
         if($request->city <> ''){
             $newApAddress = $request->city . ', ' . $request->address;
 
@@ -260,7 +256,7 @@ class ApartmentsController extends Controller
  
         
        
-        return view('apartments.show', compact('apartment'));
+        return view('apartments.show', compact('apartment', 'services'));
         
       
 

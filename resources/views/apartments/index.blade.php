@@ -58,7 +58,7 @@
         <div class="actions-right">
           <ul>
             <li>
-              <a href="#">
+              <a href="{{route('sponsors.create', $apartment)}}">
                 <button type="button" name="button">
                   Sponsorizza
                 </button>

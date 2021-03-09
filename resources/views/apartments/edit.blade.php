@@ -61,16 +61,20 @@
             </li>
           </ul>
         </div>
+        <div class="add-form-element">
+          <ul class="add-services">
           @foreach($services as $service)
-              <div class="add-form-element">
-                <ul class="add-services">
+
+
                   <li>
                     <input type="checkbox" name="services[]" value="{{$service->id}}" {{ $apartment->services->contains($service) ? 'checked' : '' }}>
                     <label for="services[]">{{$service->name}}</label>
-                  </li>   
-                </ul>
-              </div>
+                  </li>
+
+
           @endforeach
+          </ul>
+        </div>
         <div class="add-img">
           <div class="">
             <label for="cover">Carica immagina di anteprima</label><br>

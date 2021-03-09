@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
             ImgSeeder::class,
             ServiceSeeder::class,
             ApartmentServiceSeeder::class,
+            SponsorTypeSeeder::class,
         ]);
     }
 }

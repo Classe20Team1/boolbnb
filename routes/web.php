@@ -35,3 +35,5 @@ Route::get('/user/edit', 'UserInfoController@edit')->name('user.edit');
 Route::patch('user', 'UserInfoController@update')->name('user.update');
 Route::post('/search', 'ApartmentsController@search')->name('search');
 Route::get('/admin', 'AdminController@dashboard')->name('dashboard');
+Route::resource('sponsors', 'SponsorController');
+
