@@ -27,6 +27,7 @@ Vue.component('my-main', require('./components/Main.vue').default);
 Vue.component('list-container', require('./components/ListContainer.vue').default);
 Vue.component('list-item', require('./components/ListItem.vue').default);
 Vue.component('my-map', require('./components/Mapp.vue').default);
+Vue.component('show-map', require('./components/ShowMap.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -36,4 +37,8 @@ Vue.component('my-map', require('./components/Mapp.vue').default);
 
 const app = new Vue({
     el: '#app',
+});
+
+const showMap = new Vue({
+    el: '#showMap',
 });

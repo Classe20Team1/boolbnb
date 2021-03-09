@@ -77,6 +77,8 @@
 
                               <ListItem v-for="(data, index) in filterByServices "
 
+
+                                          :link= "'apartments/'.concat(data.id)"
                                           :title = "data.title"
                                           :rooms = "data.rooms"
                                           :beds = "data.beds"
@@ -131,7 +133,6 @@
                       requestedChambres:"",
                       requestedBeds:"",
                       tryArray:[],
-
                   }
           },
 
@@ -181,6 +182,7 @@
           created() {
 
             this.getApartments();
+            console.log(this.tryArray)
 
           },
 
@@ -270,10 +272,6 @@ ul li label{
   width: 55%;
   padding: 3em;
   padding-right: 1em;
-}
-
-.search-results h5 {
-
 }
 
 .search-results h1 {

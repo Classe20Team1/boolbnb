@@ -21,6 +21,8 @@
 
                         </ul>
 
+                        <a :href="link">{{link}}</a>
+
                         <div class="price-tag"> <b> {{ price / 100}} Euro </b> / notte </div>
 
                   </div>
@@ -42,6 +44,8 @@
                    'bathrooms',
                    'metri_quadrati',
                    'price',
+                   'link',
+
                    ],
             };
 
