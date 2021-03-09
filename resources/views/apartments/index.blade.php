@@ -59,8 +59,8 @@
               <a href="{{route('sponsors.create', $apartment)}}">
                 <button type="button" name="button">
                   Sponsorizza
-                </a>
-              </form>
+                </button>
+              </a>
             </li>
             <li>
               <a href="#">

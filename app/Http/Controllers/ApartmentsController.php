@@ -144,6 +144,8 @@ class ApartmentsController extends Controller
         $services = Service::all();
         $arrayFa = ['fa-wifi', 'fa-car','fa-swimmer', 'fa-concierge-bell','fa-hot-tub','fa-water'];
         $user = Auth::user();
+        $apartment
+            ->increment('views_count', 1);
 
             return view('apartments.show', compact('apartment', 'user', 'services'));
             
