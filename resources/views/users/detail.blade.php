@@ -7,7 +7,9 @@
 @section('content')
 
 <section class="user-details-container">
+<a href="/admin">Torna alla DashBoard</a>
   <div class="user-details-tab">
+  
     <div class="user-details-left">
       <ul>
         <li>

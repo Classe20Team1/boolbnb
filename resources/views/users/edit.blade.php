@@ -7,6 +7,7 @@
 @section('content')
   <section class="login-form register-form">
     <div class="login-form-container register-form-container">
+    <a href="/admin">Torna alla DashBoard</a>
       <div class="login-form-header">
         Modifica informazioni utente
       </div>

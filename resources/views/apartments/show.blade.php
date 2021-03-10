@@ -6,8 +6,8 @@
 
 @section('content')
   <section class="apartment-details">
-
-
+  <a href="/admin">Torna alla DashBoard</a>
+  
     <h2>{{$apartment->title}}</h2>
     <div class="text-box">
 
