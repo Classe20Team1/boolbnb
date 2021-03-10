@@ -85,6 +85,8 @@ export default {
         {
           "amount":this.amount,
           "nonce":this.nonce,
+          "apartment_id":21,
+          "sponsortype_id":1
         },
         )
         .then(response => {

@@ -39,7 +39,7 @@ class SponsorController extends Controller
     public function create(Apartment $apartment)
     {
         $sponsortypes = SponsorType::all();
-        return view('apartments.sponsor', compact('apartment', 'sponsortypes'));
+        return view('sponsor', compact('apartment', 'sponsortypes'));
     }
 
     /**

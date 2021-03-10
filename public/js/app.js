@@ -2426,7 +2426,9 @@ __webpack_require__.r(__webpack_exports__);
 
       axios.post("http://localhost:8000/payment/checkout", {
         "amount": this.amount,
-        "nonce": this.nonce
+        "nonce": this.nonce,
+        "apartment_id": 21,
+        "sponsortype_id": 1
       }).then(function (response) {
         _this2.tryArray = response.data;
         console.log(_this2.tryArray);
