@@ -9,13 +9,13 @@
 
 
 
-      
+
 
 
 
       <div id="app">
 
-      <my-main :searchedcity= "{{ $data }}" :services= "{{$services}}"></my-main>
+      <my-main :searchedcity= "{{ $data }}" :services= "{{$services}}" :guests={{$guests}}></my-main>
 
 
       <div class="map-box">

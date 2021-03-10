@@ -33,7 +33,7 @@ class ApartmentsController extends Controller
     {
         $user = Auth::user();
         $apartments = $user->apartments;
-        return view('apartments.index', compact('apartments'));    
+        return view('apartments.index', compact('apartments'));
     }
 
     /**
@@ -57,7 +57,7 @@ class ApartmentsController extends Controller
      */
     public function store(Request $request)
     {
-        
+
         $data = $request->all();
         $user = Auth::user();
         $newApartment = new Apartment;
@@ -72,7 +72,7 @@ class ApartmentsController extends Controller
         $newApartment->active = true;
         $newApartment->views_count = 0;
         $newApartment->price = $data['price'];
-        
+
 
         // cover_img
         if($request->file('cover')){
@@ -80,7 +80,7 @@ class ApartmentsController extends Controller
             $imgEst = $request->file('cover')->extension();
             $path = $name . '.' . $imgEst;
             $ImgApartament = $request->file('cover')->move(public_path().'/covers/', $path);
-            $newApartment->cover_img = 'covers/' . $name . '.' . $imgEst; 
+            $newApartment->cover_img = 'covers/' . $name . '.' . $imgEst;
         }
         //$request->file('cover')->store('covers');
 
@@ -91,11 +91,11 @@ class ApartmentsController extends Controller
 
 
         // locations
-        
+
         $newApAddress = $request->city . ', ' . $request->address;
-        
+
         $response = file_get_contents('https://api.tomtom.com/search/2/geocode/' . $newApAddress . '.json?limit=1&key=' . env('TOMTOM_KEY'));
-        
+
         $response = json_decode($response, true);
         $latit = $response['results'][0]['position']['lat'];
         $longit = $response['results'][0]['position']['lon'];
@@ -109,7 +109,7 @@ class ApartmentsController extends Controller
             'address' => $newApAddress,
         ]);
 
-        
+
         // $files = $newApartment->imgs; //salvo il file in variabile
         // $arrayImgApartment = $request->file('image'); // prendo il file
 
@@ -140,7 +140,7 @@ class ApartmentsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Apartment $apartment)
-    {   
+    {
         $services = Service::all();
         $arrayFa = ['fa-wifi', 'fa-car','fa-swimmer', 'fa-concierge-bell','fa-hot-tub','fa-water'];
         $user = Auth::user();
@@ -148,7 +148,7 @@ class ApartmentsController extends Controller
             ->increment('views_count', 1);
 
             return view('apartments.show', compact('apartment', 'user', 'services'));
-            
+
     }
     /**
      * Show the form for editing the specified resource.
@@ -156,7 +156,7 @@ class ApartmentsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    
+
     public function edit($id)
     {
         $apartment = Apartment::find($id);
@@ -185,7 +185,7 @@ class ApartmentsController extends Controller
         //     'cover_img' => '',
         //     'image'=> '',
         // ]);
-        $services = Service::all();  
+        $services = Service::all();
         $user = Auth::user();
 
         $apartment->update([
@@ -200,7 +200,7 @@ class ApartmentsController extends Controller
             'price' => $request['price'] * 100,
             'cover_img' => $apartment->cover_img,
         ]);
-        
+
         if($request['cover']){
             //cancellazione foto cover vecchia
             $imgEst = $request->file('cover')->extension();
@@ -253,12 +253,12 @@ class ApartmentsController extends Controller
         //     }
 
         // }
- 
-        
-       
+
+
+
         return view('apartments.show', compact('apartment', 'services'));
-        
-      
+
+
 
     }
 
@@ -270,14 +270,14 @@ class ApartmentsController extends Controller
      */
     public function destroy($id)
     {
-        
+
         $elimina = Apartment::find($id);// prendo appartmento per ID
-        
-        $elimina->position()->delete(); //prendo la posizioneo 
-        
+
+        $elimina->position()->delete(); //prendo la posizioneo
+
         $elimina->messages()->delete();// prendo i messaggi
-        // $elimina->imgs()->delete(); //prendo le immagini 
-        
+        // $elimina->imgs()->delete(); //prendo le immagini
+
         $spon = $elimina->sponsors; //prendo solo i sponsor inerenti a questo id
         foreach($spon as $sponsors){
             $elimina->sponsors()->detach($sponsors->id);
@@ -287,11 +287,11 @@ class ApartmentsController extends Controller
         foreach($serv as $services){
             $elimina->services()->detach($services->id);
         }
-       
+
         //dd($elimina);
 
         $elimina->delete();
-        
+
         return redirect()->back();
     }
 
@@ -299,7 +299,7 @@ class ApartmentsController extends Controller
     {
         $usersearch = $request->city;
         $response = file_get_contents('https://api.tomtom.com/search/2/geocode/'. $usersearch .'.json?limit=1&key=' . env('TOMTOM_KEY'));
-        
+
         $response = json_decode($response, true);
         $positionSearched = [
             'latit' => $response['results'][0]['position']['lat'],
@@ -313,13 +313,13 @@ class ApartmentsController extends Controller
             array_push($arrayId, $position->apartment_id);
         }
 
-        
+
         $services = Service::all();
         $apartments = Apartment::with('services', 'position', 'imgs')
             ->find($arrayId)
             ->where('beds', '>=', $request->guests)
             ->where('active', '=', 1);
-            
+
         $data = json_encode($usersearch);
         $guests = json_encode($request->guests);
         return view('search', compact('apartments', 'services','data','guests'));

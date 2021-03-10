@@ -37,3 +37,8 @@ Route::post('/search', 'ApartmentsController@search')->name('search');
 Route::get('/admin', 'AdminController@dashboard')->name('dashboard');
 Route::resource('sponsors', 'SponsorController');
 
+Route::get('/sponsor', function () {
+    return view('sponsor');
+});
+
+Route::post('sponsor/checkout', 'SponsorController@checkout');

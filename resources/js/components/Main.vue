@@ -114,7 +114,7 @@
         export default{
           name: "Main",
 
-          props:['searchedcity',"services"],
+          props:['searchedcity',"services", "guests"],
 
           components:{
             ListItem,
@@ -129,9 +129,9 @@
                       anArray: this.apartmentsinfo,
                       userSearch:this.searchedcity,
                       requestedServices:[],
-                      requestedBathrooms:"",
-                      requestedChambres:"",
-                      requestedBeds:"",
+                      requestedBathrooms:1,
+                      requestedChambres:1,
+                      requestedBeds:this.guests,
                       tryArray:[],
                   }
           },
@@ -173,7 +173,7 @@
                   .then(response => {
 
                     this.tryArray = response.data;
-                    console.log(this.tryArray)
+                    console.log(this.tryArray);
 
                   })
                 },

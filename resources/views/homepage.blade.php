@@ -22,9 +22,9 @@
           </div>
           <div class="right-input">
             <div class="">
-              <label for="beds">Posti letto</label><br>
+              <label for="guests">Posti letto</label><br>
               <!-- <input type="text" name="beds" value="" placeholder="Numero posti letto" required> -->
-              <input type="number" id="beds" name="beds" step="1" value="1">
+              <input type="number" id="guests" name="guests" step="1" value="1">
             </div>
             <div class="">
               <button type="submit" name="submit">
@@ -47,7 +47,7 @@
             <img src="{{ asset('img/milan.jpg') }}" alt="logo">
             <h3 class="city-card-label">Milano</h5>
         </button>
-      </form>  
+      </form>
       </div>
       <div class="city-card mg-card">
         <form action="{{ route('search') }}" name="city" id="city" method='post' required>
@@ -57,7 +57,7 @@
             <img src="{{ asset('img/naples.jpg') }}" alt="logo">
             <h3 class="city-card-label">Napoli</h5>
           </button>
-        </form> 
+        </form>
       </div>
       <div class="city-card mg-card">
         <form action="{{ route('search') }}" name="city" id="city"  method='post' required>
@@ -67,7 +67,7 @@
             <img src="{{ asset('img/rome.jpg') }}" alt="logo">
             <h3 class="city-card-label">Roma</h5>
           </button>
-        </form> 
+        </form>
       </div>
       <div class="city-card">
       <form action="{{ route('search') }}" name="city" id="city"  method='post' required>
@@ -77,7 +77,7 @@
             <img src="{{ asset('img/venice.jpg') }}" alt="logo">
             <h3 class="city-card-label">Venezia</h5>
         </button>
-      </form> 
+      </form>
       </div>
     </div>
 

@@ -15,7 +15,7 @@
                         <div class="form-group">
                             <label for="amount">Amount</label>
                             <div class="input-group">
-                                <div class="input-group-prepend"><span class="input-group-text">$</span></div>
+                                <div class="input-group-prepend"><span class="input-group-text">EUR</span></div>
                                 <input type="number" id="amount" v-model="amount" class="form-control" placeholder="Enter Amount">
                             </div>
                         </div>
@@ -54,7 +54,7 @@ export default {
             hostedFieldInstance: false,
             nonce: "",
             error: "",
-            amount: 10
+            amount: 10,
         }
     },
     methods: {
@@ -74,9 +74,22 @@ export default {
             }
         }
     },
+
+    watch:{
+      'nonce':function() {
+
+        axios.post(
+          "http://localhost:8000/payment/checkout",
+        {
+          "amount":this.amount,
+          "nonce":this.nonce,
+        })
+      },
+    },
+
     mounted() {
         braintree.client.create({
-            authorization: "sandbox_8hq8w8sr_vkn2vxs66h9rkmbw"
+            authorization: env('BRAINTREE_SANDBOX')
         })
         .then(clientInstance => {
             let options = {
@@ -126,7 +139,7 @@ export default {
                                 intent: 'sale',
                                 amount: parseFloat(this.amount) > 0 ? this.amount : 10,
                                 displayName: 'Braintree Testing',
-                                currency: 'USD'
+                                currency: 'EUR'
                         })
                     },
                     onAuthorize: (data, options) => {
