@@ -84,20 +84,21 @@ export default {
           "http://localhost:8000/payment/checkout",
         {
           "amount":this.amount,
+          
           "nonce":this.nonce,
         },
-        // {
-        //   headers: {
-        //   "Content-type": "application/json; charset=UTF-8",
-        //   }
-        // }
-      )
+
+      ).then(response=>{
+          console.log(response)
+        console.log(response.data.success_message)
+          }
+        )
       },
     },
 
     mounted() {
         braintree.client.create({
-            authorization:process.env ("BRAINTREE_SANDBOX")
+            authorization:'sandbox_mf99dc7g_y34kzz5j4tc99xnb'
         })
         .then(clientInstance => {
             let options = {

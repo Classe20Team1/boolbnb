@@ -7,7 +7,7 @@ use Braintree;
 
 class PaymentsController extends Controller
 {
-    
+
     public function checkout(Request $request)
     {
         $gateway = new Braintree\Gateway([
@@ -40,8 +40,8 @@ class PaymentsController extends Controller
         }
 
         return response()->json($result->success);
-        // return back()->withErrors('An error occurred with the message: '.$result->message);
+        return back()->withErrors('An error occurred with the message: '.$result->message);
         }
+        
     }
 }
-
