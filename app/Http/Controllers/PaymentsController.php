@@ -39,7 +39,8 @@ class PaymentsController extends Controller
                $errorString .= 'Error: ' . $error->code . ": " . $error->message . "\n";
         }
 
-        return back()->withErrors('An error occurred with the message: '.$result->message);
+        return response()->json($result->success);
+        // return back()->withErrors('An error occurred with the message: '.$result->message);
         }
     }
 }
