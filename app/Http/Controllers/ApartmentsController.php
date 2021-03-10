@@ -299,7 +299,7 @@ class ApartmentsController extends Controller
     {
         $usersearch = $request->city;
         $response = file_get_contents('https://api.tomtom.com/search/2/geocode/'. $usersearch .'.json?limit=1&key=' . env('TOMTOM_KEY'));
-
+        
         $response = json_decode($response, true);
         $positionSearched = [
             'latit' => $response['results'][0]['position']['lat'],
