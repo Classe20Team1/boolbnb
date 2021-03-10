@@ -22,7 +22,7 @@ class PaymentsController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     public function checkout(Request $request)
     {
         $gateway = new Braintree\Gateway([
@@ -46,17 +46,17 @@ class PaymentsController extends Controller
         $apartments = $user->apartments;
 
         if ($result->success) {
-        
+
         $transaction = $result->transaction;
-        $apartment = Apartment::find($request->apartment_id);
-        $sponsortype = SponsorType::find($request->sponsortype_id);
-        $date = Carbon::now();
-        Sponsor::create([
-            'apartment_id' => $apartment->id,
-            'type_id' => $sponsortype->id,
-            'date_start' => $date,
-            'date_end' => $date->addDays($sponsortype->days),
-        ]);
+        // $apartment = Apartment::find($request->apartment_id);
+        // $sponsortype = SponsorType::find($request->sponsortype_id);
+        // $date = Carbon::now();
+        // Sponsor::create([
+        //     'apartment_id' => $apartment->id,
+        //     'type_id' => $sponsortype->id,
+        //     'date_start' => $date,
+        //     'date_end' => $date->addDays($sponsortype->days),
+        // ]);
 
         return response()->json(array(
                                     'success_message' => $transaction->id,
@@ -77,4 +77,3 @@ class PaymentsController extends Controller
         }
     }
 }
-
