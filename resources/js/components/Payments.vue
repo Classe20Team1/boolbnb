@@ -87,12 +87,13 @@ export default {
           
           "nonce":this.nonce,
         },
-
-      ).then(response=>{
-          console.log(response)
-        console.log(response.data.success_message)
-          }
         )
+        .then(response => {
+
+                    this.tryArray = response.data;
+                    console.log(this.tryArray);
+
+                  })
       },
     },
 

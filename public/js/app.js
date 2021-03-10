@@ -2422,17 +2422,19 @@ __webpack_require__.r(__webpack_exports__);
   },
   watch: {
     'nonce': function nonce() {
+      var _this2 = this;
+
       axios.post("http://localhost:8000/payment/checkout", {
         "amount": this.amount,
         "nonce": this.nonce
       }).then(function (response) {
-        console.log(response);
-        console.log(response.data.success_message);
+        _this2.tryArray = response.data;
+        console.log(_this2.tryArray);
       });
     }
   },
   mounted: function mounted() {
-    var _this2 = this;
+    var _this3 = this;
 
     braintree_web__WEBPACK_IMPORTED_MODULE_0___default.a.client.create({
       authorization: 'sandbox_mf99dc7g_y34kzz5j4tc99xnb'
@@ -2467,7 +2469,7 @@ __webpack_require__.r(__webpack_exports__);
       var hostedFieldInstance = instances[0];
       var paypalCheckoutInstance = instances[1]; // Use hostedFieldInstance to send data to Braintree
 
-      _this2.hostedFieldInstance = hostedFieldInstance; // Setup PayPal Button
+      _this3.hostedFieldInstance = hostedFieldInstance; // Setup PayPal Button
 
       return paypal_checkout__WEBPACK_IMPORTED_MODULE_1___default.a.Button.render({
         env: 'sandbox',
@@ -2480,7 +2482,7 @@ __webpack_require__.r(__webpack_exports__);
           return paypalCheckoutInstance.createPayment({
             flow: 'checkout',
             intent: 'sale',
-            amount: parseFloat(_this2.amount) > 0 ? _this2.amount : 10,
+            amount: parseFloat(_this3.amount) > 0 ? _this3.amount : 10,
             displayName: 'Braintree Testing',
             currency: 'EUR'
           });
@@ -2488,8 +2490,8 @@ __webpack_require__.r(__webpack_exports__);
         onAuthorize: function onAuthorize(data, options) {
           return paypalCheckoutInstance.tokenizePayment(data).then(function (payload) {
             console.log(payload);
-            _this2.error = "";
-            _this2.nonce = payload.nonce;
+            _this3.error = "";
+            _this3.nonce = payload.nonce;
           });
         },
         onCancel: function onCancel(data) {
@@ -2498,7 +2500,7 @@ __webpack_require__.r(__webpack_exports__);
         },
         onError: function onError(err) {
           console.error(err);
-          _this2.error = "An error occurred while processing the paypal payment.";
+          _this3.error = "An error occurred while processing the paypal payment.";
         }
       }, '#paypalButton');
     })["catch"](function (err) {});
