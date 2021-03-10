@@ -31,15 +31,16 @@ class PaymentsController extends Controller
         if ($result->success) {
         $transaction = $result->transaction;
 
-        return back()->with('success_message', 'Transaction successful. The ID is:'. $transaction->id);
+
+        return response()->json($transaction->id);
+        // return back()->with('success_message', 'Transaction successful. The ID is:'. $transaction->id);
         } else {
             $errorString = "";
 
             foreach ($result->errors->deepAll() as $error) {
                $errorString .= 'Error: ' . $error->code . ": " . $error->message . "\n";
         }
-
-        return response()->json($result->success);
+        return response()->json($result->message);
         // return back()->withErrors('An error occurred with the message: '.$result->message);
         }
     }
