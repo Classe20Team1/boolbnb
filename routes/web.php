@@ -27,6 +27,7 @@ Route::get('/test', function (){
   return view('users.edit-layout');
 });
 
+Route::get('/payment/checkout', 'PaymentsController@checkout')->name('payment.checkout');
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
