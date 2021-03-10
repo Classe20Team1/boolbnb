@@ -2391,6 +2391,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2424,6 +2425,10 @@ __webpack_require__.r(__webpack_exports__);
       axios.post("http://localhost:8000/payment/checkout", {
         "amount": this.amount,
         "nonce": this.nonce
+      }, {
+        headers: {
+          "Content-type": "application/json; charset=UTF-8"
+        }
       });
     }
   },
@@ -2431,7 +2436,7 @@ __webpack_require__.r(__webpack_exports__);
     var _this2 = this;
 
     braintree_web__WEBPACK_IMPORTED_MODULE_0___default.a.client.create({
-      authorization: env('BRAINTREE_SANDBOX')
+      authorization: "sandbox_8hq8w8sr_vkn2vxs66h9rkmbw"
     }).then(function (clientInstance) {
       var options = {
         client: clientInstance,
@@ -87436,7 +87441,7 @@ var render = function() {
               ])
             : _vm._e(),
           _vm._v(" "),
-          _c("form", [
+          _c("form", { attrs: { method: "post" } }, [
             _c("div", { staticClass: "form-group" }, [
               _c("label", { attrs: { for: "amount" } }, [_vm._v("Amount")]),
               _vm._v(" "),

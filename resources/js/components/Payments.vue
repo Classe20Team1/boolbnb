@@ -11,6 +11,7 @@
                     <div class="alert alert-danger" v-if="error">
                         {{ error }}
                     </div>
+
                     <form>
                         <div class="form-group">
                             <label for="amount">Amount</label>
@@ -55,6 +56,7 @@ export default {
             nonce: "",
             error: "",
             amount: 10,
+
         }
     },
     methods: {
@@ -83,13 +85,19 @@ export default {
         {
           "amount":this.amount,
           "nonce":this.nonce,
-        })
+        },
+        // {
+        //   headers: {
+        //   "Content-type": "application/json; charset=UTF-8",
+        //   }
+        // }
+      )
       },
     },
 
     mounted() {
         braintree.client.create({
-            authorization: env('BRAINTREE_SANDBOX')
+            authorization:process.env ("BRAINTREE_SANDBOX")
         })
         .then(clientInstance => {
             let options = {
