@@ -3,7 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\User;
-
+use App\Apartment;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
+use App\Sponsor;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +20,13 @@ use App\User;
 */
 
 Route::get('/', function () {
-    return view('homepage');
+  $sponsors = Sponsor::active();
+  $array = [];
+  foreach ($sponsors as $sponsor){
+    array_push($array, $sponsor->apartment_id);
+  }
+  $apartments = Apartment::find($array);
+  return view('homepage');
 });
 
 Route::get('/test', function (){
@@ -32,5 +41,7 @@ Route::resource('apartments', 'ApartmentsController');
 Route::get('/user/edit', 'UserInfoController@edit')->name('user.edit');
 Route::patch('user', 'UserInfoController@update')->name('user.update');
 Route::post('/search', 'ApartmentsController@search')->name('search');
+Route::post('/apartments/{id}/sponsor', 'ApartmentsController@sponsor')->name('apartments.sponsor');
+
 Route::get('/admin', 'AdminController@dashboard')->name('dashboard');
 Route::resource('sponsor', 'SponsorController');

@@ -14,6 +14,8 @@ use App\Sponsor;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 use Braintree;
 
 class PaymentsController extends Controller
@@ -48,20 +50,27 @@ class PaymentsController extends Controller
         if ($result->success) {
 
         $transaction = $result->transaction;
-        // $apartment = Apartment::find($request->apartment_id);
-        // $sponsortype = SponsorType::find($request->sponsortype_id);
-        // $date = Carbon::now();
-        // Sponsor::create([
-        //     'apartment_id' => $apartment->id,
-        //     'type_id' => $sponsortype->id,
-        //     'date_start' => $date,
-        //     'date_end' => $date->addDays($sponsortype->days),
-        // ]);
+        $apartment = Apartment::find($request->apartment_id);
+        $sponsortype = SponsorType::find($request->sponsortype_id);
+        $date = Carbon::now();
+        $today = $date->format('Y-m-d');
+        $expire = $date->addDays($sponsortype->days)->format('Y-m-d');
+
+        DB::table('sponsors')->insert([
+            'apartment_id' => $apartment->id,
+            'type_id' => $sponsortype->id,
+            'date_start' => $today,
+            'date_end' => $expire,
+        ]);
 
         return response()->json(array(
                                     'success_message' => $transaction->id,
                                     'error' => '',
                                     'apartments' => $apartments,
+                                    'apartment_id' => $apartment->id,
+                                    'type_id' => $sponsortype,
+                                    'today' => $today,
+                                    'expire' => $expire
         ));
         } else {
             $errorString = "";
