@@ -34,6 +34,7 @@ class SponsorTypeSeeder extends Seeder
             DB::table('sponsortypes')->insert([
                 'price' => $type['price'],
                 'days' => $type['days'],
+                'description' => $type['description']
             ]);
         }
 
