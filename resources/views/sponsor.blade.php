@@ -22,10 +22,10 @@
                     </div>
                 @endif
 
-                    
+
       <div id="payments">
 
-        <payments :appartamento="{{$apartment}}" > </payments>
+        <payments :appartamento="{{$apartment}}" :sponsortypes="{{$sponsortypes}}"> </payments>
 
 
 
