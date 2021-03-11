@@ -396,6 +396,17 @@ header .hero {
   margin-bottom: 1.6em;
 }
 
+.host-link {
+  text-decoration: none;
+  color: black;
+}
+.host-link:visited {
+  color: black;
+}
+.host-link:hover {
+  text-decoration: underline;
+}
+
 .colorblue{
   color: #FF385C;
 }

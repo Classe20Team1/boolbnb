@@ -149,7 +149,7 @@
         <h1>Il tuo mondo merita di essere condiviso</h1>
         <h5>Trasforma lo spazio sin più in una nuova opportunità.</h5>
         <button type="button" name="button">
-          <a href="{{ route('register') }}">
+          <a href="{{ route('register') }}" class="host-link">
             Diventa host
           </a>
         </button>
