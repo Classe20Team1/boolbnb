@@ -58,11 +58,11 @@
         <div class="actions-right">
           <ul>
             <li>
-              <a href="{{route('sponsor.create', $apartment)}}">
-                <button type="button" name="button">
-                  Sponsorizza
-                </button>
-              </a>
+                <form method="post" class="d-inline"action="{{route('apartments.sponsor', $apartment->id)}}">
+                  @csrf
+                  @method('post')
+                   <button type="submit" class="btn btn-outline-danger" value="Sponsorizza">Sponsorizza</button>
+                </form>              
             </li>
             <li>
               <a href="#">

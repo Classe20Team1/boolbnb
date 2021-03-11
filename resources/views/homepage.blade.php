@@ -83,6 +83,7 @@
 
     <h1>Appartamenti in evidenza</h1>
     <div class="sponsored-apt-container">
+      @for ($i = 0; $i < 6; $i++)
       <div class="sponsored-card">
         <img src="{{ asset('img/apartment-example.png') }}" alt="apartment-preview">
         <div class="sponsored-description">
@@ -93,56 +94,8 @@
         </div>
         <i class="fas fa-star sponsored-icon"></i>
       </div>
-      <div class="sponsored-card">
-        <img src="{{ asset('img/apartment-example.png') }}" alt="apartment-preview">
-        <div class="sponsored-description">
-          Grazioso appartamento in centro a Bologna
-        </div>
-        <div class="sponsored-price">
-          25 € a notte
-        </div>
-        <i class="fas fa-star sponsored-icon"></i>
-      </div>
-      <div class="sponsored-card">
-        <img src="{{ asset('img/apartment-example.png') }}" alt="apartment-preview">
-        <div class="sponsored-description">
-          Grazioso appartamento in centro a Bologna
-        </div>
-        <div class="sponsored-price">
-          25 € a notte
-        </div>
-        <i class="fas fa-star sponsored-icon"></i>
-      </div>
-      <div class="sponsored-card">
-        <img src="{{ asset('img/apartment-example.png') }}" alt="apartment-preview">
-        <div class="sponsored-description">
-          Grazioso appartamento in centro a Bologna
-        </div>
-        <div class="sponsored-price">
-          25 € a notte
-        </div>
-        <i class="fas fa-star sponsored-icon"></i>
-      </div>
-      <div class="sponsored-card">
-        <img src="{{ asset('img/apartment-example.png') }}" alt="apartment-preview">
-        <div class="sponsored-description">
-          Grazioso appartamento in centro a Bologna
-        </div>
-        <div class="sponsored-price">
-          25 € a notte
-        </div>
-        <i class="fas fa-star sponsored-icon"></i>
-      </div>
-      <div class="sponsored-card">
-        <img src="{{ asset('img/apartment-example.png') }}" alt="apartment-preview">
-        <div class="sponsored-description">
-          Grazioso appartamento in centro a Bologna
-        </div>
-        <div class="sponsored-price">
-          25 € a notte
-        </div>
-        <i class="fas fa-star sponsored-icon"></i>
-      </div>
+      @endfor
+      
     </div>
 
     <div class="host-poster-box">

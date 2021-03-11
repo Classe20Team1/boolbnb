@@ -11,6 +11,7 @@ Use App\UserInfo;
 use App\File;
 use App\Img;
 use Illuminate\Support\Facades\Http;
+use App\SponsorType;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 
@@ -323,5 +324,11 @@ class ApartmentsController extends Controller
         $data = json_encode($usersearch);
         $guests = json_encode($request->guests);
         return view('search', compact('apartments', 'services','data','guests'));
+    }
+    public function sponsor($id)
+    {
+        $apartment = Apartment::find($id);
+        $sponsortypes = SponsorType::all();
+        return view('sponsor', compact('apartment', 'sponsortypes'));
     }
 }
