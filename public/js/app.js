@@ -2427,6 +2427,27 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2437,10 +2458,13 @@ __webpack_require__.r(__webpack_exports__);
       hostedFieldInstance: false,
       nonce: "",
       error: "",
-      amount: 0,
+      amount: 9.99,
       apartmentId: this.appartamento.id,
       sponsorTypes: this.sponsortypes,
-      sponsorId: ""
+      sponsorId: 3,
+      isPaymentFinalized: "",
+      expireDate: "",
+      path: document.referrer
     };
   },
   methods: {
@@ -2479,8 +2503,16 @@ __webpack_require__.r(__webpack_exports__);
         "apartment_id": this.apartmentId,
         "sponsortype_id": this.sponsorId
       }).then(function (response) {
-        _this2.tryArray = response.data;
-        console.log(_this2.tryArray);
+        var outcome = response.data;
+        console.log(outcome);
+
+        if (outcome.success_message) {
+          console.log("success");
+          _this2.isPaymentFinalized = outcome.success_message;
+          _this2.expireDate = outcome.expire;
+        } else {
+          console.log("error");
+        }
       });
     }
   },
@@ -29369,7 +29401,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n#amount[data-v-04c873d0],#creditCardNumber[data-v-04c873d0], #creditCardNumber[data-v-04c873d0], #cvv[data-v-04c873d0], #expireDate[data-v-04c873d0]{\n  height:30px;\n  border:1px solid lightgrey;\n  border-radius:5px;\n}\n.p-el[data-v-04c873d0]{\n  margin-top: 10px;\n}\n.sponsor-amount-container[data-v-04c873d0]{\n  display:flex;\n  align-items: center;\n  justify-content: space-between;\n  margin-top: 15px;\n}\n.checkbox-container[data-v-04c873d0]{\ndisplay:flex;\nflex-direction: column;\nborder:2px solid pink;\nborder-radius: 10px;\npadding:10px;\n}\n.input-amount-container[data-v-04c873d0]{\n  display:flex;\n  align-items: center;\n}\n.valuta[data-v-04c873d0]{\n  margin-right: 10px;\n}\n.payment-container[data-v-04c873d0]{\n  padding:20px;\n  border: 1px solid lightgray;\n  border-radius: 10px;\n}\n.ed-cvv-container[data-v-04c873d0]{\n  display:flex;\n}\n.credit-card-button[data-v-04c873d0]{\n  width:100%;\n  height:45px;\n  color:white;\n  font-weight: 600;\n  font-size: 15px;\n  background-color:#4287f5;\n  border:0px;\n  border-radius:5px;\n}\n.credit-card-button[data-v-04c873d0]:hover{\n  opacity:0.8;\n}\n.hide[data-v-04c873d0]{\n  display:none;\n}\n.display[data-v-04c873d0]{\n  display:contents;\n}\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n#amount[data-v-04c873d0],#creditCardNumber[data-v-04c873d0], #creditCardNumber[data-v-04c873d0], #cvv[data-v-04c873d0], #expireDate[data-v-04c873d0]{\n  height:30px;\n  border:1px solid lightgrey;\n  border-radius:5px;\n}\n.p-el[data-v-04c873d0]{\n  margin-top: 10px;\n}\n.sponsor-amount-container[data-v-04c873d0]{\n  display:flex;\n  align-items: center;\n  justify-content: space-between;\n  margin-top: 15px;\n}\n.checkbox-container[data-v-04c873d0]{\ndisplay:flex;\nflex-direction: column;\nborder:2px solid pink;\nborder-radius: 10px;\npadding:10px;\n}\n.input-amount-container[data-v-04c873d0]{\n  display:flex;\n  align-items: center;\n}\n.valuta[data-v-04c873d0]{\n  margin-right: 10px;\n}\n.payment-container[data-v-04c873d0]{\n  padding:20px;\n  border: 1px solid lightgray;\n  border-radius: 10px;\n}\n.ed-cvv-container[data-v-04c873d0]{\n  display:flex;\n}\n.credit-card-button[data-v-04c873d0]{\n  cursor:pointer;\n  width:100%;\n  height:45px;\n  color:white;\n  font-weight: 600;\n  font-size: 15px;\n  background-color:#4287f5;\n  border:0px;\n  border-radius:5px;\n}\n.credit-card-button[data-v-04c873d0]:hover{\n  opacity:0.8;\n}\n.hide[data-v-04c873d0]{\n  display:none;\n}\n.display[data-v-04c873d0]{\n  display:block;\n}\n.success[data-v-04c873d0]{\n  cursor:pointer;\n  border:1px solid lightgrey;\n  width:100%;\n  background-color: green;\n  height:90px;\n  border-radius:10px;\n  font-size: 15px;;\n  font-weight: 600;\n  color: white;\n}\n.success[data-v-04c873d0]:hover{\n  opacity:0.8;\n}\n.sponsored[data-v-04c873d0]{\n  border:2px solid pink;\n  border-radius: 10px;\n  height:45px;\n  display:flex;\n  justify-content: center;\n  align-items: center;\n}\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -87570,11 +87602,18 @@ var render = function() {
       _vm._v(" "),
       _c("div", { staticClass: "buttons-container p-el" }, [
         _vm.nonce
-          ? _c("div", { staticClass: "alert alert-success" }, [
-              _vm._v(
-                "\n                                  Successfully generated nonce. Waiting for reply.\n                              "
-              )
-            ])
+          ? _c(
+              "div",
+              {
+                staticClass: "alert alert-success",
+                class: _vm.isPaymentFinalized ? "hide" : "display"
+              },
+              [
+                _vm._v(
+                  "\n                                  Successfully generated nonce. Waiting for reply...\n                              "
+                )
+              ]
+            )
           : _vm._e(),
         _vm._v(" "),
         _vm.error
@@ -87586,7 +87625,24 @@ var render = function() {
               )
             ])
           : _vm._e()
-      ])
+      ]),
+      _vm._v(" "),
+      _vm.nonce
+        ? _c("div", { class: _vm.isPaymentFinalized ? "display" : "hide" }, [
+            _vm._m(4),
+            _vm._v(" "),
+            _c("div", { staticClass: "sponsored" }, [
+              _c("span", [
+                _c("em", [
+                  _vm._v(
+                    "Appartamento sponsorizzato fino al:" +
+                      _vm._s(_vm.expireDate)
+                  )
+                ])
+              ])
+            ])
+          ])
+        : _vm._e()
     ])
   ])
 }
@@ -87637,6 +87693,23 @@ var staticRenderFns = [
         _c("div", { staticClass: "form-control", attrs: { id: "cvv" } })
       ])
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      {
+        staticClass: "alert success",
+        attrs: { onclick: "javascript:history.go(-1)" }
+      },
+      [
+        _vm._v("\n                              Success!"),
+        _c("br"),
+        _vm._v("Torna ai tuoi appartamenti\n                          ")
+      ]
+    )
   }
 ]
 render._withStripped = true

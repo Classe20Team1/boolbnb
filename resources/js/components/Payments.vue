@@ -62,10 +62,10 @@
 
                             </div>
 
-                            <div class="buttons-container p-el"  >
+                            <div class="buttons-container p-el">
 
-                                  <div class="alert alert-success" v-if="nonce">
-                                      Successfully generated nonce. Waiting for reply.
+                                  <div class="alert alert-success" v-if="nonce" v-bind:class = "(isPaymentFinalized)?'hide':'display' ">
+                                      Successfully generated nonce. Waiting for reply...
                                   </div>
 
                                   <div class="alert alert-danger" v-if="error">
@@ -74,7 +74,28 @@
 
                             </div>
 
+                            <div class="" v-if="nonce" v-bind:class = "(isPaymentFinalized)?'display':'hide' ">
+
+                              <button onclick="javascript:history.go(-1)" class="alert success" >
+                                  Success!<br>Torna ai tuoi appartamenti
+                              </button>
+
+                                  <div class="sponsored" >
+                                        <span> <em>Appartamento sponsorizzato fino al:{{expireDate}}</em> </span>
+                                  </div>
+
+                            </div>
+
                     </form>
+
+
+
+                    <!-- <form class="" :action="homepage" method="post">
+
+                    <input type="submit" class="alert success" value="Success!Torna ai tuoi appartamenti">
+
+
+                    </form> -->
 
 
         </div>
@@ -95,10 +116,14 @@ export default {
             hostedFieldInstance: false,
             nonce: "",
             error: "",
-            amount: 0,
+            amount: 9.99,
             apartmentId:this.appartamento.id,
             sponsorTypes:this.sponsortypes,
-            sponsorId:"",
+            sponsorId:3,
+            isPaymentFinalized:"",
+            expireDate:"",
+            path:document.referrer,
+
         }
     },
     methods: {
@@ -145,8 +170,16 @@ export default {
         )
         .then(response => {
 
-                    this.tryArray = response.data;
-                    console.log(this.tryArray);
+                    let outcome = response.data;
+                    console.log(outcome);
+                    if(outcome.success_message){
+                      console.log("success")
+                      this.isPaymentFinalized = outcome.success_message
+                      this.expireDate = outcome.expire
+                    }else{
+                        console.log("error")
+                      }
+
 
                   })
       },
@@ -278,6 +311,7 @@ padding:10px;
 }
 
 .credit-card-button{
+  cursor:pointer;
   width:100%;
   height:45px;
   color:white;
@@ -297,7 +331,32 @@ padding:10px;
 }
 
 .display{
-  display:contents;
+  display:block;
+}
+
+.success{
+  cursor:pointer;
+  border:1px solid lightgrey;
+  width:100%;
+  background-color: green;
+  height:90px;
+  border-radius:10px;
+  font-size: 15px;;
+  font-weight: 600;
+  color: white;
+}
+
+.success:hover{
+  opacity:0.8;
+}
+
+.sponsored{
+  border:2px solid pink;
+  border-radius: 10px;
+  height:45px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
 }
 
 
