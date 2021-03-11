@@ -13,16 +13,8 @@
 
                               <div class="checkbox-container">
 
-                                    <div class="ck-el">
-                                        <input type="radio" v-model="amount" name="sponsor" value="10"> <span> <em>Sponsorizza 1 giorno</em> </span>
-                                    </div>
-
-                                    <div class="ck-el">
-                                        <input type="radio" v-model="amount" name="sponsor" value="20"> <span><em>Sponsorizza 2 giorni</em></span>
-                                    </div>
-
-                                    <div class="ck-el">
-                                        <input type="radio" v-model="amount" name="sponsor" value="30"> <span><em>Sponsorizza 3 giorni</em></span>
+                                    <div class="ck-el" v-for="(type, index) in  sponsorTypes" >
+                                        <input @click="findSponsor(type.id)" type="radio" v-model="amount" name="sponsor" :value="amount"> <span> <em>{{type.description}}</em> </span>
                                     </div>
 
                               </div>
@@ -95,20 +87,32 @@ import paypal from 'paypal-checkout';
 
 export default {
 
-  props:['appartamento'],
+  props:['appartamento','sponsortypes'],
 
     data() {
         return {
+            sandbox:process.env.MIX_BRAINTREE_SANDBOX,
             hostedFieldInstance: false,
             nonce: "",
             error: "",
-            amount: 10,
-            apartmentId:this.appartamento,
-            sponsorType:"",
-
+            amount: 0,
+            apartmentId:this.appartamento.id,
+            sponsorTypes:this.sponsortypes,
+            sponsorId:"",
         }
     },
     methods: {
+        findSponsor(id){
+          let sponsor = this.sponsorTypes.find(function(el){
+            return el.id == id
+          })
+
+          this.amount = sponsor.price / 100,
+          console.log(this.amount)
+          this.sponsorId = sponsor.id,
+          console.log(this.sponsorId)
+        },
+
         payWithCreditCard() {
             console.log(this.apartmentId)
             if(this.hostedFieldInstance)
@@ -135,8 +139,8 @@ export default {
         {
           "amount":this.amount,
           "nonce":this.nonce,
-          "apartment_id":21,
-          "sponsortype_id":1
+          "apartment_id":this.apartmentId,
+          "sponsortype_id":this.sponsorId,
         },
         )
         .then(response => {
@@ -150,7 +154,7 @@ export default {
 
     mounted() {
         braintree.client.create({
-            authorization:'sandbox_mf99dc7g_y34kzz5j4tc99xnb'
+            authorization:this.sandbox //'sandbox_mf99dc7g_y34kzz5j4tc99xnb',
         })
         .then(clientInstance => {
             let options = {
@@ -226,9 +230,8 @@ export default {
     }
 }
 </script>
+
 <style scoped>
-
-
 
 #amount,#creditCardNumber, #creditCardNumber, #cvv, #expireDate{
   height:30px;

@@ -2427,29 +2427,30 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['appartamento'],
+  props: ['appartamento', 'sponsortypes'],
   data: function data() {
     return {
+      sandbox: "sandbox_mf99dc7g_y34kzz5j4tc99xnb",
       hostedFieldInstance: false,
       nonce: "",
       error: "",
-      amount: 10,
-      apartmentId: this.appartamento,
-      sponsorType: ""
+      amount: 0,
+      apartmentId: this.appartamento.id,
+      sponsorTypes: this.sponsortypes,
+      sponsorId: ""
     };
   },
   methods: {
+    findSponsor: function findSponsor(id) {
+      var sponsor = this.sponsorTypes.find(function (el) {
+        return el.id == id;
+      });
+      this.amount = sponsor.price / 100, console.log(this.amount);
+      this.sponsorId = sponsor.id, console.log(this.sponsorId);
+    },
     payWithCreditCard: function payWithCreditCard() {
       var _this = this;
 
@@ -2475,8 +2476,8 @@ __webpack_require__.r(__webpack_exports__);
       axios.post("http://localhost:8000/payment/checkout", {
         "amount": this.amount,
         "nonce": this.nonce,
-        "apartment_id": 21,
-        "sponsortype_id": 1
+        "apartment_id": this.apartmentId,
+        "sponsortype_id": this.sponsorId
       }).then(function (response) {
         _this2.tryArray = response.data;
         console.log(_this2.tryArray);
@@ -2487,7 +2488,8 @@ __webpack_require__.r(__webpack_exports__);
     var _this3 = this;
 
     braintree_web__WEBPACK_IMPORTED_MODULE_0___default.a.client.create({
-      authorization: 'sandbox_mf99dc7g_y34kzz5j4tc99xnb'
+      authorization: this.sandbox //'sandbox_mf99dc7g_y34kzz5j4tc99xnb',
+
     }).then(function (clientInstance) {
       var options = {
         client: clientInstance,
@@ -87471,79 +87473,46 @@ var render = function() {
     _vm._v(" "),
     _c("form", [
       _c("div", { staticClass: "sponsor-amount-container" }, [
-        _c("div", { staticClass: "checkbox-container" }, [
-          _c("div", { staticClass: "ck-el" }, [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
+        _c(
+          "div",
+          { staticClass: "checkbox-container" },
+          _vm._l(_vm.sponsorTypes, function(type, index) {
+            return _c("div", { staticClass: "ck-el" }, [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.amount,
+                    expression: "amount"
+                  }
+                ],
+                attrs: { type: "radio", name: "sponsor" },
+                domProps: {
                   value: _vm.amount,
-                  expression: "amount"
+                  checked: _vm._q(_vm.amount, _vm.amount)
+                },
+                on: {
+                  click: function($event) {
+                    return _vm.findSponsor(type.id)
+                  },
+                  change: function($event) {
+                    _vm.amount = _vm.amount
+                  }
                 }
-              ],
-              attrs: { type: "radio", name: "sponsor", value: "10" },
-              domProps: { checked: _vm._q(_vm.amount, "10") },
-              on: {
-                change: function($event) {
-                  _vm.amount = "10"
-                }
-              }
-            }),
-            _vm._v(" "),
-            _vm._m(1)
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "ck-el" }, [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.amount,
-                  expression: "amount"
-                }
-              ],
-              attrs: { type: "radio", name: "sponsor", value: "20" },
-              domProps: { checked: _vm._q(_vm.amount, "20") },
-              on: {
-                change: function($event) {
-                  _vm.amount = "20"
-                }
-              }
-            }),
-            _vm._v(" "),
-            _vm._m(2)
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "ck-el" }, [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.amount,
-                  expression: "amount"
-                }
-              ],
-              attrs: { type: "radio", name: "sponsor", value: "30" },
-              domProps: { checked: _vm._q(_vm.amount, "30") },
-              on: {
-                change: function($event) {
-                  _vm.amount = "30"
-                }
-              }
-            }),
-            _vm._v(" "),
-            _vm._m(3)
-          ])
-        ]),
+              }),
+              _vm._v(" "),
+              _c("span", [_c("em", [_vm._v(_vm._s(type.description))])])
+            ])
+          }),
+          0
+        ),
         _vm._v(" "),
         _c("div", { staticClass: "amount-container p-el" }, [
           _c("label", { attrs: { for: "amount" } }, [_vm._v("Amount")]),
           _vm._v(" "),
           _c("div", { staticClass: "input-amount-container" }, [
-            _vm._m(4),
+            _vm._m(1),
             _vm._v(" "),
             _c("input", {
               directives: [
@@ -87570,9 +87539,9 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _vm._m(5),
+      _vm._m(2),
       _vm._v(" "),
-      _vm._m(6),
+      _vm._m(3),
       _vm._v(" "),
       _c(
         "div",
@@ -87629,24 +87598,6 @@ var staticRenderFns = [
     return _c("div", { staticClass: "title-container" }, [
       _c("h3", [_vm._v(" Payment Information ")])
     ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", [_c("em", [_vm._v("Sponsorizza 1 giorno")])])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", [_c("em", [_vm._v("Sponsorizza 2 giorni")])])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", [_c("em", [_vm._v("Sponsorizza 3 giorni")])])
   },
   function() {
     var _vm = this
