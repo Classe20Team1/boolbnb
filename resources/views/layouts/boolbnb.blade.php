@@ -32,7 +32,28 @@
         </a>
       </div>
       <div class="nav-contents">
-        <ul>
+        <div class="search-bar">
+          <form class="search-bar-form" action="{{ route('search')}}" method="post">
+              @csrf
+              @method('post')
+            <div class="left-input">
+              <label for="city">Dove</label><br>
+              <input type="text" id="city" name="city" value="" placeholder="Dove vuoi andare?" required>
+            </div>
+            <div class="right-input">
+              <div class="">
+                <label for="guests">Posti letto</label><br>
+                <input type="number" id="guests" name="guests" step="1" value="1">
+              </div>
+              <div class="">
+                <button type="submit" name="submit">
+                  <i class="fas fa-search"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <!-- <ul>
           <li>
             Appartamenti
             <div class="underline"></div>
@@ -41,7 +62,7 @@
             Ricerca avanzata
             <div class="underline"></div>
           </li>
-        </ul>
+        </ul> -->
       </div>
       <div class="nav-user">
         <ul class="nav-right-list-2">
@@ -98,11 +119,35 @@
       </div>
     </nav>
 
-    @yield('content')
+    <main>
+      @yield('content')
+    </main>
 
     <footer>
-      <span> &copy; Boolean Careers All rights reserved </span>
+      <h3>Classe 20 Team 1</h3>
+      <ul>
+        <li>
+          Alberto Liguori ~
+          <a href="">https://github.com/AlbertoLiguori</a>
+        </li>
+        <li>
+          Francesca Giorno ~
+          <a href="">https://github.com/francescagiorno</a>
+        </li>
+        <li>
+          Francesco Maestroni ~
+          <a href="">https://github.com/fra-mstr</a>
+        </li>
+        <li>
+          Matteo Ponchietti ~
+          <a href="">https://github.com/mattponk89</a>
+        </li>
+        <li>
+          Nicola Melito ~
+          <a href="">https://github.com/nico-m11</a>
+        </li>
+      </ul>
+      <h4>&copy; Boolean Careers All rights reserved</h4>
     </footer>
-
   </body>
 </html>

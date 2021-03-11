@@ -5,9 +5,12 @@
 @endsection
 
 @section('content')
-  <section class="add-edit-container">  
+  <section class="add-edit-container">
+    <a href="/admin" class="go-back aptedit-back-link">
+      Torna alla Dashboard
+    </a>
     <div class="add-title-container">
-     <a href="/admin">Torna alla DashBoard</a>
+
     </div>
     <div class="add-form-container">
       <form class="" action="{{route('apartments.store')}}" method="post" enctype="multipart/form-data">
@@ -70,7 +73,7 @@
                     <li>
                       <input type="checkbox" name="services[]" value="{{$service->id}}">
                       <label for="services[]">{{$service->name}}</label>
-                    </li>   
+                    </li>
                   </ul>
                 </div>
             @endforeach

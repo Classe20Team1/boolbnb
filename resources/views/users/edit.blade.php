@@ -6,8 +6,11 @@
 
 @section('content')
   <section class="login-form register-form">
+    <a href="/admin" class="go-back useredit-back-link">
+      Torna alla Dashboard
+    </a>
     <div class="login-form-container register-form-container">
-    <a href="/admin">Torna alla DashBoard</a>
+
       <div class="login-form-header">
         Modifica informazioni utente
       </div>

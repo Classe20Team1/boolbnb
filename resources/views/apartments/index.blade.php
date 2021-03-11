@@ -7,7 +7,9 @@
 @section('content')
 
   <div class="myapt-list-container">
-  <a href="/admin">Torna alla DashBoard</a>
+    <a href="/admin" class="go-back aptindex-back-link">
+      Torna alla Dashboard
+    </a>
     <h2>I miei appartamenti</h2>
   @foreach($apartments as $apartment)
     <div class="my-apt-card mt-5">

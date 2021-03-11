@@ -84,7 +84,7 @@ export default {
           "http://localhost:8000/payment/checkout",
         {
           "amount":this.amount,
-          
+
           "nonce":this.nonce,
         },
         )
@@ -174,7 +174,7 @@ export default {
     }
 }
 </script>
-<style>
+<style scoped>
     body {
         padding: 20px;
     }

@@ -12,7 +12,7 @@
       </div>
       <h1>Grazie agli host puoi.</h1>
 
-      <div class="search-bar">
+      <!-- <div class="search-bar">
         <form class="search-bar-form" action="{{ route('search')}}" method="post">
             @csrf
             @method('post')
@@ -23,7 +23,6 @@
           <div class="right-input">
             <div class="">
               <label for="guests">Posti letto</label><br>
-              <!-- <input type="text" name="beds" value="" placeholder="Numero posti letto" required> -->
               <input type="number" id="guests" name="guests" step="1" value="1">
             </div>
             <div class="">
@@ -33,10 +32,10 @@
             </div>
           </div>
         </form>
-      </div>
+      </div> -->
     </div>
   </header>
-  <main>
+  <section class="home-content">
     <h1>Una casa ovunque nel mondo</h1>
     <div class="cities-cards-container">
       <div class="city-card mg-card">
@@ -148,7 +147,7 @@
     <div class="host-poster-box">
       <div class="">
         <h1>Il tuo mondo merita di essere condiviso</h1>
-        <h5>Trasforma lo spazio in più in una nuova opportunità.</h5>
+        <h5>Trasforma lo spazio sin più in una nuova opportunità.</h5>
         <button type="button" name="button">
           <a href="{{ route('register') }}">
             Diventa host
@@ -157,5 +156,5 @@
       </div>
 
     </div>
-  </main>
+  </section class="home-content">
 @endsection

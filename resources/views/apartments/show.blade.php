@@ -6,8 +6,10 @@
 
 @section('content')
   <section class="apartment-details">
-  <a href="/admin">Torna alla DashBoard</a>
-  
+    <a href="/admin" class="go-back aptedit-back-link">
+      Torna alla Dashboard
+    </a>
+
     <h2>{{$apartment->title}}</h2>
     <div class="text-box">
 
