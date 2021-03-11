@@ -22,14 +22,9 @@
                     </div>
                 @endif
 
-
-
-
-
-
       <div id="payments">
 
-        <payments> </payments>
+        <payments :appartamento="{{$apartment}}" > </payments>
 
 
 

@@ -1076,3 +1076,15 @@ footer {
 .user-details-tab .user-details-right {
   width: 60%;
 }
+
+
+/* SPONSOR */
+
+#payments{
+  margin-top: 100px;
+  /* border:2px solid lightgrey; */
+  width:500px;
+  height:600px;
+  margin-right: auto;
+  margin-left: auto;
+}
