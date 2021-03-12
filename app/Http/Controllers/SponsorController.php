@@ -36,10 +36,12 @@ class SponsorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Apartment $apartment)
+    public function create($apartment)
     {
+        //$apartment = Apartment::find($apart_id);
         $sponsortypes = SponsorType::all();
-        return view('apartments.sponsor', compact('apartment', 'sponsortypes'));
+        dd($apartment);
+        return view('sponsor', compact('apartment', 'sponsortypes'));
     }
 
     /**
@@ -48,18 +50,20 @@ class SponsorController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, Apartment $apartment)
-    {
+    public function store(Request $request)
+    {   
         $data = $request->all();
-        $sponsortype = SponsorType::find($data['sponsortype']);
-        $user = Auth::user();
-        $apartments = $user->apartments;
+        $apartment = Apartment::find($request->apartment_id);
+        $sponsortype = SponsorType::find($request->sponsortype_id);
         $date = Carbon::now();
+        $today = $date->format('Y-m-d H:i:s');
+        $expire = $date->addDays($sponsortype->days)->format('Y-m-d H:i:s');
+
         Sponsor::create([
             'apartment_id' => $apartment->id,
             'type_id' => $sponsortype->id,
-            'date_start' => $date,
-            'date_end' => $date->addDays($sponsortype->days),
+            'date_start' => $today,
+            'date_end' => $expire,
         ]);
         return view('apartments.index', compact('apartments'));
     }

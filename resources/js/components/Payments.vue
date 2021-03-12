@@ -1,66 +1,145 @@
 <template>
+     <!-- <div id="payments" class="container"> -->
+        <div class="payment-container">
 
-     <div id="payments" class="container">
-        <div class="col-6 offset-3">
-            <div class="card bg-light">
-                <div class="card-header">Payment Information</div>
-                <div class="card-body">
-                    <div class="alert alert-success" v-if="nonce">
-                        Successfully generated nonce.
-                    </div>
-                    <div class="alert alert-danger" v-if="error">
-                        {{ error }}
-                    </div>
+
+                <div class="title-container">
+                     <h3> Payment Information </h3>
+                </div>
 
                     <form>
-                        <div class="form-group">
-                            <label for="amount">Amount</label>
-                            <div class="input-group">
-                                <div class="input-group-prepend"><span class="input-group-text">EUR</span></div>
-                                <input type="number" id="amount" v-model="amount" class="form-control" placeholder="Enter Amount">
-                            </div>
+
+                        <div class="sponsor-amount-container">
+
+                              <div class="checkbox-container">
+
+                                    <div class="ck-el" v-for="(type, index) in  sponsorTypes" >
+                                        <input @click="findSponsor(type.id)" type="radio" v-model="amount" name="sponsor" :value="amount"> <span> <em>{{type.description}}</em> </span>
+                                    </div>
+
+                              </div>
+
+                              <div class="amount-container p-el">
+                                    <label for="amount">Amount</label>
+
+                                    <div class="input-amount-container">
+                                        <div class="valuta"><span class="input-group-text">EUR</span></div>
+                                        <input  id="amount" v-model="amount" class="form-control" placeholder="Enter Amount">
+                                    </div>
+                              </div>
+
                         </div>
-                         <hr />
-                        <div class="form-group">
+
+
+
+
+                        <div class="credit-card-container p-el">
                             <label>Credit Card Number</label>
                             <div id="creditCardNumber" class="form-control"></div>
                         </div>
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-6">
+
+
+
+                            <div class="ed-cvv-container p-el">
+
+                                <div class="ed-container">
                                     <label>Expire Date</label>
                                     <div id="expireDate" class="form-control"></div>
                                 </div>
-                                <div class="col-6">
+
+                                <div class="cvv-container">
                                     <label>CVV</label>
                                     <div id="cvv" class="form-control"></div>
                                 </div>
+
                             </div>
-                        </div>
-                        <button class="btn btn-primary btn-block" @click.prevent="payWithCreditCard">Pay with Credit Card</button>
-                        <hr />
-                        <div id="paypalButton"></div>
+
+                            <div class="buttons-container p-el"   v-bind:class = "(nonce)?'hide':'display' ">
+
+                                  <button class="credit-card-button" @click.prevent="payWithCreditCard">Pay with Credit Card</button>
+
+                                  <div id="paypalButton"></div>
+
+                            </div>
+
+                            <div class="buttons-container p-el">
+
+                                  <div class="alert alert-success" v-if="nonce" v-bind:class = "(isPaymentFinalized)?'hide':'display' ">
+                                      Successfully generated nonce. Waiting for reply...
+                                  </div>
+
+                                  <div class="alert alert-danger" v-if="error">
+                                      {{ error }}
+                                  </div>
+
+                            </div>
+
+                            <div class="" v-if="nonce" v-bind:class = "(isPaymentFinalized)?'display':'hide' ">
+
+                              <button onclick="javascript:history.go(-1)" class="alert success" >
+                                  Success!<br>Torna ai tuoi appartamenti
+                              </button>
+
+                                  <div class="sponsored" >
+                                        <span> <em>Appartamento sponsorizzato fino al:{{expireDate}}</em> </span>
+                                  </div>
+
+                            </div>
+
                     </form>
-                </div>
-            </div>
+
+
+
+                    <!-- <form class="" :action="homepage" method="post">
+
+                    <input type="submit" class="alert success" value="Success!Torna ai tuoi appartamenti">
+
+
+                    </form> -->
+
+
         </div>
-    </div>
+    <!-- </div> -->
+
 </template>
 <script>
 import braintree from 'braintree-web';
 import paypal from 'paypal-checkout';
+
 export default {
+
+  props:['appartamento','sponsortypes'],
+
     data() {
         return {
+            sandbox:process.env.MIX_BRAINTREE_SANDBOX,
             hostedFieldInstance: false,
             nonce: "",
             error: "",
-            amount: 10,
+            amount: 9.99,
+            apartmentId:this.appartamento.id,
+            sponsorTypes:this.sponsortypes,
+            sponsorId:3,
+            isPaymentFinalized:"",
+            expireDate:"",
+            path:document.referrer,
 
         }
     },
     methods: {
+        findSponsor(id){
+          let sponsor = this.sponsorTypes.find(function(el){
+            return el.id == id
+          })
+
+          this.amount = sponsor.price / 100,
+          console.log(this.amount)
+          this.sponsorId = sponsor.id,
+          console.log(this.sponsorId)
+        },
+
         payWithCreditCard() {
+            console.log(this.apartmentId)
             if(this.hostedFieldInstance)
             {
                 this.error = "";
@@ -86,12 +165,22 @@ export default {
           "amount":this.amount,
 
           "nonce":this.nonce,
+          "apartment_id":this.apartmentId,
+          "sponsortype_id":this.sponsorId,
         },
         )
         .then(response => {
 
-                    this.tryArray = response.data;
-                    console.log(this.tryArray);
+                    let outcome = response.data;
+                    console.log(outcome);
+                    if(outcome.success_message){
+                      console.log("success")
+                      this.isPaymentFinalized = outcome.success_message
+                      this.expireDate = outcome.expire
+                    }else{
+                        console.log("error")
+                      }
+
 
                   })
       },
@@ -99,7 +188,7 @@ export default {
 
     mounted() {
         braintree.client.create({
-            authorization:'sandbox_mf99dc7g_y34kzz5j4tc99xnb'
+            authorization:this.sandbox //'sandbox_mf99dc7g_y34kzz5j4tc99xnb',
         })
         .then(clientInstance => {
             let options = {
@@ -108,6 +197,7 @@ export default {
                     input: {
                         'font-size': '14px',
                         'font-family': 'Open Sans'
+
                     }
                 },
                 fields: {
@@ -174,11 +264,105 @@ export default {
     }
 }
 </script>
+
 <style scoped>
-    body {
-        padding: 20px;
-    }
-    #payments{
-      margin-top: 250px;
-    }
+
+#amount,#creditCardNumber, #creditCardNumber, #cvv, #expireDate{
+  height:30px;
+  border:1px solid lightgrey;
+  border-radius:5px;
+}
+
+.p-el{
+  margin-top: 10px;
+}
+
+.sponsor-amount-container{
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.checkbox-container{
+display:flex;
+flex-direction: column;
+border:2px solid pink;
+border-radius: 10px;
+padding:10px;
+}
+
+.input-amount-container{
+  display:flex;
+  align-items: center;
+}
+
+.valuta{
+  margin-right: 10px;
+}
+.payment-container{
+  padding:20px;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+
+}
+
+.ed-cvv-container{
+  display:flex;
+}
+
+.credit-card-button{
+  cursor:pointer;
+  width:100%;
+  height:45px;
+  color:white;
+  font-weight: 600;
+  font-size: 15px;
+  background-color:#4287f5;
+  border:0px;
+  border-radius:5px;
+}
+
+.credit-card-button:hover{
+  opacity:0.8;
+}
+
+.hide{
+  display:none;
+}
+
+.display{
+  display:block;
+}
+
+.success{
+  cursor:pointer;
+  border:1px solid lightgrey;
+  width:100%;
+  background-color: green;
+  height:90px;
+  border-radius:10px;
+  font-size: 15px;;
+  font-weight: 600;
+  color: white;
+}
+
+.success:hover{
+  opacity:0.8;
+}
+
+.sponsored{
+  border:2px solid pink;
+  border-radius: 10px;
+  height:45px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+
+
 </style>
