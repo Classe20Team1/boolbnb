@@ -17,22 +17,24 @@ class SponsorTypeSeeder extends Seeder
             [
                 'price' => 299,
                 'days' => 1,
-                'description' => '2,99 € per 24 ore'
+                'description' => 'Sponsorizza per 1 giorno'
             ],
             [
                 'price' => 599,
                 'days' => 3,
-                'description' => '5.99 € per 72 ore'
+                'description' => 'Sponsorizza per 3 giorni'
             ],
             [
                 'price' => 999,
-                'days' => 6
+                'days' => 6,
+                'description' => 'Sponsorizza per 6 giorni'
             ]
         ];
         foreach ($sponsortypes as $type){
             DB::table('sponsortypes')->insert([
                 'price' => $type['price'],
                 'days' => $type['days'],
+                'description' => $type['description']
             ]);
         }
 

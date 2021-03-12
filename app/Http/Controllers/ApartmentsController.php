@@ -10,6 +10,7 @@ use App\Position;
 Use App\UserInfo;
 use App\File;
 use App\Img;
+use App\Sponsor;
 use Illuminate\Support\Facades\Http;
 use App\SponsorType;
 use Illuminate\Support\Facades\Auth;
@@ -34,7 +35,13 @@ class ApartmentsController extends Controller
     {
         $user = Auth::user();
         $apartments = $user->apartments;
-        return view('apartments.index', compact('apartments'));
+
+        $sponsors = Sponsor::active();
+        $array_sponsored = [];
+        foreach ($sponsors as $sponsor) {
+            array_push($array_sponsored, $sponsor->apartment_id);
+        }
+        return view('apartments.index', compact('apartments', 'array_sponsored'));
     }
 
     /**
@@ -198,7 +205,7 @@ class ApartmentsController extends Controller
             'bathrooms' => $request['bathrooms'],
             'metri_quadrati' => $request['metri_quadrati'],
             'active' => true,
-            'price' => $request['price'] * 100,
+            'price' => $request['price'],
             'cover_img' => $apartment->cover_img,
         ]);
 
@@ -325,6 +332,8 @@ class ApartmentsController extends Controller
         $guests = json_encode($request->guests);
         return view('search', compact('apartments', 'services','data','guests'));
     }
+    
+    
     public function sponsor($id)
     {
         $apartment = Apartment::find($id);

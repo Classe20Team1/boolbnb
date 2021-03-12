@@ -38,7 +38,7 @@ class SponsorController extends Controller
      */
     public function create($apartment)
     {
-        // $apartment = Apartment::find($apart_id);
+        //$apartment = Apartment::find($apart_id);
         $sponsortypes = SponsorType::all();
         dd($apartment);
         return view('sponsor', compact('apartment', 'sponsortypes'));
