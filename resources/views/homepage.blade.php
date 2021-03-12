@@ -83,19 +83,25 @@
 
     <h1>Appartamenti in evidenza</h1>
     <div class="sponsored-apt-container">
-      @for ($i = 0; $i < 6; $i++)
-      <div class="sponsored-card">
-        <img src="{{ asset('img/apartment-example.png') }}" alt="apartment-preview">
-        <div class="sponsored-description">
-          Grazioso appartamento in centro a Bologna
-        </div>
-        <div class="sponsored-price">
-          25 € a notte
-        </div>
-        <i class="fas fa-star sponsored-icon"></i>
-      </div>
-      @endfor
+    
       
+        @foreach($apartments as $appart)
+          
+          <div class="sponsored-card">
+            <img src="{{ asset($appart->cover_img) }}" alt="apartment-preview">
+            {{ $appart->title }}
+            <div class="sponsored-description">
+             <b>Descrizione:</b> {{ $appart->description}}
+            </div>
+            <div class="sponsored-price">
+             <b> Prezzo a Notte:</b> {{ $appart->price }} €
+            </div>
+            <i class="fas fa-star sponsored-icon"></i>
+          </div>
+          
+        @endforeach
+     
+
     </div>
 
     <div class="host-poster-box">

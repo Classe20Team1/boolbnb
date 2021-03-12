@@ -26,7 +26,7 @@ Route::get('/', function () {
     array_push($array, $sponsor->apartment_id);
   }
   $apartments = Apartment::find($array);
-  return view('homepage', $apartments);
+  return view('homepage', compact('apartments'));
 });
 
 Route::get('/test', function (){

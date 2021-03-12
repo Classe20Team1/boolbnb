@@ -205,7 +205,7 @@ class ApartmentsController extends Controller
             'bathrooms' => $request['bathrooms'],
             'metri_quadrati' => $request['metri_quadrati'],
             'active' => true,
-            'price' => $request['price'] * 100,
+            'price' => $request['price'],
             'cover_img' => $apartment->cover_img,
         ]);
 
@@ -332,6 +332,8 @@ class ApartmentsController extends Controller
         $guests = json_encode($request->guests);
         return view('search', compact('apartments', 'services','data','guests'));
     }
+    
+    
     public function sponsor($id)
     {
         $apartment = Apartment::find($id);
