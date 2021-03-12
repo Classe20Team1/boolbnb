@@ -60,29 +60,9 @@
         <div class="actions-right">
           <ul>
             <li>
-            @if($apartment->id === $array_sponsored['0'])
+            @if(in_array($apartment->id, $array_sponsored))
               <form method="post" class="d-inline">
                 <div type="submit" class="btn btn-outline-danger" value="Sponsorizza" style='border:1px solid #FF385C;height: 22px; width: auto; background-color: lightgray; text-decoration: line-through; color: black;'>Già Sponsorizzato</div>                
-              </form>
-            @elseif($apartment->id === $array_sponsored['1'])
-              <form method="post" class="d-inline">                  
-                <div type="submit" class="btn btn-outline-danger" value="Sponsorizza" style='border:1px solid #FF385C;height: 22px; width: auto; background-color: lightgray; text-decoration: line-through; color: black;'>Già Sponsorizzato</div>
-              </form>
-            @elseif($apartment->id === $array_sponsored['2'])
-              <form method="post" class="d-inline">                 
-                <div type="submit" class="btn btn-outline-danger" value="Sponsorizza" style='border:1px solid #FF385C;height: 22px; width: auto; background-color: lightgray; text-decoration: line-through; color: black;'>Già Sponsorizzato</div>
-              </form>
-            @elseif($apartment->id === $array_sponsored['3'])
-              <form method="post" class="d-inline">
-                <div type="submit" class="btn btn-outline-danger" value="Sponsorizza" style='border:1px solid #FF385C;height: 22px; width: auto; background-color: lightgray; text-decoration: line-through; color: black;'>Già Sponsorizzato</div>
-              </form>
-            @elseif($apartment->id === $array_sponsored['4'])
-              <form method="post" class="d-inline">  
-                <div type="submit" class="btn btn-outline-danger" value="Sponsorizza" style='border:1px solid #FF385C;height: 22px; width: auto; background-color: lightgray; text-decoration: line-through; color: black;'>Già Sponsorizzato</div>              
-              </form>
-            @elseif($apartment->id === $array_sponsored['5'])
-              <form method="post" class="d-inline">    
-                <div type="submit" class="btn btn-outline-danger" value="Sponsorizza" style='border:1px solid #FF385C;height: 22px; width: auto; background-color: lightgray; text-decoration: line-through; color: black;'>Già Sponsorizzato</div>              
               </form>
             @else
                   <form method="post" class="d-inline"action="{{route('apartments.sponsor', $apartment->id)}}">
