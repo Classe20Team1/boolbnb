@@ -127,23 +127,23 @@
       <h3>Classe 20 Team 1</h3>
       <ul>
         <li>
-          Alberto Liguori ~
+          Alberto Liguori 
           <a href="">https://github.com/AlbertoLiguori</a>
         </li>
         <li>
-          Francesca Giorno ~
+          Francesca Giorno 
           <a href="">https://github.com/francescagiorno</a>
         </li>
         <li>
-          Francesco Maestroni ~
+          Francesco Maestroni 
           <a href="">https://github.com/fra-mstr</a>
         </li>
         <li>
-          Matteo Ponchietti ~
+          Matteo Ponchietti 
           <a href="">https://github.com/mattponk89</a>
         </li>
         <li>
-          Nicola Melito ~
+          Nicola Melito 
           <a href="">https://github.com/nico-m11</a>
         </li>
       </ul>
