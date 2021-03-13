@@ -5,13 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Apartment;
 use App\Service;
-use App\User;
 use App\Position;
-Use App\UserInfo;
-use App\File;
-use App\Img;
 use App\Sponsor;
-use Illuminate\Support\Facades\Http;
 use App\SponsorType;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
@@ -152,8 +147,8 @@ class ApartmentsController extends Controller
         $services = Service::all();
         $arrayFa = ['fa-wifi', 'fa-car','fa-swimmer', 'fa-concierge-bell','fa-hot-tub','fa-water'];
         $user = Auth::user();
-        $apartment
-            ->increment('views_count', 1);
+
+        $apartment->increment('views_count', 1);
 
             return view('apartments.show', compact('apartment', 'user', 'services'));
 
@@ -332,8 +327,8 @@ class ApartmentsController extends Controller
         $guests = json_encode($request->guests);
         return view('search', compact('apartments', 'services','data','guests'));
     }
-    
-    
+
+
     public function sponsor($id)
     {
         $apartment = Apartment::find($id);
