@@ -2184,6 +2184,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -2617,6 +2624,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_sequential_entrance__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-sequential-entrance */ "./node_modules/vue-sequential-entrance/index.js");
 /* harmony import */ var vue_sequential_entrance_vue_sequential_entrance_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-sequential-entrance/vue-sequential-entrance.css */ "./node_modules/vue-sequential-entrance/vue-sequential-entrance.css");
 /* harmony import */ var vue_sequential_entrance_vue_sequential_entrance_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue_sequential_entrance_vue_sequential_entrance_css__WEBPACK_IMPORTED_MODULE_1__);
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -29468,7 +29482,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.search-component-apartments-card[data-v-be0f3488]{\n  display: flex;\n  width:100%;\n  height:200px;\n  padding:10px;\n}\n.search-component-apartment-img-box[data-v-be0f3488]{\n  position: relative;\n  min-width:180px;\n  max-width:180px;\n  height:180px;\n  border-radius:10px;\n  overflow:hidden;\n}\n.search-component-apartment-img-box img[data-v-be0f3488]{\n  height:100%;\n  position:absolute;\n  top:50%;\n  left:50%;\n  transform:translate(-50%, -50%)\n}\n.search-component-apartment-features[data-v-be0f3488]{\n  width:100%;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  padding:5px;\n  margin-left: 20px;\n}\n.tinies-container[data-v-be0f3488]{\n  width:100%;\n  display: flex;\n  justify-content: space-between;\n  list-style: none;\n}\n.apartment-description-search-component[data-v-be0f3488]{\n  height:75px;\n  width:100%;\n  overflow:hidden;\n  text-overflow:ellipsis;\n}\n.price-tag-search-component[data-v-be0f3488]{\n  height:30px;\n}\n.price-tag-search-component[data-v-be0f3488]{\n  display:flex;\n  justify-content: flex-end;\n}\n\n", ""]);
+exports.push([module.i, "\n.search-component-apartments-card[data-v-be0f3488]{\n  display: flex;\n  width:100%;\n  height:200px;\n  padding:10px;\n  border-bottom:1px solid lightgrey;\n}\n.search-component-apartments-card[data-v-be0f3488]:hover{\n  background-color: #e1f4f5;\n  cursor:pointer;\n}\n.search-component-apartment-img-box[data-v-be0f3488]{\n  position: relative;\n  min-width:180px;\n  max-width:180px;\n  height:180px;\n  border-radius:10px;\n  overflow:hidden;\n}\n.search-component-apartment-img-box img[data-v-be0f3488]{\n  height:100%;\n  position:absolute;\n  top:50%;\n  left:50%;\n  transform:translate(-50%, -50%)\n}\n.search-component-apartment-features[data-v-be0f3488]{\n  width:100%;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  padding:5px;\n  margin-left: 20px;\n}\n.tinies-container[data-v-be0f3488]{\n  width:100%;\n  display: flex;\n  justify-content: space-between;\n  list-style: none;\n}\n.apartment-description-search-component[data-v-be0f3488]{\n  height:75px;\n  width:100%;\n  overflow:hidden;\n  text-overflow:ellipsis;\n}\n.price-tag-search-component[data-v-be0f3488]{\n  height:30px;\n}\n.price-tag-search-component[data-v-be0f3488]{\n  display:flex;\n  justify-content: flex-end;\n}\n\n", ""]);
 
 // exports
 
@@ -29487,7 +29501,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.sistemazione[data-v-b9c20fb8]{\n  margin-top:25px;\n}\n/* .container{\n  margin-left: auto;\n  margin-right: auto;\n} */\n.search-component-row[data-v-b9c20fb8]{\n  width:100%;\n  display: flex;\n}\n.filter-results[data-v-b9c20fb8]{\n  height:100vh;\n  padding-left:20px;\n  padding-right:20px;\n  width:50%;\n}\n\n/* .sistemazione{\n  margin-top:50px;\n} */\n.service-filters[data-v-b9c20fb8]{\n  justify-content: space-between;\n  margin-top:25px;\n  /* margin-top:50px;\n  margin-bottom:50px; */\n}\n.services-filters[data-v-b9c20fb8]{\n  margin-top:15px;\n}\n\n/* .services-filters ul li{\n  align-items: center;\n} */\n.results-list[data-v-b9c20fb8]{\n  height:calc(100vh - 255px);\n  overflow-y: hidden;\n  overflow-y: scroll;\n  border-top:1px solid lightgrey;\n}\n*[data-v-b9c20fb8] {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n}\nul[data-v-b9c20fb8]{\n  list-style: none;\n  display:flex;\n  flex-wrap: wrap;\n}\nul li[data-v-b9c20fb8]{\n  display: flex;\n  flex-wrap: nowrap;\n  align-items: center;\n  height:40px;\n  min-width: 150px;\n  line-height: 40px;\n}\nul li label[data-v-b9c20fb8]{\n  margin-left:5px;\n}\n.basic-filters[data-v-b9c20fb8]{\n  justify-content: space-between;\n}\n.basic-filters label[data-v-b9c20fb8]{\n  line-height: 40px;\n}\n.basic-filters input[data-v-b9c20fb8]{\n  margin-left:5px;\n  border:1px solid lightgrey;\n  border-radius: 10px;\n  width:75px;\n}\n.basic-filters li[data-v-b9c20fb8]{\n  margin-top: 10px;\n};\n.search-results[data-v-b9c20fb8] {\n  width: 55%;\n  padding: 3em;\n  padding-right: 1em;\n}\n.search-results h1[data-v-b9c20fb8] {\n  margin-bottom: 1.1em;\n}\n.search-results .search-filters ul button[data-v-b9c20fb8] {\n}\n.search-results .search-filters ul button[data-v-b9c20fb8]:hover {\n  border: 1px solid black;\n}\n.mappa-container[data-v-b9c20fb8]{\n  flex:2;\n  /* border:2px solid red; */\n}\n\n", ""]);
+exports.push([module.i, "\n.sistemazione[data-v-b9c20fb8]{\n  margin-top:25px;\n}\n/* .container{\n  margin-left: auto;\n  margin-right: auto;\n} */\n.search-component-row[data-v-b9c20fb8]{\n  width:100%;\n  display: flex;\n}\n.filter-results[data-v-b9c20fb8]{\n  height:100vh;\n  padding-left:20px;\n  padding-right:20px;\n  width:50%;\n}\n\n/* .sistemazione{\n  margin-top:50px;\n} */\n.service-filters[data-v-b9c20fb8]{\n  justify-content: space-between;\n  margin-top:25px;\n  /* margin-top:50px;\n  margin-bottom:50px; */\n}\n.services-filters[data-v-b9c20fb8]{\n  margin-top:15px;\n}\n\n/* .services-filters ul li{\n  align-items: center;\n} */\n.results-list[data-v-b9c20fb8]{\n  height:calc(100vh - 255px);\n  overflow-y: hidden;\n  overflow-y: scroll;\n  border-top:1px solid lightgrey;\n}\n*[data-v-b9c20fb8] {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n}\nul[data-v-b9c20fb8]{\n  list-style: none;\n  display:flex;\n  flex-wrap: wrap;\n}\nul li[data-v-b9c20fb8]{\n  display: flex;\n  flex-wrap: nowrap;\n  align-items: center;\n  height:40px;\n  min-width: 150px;\n  line-height: 40px;\n}\nul li label[data-v-b9c20fb8]{\n  margin-left:5px;\n}\n.basic-filters[data-v-b9c20fb8]{\n  justify-content: space-between;\n}\n.basic-filters label[data-v-b9c20fb8]{\n  line-height: 40px;\n}\n.basic-filters input[data-v-b9c20fb8]{\n  margin-left:5px;\n  border:1px solid lightgrey;\n  border-radius: 10px;\n  width:75px;\n}\n.basic-filters li[data-v-b9c20fb8]{\n  margin-top: 10px;\n};\n.search-results[data-v-b9c20fb8] {\n  width: 55%;\n  padding: 3em;\n  padding-right: 1em;\n}\n.search-results h1[data-v-b9c20fb8] {\n  margin-bottom: 1.1em;\n}\n.search-results .search-filters ul button[data-v-b9c20fb8] {\n}\n.search-results .search-filters ul button[data-v-b9c20fb8]:hover {\n  border: 1px solid black;\n}\n.mappa-container[data-v-b9c20fb8]{\n  flex:2;\n  /* border:2px solid red; */\n}\n.noresult-container[data-v-b9c20fb8]{\n  height:50%;\n  width:100%;\n  position: relative;\n}\n.no-results[data-v-b9c20fb8]{\n  position: absolute;\n  top:50%;\n  left:50%;\n  transform:translate(-50%,-50%)\n}\n\n", ""]);
 
 // exports
 
@@ -29525,7 +29539,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.sequential-image-component-box[data-v-145c762a]{\n  /* width:300px; */\n  border-radius:10px;\n\n  margin-right: 30px;\n  margin-top:10px;\n  margin-bottom:10px;\n\n  /* border:1px solid lightgrey; */\n  /* height:250px; */\n}\n.sequential-image-component-box[data-v-145c762a]:hover{\n  transition: 0.5s;\n  box-shadow: 0 0 10px black;\n}\n\n/* .box{\n  transition:0.5s;\n} */\n.sequential-img-container[data-v-145c762a]{\n  /* border:2px solid #FF385C; */\n  border-bottom: 0px;\n  overflow:hidden;\n  height:150px;\n  width:298px;\n  border-top-left-radius:10px;\n  border-top-right-radius:10px;\n  position:relative;\n}\n.sequential-img-details-container[data-v-145c762a]{\n  border:1px solid grey;\n  width:298px;\n  border-top: 0px;\n  padding:5px;\n  border-bottom-left-radius:10px;\n  border-bottom-right-radius:10px;\n}\n.micro-details-header[data-v-145c762a]{\n  display: flex;\n  justify-content: space-between;\n  margin-top:5px;\n}\n.micro-details-header h4[data-v-145c762a]{\n  font-weight: 400;\n  color:Grey;\n}\n.sponsored-description[data-v-145c762a]{\n  margin-top:5px;\n  text-overflow: hidden;\n  font-size: 11px;\n  margin-bottom:5px;\n}\n.micro-details-sponsored-price[data-v-145c762a]{\n  color:grey;\n}\n.sponsored-description p[data-v-145c762a]{\nheight:40px;\noverflow:hidden;\ntext-overflow: ellipsis;\n}\n.sequential-img-container[data-v-145c762a]:hover {\n    /* transform: scale(105%); */\n    /* transition: 0.5s;\n    box-shadow: 0 0 25px black; */\n}\n.sequential-img-container img[data-v-145c762a]{\n    width:298px;\n    position:absolute;\n    top:50%;\n    left:50%;\n    transform:translate(-50%, -50%)\n}\n\n", ""]);
+exports.push([module.i, "\n.sequential-image-component-box[data-v-145c762a]{\n  /* width:300px; */\n  border-radius:10px;\n\n  margin-right: 30px;\n  margin-top:10px;\n  margin-bottom:10px;\n\n  /* border:1px solid lightgrey; */\n  /* height:250px; */\n}\n.sequential-image-component-box[data-v-145c762a]:hover{\n  transition: 0.5s;\n  box-shadow: 0 0 10px black;\n}\n\n/* .box{\n  transition:0.5s;\n} */\n.sequential-img-container[data-v-145c762a]{\n  /* border:2px solid #FF385C; */\n  border-bottom: 0px;\n  overflow:hidden;\n  height:150px;\n  width:298px;\n  border-top-left-radius:10px;\n  border-top-right-radius:10px;\n  position:relative;\n}\n.sequential-img-details-container[data-v-145c762a]{\n  border:1px solid grey;\n  width:298px;\n  border-top: 0px;\n  padding:5px;\n  border-bottom-left-radius:10px;\n  border-bottom-right-radius:10px;\n}\n.micro-details-header[data-v-145c762a]{\n  display: flex;\n  justify-content: space-between;\n  margin-top:5px;\n}\n.micro-details-header h4[data-v-145c762a]{\n  font-weight: 400;\n  color:Grey;\n}\n.sponsored-description[data-v-145c762a]{\n  margin-top:5px;\n  text-overflow: hidden;\n  font-size: 12px;\n  margin-bottom:5px;\n}\n.sponsored-description ul[data-v-145c762a]{\n  margin-top: 10px;\n  list-style:none;\n  display: flex;\n  justify-content: space-between;\n  color:darkgrey;\n}\n.micro-details-sponsored-price[data-v-145c762a]{\n  color:grey;\n}\n.sponsored-description p[data-v-145c762a]{\nheight:40px;\noverflow:hidden;\ntext-overflow: ellipsis;\n}\n.sequential-img-container[data-v-145c762a]:hover {\n    /* transform: scale(105%); */\n    /* transition: 0.5s;\n    box-shadow: 0 0 25px black; */\n}\n.sequential-img-container img[data-v-145c762a]{\n    width:298px;\n    position:absolute;\n    top:50%;\n    left:50%;\n    transform:translate(-50%, -50%)\n}\n\n", ""]);
 
 // exports
 
@@ -87606,7 +87620,15 @@ var render = function() {
                 },
                 slot: "items"
               })
-            })
+            }),
+            _vm._v(" "),
+            _vm.filterByServices.length == 0
+              ? _c("div", { staticClass: "noresult-container" }, [
+                  _c("h3", { staticClass: "no-results" }, [
+                    _vm._v(" There's no place in heaven! ")
+                  ])
+                ])
+              : _vm._e()
           ],
           2
         )
@@ -87942,7 +87964,15 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "sponsored-description" }, [
-                _c("p", [_vm._v(" " + _vm._s(element.description) + " ")])
+                _c("ul", [
+                  _c("li", [_vm._v("Stanze:" + _vm._s(element.rooms))]),
+                  _vm._v(" "),
+                  _c("li", [_vm._v("Letti:" + _vm._s(element.beds))]),
+                  _vm._v(" "),
+                  _c("li", [_vm._v("Bagni:" + _vm._s(element.bathrooms))]),
+                  _vm._v(" "),
+                  _c("li", [_vm._v("Mq:" + _vm._s(element.metri_quadrati))])
+                ])
               ]),
               _vm._v(" "),
               _c("i", { staticClass: "fas fa-star sponsored-icon" })

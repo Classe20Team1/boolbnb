@@ -1247,10 +1247,14 @@ display:flex;
   border-radius:10px;
 }
 
-.city-cover-card{
-  height:100%;
-  width:100%;
-  background-color: black
 
+.city-cover-card{
+  height: 180px;
+  width:100%;
   border:2px solid red;
+}
+
+.city-cover-card button{
+  height: 180px;
+  margin-bottom: 1em;
 }

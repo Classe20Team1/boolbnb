@@ -79,7 +79,7 @@
 
                               <ListContainer />
 
-                              <ListItem v-for="(data, index) in filterByServices "
+                              <ListItem  v-for="(data, index) in filterByServices "
 
                                           :coverimg="data.cover_img"
                                           :description="data.description"
@@ -94,7 +94,14 @@
                                           :key = "index"
                                           slot = "items"
                                           />
+
+                              <div class="noresult-container"v-if= '(filterByServices.length == 0)'> <h3 class="no-results"> There's no place in heaven! </h3> </div>
+
                       </div>
+
+
+
+
 
           </div>
 
@@ -308,6 +315,19 @@ ul li label{
 .mappa-container{
   flex:2;
   /* border:2px solid red; */
+}
+
+.noresult-container{
+  height:50%;
+  width:100%;
+  position: relative;
+}
+
+.no-results{
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%)
 }
 
 </style>

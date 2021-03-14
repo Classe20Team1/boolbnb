@@ -65,6 +65,12 @@
   width:100%;
   height:200px;
   padding:10px;
+  border-bottom:1px solid lightgrey;
+}
+
+.search-component-apartments-card:hover{
+  background-color: #e1f4f5;
+  cursor:pointer;
 }
 
 .search-component-apartment-img-box{

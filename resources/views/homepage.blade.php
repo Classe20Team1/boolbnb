@@ -56,8 +56,6 @@
 
       <div class="city-card mg-card">
 
-          <div class="city-cover-card">
-
                 <form action="{{ route('search') }}" name="city" id="city" method='post' required>
 
                       <button style='background-color: white; border: none'type="submit" name='city' id='city' value='Milano'>
@@ -70,8 +68,6 @@
                       </button>
 
                 </form>
-
-          </div>
 
       </div>
 

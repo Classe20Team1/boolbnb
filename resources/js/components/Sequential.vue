@@ -28,7 +28,14 @@
 
 
                                           <div class="sponsored-description">
-                                                <p> {{element.description}} </p>
+                                                <!-- <p> {{element.description}} </p> -->
+                                                <ul>
+                                                      <li>Stanze:{{element.rooms}}</li>
+                                                      <li>Letti:{{element.beds}}</li>
+                                                      <li>Bagni:{{element.bathrooms}}</li>
+                                                      <li>Mq:{{element.metri_quadrati}}</li>
+                                                </ul>
+
                                           </div>
 
                                           <i class="fas fa-star sponsored-icon"></i>
@@ -128,12 +135,22 @@ export default{
 .sponsored-description{
   margin-top:5px;
   text-overflow: hidden;
-  font-size: 11px;
+  font-size: 12px;
   margin-bottom:5px;
+}
+
+.sponsored-description ul{
+  margin-top: 10px;
+  list-style:none;
+  display: flex;
+  justify-content: space-between;
+  color:darkgrey;
 }
 .micro-details-sponsored-price{
   color:grey;
 }
+
+
 .sponsored-description p{
 height:40px;
 overflow:hidden;
