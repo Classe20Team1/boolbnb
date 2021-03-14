@@ -6,7 +6,7 @@
 
 @section('content')
 
-                    @if (session()->has('success_message'))
+                    <!-- @if (session()->has('success_message'))
                     <div class="alert alert-success">
                         {{ session()->get('success_message') }}
                     </div>
@@ -20,17 +20,20 @@
                             @endforeach
                         </ul>
                     </div>
-                @endif
+                @endif -->
 
 
       <div id="payments">
 
-        <payments :appartamento="{{$apartment}}" :sponsortypes="{{$sponsortypes}}"> </payments>
-
-
+            <payments :appartamento="{{$apartment}}" :sponsortypes="{{$sponsortypes}}"> </payments>
 
       </div>
 
+      <div class="blade-button-success-container">
+
+            <a class="blade-button-success" href="{{route('apartments.index')}}">Torna alla lista dei tuoi appartamenti</a>
+
+      </div>
 
 
 

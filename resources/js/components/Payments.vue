@@ -77,7 +77,7 @@
                             <div class="" v-if="nonce" v-bind:class = "(isPaymentFinalized)?'display':'hide' ">
 
                               <button onclick="javascript:history.go(-1)" class="alert success" >
-                                  Success!<br>Torna ai tuoi appartamenti
+                                  Success!
                               </button>
 
                                   <div class="sponsored" >
@@ -127,6 +127,7 @@ export default {
         }
     },
     methods: {
+
         findSponsor(id){
           let sponsor = this.sponsorTypes.find(function(el){
             return el.id == id
@@ -336,7 +337,6 @@ padding:10px;
 }
 
 .success{
-  cursor:pointer;
   border:1px solid lightgrey;
   width:100%;
   background-color: green;
@@ -347,10 +347,6 @@ padding:10px;
   color: white;
 }
 
-.success:hover{
-  opacity:0.8;
-}
-
 .sponsored{
   border:2px solid pink;
   border-radius: 10px;
@@ -359,10 +355,5 @@ padding:10px;
   justify-content: center;
   align-items: center;
 }
-
-
-
-
-
 
 </style>

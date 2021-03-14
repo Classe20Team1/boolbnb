@@ -32,7 +32,7 @@ Vue.component('show-map', require('./components/ShowMap.vue').default);
 
 Vue.component('payments', require('./components/Payments.vue').default);
 
-
+Vue.component('sequential', require('./components/Sequential.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -50,4 +50,8 @@ const showMap = new Vue({
 
 const payments = new Vue({
     el: '#payments',
+});
+
+const sequential = new Vue({
+    el: '#sequential',
 });
