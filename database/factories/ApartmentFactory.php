@@ -10,6 +10,15 @@ $factory->define(Apartment::class, function (Faker $faker) {
 
     $users = User::all();
     $num_rooms = $faker->numberBetween(1, 4);
+    $array = [
+        'images/external2.jpg',
+        'images/external3.jpg',
+        'images/external4.jpg',
+        'images/external5.jpg',
+        'images/external6.jpg',
+        'images/external7.png',
+        'images/external1.png',
+    ];
     return [
         'user_id' => $faker->numberBetween(1, $users->count()),
         'title' => $faker->sentence(4),
@@ -21,6 +30,6 @@ $factory->define(Apartment::class, function (Faker $faker) {
         'active' => true,
         'views_count' => 0,
         'price' => $faker->numberBetween(4600, 11900),
-        'cover_img' => $faker->url,
+        'cover_img' => $array[$faker->numberBetween(0, 6)],
     ];
 });

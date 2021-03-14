@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Http;
 use App\SponsorType;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
+use function GuzzleHttp\json_encode;
 
 class ApartmentsController extends Controller
 {
@@ -63,6 +64,7 @@ class ApartmentsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
     public function store(Request $request)
     {
 
@@ -87,8 +89,8 @@ class ApartmentsController extends Controller
             $name = Str::random(25);
             $imgEst = $request->file('cover')->extension();
             $path = $name . '.' . $imgEst;
-            $ImgApartament = $request->file('cover')->move(public_path().'/covers/', $path);
-            $newApartment->cover_img = 'covers/' . $name . '.' . $imgEst;
+            $ImgApartament = $request->file('cover')->move(public_path().'/images/', $path);
+            $newApartment->cover_img = 'images/' . $name . '.' . $imgEst;
         }
         //$request->file('cover')->store('covers');
 
@@ -147,6 +149,7 @@ class ApartmentsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function show(Apartment $apartment)
     {
         $services = Service::all();
@@ -158,6 +161,7 @@ class ApartmentsController extends Controller
             return view('apartments.show', compact('apartment', 'user', 'services'));
 
     }
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -179,6 +183,7 @@ class ApartmentsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function update(Request $request, Apartment $apartment)
     {
         // $validator = Apartment::make($request->all(), [
@@ -214,8 +219,8 @@ class ApartmentsController extends Controller
             $imgEst = $request->file('cover')->extension();
             $name = Str::random(25);
             $path = $name . '.' . $imgEst;
-            $ImgApartament = $request->file('cover')->move(public_path().'/image/', $path);
-            $apartment->cover_img = 'image/' . $name . '.' . $imgEst;
+            $ImgApartament = $request->file('cover')->move(public_path().'/images/', $path);
+            $apartment->cover_img = 'images/' . $name . '.' . $imgEst;
             $apartment->save();
         }
 
@@ -261,13 +266,7 @@ class ApartmentsController extends Controller
         //     }
 
         // }
-
-
-
         return view('apartments.show', compact('apartment', 'services'));
-
-
-
     }
 
     /*
@@ -276,31 +275,25 @@ class ApartmentsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function destroy($id)
     {
 
-        $elimina = Apartment::find($id);// prendo appartmento per ID
+        $elimina = Apartment::find($id);// seleziono appartmento per ID
 
-        $elimina->position()->delete(); //prendo la posizioneo
+        $elimina->position()->delete(); //elimino la posizioneo
+        $elimina->messages()->delete(); // elimino i messaggi
+        $elimina->sponsors()->delete(); //elimino gli sponsor legati a questo appartamento
+        // $elimina->imgs()->delete(); //elimino le immagini
 
-        $elimina->messages()->delete();// prendo i messaggi
-        // $elimina->imgs()->delete(); //prendo le immagini
-
-        $spon = $elimina->sponsors; //prendo solo i sponsor inerenti a questo id
-        foreach($spon as $sponsors){
-            $elimina->sponsors()->detach($sponsors->id);
-        }
-
-        $serv = $elimina->services; //prendo solo i servizi inerenti a questo id
+        $serv = $elimina->services; //elimino solo i servizi inerenti a questo id
         foreach($serv as $services){
             $elimina->services()->detach($services->id);
         }
-
         //dd($elimina);
+        $elimina->delete(); // elimino l'appartamento
 
-        $elimina->delete();
-
-        return redirect()->back();
+        return redirect()->back(); //reindirizzo alla pagina precedente.
     }
 
     public function search(Request $request)
@@ -313,7 +306,7 @@ class ApartmentsController extends Controller
             'latit' => $response['results'][0]['position']['lat'],
             'longit' => $response['results'][0]['position']['lon'],
         ];
-        $radius = 10;
+        $radius = 20;
 
         $filtered = Position::radius($positionSearched['latit'], $positionSearched['longit'],$radius);
         $arrayId= [];
@@ -327,13 +320,21 @@ class ApartmentsController extends Controller
             ->find($arrayId)
             ->where('beds', '>=', $request->guests)
             ->where('active', '=', 1);
+        if($positionSearched){
+            $positionSearched = json_encode($positionSearched);
+        } else {
+            $positionSearched = json_encode($positionSearched = [
+                'latit' => 41,9109,
+                'longit' => 12,4818,
+            ]);
 
+        }
         $data = json_encode($usersearch);
         $guests = json_encode($request->guests);
-        return view('search', compact('apartments', 'services','data','guests'));
+        return view('search', compact('apartments', 'services','data','guests', 'positionSearched'));
     }
-    
-    
+
+
     public function sponsor($id)
     {
         $apartment = Apartment::find($id);
