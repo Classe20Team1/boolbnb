@@ -107,7 +107,7 @@
 
               <div id="myMap" class="mappa-container">
 
-                    <Mapp :markersinfo = "filterByServices" :usersearch = "userSearch" />
+                    <Mapp :markersinfo = "filterByServices" :usersearch = "userSearch" :ctrlat = "centerMap.latit" :ctrlon = "centerMap.longit"/>
 
               </div>
 
@@ -126,7 +126,7 @@
         export default{
           name: "Main",
 
-          props:['searchedcity',"services", "guests"],
+          props:['searchedcity',"services", "guests", "searchcoo"],
 
           components:{
             ListItem,
@@ -145,6 +145,7 @@
                       requestedChambres:1,
                       requestedBeds:this.guests,
                       tryArray:[],
+                      centerMap:this.searchcoo,
                   }
           },
 
@@ -195,6 +196,7 @@
           created() {
 
             this.getApartments();
+            console.log(this.centerMap)
 
 
           },
