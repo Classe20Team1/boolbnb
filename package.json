@@ -27,6 +27,8 @@
     "dependencies": {
         "braintree": "^3.2.1",
         "braintree-web": "^3.74.0",
-        "paypal-checkout": "^4.0.325"
+        "emailjs-com": "^2.6.4",
+        "paypal-checkout": "^4.0.325",
+        "vue-sequential-entrance": "^1.1.3"
     }
 }

@@ -2,13 +2,15 @@
 
 <div id = "app" class="container">
 
-    <div class="row">
+    <div class="search-component-row">
 
           <div class="filter-results">
 
-                      <h5>Oltre 300 alloggi</h5>
+                      <div class="search-component-title-container">
 
-                      <h1>Roma: alloggi</h1>
+                            <h2>{{filterByServices.length}} Alloggi trovati a: {{userSearch}}</h2>
+
+                      </div>
 
                       <div class="sistemazione">
 
@@ -71,13 +73,16 @@
 
                       </div>
 
+
+
                       <div class="results-list">
 
                               <ListContainer />
 
-                              <ListItem v-for="(data, index) in filterByServices "
+                              <ListItem  v-for="(data, index) in filterByServices "
 
                                           :coverimg="data.cover_img"
+                                          :description="data.description"
                                           :link="'window.location=`apartments/'.concat(data.id).concat('`;')"
                                           :title = "data.title"
                                           :rooms = "data.rooms"
@@ -89,7 +94,14 @@
                                           :key = "index"
                                           slot = "items"
                                           />
+
+                              <div class="noresult-container"v-if= '(filterByServices.length == 0)'> <h3 class="no-results"> There's no place in heaven! </h3> </div>
+
                       </div>
+
+
+
+
 
           </div>
 
@@ -193,34 +205,47 @@
 
 
 <style scoped>
-
-.container{
+.sistemazione{
+  margin-top:25px;
+}
+/* .container{
   margin-left: auto;
   margin-right: auto;
-}
+} */
 
-.row{
+.search-component-row{
   width:100%;
   display: flex;
 }
 
 .filter-results{
-  flex:2;
   height:100vh;
-  padding:20px;
+  padding-left:20px;
+  padding-right:20px;
+  width:50%;
 }
-.sistemazione{
+
+/* .sistemazione{
   margin-top:50px;
-}
+} */
 
 .service-filters{
   justify-content: space-between;
-  margin-top:50px;
-  margin-bottom:50px;
+  margin-top:25px;
+  /* margin-top:50px;
+  margin-bottom:50px; */
 }
 
+.services-filters{
+  margin-top:15px;
+}
+
+/* .services-filters ul li{
+  align-items: center;
+} */
+
 .results-list{
-  height:calc(100vh - 390px);
+  height:calc(100vh - 255px);
   overflow-y: hidden;
   overflow-y: scroll;
   border-top:1px solid lightgrey;
@@ -241,6 +266,7 @@ ul{
 ul li{
   display: flex;
   flex-wrap: nowrap;
+  align-items: center;
   height:40px;
   min-width: 150px;
   line-height: 40px;
@@ -289,6 +315,19 @@ ul li label{
 .mappa-container{
   flex:2;
   /* border:2px solid red; */
+}
+
+.noresult-container{
+  height:50%;
+  width:100%;
+  position: relative;
+}
+
+.no-results{
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%)
 }
 
 </style>

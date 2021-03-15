@@ -1,16 +1,17 @@
 <template >
 
-              <li :onclick="link" class="apartments-card">
+              <li :onclick="link" class="search-component-apartments-card">
 
-                  <div class="apartment-img-box">
+                  <div class="search-component-apartment-img-box">
 
                       <img :src="coverimg" alt="img">
+                      <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/5/50/Bodiam-castle-10My8-1197.jpg"> -->
 
                   </div>
 
-                  <div class="apartment-features">
+                  <div class="search-component-apartment-features">
 
-                        <div class="font-helper-1">{{ title }}</div>
+                        <div class="font-helper-1"> <h3>{{ title }}</h3></div>
 
                         <ul class="tinies-container" >
 
@@ -21,7 +22,13 @@
 
                         </ul>
 
-                        <div class="price-tag"> <b> {{ price / 100}} Euro </b> / notte </div>
+                        <div class="apartment-description-search-component">
+
+                                {{description}}
+
+                        </div>
+
+                        <div class="price-tag-search-component"> <span><b> {{ price / 100}} Euro </b> / notte </span></div>
 
                   </div>
 
@@ -44,6 +51,7 @@
                    'price',
                    'link',
                    'coverimg',
+                   'description'
 
                    ],
             };
@@ -52,64 +60,67 @@
 
 <style scoped>
 
-.apartments-card {
-  display:flex;
-  justify-content: space-between;
-  border-top: 1px solid lightgrey;
-  border-bottom: 1px solid lightgrey;
-  padding: 1em;
-  padding-left: 0;
+.search-component-apartments-card{
   display: flex;
-  height: 200px;
-}
-
-.apartments-card:hover{
-  cursor:pointer;
-  border:1px solid grey;
-}
-
-.apartments-card .apartment-img-box {
-  width: 200px;
+  width:100%;
+  height:200px;
   padding:10px;
-  border:1px solid pink;
-
+  border-bottom:1px solid lightgrey;
 }
 
-.apartments-card .apartment-features {
+.search-component-apartments-card:hover{
+  background-color: #e1f4f5;
+  cursor:pointer;
+}
 
+.search-component-apartment-img-box{
+  position: relative;
+  min-width:180px;
+  max-width:180px;
+  height:180px;
+  border-radius:10px;
+  overflow:hidden;
+}
 
-  padding: 10px;
-  display:flex;
+.search-component-apartment-img-box img{
+  height:100%;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%)
+}
+
+.search-component-apartment-features{
+  width:100%;
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
-
-.apartments-card .apartment-img-box img {
-  width: 100%;
-  height: 100%;
-
-  border-radius: 1em;
-}
-
-.font-helper-1 {
-  font-size: .8em;
-  color: grey;
-  margin-bottom: 1em;
-}
-
-.font-helper-2 {
-  margin-bottom: 1em;
+  padding:5px;
+  margin-left: 20px;
 }
 
 .tinies-container{
-  list-style: none;
+  width:100%;
   display: flex;
   justify-content: space-between;
+  list-style: none;
 }
 
 
+.apartment-description-search-component{
+  height:75px;
+  width:100%;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
 
+.price-tag-search-component{
+  height:30px;
+}
 
-
+.price-tag-search-component{
+  display:flex;
+  justify-content: flex-end;
+}
 
 </style>

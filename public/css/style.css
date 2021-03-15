@@ -10,7 +10,8 @@ body {
 }
 
 main {
-  padding-top: 152px;
+  transition: 0.5s;
+  margin-top: 100px;
 }
 
 header {
@@ -41,22 +42,25 @@ header {
 }
 
 nav {
-  border: 1px solid black;
-  padding: 2em 3em;
+  /* border: 1px solid black; */
+  /* padding: 2em 3em; */
   display: flex;
   color: white;
   justify-content: space-between;
   /* padding-bottom: 2em; */
+  height:100px;
+  scroll-behavior: auto;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1;
-  background-color: black;
+  background-color: white;;
+  /* opacity:0.8; */
 }
 
 nav > div {
-  padding: .5em;
+  /* height:40px; */
 }
 
 nav .nav-logo-box {
@@ -66,7 +70,8 @@ nav .nav-logo-box {
 }
 
 nav .nav-logo-box img {
-  height: 2em;
+  height: 80px;
+  margin-left: 50px;
 }
 
 nav .nav-contents {
@@ -106,6 +111,7 @@ nav .nav-contents ul li:hover::after {
 
 nav .nav-user {
   display: flex;
+  margin-right: 50px;
   align-items: center;
   position: relative;
 }
@@ -155,24 +161,34 @@ nav .nav-user {
   margin-right: .5em;
 }
 
-.nav-right-list-2 li.logged {
-  /* position: relative; */
+.nav-right-list-2 li.logged:hover{
+  position: relative;
 }
 
 .nav-right-list-2 li.logged:hover .nav-dropdown {
   display: block;
+
 }
 
 .nav-dropdown {
   width: 130px;
   font-weight: bold;
   background-color: white;
+  border:1px solid pink;
   position: absolute;
-  bottom: -207%;
-  right: 0%;
+  top:33px;
+  right:0px;
+  /* top:60px; */
+
+  /* bottom: -207%; */
+  /* right: 0%; */
   display: none;
-  border: 1px solid black;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  /* border: 1px solid black; */
 }
+
+
 .nav-dropdown ul {
   list-style: none;
 }
@@ -181,6 +197,7 @@ nav .nav-user {
   padding: .5em;
   border-radius: 0;
 }
+
 .dropdown-helper {
   padding-bottom: 1.5em;
   border-bottom: 1px solid black;
@@ -191,27 +208,50 @@ nav .nav-user {
 }
 .nav-right-list-2 .user-icon {
   font-size: 1.8em;
+
 }
 
 /* Jumbotron */
-header .hero {
-  width: 100%;
+.hero {
+  /* width: 100%;
   padding: 3em 2em;
-  text-align: center;
+  text-align: center; */
   /* padding-top: 125px; */
-  padding-bottom: 3.5em;
-  position: relative;
+  /* padding-bottom: 3.5em;
+  position: relative; */
 }
 
-.hero .hero-img-box {
+.hero{
+  background-image: url('../img/jumbotrone.jpg');
+  height:750px;
+  background-position: bottom;
+  background-size:cover;
+}
+
+.hero .hero-title-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:50%;
+  height:100%;
+}
+
+.hero-title-container h1{
+  font-size: 50px;
+  line-height: 75px;
+
+
+}
+
+/* .hero .hero-img-box {
   width: 100%;
   margin-bottom: 1.8em;
-}
+} */
 
-.hero img {
+/* .hero img {
   width: 88%;
   margin-bottom: 1em;
-}
+} */
 
 .search-bar {
   background-color: white;
@@ -240,6 +280,7 @@ header .hero {
 }
 
 .search-bar-form .left-input {
+  opacity:1;
   padding: .5em 2em;
 }
 
@@ -289,7 +330,7 @@ header .hero {
 
 .home-content {
   padding: 0 3em;
-  padding-top: 4em;
+  margin-top: 40px;;
   padding-bottom: 6em;
 }
 
@@ -305,6 +346,8 @@ header .hero {
   max-width: calc(100% / 4.2);
   padding: 1em 0;
   cursor: pointer;
+  /* object-fit: cover;
+  object-position: 50% 50%; */
 }
 
 /* .mg-card {
@@ -343,7 +386,7 @@ header .hero {
 
 .sponsored-card img {
   height: 180px;
-  width: 100%;
+  /* width: 100%; */
   margin-bottom: .5em;
   border-radius: .5em;
 }
@@ -1173,6 +1216,7 @@ footer ul li a:hover {
 }
 
 
+/* COMPONENTS*/
 /* SPONSOR */
 
 #payments{
@@ -1182,4 +1226,62 @@ footer ul li a:hover {
   height:600px;
   margin-right: auto;
   margin-left: auto;
+}
+
+/* HOMEPAGE */
+
+#sequential span{
+  display:flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  width:100%;
+  margin-bottom: 40px;
+  overflow-x: scroll;
+}
+
+/* .sequential-component-container{
+  width:100%;
+} */
+
+.helper-flex-JCC{
+  display:flex;
+  justify-content:center;
+}
+
+.appartamenti-in-evidenza-section h1{
+  /* text-align: center; */
+  margin-bottom:40px;
+}
+
+.blade-button-success-container{
+width:100%;
+position:relative;
+margin-bottom: 100px;
+display:flex;
+
+}
+
+.blade-button-success{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  height:40px;
+  font-size: 20px;
+  color:black;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius:10px;
+}
+
+
+.city-cover-card{
+  height: 180px;
+  width:100%;
+  border:2px solid red;
+}
+
+.city-cover-card button{
+  height: 180px;
+  margin-bottom: 1em;
 }

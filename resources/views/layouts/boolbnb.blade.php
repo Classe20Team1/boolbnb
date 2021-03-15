@@ -10,6 +10,7 @@
     <!-- BootStrap -->
     {{-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> --}}
     <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <script  src="https://api.tomtom.com/maps-sdk-for-web/cdn/5.x/5.64.0/maps/maps-web.min.js"></script>
     <script  src="https://api.tomtom.com/maps-sdk-for-web/cdn/5.x/5.64.0/services/services-web.min.js"></script>
@@ -25,10 +26,10 @@
 
   </head>
   <body>
-    <nav>
+    <nav id="navi">
       <div class="nav-logo-box">
         <a href="/">
-          <img src="{{ asset('img/logo.png') }}" alt="logo">
+          <img src="{{ asset('img/logobnb.jpg') }}" alt="logo">
         </a>
       </div>
       <div class="nav-contents">
@@ -149,5 +150,6 @@
       </ul>
       <h4>&copy; Boolean Careers All rights reserved</h4>
     </footer>
+    <script src="{{ asset('js/various.js') }}" defer></script>
   </body>
 </html>
