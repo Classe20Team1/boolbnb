@@ -841,6 +841,9 @@ footer ul li a:hover {
 .myapt-list-container {
   padding: 3em 7.5em;
   padding-right: 9em;
+  width: 80%;
+  justify-content: space-between;
+  margin: auto;
 }
 
 .myapt-list-container h2 {
@@ -855,6 +858,9 @@ footer ul li a:hover {
   border-radius: 1em;
   box-shadow: 0 0 1px 1px lightgrey;
   margin-bottom: 1em;
+  width: 70%;
+  justify-content: space-between;
+  margin: auto;
 }
 /* .my-apt-card > div {
   height: 100px;

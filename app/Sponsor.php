@@ -3,6 +3,8 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Apartment;
+use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 
 
@@ -23,9 +25,25 @@ class Sponsor extends Model
       $date = Carbon::now();
       $today = $date->format('Y-m-d');
       $filtered = Sponsor::select()
-      ->whereDate('date_start', '<=', $today)
       ->whereDate('date_end', '>=', $today)
       ->get();
+
+    $array = [];
+        foreach ($filtered as $sponsor){
+            array_push($array, $sponsor->apartment_id);
+        }
+      $apartments = Apartment::all();
+      foreach($apartments as $apartment){
+          if(in_array($apartment->id, $array)){
+              DB::table('apartments')->update(
+                  ['active' => true]
+              );
+          } else {
+              DB::table('apartments')->update(
+                  ['active' => false]
+              );
+          }
+      }
 
       return $filtered;
     }
