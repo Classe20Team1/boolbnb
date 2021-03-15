@@ -39,17 +39,19 @@
     <div class="apartment-description">
       <p>{{$apartment->description}}</p>
 
-      <div class="host-btn">
+    </div>
+      <!-- <div class="host-btn">
 
         <a href="#">Contatta l'host</a>
 
-      </div>
+      </div> -->
 
         <!-- <div id="message">
 
               <message> </message>
 
         </div> -->
+      <div class="line-separator"></div>
 
       <div id="modal">
         <modal> </modal>
@@ -58,7 +60,7 @@
 
 
 
-    </div>
+
     <div class="line-separator"></div>
     <div class="services-list">
       <h4>Sistemazione</h4>

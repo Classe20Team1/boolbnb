@@ -2196,7 +2196,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Main",
-  props: ['searchedcity', "services", "guests"],
+  props: ['searchedcity', "services", "guests", "searchcoo"],
   components: {
     ListItem: _ListItem__WEBPACK_IMPORTED_MODULE_0__["default"],
     ListContainer: _ListContainer__WEBPACK_IMPORTED_MODULE_1__["default"],
@@ -2211,7 +2211,8 @@ __webpack_require__.r(__webpack_exports__);
       requestedBathrooms: 1,
       requestedChambres: 1,
       requestedBeds: this.guests,
-      tryArray: []
+      tryArray: [],
+      centerMap: this.searchcoo
     };
   },
   computed: {
@@ -2248,6 +2249,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   created: function created() {
     this.getApartments();
+    console.log(this.centerMap);
   }
 });
 
@@ -2266,18 +2268,24 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Mapp',
-  props: ['markersinfo', 'usersearch'],
+  props: ['markersinfo', 'usersearch', 'ctrlat', 'ctrlon'],
   data: function data() {
     return {
       userSearch: this.usersearch,
-      centerLng: null,
-      centerLat: null,
+      centerLng: this.ctrlon,
+      centerLat: this.ctrlat,
       markersArray: [],
       mapObj: {},
       currentMarkers: [],
-      counter: 0
+      counter: 0,
+      popup: "<div class='popupcontainer'>\n                <span class='popup'> ciaocioa </span>\n            </div>"
     };
   },
   methods: {
@@ -2317,7 +2325,8 @@ __webpack_require__.r(__webpack_exports__);
       var popup = new tt.Popup({
         offset: popupOffset
       }).setHTML(title);
-      marker.setPopup(popup).togglePopup();
+      marker.setPopup(popup);
+      console.log(popup);
       this.currentMarkers.push(marker);
     }
   },
@@ -2328,8 +2337,8 @@ __webpack_require__.r(__webpack_exports__);
 
       if (this.counter == 0) {
         //INIZIALIZZA LA MAPPA
-        this.centerLng = this.markersArray[0].position.longitude;
-        this.centerLat = this.markersArray[0].position.latitude;
+        // this.centerLng=this.markersArray[0].position.longitude;
+        // this.centerLat=this.markersArray[0].position.latitude;
         this.getMap(this.centerLng, this.centerLat);
         this.markersArray.forEach(function (el) {
           that.addMarker(that.mapObj, el.position.longitude, el.position.latitude, el.title);
@@ -2361,6 +2370,12 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var emailjs_com__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! emailjs-com */ "./node_modules/emailjs-com/source/index.js");
 /* harmony import */ var emailjs_com__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(emailjs_com__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -29691,7 +29706,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n*[data-v-b91a6428] {box-sizing: border-box;}\n.container[data-v-b91a6428] {\n  display: block;\n  margin:auto;\n  text-align: center;\n  background-color: #f2f2f2;\n  padding: 20px;\n  width: 100%;\n  border-radius: 15px;\n}\n.inputs-container-message-component[data-v-b91a6428]{\n  display:flex;\n}\nlabel[data-v-b91a6428] {\n  float: left;\n  font-size: 15px;\n}\ninput[type=text][data-v-b91a6428], [type=email][data-v-b91a6428],textarea[data-v-b91a6428] {\n  width: 100%;\n  padding: 12px;\n  border: 1px solid #ccc;\n  border-radius: 4px;\n  box-sizing: border-box;\n  margin-top: 6px;\n  margin-bottom: 10px;\n  resize: vertical;\n}\ninput[type=submit][data-v-b91a6428] {\n  background-color: #FF385C;\n  color: white;\n  padding: 12px 20px;\n  border: none;\n  border-radius: 4px;\n  cursor: pointer;\n}\ninput[type=submit][data-v-b91a6428]:hover {\n  background-color: #45a049;\n}\n", ""]);
+exports.push([module.i, "\n*[data-v-b91a6428] {box-sizing: border-box;}\n.container[data-v-b91a6428] {\n  position:relative;\n  display: block;\n  margin:auto;\n  text-align: center;\n  background-color: #f2f2f2;\n  padding: 20px;\n  width: 100%;\n  border-radius: 15px;\n}\n.message-component-close-button[data-v-b91a6428]{\n  position:absolute;\n  right:20px;\n  top:10px;\n  border:0px;\n  font-size: 20px;\n  color:lightgrey;\n  cursor:pointer;\n  line-height: 20px;\n  height: 20px;\n  width:20px;\n  border-radius: 5px;\n}\n.message-component-close-button[data-v-b91a6428]:hover{\n  background-color: grey;\n}\n.inputs-container-message-component[data-v-b91a6428]{\n  display:flex;\n}\n.submit-container-message-component[data-v-b91a6428]{\n  display:flex;\n  justify-content: flex-end;\n}\nlabel[data-v-b91a6428] {\n  float: left;\n  font-size: 15px;\n}\ninput[type=text][data-v-b91a6428], [type=email][data-v-b91a6428],textarea[data-v-b91a6428] {\n  width: 100%;\n  padding: 12px;\n  border: 1px solid #ccc;\n  border-radius: 4px;\n  box-sizing: border-box;\n  margin-top: 6px;\n  margin-bottom: 10px;\n  resize: vertical;\n}\ninput[type=submit][data-v-b91a6428] {\n  background-color: #FF385C;\n  color: white;\n  padding: 12px 20px;\n  border: none;\n  border-radius: 4px;\n  cursor: pointer;\n}\ninput[type=submit][data-v-b91a6428]:hover {\n  background-color: #45a049;\n}\n", ""]);
 
 // exports
 
@@ -29710,7 +29725,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.modal-mask {\nposition: fixed;\nz-index: 9998;\ntop: 0;\nleft: 0;\nwidth: 100%;\nheight: 100%;\nbackground-color: rgba(0, 0, 0, .5);\ndisplay: table;\ntransition: opacity .3s ease;\n}\n.modal-wrapper {\ndisplay: table-cell;\nvertical-align: middle;\n}\n.modal-container {\nwidth: 300px;\nmargin: 0px auto;\npadding: 20px 30px;\nbackground-color: #fff;\nborder-radius: 2px;\nbox-shadow: 0 2px 8px rgba(0, 0, 0, .33);\ntransition: all .3s ease;\nfont-family: Helvetica, Arial, sans-serif;\n}\n.modal-header h3 {\nmargin-top: 0;\ncolor: #42b983;\n}\n.modal-body {\nmargin: 20px 0;\n}\n.modal-default-button {\nfloat: right;\n}\n\n/*\n* The following styles are auto-applied to elements with\n* transition=\"modal\" when their visibility is toggled\n* by Vue.js.\n*\n* You can easily play with the modal transition by editing\n* these styles.\n*/\n.modal-enter {\nopacity: 0;\n}\n.modal-leave-active {\nopacity: 0;\n}\n.modal-enter .modal-container,\n.modal-leave-active .modal-container {\ntransform: scale(1.1);\n}\n\n", ""]);
+exports.push([module.i, "\n.modal-mask {\nposition: fixed;\nz-index: 9998;\ntop: 0;\nleft: 0;\nwidth: 100%;\nheight: 100%;\nbackground-color: rgba(0, 0, 0, .5);\ndisplay: table;\ntransition: opacity .3s ease;\n}\n.modal-message-component{\n  display:flex;\n}\n.modal-message-component-button{\n  height:40px;\n  width:160px;\n  border-radius: 10px;\n  background-color: white;\n}\n.modal-wrapper {\ndisplay: table-cell;\nvertical-align: middle;\n}\n.modal-container {\nwidth: 300px;\nmargin: 0px auto;\npadding: 20px 30px;\nbackground-color: #fff;\nborder-radius: 2px;\nbox-shadow: 0 2px 8px rgba(0, 0, 0, .33);\ntransition: all .3s ease;\nfont-family: Helvetica, Arial, sans-serif;\n}\n.modal-header h3 {\nmargin-top: 0;\ncolor: #42b983;\n}\n.modal-body {\nmargin: 20px 0;\n}\n.modal-default-button {\nfloat: right;\n}\n\n/*\n* The following styles are auto-applied to elements with\n* transition=\"modal\" when their visibility is toggled\n* by Vue.js.\n*\n* You can easily play with the modal transition by editing\n* these styles.\n*/\n.modal-enter {\nopacity: 0;\n}\n.modal-leave-active {\nopacity: 0;\n}\n.modal-enter .modal-container,\n.modal-leave-active .modal-container {\ntransform: scale(1.1);\n}\n\n", ""]);
 
 // exports
 
@@ -88098,7 +88113,9 @@ var render = function() {
           _c("Mapp", {
             attrs: {
               markersinfo: _vm.filterByServices,
-              usersearch: _vm.userSearch
+              usersearch: _vm.userSearch,
+              ctrlat: _vm.centerMap.latit,
+              ctrlon: _vm.centerMap.longit
             }
           })
         ],
@@ -88154,6 +88171,16 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
+    _c("input", {
+      staticClass: "message-component-close-button",
+      attrs: { type: "button", name: "", value: "X" },
+      on: {
+        click: function($event) {
+          return _vm.$emit("close")
+        }
+      }
+    }),
+    _vm._v(" "),
     _c(
       "form",
       {
@@ -88249,14 +88276,16 @@ var render = function() {
           }
         }),
         _vm._v(" "),
-        _c("input", {
-          attrs: { type: "submit", value: "Send" },
-          on: {
-            click: function($event) {
-              return _vm.$emit("close")
+        _c("div", { staticClass: "submit-container-message-component" }, [
+          _c("input", {
+            attrs: { type: "submit", value: "Send" },
+            on: {
+              click: function($event) {
+                return _vm.$emit("close")
+              }
             }
-          }
-        })
+          })
+        ])
       ]
     )
   ])
@@ -88285,18 +88314,19 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    {},
+    { staticClass: "modal-message-component" },
     [
       _c(
         "button",
         {
+          staticClass: "modal-message-component-button",
           on: {
             click: function($event) {
               _vm.showModal = true
             }
           }
         },
-        [_vm._v("Show Modal")]
+        [_vm._v("Contatta l'host!")]
       ),
       _vm._v(" "),
       _c(
