@@ -1255,6 +1255,56 @@ footer ul li a:hover {
   overflow-x: scroll;
 }
 
+#hooper{
+  /* border:2px solid green; */
+  display: flex;
+  flex-wrap: wrap;
+  width:40%;
+  /* height:600px; */
+}
+
+/* #modal{
+  height:100%;
+} */
+
+.my-apartment-info-container{
+  display: flex;
+  justify-content: spac;
+}
+
+.services-list{
+  width:50%;
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between;
+  margin-left: 30px;
+}
+
+.apt-basics-list{
+  display:flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.apt-basics-list li{
+  width:150px;
+  margin-bottom:10px;
+  margin-top:10px;
+}
+
+/* .service-list-low-section{
+  display: flex;
+} */
+
+.service-list-low-section-right{
+  display: flex;
+  justify-content: center;
+  /* align-items: center;
+  height:100%; */
+}
+
+
+
 /* .sequential-component-container{
   width:100%;
 } */

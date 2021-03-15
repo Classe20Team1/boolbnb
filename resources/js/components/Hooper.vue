@@ -1,60 +1,167 @@
 <template>
 
-      <Hooper class="">
+      <!-- <hooper group="group1" >
 
-        <Slide>
+        <slide>
 
-            <div class="ciao">
+          <div class="img-container">
 
-            </div>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/50/Bodiam-castle-10My8-1197.jpg" alt="">
 
-        </Slide>
+          </div>
 
-      </Hooper>
+        </slide>
+
+      </hooper> -->
+
+
+      <hooper group="group1" :settings="hooperSettings">
+
+        <slide v-for="(slide, indx) in images" :key="indx" :index="indx">
+
+          <div class="img-container-hooper">
+
+            <img :src="slide.path" alt="">
+
+          </div>
+
+        </slide>
+
+        <!-- <slide>
+
+          <div class="img-container-hooper">
+
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/50/Bodiam-castle-10My8-1197.jpg" alt="">
+
+          </div>
+
+        </slide>
+
+        <slide>
+
+          <div class="img-container-hooper">
+
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/50/Bodiam-castle-10My8-1197.jpg" alt="">
+
+          </div>
+
+        </slide>
+
+        <slide>
+
+          <div class="img-container-hooper">
+
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/50/Bodiam-castle-10My8-1197.jpg" alt="">
+
+          </div>
+
+        </slide>
+
+        <slide>
+
+          <div class="img-container-hooper">
+
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/50/Bodiam-castle-10My8-1197.jpg" alt="">
+
+          </div>
+
+        </slide> -->
+
+
+
+
+
+
+
+        <hooper-navigation slot="hooper-addons"></hooper-navigation>
+
+        <hooper-pagination slot="hooper-addons"></hooper-pagination>
+
+      </hooper>
+
 
 </template>
 
 <script>
-  import { Hooper, Slide } from 'hooper';
+  import { Hooper,
+           Slide,
+           Navigation as HooperNavigation,
+           Pagination as HooperPagination } from 'hooper';
   import 'hooper/dist/hooper.css';
 
 
 
   export default {
-    name: 'Hooper',
+    name: 'my-hooper',
     components: {
       Hooper,
-      Slide
+      Slide,
+      HooperPagination,
+      HooperNavigation
     },
 
-    props:['index'],
+    props:['imgs','numofitems'],
 
     data() {
     return {
       hooperSettings: {
-        itemsToShow: 2,
-        centerMode: true,
-        breakpoints: {
-          800: {
-            centerMode: false,
-            itemsToShow: 3
-          },
-          1000: {
-            itemsToShow: 6,
-            pagination: 'fraction'
-          }
-        }
-      }
+        itemsToShow: this.numofitems,
+        centerMode: false,
+        infiniteScroll:true,
+        autoPlay: true,
+        playSpeed: 3500,
+
+
+      },
+
+      images:this.imgs,
     };
+  },
+
+  mounted(){
+    console.log(this.imgs.map(el=>el.path))
+    // element.services.map(el=>el.name))
   }
 }
 </script>
 
-<style >
+<style scoped>
 
-  .ciao{
-    height:500px;
-    width:500px;
-    border:2px solid red;
-  }
+.hooper{
+  /* border:5px solid black; */
+  height:320px;;
+  width:100%;
+}
+
+ .hooper-slide{
+ position:relative;
+ /* border:2px solid red; */
+ /* margin-right:10px;
+ margin-left:10px; */
+ /* height:350px;
+ width:30%; */
+}
+
+/* .img-container-hooper{
+  position:relative;
+  border:2px solid red;
+  margin-right:10px;
+  margin-left:10px;
+  height:350px;
+  width:500px;
+} */
+
+img{
+
+  padding:10px;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  width:100%;
+  overflow:hidden;
+  border-radius:15px;
+
+}
+
 </style>
