@@ -134,10 +134,10 @@
               </span>
             @enderror
           </div>
-          {{-- <div class="">
+          <div class="">
             <label for="image">Carica immagini</label><br>
             <input id="image" type="file" name="image[]" multiple>
-          </div> --}}
+          </div>
         </div>
         <div class="submit-form-btn">
           <input type="submit" name="submit" value="Aggiungi">

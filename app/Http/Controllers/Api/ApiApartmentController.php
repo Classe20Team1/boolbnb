@@ -22,17 +22,16 @@ class ApiApartmentController extends Controller
             'longit' => $response['results'][0]['position']['lon'],
         ];
 
-        $radius = 100;
+        $radius = 30;
 
         $filtered = Position::radius($positionSearched['latit'], $positionSearched['longit'], $radius);
         $arrayId = [];
         foreach ($filtered as $position) {
             array_push($arrayId, $position->apartment_id);
         }
-        
+
         return response()->json(Apartment::with('services', 'position', 'imgs')
         ->find($arrayId)
-        ->where('beds', '>=', $request->guests)
-        ->where('active', '=', true));
+        ->where('beds', '>=', $request->guests));
     }
 }

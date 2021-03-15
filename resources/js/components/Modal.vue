@@ -1,9 +1,9 @@
 <template>
 
-    <div class="">
+    <div class="modal-message-component">
 
 
-      <button @click="showModal = true">Show Modal</button>
+      <button class="modal-message-component-button" @click="showModal = true">Contatta l'host!</button>
 
             <transition name="modal">
 
@@ -76,6 +76,17 @@ height: 100%;
 background-color: rgba(0, 0, 0, .5);
 display: table;
 transition: opacity .3s ease;
+}
+
+.modal-message-component{
+  display:flex;
+}
+
+.modal-message-component-button{
+  height:40px;
+  width:160px;
+  border-radius: 10px;
+  background-color: white;
 }
 
 .modal-wrapper {

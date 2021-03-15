@@ -15,7 +15,7 @@
 
       <div id="app">
 
-      <my-main :searchedcity= "{{ $data }}" :services= "{{$services}}" :guests={{$guests}}></my-main>
+      <my-main :searchedcity= "{{ $data }}" :services= "{{$services}}" :guests={{$guests}} :searchcoo={{$positionSearched}}></my-main>
 
 
       <div class="map-box">

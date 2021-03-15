@@ -119,10 +119,10 @@
             <label for="cover">Carica immagina di anteprima</label><br>
             <input id="cover" type="file" name="cover" value="">
           </div>
-          {{-- <div class="">
+          <div class="">
             <label for="image">Carica immagini</label><br>
             <input id="image" type="file" name="image[]" multiple>
-          </div> --}}
+          </div>
         </div>
         <div class="submit-form-btn">
           <input type="submit" name="submit" value="Aggiungi">
