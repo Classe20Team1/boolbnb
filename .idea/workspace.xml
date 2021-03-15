@@ -6,6 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="6aae546b-150d-41e0-b1d7-5d3d8ad8b5c5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ApartmentsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ApartmentsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/ApiApartmentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/ApiApartmentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/PositionSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/PositionSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/apartments/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/apartments/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/apartments/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/apartments/edit.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,8 +28,8 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/database/factories/ApartmentFactory.php" root0="SKIP_INSPECTION" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/database/seeds/SponsorSeeder.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/database/factories/PositionFactory.php" root0="SKIP_INSPECTION" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/database/seeds/SponsorSeeder.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/app/Http/Controllers/ApartmentsController.php" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.4">
@@ -145,6 +150,9 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1pfJkBXueunXB07CWQtJwLXE5Lo" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="autoscrollToSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -156,7 +164,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../app_prev" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="reference.idesettings.emmet" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">

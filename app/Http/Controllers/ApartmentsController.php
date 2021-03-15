@@ -90,7 +90,7 @@ class ApartmentsController extends Controller
             $imgEst = $request->file('cover')->extension();
             $path = $name . '.' . $imgEst;
             $ImgApartament = $request->file('cover')->move(public_path().'/images/', $path);
-            $newApartment->cover_img = 'images/' . $name . '.' . $imgEst;
+            $newApartment->cover_img = 'images/' . $path;
         }
         //$request->file('cover')->store('covers');
 
@@ -120,22 +120,23 @@ class ApartmentsController extends Controller
         ]);
 
 
-        // $files = $newApartment->imgs; //salvo il file in variabile
-        // $arrayImgApartment = $request->file('image'); // prendo il file
+         $files = $newApartment->imgs; //salvo il file in variabile
+         $arrayImgApartment = $request->file('image'); // prendo il file
 
-        // if($request->hasFile('image'))
-        // { //ciclo per salvarlo
-        //     foreach ($arrayImgApartment as $file) {
-        //         $newImg = new Img; // collego la varibile alla tabella img
-        //         $name = Str::random(25); // creo nome random di 25 caratteri
-        //         $imgEst = $file->extension();
-        //         $file->move(public_path().'/images/', $name);  //salva l'img nella cartella di destinazione
-        //         $newImg->path = 'images/' . $name . '.' . $imgEst;  //aggiungo path
-        //         $newImg->apartment_id = $newApartment->id; // aggangio all'appartamento tramite id
-        //         $newImg->save();             // salvo tutto
-        //     }
+         if($request->hasFile('image'))
+         { //ciclo per salvarlo
+             foreach ($arrayImgApartment as $file) {
+                 $newImg = new Img; // collego la varibile alla tabella img
+                 $name = Str::random(25); // creo nome random di 25 caratteri
+                 $imgEst = $file->extension();
+                 $path = $name . '.' . $imgEst;
+                 $file->move(public_path().'/images/', $path);  //salva l'img nella cartella di destinazione
+                 $newImg->path = 'images/' . $path;  //aggiungo path
+                 $newImg->apartment_id = $newApartment->id; // aggangio all'appartamento tramite id
+                 $newImg->save();             // salvo tutto
+             }
 
-        // }
+         }
 
         return redirect()->route('apartments.index');
 
@@ -220,7 +221,7 @@ class ApartmentsController extends Controller
             $name = Str::random(25);
             $path = $name . '.' . $imgEst;
             $ImgApartament = $request->file('cover')->move(public_path().'/images/', $path);
-            $apartment->cover_img = 'images/' . $name . '.' . $imgEst;
+            $apartment->cover_img = 'images/' . $path;
             $apartment->save();
         }
 
@@ -250,22 +251,23 @@ class ApartmentsController extends Controller
             ]);
         }
 
-        // $files = $apartment->imgs; //salvo il file in variabile
-        // $arrayImgApartment = $request->file('image'); // prendo i file
-        // //cancellazione imgs vecchie
-        // if($request->hasFile('image'))
-        // { //ciclo per salvarlo
-        //     foreach ($arrayImgApartment as $file) {
-        //         $newImg = new Img; // collego la varibile alla tabella img
-        //         $imgEst = $file->extension();
-        //         $name = Str::random(25); // creo nome random di 25 caratteri
-        //         $file->move(public_path().'/images/', $name);  //salva l'img nella cartella di destinazione
-        //         $newImg->path = 'images/' . $name . '.' . $imgEst;  //aggiungo path
-        //         $newImg->apartment_id = $apartment->id; // aggangio all'appartamento tramite id
-        //         $newImg->save();             // salvo tutto
-        //     }
+         $files = $apartment->imgs; //salvo il file in variabile
+         $arrayImgApartment = $request->file('image'); // prendo i file
+         //cancellazione imgs vecchie
+         if($request->hasFile('image'))
+         { //ciclo per salvarlo
+             foreach ($arrayImgApartment as $file) {
+                 $newImg = new Img; // collego la varibile alla tabella img
+                 $imgEst = $file->extension();
+                 $name = Str::random(25);
+                 $path = $name . '.' . $imgEst;// creo nome random di 25 caratteri
+                 $file->move(public_path().'/images/', $path);  //salva l'img nella cartella di destinazione
+                 $newImg->path = 'images/' . $path;  //aggiungo path
+                 $newImg->apartment_id = $apartment->id; // aggangio all'appartamento tramite id
+                 $newImg->save();             // salvo tutto
+             }
 
-        // }
+         }
         return view('apartments.show', compact('apartment', 'services'));
     }
 
@@ -306,7 +308,7 @@ class ApartmentsController extends Controller
             'latit' => $response['results'][0]['position']['lat'],
             'longit' => $response['results'][0]['position']['lon'],
         ];
-        $radius = 20;
+        $radius = 30;
 
         $filtered = Position::radius($positionSearched['latit'], $positionSearched['longit'],$radius);
         $arrayId= [];
