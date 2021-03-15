@@ -73,11 +73,11 @@ class ApartmentsController extends Controller
         // 'rooms' => 'required | numeric | min:1',
         // 'beds' =>  'required| min:1 | numeric',
         // 'bathrooms' =>  'required | numeric | min:1',
-        // 'metri_quadri'  => 'required | numeric | min:10',            
+        // 'metri_quadri'  => 'required | numeric | min:10',
         // 'price' => 'required | numeric | min:5',
         // 'cover' => 'file',
-        // 'image' => 'file',        
-        // ]);       
+        // 'image' => 'file',
+        // ]);
         $data = $request->all();
         $user = Auth::user();
         $newApartment = new Apartment;
@@ -107,7 +107,7 @@ class ApartmentsController extends Controller
 
         $newApartment->save(); //salva
         // services
-        
+
         if(isset($data['services'])){
             $newApartment->services()->attach($data['services']);
         }
@@ -166,7 +166,7 @@ class ApartmentsController extends Controller
     public function show(Apartment $apartment)
     {
         $services = Service::all();
-        $arrayFa = ['fa-wifi', 'fa-car','fa-swimmer', 'fa-concierge-bell','fa-hot-tub','fa-water'];
+        $array = ['fa-wifi', 'fa-car','fa-swimmer', 'fa-concierge-bell','fa-hot-tub','fa-water'];
         $user = Auth::user();
         $apartment
             ->increment('views_count', 1);
@@ -206,7 +206,7 @@ class ApartmentsController extends Controller
         //     'beds' =>  'required',
         //     'bathrooms' =>  'required',
         //     'metri_quadri'  => 'required',
-            
+
         //     'price' => 'required',
         //     'cover_img' => '',
         //     'image'=> '',
@@ -360,5 +360,5 @@ class ApartmentsController extends Controller
         return view('sponsor', compact('apartment', 'sponsortypes'));
     }
 
-   
+
 }
