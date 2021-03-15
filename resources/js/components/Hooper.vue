@@ -1,14 +1,16 @@
 <template>
 
-      <div class="">
+      <Hooper class="">
 
-        <slide v-for="(slide, indx) in slides" :key="indx" >
+        <Slide>
 
-              {{ slide }}
+            <div class="ciao">
 
-        </slide>
+            </div>
 
-      </div>
+        </Slide>
+
+      </Hooper>
 
 </template>
 
@@ -47,3 +49,12 @@
   }
 }
 </script>
+
+<style >
+
+  .ciao{
+    height:500px;
+    width:500px;
+    border:2px solid red;
+  }
+</style>

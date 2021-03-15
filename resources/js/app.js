@@ -38,7 +38,7 @@ Vue.component('message', require('./components/Message.vue').default);
 
 Vue.component('modal', require('./components/Modal.vue').default);
 
-Vue.component('hooper', require('./components/Hooper.vue').default);
+Vue.component('my-hooper', require('./components/Hooper.vue').default);
 
 
 /**

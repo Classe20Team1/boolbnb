@@ -15,12 +15,13 @@
 
     </div>
 
+
     <!-- <div class="apartment-imgs"> -->
 
       <div id="hooper">
 
         <!-- <hooper> </hooper> -->
-        <hooper :index="1">  </hooper>
+        <my-hooper>  </my-hooper>
 
       </div>
       <!-- <div class="apartment-imgs-left">
