@@ -2,6 +2,8 @@
 
     <div class="container">
 
+        <input class="message-component-close-button" type="button" name="" value="X" @click="$emit('close')">
+
         <form @submit.prevent="sendEmail">
 
           <div class="inputs-container-message-component">
@@ -43,7 +45,11 @@
             placeholder="Message">
           </textarea>
 
-          <input type="submit" value="Send" @click="$emit('close')">
+          <div class="submit-container-message-component">
+
+               <input type="submit" value="Send" @click="$emit('close')">
+
+         </div>
 
         </form>
 
@@ -92,6 +98,7 @@
 * {box-sizing: border-box;}
 
 .container {
+  position:relative;
   display: block;
   margin:auto;
   text-align: center;
@@ -102,8 +109,31 @@
 
 }
 
+.message-component-close-button{
+  position:absolute;
+  right:20px;
+  top:10px;
+  border:0px;
+  font-size: 20px;
+  color:lightgrey;
+  cursor:pointer;
+  line-height: 20px;
+  height: 20px;
+  width:20px;
+  border-radius: 5px;
+}
+
+.message-component-close-button:hover{
+  background-color: grey;
+}
+
 .inputs-container-message-component{
   display:flex;
+}
+
+.submit-container-message-component{
+  display:flex;
+  justify-content: flex-end;
 }
 
 label {

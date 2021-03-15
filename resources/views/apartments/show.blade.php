@@ -14,11 +14,19 @@
     <div class="text-box">
 
     </div>
-    <div class="apartment-imgs">
-      <div class="apartment-imgs-left">
+
+    <!-- <div class="apartment-imgs"> -->
+
+      <div id="hooper">
+
+        <!-- <hooper> </hooper> -->
+        <hooper :index="1">  </hooper>
+
+      </div>
+      <!-- <div class="apartment-imgs-left">
         <img src="{{asset($apartment->cover_img)}}" alt="apartment cover img" class="left-border-radius-helper">
       </div>
-      {{-- <div class="apartment-imgs-right">
+       <div class="apartment-imgs-right">
         <div class="apartment-imgs-box margin-right-helper margin-bottom-helper">
           <img src="{{ asset('img/apt-2.png') }}" alt="apartment-img">
         </div>
@@ -31,25 +39,29 @@
         <div class="apartment-imgs-box">
           <img src="{{ asset('img/apt-5.png') }}" alt="apartment-img" class="bottom-right-border-radius-helper">
         </div>
-      </div> --}}
-    </div>
+      </div> -->
+
+    <!-- </div> -->
+
     <h3>Intero appartamento - Host: {{ $apartment->user->username }}</h3>
     <div class="margin-2-helper"> {{$apartment->metri_quadrati}}&#13217; </div>
     <div class="line-separator"></div>
     <div class="apartment-description">
       <p>{{$apartment->description}}</p>
 
-      <div class="host-btn">
+    </div>
+      <!-- <div class="host-btn">
 
         <a href="#">Contatta l'host</a>
 
-      </div>
+      </div> -->
 
         <!-- <div id="message">
 
               <message> </message>
 
         </div> -->
+      <div class="line-separator"></div>
 
       <div id="modal">
         <modal> </modal>
@@ -58,7 +70,7 @@
 
 
 
-    </div>
+
     <div class="line-separator"></div>
     <div class="services-list">
       <h4>Sistemazione</h4>
