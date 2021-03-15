@@ -343,11 +343,14 @@ nav .nav-user {
   margin-bottom: 2em;
 }
 .city-card {
-  max-width: calc(100% / 4.2);
+  max-width: 280px;
   padding: 1em 0;
-  cursor: pointer;
   /* object-fit: cover;
   object-position: 50% 50%; */
+}
+
+.city-card button {
+  cursor: pointer;
 }
 
 /* .mg-card {
@@ -853,9 +856,9 @@ footer ul li a:hover {
   box-shadow: 0 0 1px 1px lightgrey;
   margin-bottom: 1em;
 }
-.my-apt-card > div {
+/* .my-apt-card > div {
   height: 100px;
-}
+} */
 
 .my-apt-img-box {
   height: 100px;
@@ -886,10 +889,12 @@ footer ul li a:hover {
 .my-apt-infos p {
   margin-top: .6em;
   font-size: .8em;
+  height: 60px;
+  overflow: hidden;
 }
 
 .my-apt-actions {
-  padding: .5em 2em;
+  padding: 1.5em .5em;
   font-size: .8em;
   display: flex;
 }
@@ -897,24 +902,35 @@ footer ul li a:hover {
 .my-apt-actions .actions-left {
   margin-right: 2em;
 }
-.my-apt-actions > div button {
+.actions-btn {
   padding: .3em;
   cursor: pointer;
   border: 1px solid #FF385C;
   background-color: #FF385C;
   color: white;
   border-radius: .5em;
+  width: 100px;
 }
-.my-apt-actions > div button:hover {
+.actions-btn:hover {
   background-color: white;
   color: #FF385C;
 }
-.my-apt-actions .actions-right button {
-  width: 86px;
+
+.actions-btn.sponsored {
+  background-color: lightgrey;
+  border: 1px solid grey;
+  color: black;
+  font-weight: bold;
+  cursor: auto;
+}
+
+
+/* .my-apt-actions .actions-right button {
+  width: auto;
 }
 .my-apt-actions .actions-left button {
-  width: 63px;
-}
+  width: auto;
+} */
 
 .my-apt-actions ul {
   list-style: none;

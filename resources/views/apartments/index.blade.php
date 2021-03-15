@@ -35,26 +35,19 @@
           <ul>
             <li>
               <a href="{{route('apartments.show', $apartment->id) }}">
-                <button type="button" name="button">
+                <button type="button" name="button" class="actions-btn">
                   Dettagli
                 </button>
               </a>
             </li>
             <li>
               <a href="{{route('apartments.edit', $apartment->id)}}">
-                <button type="button" name="button">
+                <button type="button" name="button" class="actions-btn">
                   Modifica
                 </button>
               </a>
             </li>
-            <li>
-                <form method="post" class="d-inline"action="{{route('apartments.destroy', $apartment->id)}}">
-                  @csrf
-                  @method('delete')
-                   <button type="submit" class="btn btn-outline-danger" value="Elimina">Elimina</button>
-                </form>
-              </a>
-            </li>
+
           </ul>
         </div>
         <div class="actions-right">
@@ -62,21 +55,24 @@
             <li>
             @if(in_array($apartment->id, $array_sponsored))
               <form method="post" class="d-inline">
-                <div type="submit" class="btn btn-outline-danger" value="Sponsorizza" style='border:1px solid #FF385C;height: 22px; width: auto; background-color: lightgray; text-decoration: line-through; color: black;'>Già Sponsorizzato</div>                
+                <button type="submit" class="actions-btn sponsored" value="Sponsorizza">Sponsorizzato</button>
               </form>
             @else
                   <form method="post" class="d-inline"action="{{route('apartments.sponsor', $apartment->id)}}">
                     @csrf
                     @method('post')
-                    <button type="submit" class="btn btn-outline-danger" value="Sponsorizza"  style='background-color: #FF385C' >Sponzorizza</button>
-                  </form> 
-            @endif           
+                    <button type="submit" class="actions-btn" value="Sponsorizza">
+                      Sponsorizza
+                    </button>
+                  </form>
+            @endif
             </li>
             <li>
-              <a href="#">
-                <button type="button" name="button">
-                  Statistiche
-                </button>
+                <form method="post" class="d-inline"action="{{route('apartments.destroy', $apartment->id)}}">
+                  @csrf
+                  @method('delete')
+                   <button type="submit" class="actions-btn" value="Elimina">Elimina</button>
+                </form>
               </a>
             </li>
           </ul>

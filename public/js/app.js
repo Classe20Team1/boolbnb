@@ -2046,11 +2046,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-<<<<<<< HEAD
-/* harmony default export */ __webpack_exports__["default"] = ({
-  name: "ListItem",
-  props: ['title', 'description', 'rooms', 'beds', 'bathrooms', 'metri_quadrati', 'price', 'link', 'coverimg']
-=======
 //
 //
 //
@@ -2061,7 +2056,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "ListItem",
   props: ['title', 'description', 'rooms', 'beds', 'bathrooms', 'metri_quadrati', 'price', 'link', 'coverimg', 'description']
->>>>>>> restyleandfix
 });
 
 /***/ }),
@@ -2185,8 +2179,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-<<<<<<< HEAD
-=======
 //
 //
 //
@@ -2199,7 +2191,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
->>>>>>> restyleandfix
 
 
 
@@ -2359,8 +2350,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-<<<<<<< HEAD
-=======
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Message.vue?vue&type=script&lang=js&":
 /*!******************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Message.vue?vue&type=script&lang=js& ***!
@@ -2531,7 +2520,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
->>>>>>> restyleandfix
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Payments.vue?vue&type=script&lang=js&":
 /*!*******************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Payments.vue?vue&type=script&lang=js& ***!
@@ -2541,11 +2529,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-<<<<<<< HEAD
-/* WEBPACK VAR INJECTION */(function(process) {/* harmony import */ var braintree_web__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! braintree-web */ "./node_modules/braintree-web/dist/browser/index.js");
-=======
 /* harmony import */ var braintree_web__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! braintree-web */ "./node_modules/braintree-web/dist/browser/index.js");
->>>>>>> restyleandfix
 /* harmony import */ var braintree_web__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(braintree_web__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var paypal_checkout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! paypal-checkout */ "./node_modules/paypal-checkout/index.js");
 /* harmony import */ var paypal_checkout__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(paypal_checkout__WEBPACK_IMPORTED_MODULE_1__);
@@ -2659,11 +2643,7 @@ __webpack_require__.r(__webpack_exports__);
   props: ['appartamento', 'sponsortypes'],
   data: function data() {
     return {
-<<<<<<< HEAD
-      sandbox: process.env.MIX_BRAINTREE_SANDBOX,
-=======
-      sandbox: "sandbox_mf99dc7g_y34kzz5j4tc99xnb",
->>>>>>> restyleandfix
+      sandbox: "sandbox_rz3sks9y_tfrvhyhd6cw98dnw",
       hostedFieldInstance: false,
       nonce: "",
       error: "",
@@ -2799,9 +2779,6 @@ __webpack_require__.r(__webpack_exports__);
     })["catch"](function (err) {});
   }
 });
-<<<<<<< HEAD
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../node_modules/process/browser.js */ "./node_modules/process/browser.js")))
-=======
 
 /***/ }),
 
@@ -2884,7 +2861,6 @@ Vue.use(vue_sequential_entrance__WEBPACK_IMPORTED_MODULE_0__["default"]);
     };
   }
 });
->>>>>>> restyleandfix
 
 /***/ }),
 
@@ -29627,8 +29603,6 @@ function isnan (val) {
 
 /***/ }),
 
-<<<<<<< HEAD
-=======
 /***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-sequential-entrance/vue-sequential-entrance.css":
 /*!**********************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-sequential-entrance/vue-sequential-entrance.css ***!
@@ -29648,7 +29622,6 @@ exports.push([module.i, ".entranceFromTop {\n  -webkit-animation-duration: 2s;\n
 
 /***/ }),
 
->>>>>>> restyleandfix
 /***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ListContainer.vue?vue&type=style&index=0&id=4fd7a0b0&scoped=true&lang=css&":
 /*!*******************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ListContainer.vue?vue&type=style&index=0&id=4fd7a0b0&scoped=true&lang=css& ***!
@@ -29680,11 +29653,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-<<<<<<< HEAD
-exports.push([module.i, "\n.apartments-card[data-v-be0f3488] {\n  display:flex;\n  justify-content: space-between;\n  border-top: 1px solid lightgrey;\n  border-bottom: 1px solid lightgrey;\n  padding: 1em;\n  padding-left: 0;\n  display: flex;\n  height: 200px;\n}\n.apartments-card[data-v-be0f3488]:hover{\n  cursor:pointer;\n  border:1px solid grey;\n}\n.apartments-card .apartment-img-box[data-v-be0f3488] {\n  width: 200px;\n  padding:10px;\n  border:1px solid pink;\n}\n.apartments-card .apartment-features[data-v-be0f3488] {\n\n\n  padding: 10px;\n  display:flex;\n  flex-direction: column;\n  justify-content: space-between;\n}\n.apartments-card .apartment-img-box img[data-v-be0f3488] {\n  width: 100%;\n  height: 100%;\n\n  border-radius: 1em;\n}\n.font-helper-1[data-v-be0f3488] {\n  font-size: .8em;\n  color: grey;\n  margin-bottom: 1em;\n}\n.font-helper-2[data-v-be0f3488] {\n  margin-bottom: 1em;\n}\n.tinies-container[data-v-be0f3488]{\n  list-style: none;\n  display: flex;\n  justify-content: space-between;\n}\n\n\n\n\n\n\n", ""]);
-=======
 exports.push([module.i, "\n.search-component-apartments-card[data-v-be0f3488]{\n  display: flex;\n  width:100%;\n  height:200px;\n  padding:10px;\n  border-bottom:1px solid lightgrey;\n}\n.search-component-apartments-card[data-v-be0f3488]:hover{\n  background-color: #e1f4f5;\n  cursor:pointer;\n}\n.search-component-apartment-img-box[data-v-be0f3488]{\n  position: relative;\n  min-width:180px;\n  max-width:180px;\n  height:180px;\n  border-radius:10px;\n  overflow:hidden;\n}\n.search-component-apartment-img-box img[data-v-be0f3488]{\n  height:100%;\n  position:absolute;\n  top:50%;\n  left:50%;\n  transform:translate(-50%, -50%)\n}\n.search-component-apartment-features[data-v-be0f3488]{\n  width:100%;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  padding:5px;\n  margin-left: 20px;\n}\n.tinies-container[data-v-be0f3488]{\n  width:100%;\n  display: flex;\n  justify-content: space-between;\n  list-style: none;\n}\n.apartment-description-search-component[data-v-be0f3488]{\n  height:75px;\n  width:100%;\n  overflow:hidden;\n  text-overflow:ellipsis;\n}\n.price-tag-search-component[data-v-be0f3488]{\n  height:30px;\n}\n.price-tag-search-component[data-v-be0f3488]{\n  display:flex;\n  justify-content: flex-end;\n}\n\n", ""]);
->>>>>>> restyleandfix
 
 // exports
 
@@ -29703,9 +29672,6 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-<<<<<<< HEAD
-exports.push([module.i, "\n.container[data-v-b9c20fb8]{\n  margin-left: auto;\n  margin-right: auto;\n}\n.row[data-v-b9c20fb8]{\n  width:100%;\n  display: flex;\n}\n.filter-results[data-v-b9c20fb8]{\n  flex:2;\n  height:100vh;\n  padding:20px;\n}\n.sistemazione[data-v-b9c20fb8]{\n  margin-top:50px;\n}\n.service-filters[data-v-b9c20fb8]{\n  justify-content: space-between;\n  margin-top:50px;\n  margin-bottom:50px;\n}\n.results-list[data-v-b9c20fb8]{\n  height:calc(100vh - 390px);\n  overflow-y: hidden;\n  overflow-y: scroll;\n  border-top:1px solid lightgrey;\n}\n*[data-v-b9c20fb8] {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n}\nul[data-v-b9c20fb8]{\n  list-style: none;\n  display:flex;\n  flex-wrap: wrap;\n}\nul li[data-v-b9c20fb8]{\n  display: flex;\n  flex-wrap: nowrap;\n  height:40px;\n  min-width: 150px;\n  line-height: 40px;\n}\nul li label[data-v-b9c20fb8]{\n  margin-left:5px;\n}\n.basic-filters[data-v-b9c20fb8]{\n  justify-content: space-between;\n}\n.basic-filters label[data-v-b9c20fb8]{\n  line-height: 40px;\n}\n.basic-filters input[data-v-b9c20fb8]{\n  margin-left:5px;\n  border:1px solid lightgrey;\n  border-radius: 10px;\n  width:75px;\n}\n.basic-filters li[data-v-b9c20fb8]{\n  margin-top: 10px;\n};\n.search-results[data-v-b9c20fb8] {\n  width: 55%;\n  padding: 3em;\n  padding-right: 1em;\n}\n.search-results h1[data-v-b9c20fb8] {\n  margin-bottom: 1.1em;\n}\n.search-results .search-filters ul button[data-v-b9c20fb8] {\n}\n.search-results .search-filters ul button[data-v-b9c20fb8]:hover {\n  border: 1px solid black;\n}\n.mappa-container[data-v-b9c20fb8]{\n  flex:2;\n  /* border:2px solid red; */\n}\n\n", ""]);
-=======
 exports.push([module.i, "\n.sistemazione[data-v-b9c20fb8]{\n  margin-top:25px;\n}\n/* .container{\n  margin-left: auto;\n  margin-right: auto;\n} */\n.search-component-row[data-v-b9c20fb8]{\n  width:100%;\n  display: flex;\n}\n.filter-results[data-v-b9c20fb8]{\n  height:100vh;\n  padding-left:20px;\n  padding-right:20px;\n  width:50%;\n}\n\n/* .sistemazione{\n  margin-top:50px;\n} */\n.service-filters[data-v-b9c20fb8]{\n  justify-content: space-between;\n  margin-top:25px;\n  /* margin-top:50px;\n  margin-bottom:50px; */\n}\n.services-filters[data-v-b9c20fb8]{\n  margin-top:15px;\n}\n\n/* .services-filters ul li{\n  align-items: center;\n} */\n.results-list[data-v-b9c20fb8]{\n  height:calc(100vh - 255px);\n  overflow-y: hidden;\n  overflow-y: scroll;\n  border-top:1px solid lightgrey;\n}\n*[data-v-b9c20fb8] {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n}\nul[data-v-b9c20fb8]{\n  list-style: none;\n  display:flex;\n  flex-wrap: wrap;\n}\nul li[data-v-b9c20fb8]{\n  display: flex;\n  flex-wrap: nowrap;\n  align-items: center;\n  height:40px;\n  min-width: 150px;\n  line-height: 40px;\n}\nul li label[data-v-b9c20fb8]{\n  margin-left:5px;\n}\n.basic-filters[data-v-b9c20fb8]{\n  justify-content: space-between;\n}\n.basic-filters label[data-v-b9c20fb8]{\n  line-height: 40px;\n}\n.basic-filters input[data-v-b9c20fb8]{\n  margin-left:5px;\n  border:1px solid lightgrey;\n  border-radius: 10px;\n  width:75px;\n}\n.basic-filters li[data-v-b9c20fb8]{\n  margin-top: 10px;\n};\n.search-results[data-v-b9c20fb8] {\n  width: 55%;\n  padding: 3em;\n  padding-right: 1em;\n}\n.search-results h1[data-v-b9c20fb8] {\n  margin-bottom: 1.1em;\n}\n.search-results .search-filters ul button[data-v-b9c20fb8] {\n}\n.search-results .search-filters ul button[data-v-b9c20fb8]:hover {\n  border: 1px solid black;\n}\n.mappa-container[data-v-b9c20fb8]{\n  flex:2;\n  /* border:2px solid red; */\n}\n.noresult-container[data-v-b9c20fb8]{\n  height:50%;\n  width:100%;\n  position: relative;\n}\n.no-results[data-v-b9c20fb8]{\n  position: absolute;\n  top:50%;\n  left:50%;\n  transform:translate(-50%,-50%)\n}\n\n", ""]);
 
 // exports
@@ -29745,7 +29711,6 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 // module
 exports.push([module.i, "\n.modal-mask {\nposition: fixed;\nz-index: 9998;\ntop: 0;\nleft: 0;\nwidth: 100%;\nheight: 100%;\nbackground-color: rgba(0, 0, 0, .5);\ndisplay: table;\ntransition: opacity .3s ease;\n}\n.modal-wrapper {\ndisplay: table-cell;\nvertical-align: middle;\n}\n.modal-container {\nwidth: 300px;\nmargin: 0px auto;\npadding: 20px 30px;\nbackground-color: #fff;\nborder-radius: 2px;\nbox-shadow: 0 2px 8px rgba(0, 0, 0, .33);\ntransition: all .3s ease;\nfont-family: Helvetica, Arial, sans-serif;\n}\n.modal-header h3 {\nmargin-top: 0;\ncolor: #42b983;\n}\n.modal-body {\nmargin: 20px 0;\n}\n.modal-default-button {\nfloat: right;\n}\n\n/*\n* The following styles are auto-applied to elements with\n* transition=\"modal\" when their visibility is toggled\n* by Vue.js.\n*\n* You can easily play with the modal transition by editing\n* these styles.\n*/\n.modal-enter {\nopacity: 0;\n}\n.modal-leave-active {\nopacity: 0;\n}\n.modal-enter .modal-container,\n.modal-leave-active .modal-container {\ntransform: scale(1.1);\n}\n\n", ""]);
->>>>>>> restyleandfix
 
 // exports
 
@@ -29764,9 +29729,6 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-<<<<<<< HEAD
-exports.push([module.i, "\n#amount[data-v-04c873d0],#creditCardNumber[data-v-04c873d0], #creditCardNumber[data-v-04c873d0], #cvv[data-v-04c873d0], #expireDate[data-v-04c873d0]{\n  height:30px;\n  border:1px solid lightgrey;\n  border-radius:5px;\n}\n.p-el[data-v-04c873d0]{\n  margin-top: 10px;\n}\n.sponsor-amount-container[data-v-04c873d0]{\n  display:flex;\n  align-items: center;\n  justify-content: space-between;\n  margin-top: 15px;\n}\n.checkbox-container[data-v-04c873d0]{\ndisplay:flex;\nflex-direction: column;\nborder:2px solid pink;\nborder-radius: 10px;\npadding:10px;\n}\n.input-amount-container[data-v-04c873d0]{\n  display:flex;\n  align-items: center;\n}\n.valuta[data-v-04c873d0]{\n  margin-right: 10px;\n}\n.payment-container[data-v-04c873d0]{\n  padding:20px;\n  border: 1px solid lightgray;\n  border-radius: 10px;\n}\n.ed-cvv-container[data-v-04c873d0]{\n  display:flex;\n}\n.credit-card-button[data-v-04c873d0]{\n  cursor:pointer;\n  width:100%;\n  height:45px;\n  color:white;\n  font-weight: 600;\n  font-size: 15px;\n  background-color:#4287f5;\n  border:0px;\n  border-radius:5px;\n}\n.credit-card-button[data-v-04c873d0]:hover{\n  opacity:0.8;\n}\n.hide[data-v-04c873d0]{\n  display:none;\n}\n.display[data-v-04c873d0]{\n  display:block;\n}\n.success[data-v-04c873d0]{\n  cursor:pointer;\n  border:1px solid lightgrey;\n  width:100%;\n  background-color: green;\n  height:90px;\n  border-radius:10px;\n  font-size: 15px;;\n  font-weight: 600;\n  color: white;\n}\n.success[data-v-04c873d0]:hover{\n  opacity:0.8;\n}\n.sponsored[data-v-04c873d0]{\n  border:2px solid pink;\n  border-radius: 10px;\n  height:45px;\n  display:flex;\n  justify-content: center;\n  align-items: center;\n}\n\n\n\n\n\n\n", ""]);
-=======
 exports.push([module.i, "\n#amount[data-v-04c873d0],#creditCardNumber[data-v-04c873d0], #creditCardNumber[data-v-04c873d0], #cvv[data-v-04c873d0], #expireDate[data-v-04c873d0]{\n  height:30px;\n  border:1px solid lightgrey;\n  border-radius:5px;\n}\n.p-el[data-v-04c873d0]{\n  margin-top: 10px;\n}\n.sponsor-amount-container[data-v-04c873d0]{\n  display:flex;\n  align-items: center;\n  justify-content: space-between;\n  margin-top: 15px;\n}\n.checkbox-container[data-v-04c873d0]{\ndisplay:flex;\nflex-direction: column;\nborder:2px solid pink;\nborder-radius: 10px;\npadding:10px;\n}\n.input-amount-container[data-v-04c873d0]{\n  display:flex;\n  align-items: center;\n}\n.valuta[data-v-04c873d0]{\n  margin-right: 10px;\n}\n.payment-container[data-v-04c873d0]{\n  padding:20px;\n  border: 1px solid lightgray;\n  border-radius: 10px;\n}\n.ed-cvv-container[data-v-04c873d0]{\n  display:flex;\n}\n.credit-card-button[data-v-04c873d0]{\n  cursor:pointer;\n  width:100%;\n  height:45px;\n  color:white;\n  font-weight: 600;\n  font-size: 15px;\n  background-color:#4287f5;\n  border:0px;\n  border-radius:5px;\n}\n.credit-card-button[data-v-04c873d0]:hover{\n  opacity:0.8;\n}\n.hide[data-v-04c873d0]{\n  display:none;\n}\n.display[data-v-04c873d0]{\n  display:block;\n}\n.success[data-v-04c873d0]{\n  border:1px solid lightgrey;\n  width:100%;\n  background-color: green;\n  height:90px;\n  border-radius:10px;\n  font-size: 15px;;\n  font-weight: 600;\n  color: white;\n}\n.sponsored[data-v-04c873d0]{\n  border:2px solid pink;\n  border-radius: 10px;\n  height:45px;\n  display:flex;\n  justify-content: center;\n  align-items: center;\n}\n\n", ""]);
 
 // exports
@@ -29787,7 +29749,6 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 // module
 exports.push([module.i, "\n.sequential-image-component-box[data-v-145c762a]{\n  border-radius:10px;\n  margin-right: 30px;\n  margin-top:10px;\n  margin-bottom:10px;\n}\n.sequential-image-component-box[data-v-145c762a]:hover{\n  transition: 0.5s;\n  box-shadow: 0 0 10px black;\n}\n.sequential-img-container[data-v-145c762a]{\n  border-bottom: 0px;\n  overflow:hidden;\n  height:150px;\n  width:298px;\n  border-top-left-radius:10px;\n  border-top-right-radius:10px;\n  position:relative;\n}\n.sequential-img-details-container[data-v-145c762a]{\n  border:1px solid grey;\n  width:298px;\n  border-top: 0px;\n  padding:5px;\n  border-bottom-left-radius:10px;\n  border-bottom-right-radius:10px;\n}\n.micro-details-header[data-v-145c762a]{\n  display: flex;\n  justify-content: space-between;\n  margin-top:5px;\n}\n.micro-details-header h4[data-v-145c762a]{\n  font-weight: 400;\n  color:grey;\n}\n.sponsored-description[data-v-145c762a]{\n  margin-top:5px;\n  text-overflow: hidden;\n  font-size: 12px;\n  margin-bottom:5px;\n}\n.sponsored-description ul[data-v-145c762a]{\n  margin-top: 10px;\n  list-style:none;\n  display: flex;\n  justify-content: space-between;\n  color:darkgrey;\n}\n.micro-details-sponsored-price[data-v-145c762a]{\n  color:grey;\n}\n.sequential-img-container img[data-v-145c762a]{\n    width:298px;\n    position:absolute;\n    top:50%;\n    left:50%;\n    transform:translate(-50%, -50%);\n}\n\n", ""]);
->>>>>>> restyleandfix
 
 // exports
 
@@ -29900,8 +29861,6 @@ function toComment(sourceMap) {
 
 /***/ }),
 
-<<<<<<< HEAD
-=======
 /***/ "./node_modules/emailjs-com/source/index.js":
 /*!**************************************************!*\
   !*** ./node_modules/emailjs-com/source/index.js ***!
@@ -30090,7 +30049,6 @@ exports.UI = UI;
 
 /***/ }),
 
->>>>>>> restyleandfix
 /***/ "./node_modules/ieee754/index.js":
 /*!***************************************!*\
   !*** ./node_modules/ieee754/index.js ***!
@@ -87049,8 +87007,6 @@ if(false) {}
 
 /***/ }),
 
-<<<<<<< HEAD
-=======
 /***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Message.vue?vue&type=style&index=0&id=b91a6428&scoped=true&lang=css&":
 /*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Message.vue?vue&type=style&index=0&id=b91a6428&scoped=true&lang=css& ***!
@@ -87111,7 +87067,6 @@ if(false) {}
 
 /***/ }),
 
->>>>>>> restyleandfix
 /***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Payments.vue?vue&type=style&index=0&id=04c873d0&scoped=true&lang=css&":
 /*!******************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Payments.vue?vue&type=style&index=0&id=04c873d0&scoped=true&lang=css& ***!
@@ -87142,8 +87097,6 @@ if(false) {}
 
 /***/ }),
 
-<<<<<<< HEAD
-=======
 /***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Sequential.vue?vue&type=style&index=0&id=145c762a&scoped=true&lang=css&":
 /*!********************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Sequential.vue?vue&type=style&index=0&id=145c762a&scoped=true&lang=css& ***!
@@ -87174,7 +87127,6 @@ if(false) {}
 
 /***/ }),
 
->>>>>>> restyleandfix
 /***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ShowMap.vue?vue&type=style&index=0&lang=css&":
 /*!*****************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ShowMap.vue?vue&type=style&index=0&lang=css& ***!
@@ -87877,17 +87829,6 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "li",
-<<<<<<< HEAD
-    { staticClass: "apartments-card", attrs: { onclick: _vm.link } },
-    [
-      _c("div", { staticClass: "apartment-img-box" }, [
-        _c("img", { attrs: { src: _vm.coverimg, alt: "img" } })
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "apartment-features" }, [
-        _c("div", { staticClass: "font-helper-1" }, [
-          _vm._v(_vm._s(_vm.title))
-=======
     {
       staticClass: "search-component-apartments-card",
       attrs: { onclick: _vm.link }
@@ -87900,7 +87841,6 @@ var render = function() {
       _c("div", { staticClass: "search-component-apartment-features" }, [
         _c("div", { staticClass: "font-helper-1" }, [
           _c("h3", [_vm._v(_vm._s(_vm.title))])
->>>>>>> restyleandfix
         ]),
         _vm._v(" "),
         _c("ul", { staticClass: "tinies-container" }, [
@@ -87921,11 +87861,6 @@ var render = function() {
           ])
         ]),
         _vm._v(" "),
-<<<<<<< HEAD
-        _c("div", { staticClass: "price-tag" }, [
-          _c("b", [_vm._v(" " + _vm._s(_vm.price / 100) + " Euro ")]),
-          _vm._v(" / notte ")
-=======
         _c("div", { staticClass: "apartment-description-search-component" }, [
           _vm._v(
             "\n\n                  " +
@@ -87939,7 +87874,6 @@ var render = function() {
             _c("b", [_vm._v(" " + _vm._s(_vm.price / 100) + " Euro ")]),
             _vm._v(" / notte ")
           ])
->>>>>>> restyleandfix
         ])
       ])
     ]
@@ -87968,13 +87902,6 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container", attrs: { id: "app" } }, [
-<<<<<<< HEAD
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "filter-results" }, [
-        _c("h5", [_vm._v("Oltre 300 alloggi")]),
-        _vm._v(" "),
-        _c("h1", [_vm._v("Roma: alloggi")]),
-=======
     _c("div", { staticClass: "search-component-row" }, [
       _c("div", { staticClass: "filter-results" }, [
         _c("div", { staticClass: "search-component-title-container" }, [
@@ -87986,7 +87913,6 @@ var render = function() {
             )
           ])
         ]),
->>>>>>> restyleandfix
         _vm._v(" "),
         _c("div", { staticClass: "sistemazione" }, [
           _c("h5", [_vm._v("SISTEMAZIONE")]),
@@ -88137,10 +88063,7 @@ var render = function() {
                 attrs: {
                   slot: "items",
                   coverimg: data.cover_img,
-<<<<<<< HEAD
-=======
                   description: data.description,
->>>>>>> restyleandfix
                   link: "window.location=`apartments/"
                     .concat(data.id)
                     .concat("`;"),
@@ -88154,9 +88077,6 @@ var render = function() {
                 },
                 slot: "items"
               })
-<<<<<<< HEAD
-            })
-=======
             }),
             _vm._v(" "),
             _vm.filterByServices.length == 0
@@ -88166,7 +88086,6 @@ var render = function() {
                   ])
                 ])
               : _vm._e()
->>>>>>> restyleandfix
           ],
           2
         )
@@ -88219,8 +88138,6 @@ render._withStripped = true
 
 /***/ }),
 
-<<<<<<< HEAD
-=======
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Message.vue?vue&type=template&id=b91a6428&scoped=true&":
 /*!**********************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Message.vue?vue&type=template&id=b91a6428&scoped=true& ***!
@@ -88410,7 +88327,6 @@ render._withStripped = true
 
 /***/ }),
 
->>>>>>> restyleandfix
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Payments.vue?vue&type=template&id=04c873d0&scoped=true&":
 /*!***********************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Payments.vue?vue&type=template&id=04c873d0&scoped=true& ***!
@@ -88555,9 +88471,6 @@ var render = function() {
       _vm._v(" "),
       _vm.nonce
         ? _c("div", { class: _vm.isPaymentFinalized ? "display" : "hide" }, [
-<<<<<<< HEAD
-            _vm._m(4),
-=======
             _c(
               "button",
               {
@@ -88570,7 +88483,6 @@ var render = function() {
                 )
               ]
             ),
->>>>>>> restyleandfix
             _vm._v(" "),
             _c("div", { staticClass: "sponsored" }, [
               _c("span", [
@@ -88634,26 +88546,6 @@ var staticRenderFns = [
         _c("div", { staticClass: "form-control", attrs: { id: "cvv" } })
       ])
     ])
-<<<<<<< HEAD
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "button",
-      {
-        staticClass: "alert success",
-        attrs: { onclick: "javascript:history.go(-1)" }
-      },
-      [
-        _vm._v("\n                              Success!"),
-        _c("br"),
-        _vm._v("Torna ai tuoi appartamenti\n                          ")
-      ]
-    )
-=======
->>>>>>> restyleandfix
   }
 ]
 render._withStripped = true
@@ -88662,8 +88554,6 @@ render._withStripped = true
 
 /***/ }),
 
-<<<<<<< HEAD
-=======
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Sequential.vue?vue&type=template&id=145c762a&scoped=true&":
 /*!*************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Sequential.vue?vue&type=template&id=145c762a&scoped=true& ***!
@@ -88747,7 +88637,6 @@ render._withStripped = true
 
 /***/ }),
 
->>>>>>> restyleandfix
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ShowMap.vue?vue&type=template&id=207f9704&":
 /*!**********************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ShowMap.vue?vue&type=template&id=207f9704& ***!
@@ -88884,8 +88773,6 @@ function normalizeComponent (
 
 /***/ }),
 
-<<<<<<< HEAD
-=======
 /***/ "./node_modules/vue-sequential-entrance/SequentialEntrance.js":
 /*!********************************************************************!*\
   !*** ./node_modules/vue-sequential-entrance/SequentialEntrance.js ***!
@@ -88978,7 +88865,6 @@ if(false) {}
 
 /***/ }),
 
->>>>>>> restyleandfix
 /***/ "./node_modules/vue/dist/vue.common.dev.js":
 /*!*************************************************!*\
   !*** ./node_modules/vue/dist/vue.common.dev.js ***!
@@ -101061,12 +100947,9 @@ Vue.component('list-item', __webpack_require__(/*! ./components/ListItem.vue */ 
 Vue.component('my-map', __webpack_require__(/*! ./components/Mapp.vue */ "./resources/js/components/Mapp.vue")["default"]);
 Vue.component('show-map', __webpack_require__(/*! ./components/ShowMap.vue */ "./resources/js/components/ShowMap.vue")["default"]);
 Vue.component('payments', __webpack_require__(/*! ./components/Payments.vue */ "./resources/js/components/Payments.vue")["default"]);
-<<<<<<< HEAD
-=======
 Vue.component('sequential', __webpack_require__(/*! ./components/Sequential.vue */ "./resources/js/components/Sequential.vue")["default"]);
 Vue.component('message', __webpack_require__(/*! ./components/Message.vue */ "./resources/js/components/Message.vue")["default"]);
 Vue.component('modal', __webpack_require__(/*! ./components/Modal.vue */ "./resources/js/components/Modal.vue")["default"]);
->>>>>>> restyleandfix
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -101082,8 +100965,6 @@ var showMap = new Vue({
 var payments = new Vue({
   el: '#payments'
 });
-<<<<<<< HEAD
-=======
 var sequential = new Vue({
   el: '#sequential'
 });
@@ -101093,7 +100974,6 @@ var message = new Vue({
 var modal = new Vue({
   el: '#modal'
 });
->>>>>>> restyleandfix
 
 /***/ }),
 
@@ -101541,8 +101421,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-<<<<<<< HEAD
-=======
 /***/ "./resources/js/components/Message.vue":
 /*!*********************************************!*\
   !*** ./resources/js/components/Message.vue ***!
@@ -101717,7 +101595,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
->>>>>>> restyleandfix
 /***/ "./resources/js/components/Payments.vue":
 /*!**********************************************!*\
   !*** ./resources/js/components/Payments.vue ***!
@@ -101805,8 +101682,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-<<<<<<< HEAD
-=======
 /***/ "./resources/js/components/Sequential.vue":
 /*!************************************************!*\
   !*** ./resources/js/components/Sequential.vue ***!
@@ -101894,7 +101769,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
->>>>>>> restyleandfix
 /***/ "./resources/js/components/ShowMap.vue":
 /*!*********************************************!*\
   !*** ./resources/js/components/ShowMap.vue ***!
@@ -102000,13 +101874,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
 __webpack_require__(/*! /Users/francesco/Documents/Coding/esercizi-boolean/boolbnb/resources/js/app.js */"./resources/js/app.js");
 module.exports = __webpack_require__(/*! /Users/francesco/Documents/Coding/esercizi-boolean/boolbnb/resources/sass/app.scss */"./resources/sass/app.scss");
-=======
-__webpack_require__(/*! /Users/aj/Desktop/Courses/repository/bool-airbnb/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/aj/Desktop/Courses/repository/bool-airbnb/resources/sass/app.scss */"./resources/sass/app.scss");
->>>>>>> restyleandfix
 
 
 /***/ })
