@@ -1,5 +1,10 @@
 <template >
 
+<!-- <div class='popupcontainer'>
+    <span class='popup'> ciaocioa </span>
+</div> -->
+
+
 </template>
 
 <script>
@@ -8,18 +13,21 @@ export default {
   name: 'Mapp',
 
   props:
-    ['markersinfo', 'usersearch'],
+    ['markersinfo', 'usersearch', 'ctrlat', 'ctrlon'],
 
   data(){
           return{
 
             userSearch:this.usersearch,
-            centerLng:null,
-            centerLat:null,
+            centerLng:this.ctrlon,
+            centerLat:this.ctrlat,
             markersArray:[],
             mapObj:{},
             currentMarkers:[],
             counter:0,
+            popup: `<div class='popupcontainer'>
+                <span class='popup'> ciaocioa </span>
+            </div>`
 
           }
   },
@@ -61,7 +69,8 @@ export default {
 
             var marker = new tt.Marker().setLngLat(location).addTo(map);
             var popup = new tt.Popup({ offset: popupOffset }).setHTML(title);
-                  marker.setPopup(popup).togglePopup();
+                  marker.setPopup(popup);
+                  console.log(popup)
                   this.currentMarkers.push(marker);
 
       },
@@ -77,8 +86,8 @@ export default {
         if(this.counter== 0){
 
           //INIZIALIZZA LA MAPPA
-          this.centerLng=this.markersArray[0].position.longitude;
-          this.centerLat=this.markersArray[0].position.latitude;
+          // this.centerLng=this.markersArray[0].position.longitude;
+          // this.centerLat=this.markersArray[0].position.latitude;
 
           this.getMap(this.centerLng, this.centerLat);
 
@@ -90,7 +99,7 @@ export default {
           this.counter++;
 
         }else{
-          
+
           //AGGIORNA I MARKERS
           this.currentMarkers.forEach(function(el){
             el.remove();
@@ -113,5 +122,8 @@ export default {
 
 
 <style>
+
+
+
 
 </style>
