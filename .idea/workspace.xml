@@ -7,10 +7,8 @@
     <list default="true" id="6aae546b-150d-41e0-b1d7-5d3d8ad8b5c5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ApartmentsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ApartmentsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/ApiApartmentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/ApiApartmentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/PositionSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/PositionSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/apartments/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/apartments/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/apartments/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/apartments/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Sponsor.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Sponsor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -36,12 +36,12 @@ class ApartmentsController extends Controller
     {
         $user = Auth::user();
         $apartments = $user->apartments;
-
         $sponsors = Sponsor::active();
         $array_sponsored = [];
         foreach ($sponsors as $sponsor) {
             array_push($array_sponsored, $sponsor->apartment_id);
         }
+
         return view('apartments.index', compact('apartments', 'array_sponsored'));
     }
 
@@ -300,6 +300,7 @@ class ApartmentsController extends Controller
 
     public function search(Request $request)
     {
+
         $usersearch = $request->city;
         $response = file_get_contents('https://api.tomtom.com/search/2/geocode/'. $usersearch .'.json?limit=1&key=' . env('TOMTOM_KEY'));
 
@@ -309,6 +310,8 @@ class ApartmentsController extends Controller
             'longit' => $response['results'][0]['position']['lon'],
         ];
         $radius = 30;
+
+        $sponsors = Sponsor::active();
 
         $filtered = Position::radius($positionSearched['latit'], $positionSearched['longit'],$radius);
         $arrayId= [];
@@ -320,8 +323,7 @@ class ApartmentsController extends Controller
         $services = Service::all();
         $apartments = Apartment::with('services', 'position', 'imgs')
             ->find($arrayId)
-            ->where('beds', '>=', $request->guests)
-            ->where('active', '=', 1);
+            ->where('beds', '>=', $request->guests);
         if($positionSearched){
             $positionSearched = json_encode($positionSearched);
         } else {
