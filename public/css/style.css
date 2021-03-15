@@ -346,6 +346,8 @@ nav .nav-user {
   max-width: calc(100% / 4.2);
   padding: 1em 0;
   cursor: pointer;
+  /* object-fit: cover;
+  object-position: 50% 50%; */
 }
 
 /* .mg-card {
@@ -1222,7 +1224,7 @@ footer ul li {
 }
 
 .appartamenti-in-evidenza-section h1{
-  text-align: center;
+  /* text-align: center; */
   margin-bottom:40px;
 }
 

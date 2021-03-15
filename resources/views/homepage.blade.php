@@ -50,6 +50,24 @@
 
   <section class="home-content">
 
+
+    <div class="appartamenti-in-evidenza-section">
+
+          <h1>Appartamenti in evidenza</h1>
+
+          <div class="sequential-component-container">
+
+              <div id="sequential">
+
+                    <sequential :array="{{ $apartments }}"></sequential>
+
+              </div>
+
+          </div>
+
+    </div>
+
+
     <h1>Una casa ovunque nel mondo</h1>
 
     <div class="cities-cards-container">
@@ -124,24 +142,6 @@
       </div>
 
     </div>
-
-
-    <div class="appartamenti-in-evidenza-section">
-
-          <h1>Appartamenti in evidenza</h1>
-
-          <div class="sequential-component-container">
-
-              <div id="sequential">
-
-                    <sequential :array="{{ $apartments }}"></sequential>
-
-              </div>
-
-          </div>
-
-    </div>
-
 
     <!-- <div class="sponsored-apt-container">
 

@@ -3,7 +3,7 @@
         <sequential-entrance fromRight>
 
 
-                    <div :onclick="'window.location=`apartments/'.concat(element.id).concat('`;')" class="sequential-image-component-box" v-for="element in elements" :key="element">
+                    <div :onclick="'window.location=`apartments/'.concat(element.id).concat('`;')" class="sequential-image-component-box" v-for="element in elements" :key="element.id">
 
                       <div class="sequential-img-container">
 
@@ -18,22 +18,23 @@
 
                                           <div class="micro-details-header">
 
-                                                <h4>{{element.title}}</h4>
+                                                <h4> {{element.title}} </h4>
 
                                                 <div class="micro-details-sponsored-price">
-                                                      {{element.price}}€ a notte
+
+                                                      {{element.price}} € a notte
                                                 </div>
 
                                           </div>
 
 
                                           <div class="sponsored-description">
-                                                <!-- <p> {{element.description}} </p> -->
+
                                                 <ul>
-                                                      <li>Stanze:{{element.rooms}}</li>
-                                                      <li>Letti:{{element.beds}}</li>
-                                                      <li>Bagni:{{element.bathrooms}}</li>
-                                                      <li>Mq:{{element.metri_quadrati}}</li>
+                                                      <li>Stanze: {{element.rooms}}</li>
+                                                      <li>Letti: {{element.beds}}</li>
+                                                      <li>Bagni: {{element.bathrooms}}</li>
+                                                      <li>Mq: {{element.metri_quadrati}}</li>
                                                 </ul>
 
                                           </div>
@@ -80,16 +81,10 @@ export default{
 
 
 .sequential-image-component-box{
-  /* width:300px; */
   border-radius:10px;
-
   margin-right: 30px;
   margin-top:10px;
   margin-bottom:10px;
-
-  /* border:1px solid lightgrey; */
-  /* height:250px; */
-
 }
 
 .sequential-image-component-box:hover{
@@ -97,12 +92,7 @@ export default{
   box-shadow: 0 0 10px black;
 }
 
-/* .box{
-  transition:0.5s;
-} */
-
 .sequential-img-container{
-  /* border:2px solid #FF385C; */
   border-bottom: 0px;
   overflow:hidden;
   height:150px;
@@ -129,7 +119,7 @@ export default{
 
 .micro-details-header h4{
   font-weight: 400;
-  color:Grey;
+  color:grey;
 }
 
 .sponsored-description{
@@ -146,21 +136,9 @@ export default{
   justify-content: space-between;
   color:darkgrey;
 }
+
 .micro-details-sponsored-price{
   color:grey;
-}
-
-
-.sponsored-description p{
-height:40px;
-overflow:hidden;
-text-overflow: ellipsis;
-}
-
-.sequential-img-container:hover {
-    /* transform: scale(105%); */
-    /* transition: 0.5s;
-    box-shadow: 0 0 25px black; */
 }
 
 .sequential-img-container img{
@@ -168,7 +146,7 @@ text-overflow: ellipsis;
     position:absolute;
     top:50%;
     left:50%;
-    transform:translate(-50%, -50%)
+    transform:translate(-50%, -50%);
 }
 
 </style>

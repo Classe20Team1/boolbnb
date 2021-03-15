@@ -34,6 +34,10 @@ Vue.component('payments', require('./components/Payments.vue').default);
 
 Vue.component('sequential', require('./components/Sequential.vue').default);
 
+Vue.component('message', require('./components/Message.vue').default);
+
+Vue.component('modal', require('./components/Modal.vue').default);
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -54,4 +58,12 @@ const payments = new Vue({
 
 const sequential = new Vue({
     el: '#sequential',
+});
+
+const message = new Vue({
+    el: '#message',
+});
+
+const modal = new Vue({
+    el: '#modal',
 });
