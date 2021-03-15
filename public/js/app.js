@@ -2643,7 +2643,7 @@ __webpack_require__.r(__webpack_exports__);
   props: ['appartamento', 'sponsortypes'],
   data: function data() {
     return {
-      sandbox: "sandbox_mf99dc7g_y34kzz5j4tc99xnb",
+      sandbox: "sandbox_rz3sks9y_tfrvhyhd6cw98dnw",
       hostedFieldInstance: false,
       nonce: "",
       error: "",
@@ -101874,8 +101874,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/aj/Desktop/Courses/repository/bool-airbnb/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/aj/Desktop/Courses/repository/bool-airbnb/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/francesco/Documents/Coding/esercizi-boolean/boolbnb/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/francesco/Documents/Coding/esercizi-boolean/boolbnb/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

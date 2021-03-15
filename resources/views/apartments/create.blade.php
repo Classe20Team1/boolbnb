@@ -35,7 +35,7 @@
           </div>
           <div class="title-element">
             <label for="address">Indirizzo</label><br>
-            <input class="title-box" type="address" id="address" name="address" value="" placeholder="Via Risorgimento 1">
+            <input class="address-box" type="address" id="address" name="address" value="" placeholder="Via Risorgimento 1">
           </div>
         </div>
 

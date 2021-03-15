@@ -4,6 +4,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BoolBnb - @yield('title')</title>
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous"> -->
     <script src="https://js.braintreegateway.com/web/dropin/1.26.1/js/dropin.js"></script>
@@ -128,23 +129,23 @@
       <h3>Classe 20 Team 1</h3>
       <ul>
         <li>
-          Alberto Liguori ~
+          Alberto Liguori
           <a href="">https://github.com/AlbertoLiguori</a>
         </li>
         <li>
-          Francesca Giorno ~
+          Francesca Giorno
           <a href="">https://github.com/francescagiorno</a>
         </li>
         <li>
-          Francesco Maestroni ~
+          Francesco Maestroni
           <a href="">https://github.com/fra-mstr</a>
         </li>
         <li>
-          Matteo Ponchietti ~
+          Matteo Ponchietti
           <a href="">https://github.com/mattponk89</a>
         </li>
         <li>
-          Nicola Melito ~
+          Nicola Melito
           <a href="">https://github.com/nico-m11</a>
         </li>
       </ul>

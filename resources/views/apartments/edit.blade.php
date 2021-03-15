@@ -23,7 +23,7 @@
             <input class="title-box" type="text" id="title" name="title" value="{{ $apartment->title }}" placeholder="">
           </div>
           <div class="price-element">
-            <label for="price">Prezzo</label>
+            <label for="price">Prezzo</label><br>
             <input id="price" type="text" name="price" value="{{$apartment->price}}">
           </div>
         </div>

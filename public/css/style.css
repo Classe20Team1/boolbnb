@@ -343,11 +343,14 @@ nav .nav-user {
   margin-bottom: 2em;
 }
 .city-card {
-  max-width: calc(100% / 4.2);
+  max-width: 280px;
   padding: 1em 0;
-  cursor: pointer;
   /* object-fit: cover;
   object-position: 50% 50%; */
+}
+
+.city-card button {
+  cursor: pointer;
 }
 
 /* .mg-card {
@@ -486,10 +489,23 @@ footer h4 {
 footer ul {
   list-style: none;
   margin-bottom: 2em;
+  display: flex;
+  justify-content: space-between;
 }
 
 footer ul li {
   margin-bottom: .2em;
+}
+
+footer ul li a {
+  color: #00a0eb;
+  text-decoration: none;
+}
+footer ul li a:visited{
+  color: #00a0eb
+}
+footer ul li a:hover {
+  font-weight: bold;
 }
 
 /* Ricerca avanzata */
@@ -840,9 +856,9 @@ footer ul li {
   box-shadow: 0 0 1px 1px lightgrey;
   margin-bottom: 1em;
 }
-.my-apt-card > div {
+/* .my-apt-card > div {
   height: 100px;
-}
+} */
 
 .my-apt-img-box {
   height: 100px;
@@ -873,10 +889,12 @@ footer ul li {
 .my-apt-infos p {
   margin-top: .6em;
   font-size: .8em;
+  height: 60px;
+  overflow: hidden;
 }
 
 .my-apt-actions {
-  padding: .5em 2em;
+  padding: 1.5em .5em;
   font-size: .8em;
   display: flex;
 }
@@ -884,24 +902,35 @@ footer ul li {
 .my-apt-actions .actions-left {
   margin-right: 2em;
 }
-.my-apt-actions > div button {
+.actions-btn {
   padding: .3em;
   cursor: pointer;
   border: 1px solid #FF385C;
   background-color: #FF385C;
   color: white;
   border-radius: .5em;
+  width: 100px;
 }
-.my-apt-actions > div button:hover {
+.actions-btn:hover {
   background-color: white;
   color: #FF385C;
 }
-.my-apt-actions .actions-right button {
-  width: 86px;
+
+.actions-btn.sponsored {
+  background-color: lightgrey;
+  border: 1px solid grey;
+  color: black;
+  font-weight: bold;
+  cursor: auto;
+}
+
+
+/* .my-apt-actions .actions-right button {
+  width: auto;
 }
 .my-apt-actions .actions-left button {
-  width: 63px;
-}
+  width: auto;
+} */
 
 .my-apt-actions ul {
   list-style: none;
@@ -972,20 +1001,32 @@ footer ul li {
   width: 100%;
 }
 
+.add-form-element .title-element {
+  width: 40%;
+  margin-right: 3em;
+}
+
+.add-form-element .price-element {
+  width: 30%;
+}
+
 .add-form-element.add-title {
   display: flex;
 }
 
-.add-form-element.add-title .title-element {
+/* .add-form-element.add-title .title-element {
   margin-right: 90px;
-}
+} */
 
-.add-form-element input.title-box {
-  width: 400px;
-}
+/* .add-form-element input.title-box {
+  width: 100%;
+} */
+/* .add-form-element input.address-box {
+  width: 100%;
+} */
 
 .add-form-element.add-title div.price-element input {
-  width: 100px;
+  width: 50%;
 }
 
 
