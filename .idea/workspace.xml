@@ -5,24 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6aae546b-150d-41e0-b1d7-5d3d8ad8b5c5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ApartmentsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ApartmentsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/ApartmentFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/ApartmentFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/PositionFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/PositionFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/ApartmentSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/ApartmentSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/MessageSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/MessageSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/covers/3HFPzL0fQFYPacJ8j11q1l5ku.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/covers/mzJuiCMzYyjOpEFwClBBJXk4K.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/covers/nWVLvsce0cm0k1dbLbgavoZrk.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/covers/oYwTu3BWhyogFnGeTdzj3Ragw.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/covers/q6x310EEOI4QTgEpyHOFc86ri.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/covers/xEHsg8LeDb5ITfbl3a8fhFyXh.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/J8ho5TgOGNmJPw4E2yUUGl4jH" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/KKUpZrMdJHWh5QCJCTZiFOuMp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/ggX5JEtGyZR5Oo07wVT1cpDna.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/vyEmxhkGSNUw7WCtLYO8xFnnL.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/image/x2UzNXKnn0T4jtNv5yqsb5pMM.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/WKVKI3dPf7IulmvyK6nk4vnJX.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,7 +182,8 @@
       <workItem from="1615629157829" duration="2159000" />
       <workItem from="1615717641013" duration="4379000" />
       <workItem from="1615738007605" duration="12000" />
-      <workItem from="1615738022718" duration="3829000" />
+      <workItem from="1615738022718" duration="4529000" />
+      <workItem from="1615801096089" duration="1801000" />
     </task>
     <servers />
   </component>
