@@ -346,6 +346,8 @@ nav .nav-user {
   max-width: calc(100% / 4.2);
   padding: 1em 0;
   cursor: pointer;
+  /* object-fit: cover;
+  object-position: 50% 50%; */
 }
 
 /* .mg-card {
@@ -1222,7 +1224,7 @@ footer ul li {
 }
 
 .appartamenti-in-evidenza-section h1{
-  text-align: center;
+  /* text-align: center; */
   margin-bottom:40px;
 }
 
@@ -1247,10 +1249,14 @@ display:flex;
   border-radius:10px;
 }
 
-.city-cover-card{
-  height:100%;
-  width:100%;
-  background-color: black
 
+.city-cover-card{
+  height: 180px;
+  width:100%;
   border:2px solid red;
+}
+
+.city-cover-card button{
+  height: 180px;
+  margin-bottom: 1em;
 }

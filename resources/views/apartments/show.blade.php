@@ -38,9 +38,26 @@
     <div class="line-separator"></div>
     <div class="apartment-description">
       <p>{{$apartment->description}}</p>
+
       <div class="host-btn">
+
         <a href="#">Contatta l'host</a>
+
       </div>
+
+        <!-- <div id="message">
+
+              <message> </message>
+
+        </div> -->
+
+      <div id="modal">
+        <modal> </modal>
+
+      </div>
+
+
+
     </div>
     <div class="line-separator"></div>
     <div class="services-list">
