@@ -31,6 +31,7 @@ class ApiApartmentController extends Controller
         }
 
         return response()->json(Apartment::with('services', 'position', 'imgs')
+        ->orderBy("active", 'desc')
         ->find($arrayId)
         ->where('beds', '>=', $request->guests));
     }
