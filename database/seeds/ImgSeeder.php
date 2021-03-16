@@ -29,7 +29,7 @@ class ImgSeeder extends Seeder
         ];
 
         foreach($apartments as $apartment){
-            for($i = 1; $i <= 4; $i++){
+            for($i = 1; $i <= 6; $i++){
                 DB::table('images')->insert([
                     'apartment_id' => $apartment->id,
                     'path' => $array[$faker->numberBetween(0,8)],

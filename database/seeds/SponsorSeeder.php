@@ -17,8 +17,8 @@ class SponsorSeeder extends Seeder
     {
         $apartments = Apartment::all();
         foreach($apartments as $apartment){
-            $active = $faker->numberBetween(0,1);
-            if($active){
+
+            if($apartment->active){
                 DB::table('sponsors')->insert([
                     'apartment_id' => $apartment->id,
                     'type_id' => 3,
