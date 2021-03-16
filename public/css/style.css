@@ -344,12 +344,15 @@ nav .nav-user {
 }
 .city-card {
   padding: 1em 0;
+  width: calc(100% / 4.2);
+  height: 100%;
   /* object-fit: cover;
   object-position: 50% 50%; */
 }
 
 .city-card button {
   cursor: pointer;
+  height: 300px;
 }
 
 /* .mg-card {
@@ -357,10 +360,12 @@ nav .nav-user {
 } */
 
 .city-card img {
-  width: 550px;
-  height: 380px;
   margin-bottom: 1em;
   border-radius: 1.5em;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center center;
 }
 .city-card img:hover {
   opacity: .8;
