@@ -42,13 +42,13 @@
             name="message"
             v-model="message"
             cols="30" rows="5"
-            placeholder="Message">
+            placeholder="Message"> Ciao! sono interessato al tuo appartamento!
           </textarea>
 
           <div class="submit-container-message-component">
 
                <input type="submit" value="Send" @click="$emit('close')">
-            
+
          </div>
 
         </form>

@@ -2128,10 +2128,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "ListItem",
   props: ['title', 'description', 'rooms', 'beds', 'bathrooms', 'metri_quadrati', 'price', 'link', 'coverimg', 'description', 'activestar']
@@ -89264,10 +89260,6 @@ var render = function() {
       _vm._v(" "),
       _c("div", { staticClass: "search-component-apartment-features" }, [
         _vm.activestar
-          ? _c("div", {}, [_vm._v("\n            ciccio\n          ")])
-          : _vm._e(),
-        _vm._v(" "),
-        _vm.activestar
           ? _c("i", {
               staticClass:
                 "fas fa-star aria-hidden='true' search-component-sponsored-star"
@@ -89671,31 +89663,35 @@ var render = function() {
         _vm._v(" "),
         _c("label", [_vm._v("Message")]),
         _vm._v(" "),
-        _c("textarea", {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model",
-              value: _vm.message,
-              expression: "message"
-            }
-          ],
-          attrs: {
-            name: "message",
-            cols: "30",
-            rows: "5",
-            placeholder: "Message"
-          },
-          domProps: { value: _vm.message },
-          on: {
-            input: function($event) {
-              if ($event.target.composing) {
-                return
+        _c(
+          "textarea",
+          {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.message,
+                expression: "message"
               }
-              _vm.message = $event.target.value
+            ],
+            attrs: {
+              name: "message",
+              cols: "30",
+              rows: "5",
+              placeholder: "Message"
+            },
+            domProps: { value: _vm.message },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.message = $event.target.value
+              }
             }
-          }
-        }),
+          },
+          [_vm._v(" Ciao! sono interessato al tuo appartamento!\n      ")]
+        ),
         _vm._v(" "),
         _c("div", { staticClass: "submit-container-message-component" }, [
           _c("input", {

@@ -166,6 +166,7 @@
     </div> -->
 
     <div class="host-poster-box">
+
       <div class="">
         <h1>Il tuo mondo merita di essere condiviso</h1>
         <h5>Trasforma lo spazio sin più in una nuova opportunità.</h5>
@@ -175,6 +176,8 @@
           </a>
         </button>
       </div>
+
+      <img class="airbnb-img" src='https://s3.eu-central-1.amazonaws.com/centaur-wp/marketingweek/prod/content/uploads/2014/11/Brand_Case_Study3.gif?auto=compress,format&q=60&w=1002&h=563' alt="">
 
     </div>
   </section class="home-content">
