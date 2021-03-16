@@ -11,6 +11,12 @@
 
                   <div class="search-component-apartment-features">
 
+                        <div v-if="activestar" class="">
+                          ciccio
+                        </div>
+
+                        <i  v-if="activestar" class="fas fa-star aria-hidden='true' search-component-sponsored-star"> </i>
+
                         <div class="font-helper-1"> <h3>{{ title }}</h3></div>
 
                         <ul class="tinies-container" >
@@ -51,7 +57,8 @@
                    'price',
                    'link',
                    'coverimg',
-                   'description'
+                   'description',
+                   'activestar',
 
                    ],
             };
@@ -66,6 +73,7 @@
   height:200px;
   padding:10px;
   border-bottom:1px solid lightgrey;
+  position:relative;
 }
 
 .search-component-apartments-card:hover{
@@ -122,5 +130,16 @@
   display:flex;
   justify-content: flex-end;
 }
+
+.search-component-sponsored-star{
+  position:absolute;
+  color:#FF385C;
+  right:15px;
+  top:10px;
+}
+
+/* .dActive{
+  display: block;
+} */
 
 </style>

@@ -48,7 +48,7 @@
           <div class="submit-container-message-component">
 
                <input type="submit" value="Send" @click="$emit('close')">
-
+            
          </div>
 
         </form>

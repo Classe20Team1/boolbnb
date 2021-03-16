@@ -6,11 +6,16 @@
 
 @section('content')
   <section class="dashboard-container">
+
+
     <h2>Account</h2>
     <div class="dashboard-username">
       <b class="dashboard-font-helper">{{$user->username}}</b> · {{$user->email}}
     </div>
+
     <div class="dashboard-sections">
+
+
       <div class="dashboard-card">
         <a href="{{route('user.edit')}}">
           <i class="far fa-id-card"></i>
@@ -20,6 +25,8 @@
           </div>
         </a>
       </div>
+
+
       <div class="dashboard-card">
         <a href="{{route('apartments.index')}}">
           <i class="fas fa-house-user"></i>
@@ -29,6 +36,7 @@
           </div>
         </a>
       </div>
+
       <div class="dashboard-card">
         <a href="{{route('apartments.create')}}">
           <i class="fas fa-plus-circle"></i>
@@ -38,6 +46,8 @@
           </div>
         </a>
       </div>
+
+      
     </div>
   </section>
 @endsection

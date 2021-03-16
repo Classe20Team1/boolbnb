@@ -81,6 +81,7 @@
 
                               <ListItem  v-for="(data, index) in filterByServices "
 
+                                          :activestar="data.active"
                                           :coverimg="data.cover_img"
                                           :description="data.description"
                                           :link="'window.location=`apartments/'.concat(data.id).concat('`;')"
