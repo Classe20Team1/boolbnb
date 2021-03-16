@@ -27,7 +27,7 @@ $factory->define(Apartment::class, function (Faker $faker) {
         'beds' => $faker->numberBetween($num_rooms, $num_rooms*2),
         'bathrooms' => $faker->numberBetween(1, 3),
         'metri_quadrati' => $num_rooms*70,
-        'active' => true,
+        'active' => $faker->numberBetween(0,1),
         'views_count' => 0,
         'price' => $faker->numberBetween(4600, 11900),
         'cover_img' => $array[$faker->numberBetween(0, 6)],

@@ -2126,9 +2126,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "ListItem",
-  props: ['title', 'description', 'rooms', 'beds', 'bathrooms', 'metri_quadrati', 'price', 'link', 'coverimg', 'description']
+  props: ['title', 'description', 'rooms', 'beds', 'bathrooms', 'metri_quadrati', 'price', 'link', 'coverimg', 'description', 'activestar']
 });
 
 /***/ }),
@@ -2145,6 +2151,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ListItem__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ListItem */ "./resources/js/components/ListItem.vue");
 /* harmony import */ var _ListContainer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ListContainer */ "./resources/js/components/ListContainer.vue");
 /* harmony import */ var _Mapp_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Mapp.vue */ "./resources/js/components/Mapp.vue");
+//
 //
 //
 //
@@ -29784,7 +29791,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.search-component-apartments-card[data-v-be0f3488]{\n  display: flex;\n  width:100%;\n  height:200px;\n  padding:10px;\n  border-bottom:1px solid lightgrey;\n}\n.search-component-apartments-card[data-v-be0f3488]:hover{\n  background-color: #e1f4f5;\n  cursor:pointer;\n}\n.search-component-apartment-img-box[data-v-be0f3488]{\n  position: relative;\n  min-width:180px;\n  max-width:180px;\n  height:180px;\n  border-radius:10px;\n  overflow:hidden;\n}\n.search-component-apartment-img-box img[data-v-be0f3488]{\n  height:100%;\n  position:absolute;\n  top:50%;\n  left:50%;\n  transform:translate(-50%, -50%)\n}\n.search-component-apartment-features[data-v-be0f3488]{\n  width:100%;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  padding:5px;\n  margin-left: 20px;\n}\n.tinies-container[data-v-be0f3488]{\n  width:100%;\n  display: flex;\n  justify-content: space-between;\n  list-style: none;\n}\n.apartment-description-search-component[data-v-be0f3488]{\n  height:75px;\n  width:100%;\n  overflow:hidden;\n  text-overflow:ellipsis;\n}\n.price-tag-search-component[data-v-be0f3488]{\n  height:30px;\n}\n.price-tag-search-component[data-v-be0f3488]{\n  display:flex;\n  justify-content: flex-end;\n}\n\n", ""]);
+exports.push([module.i, "\n.search-component-apartments-card[data-v-be0f3488]{\n  display: flex;\n  width:100%;\n  height:200px;\n  padding:10px;\n  border-bottom:1px solid lightgrey;\n  position:relative;\n}\n.search-component-apartments-card[data-v-be0f3488]:hover{\n  background-color: #e1f4f5;\n  cursor:pointer;\n}\n.search-component-apartment-img-box[data-v-be0f3488]{\n  position: relative;\n  min-width:180px;\n  max-width:180px;\n  height:180px;\n  border-radius:10px;\n  overflow:hidden;\n}\n.search-component-apartment-img-box img[data-v-be0f3488]{\n  height:100%;\n  position:absolute;\n  top:50%;\n  left:50%;\n  transform:translate(-50%, -50%)\n}\n.search-component-apartment-features[data-v-be0f3488]{\n  width:100%;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  padding:5px;\n  margin-left: 20px;\n}\n.tinies-container[data-v-be0f3488]{\n  width:100%;\n  display: flex;\n  justify-content: space-between;\n  list-style: none;\n}\n.apartment-description-search-component[data-v-be0f3488]{\n  height:75px;\n  width:100%;\n  overflow:hidden;\n  text-overflow:ellipsis;\n}\n.price-tag-search-component[data-v-be0f3488]{\n  height:30px;\n}\n.price-tag-search-component[data-v-be0f3488]{\n  display:flex;\n  justify-content: flex-end;\n}\n.search-component-sponsored-star[data-v-be0f3488]{\n  position:absolute;\n  color:#FF385C;\n  right:15px;\n  top:10px;\n}\n\n/* .dActive{\n  display: block;\n} */\n\n", ""]);
 
 // exports
 
@@ -89256,6 +89263,17 @@ var render = function() {
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "search-component-apartment-features" }, [
+        _vm.activestar
+          ? _c("div", {}, [_vm._v("\n            ciccio\n          ")])
+          : _vm._e(),
+        _vm._v(" "),
+        _vm.activestar
+          ? _c("i", {
+              staticClass:
+                "fas fa-star aria-hidden='true' search-component-sponsored-star"
+            })
+          : _vm._e(),
+        _vm._v(" "),
         _c("div", { staticClass: "font-helper-1" }, [
           _c("h3", [_vm._v(_vm._s(_vm.title))])
         ]),
@@ -89479,6 +89497,7 @@ var render = function() {
                 key: index,
                 attrs: {
                   slot: "items",
+                  activestar: data.active,
                   coverimg: data.cover_img,
                   description: data.description,
                   link: "window.location=`apartments/"
