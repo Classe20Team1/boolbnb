@@ -22,28 +22,28 @@ class Sponsor extends Model
 
     public static function active()
     {
-      $date = Carbon::now();
-      $today = $date->format('Y-m-d');
-      $filtered = Sponsor::select()
-      ->whereDate('date_end', '>=', $today)
-      ->get();
+        $date = Carbon::now();
+        $today = $date->format('Y-m-d');
+        $filtered = Sponsor::select()
+          ->whereDate('date_end', '>=', $today)
+          ->get();
 
     $array = [];
-        foreach ($filtered as $sponsor){
-            array_push($array, $sponsor->apartment_id);
+    foreach ($filtered as $sponsor){
+        array_push($array, $sponsor->apartment_id);
+    }
+        $apartments = Apartment::all();
+        foreach($apartments as $apartment){
+            if (in_array($apartment->id, $array)){
+                DB::table('apartments')
+                    ->where('id', $apartment->id)
+                    ->update(['active' => 1]);
+            } else {
+                DB::table('apartments')
+                    ->where('id', $apartment->id)
+                    ->update(['active' => 0]);
+            }
         }
-      $apartments = Apartment::all();
-      foreach($apartments as $apartment){
-          if(in_array($apartment->id, $array)){
-              DB::table('apartments')->update(
-                  ['active' => true]
-              );
-          } else {
-              DB::table('apartments')->update(
-                  ['active' => false]
-              );
-          }
-      }
 
       return $filtered;
     }
