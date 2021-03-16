@@ -25,7 +25,7 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
-        "braintree": "^3.2.1",
+        "braintree": "^3.2.2",
         "braintree-web": "^3.74.0",
         "emailjs-com": "^2.6.4",
         "hooper": "^0.3.4",

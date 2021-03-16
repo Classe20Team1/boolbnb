@@ -2017,64 +2017,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2091,17 +2033,20 @@ __webpack_require__.r(__webpack_exports__);
       hooperSettings: {
         itemsToShow: this.numofitems,
         centerMode: false,
-        infiniteScroll: true,
+        infiniteScroll: false,
         autoPlay: true,
         playSpeed: 3500
       },
-      images: this.imgs
+      images: this.imgs.map(function (el) {
+        return el.path;
+      })
     };
   },
   mounted: function mounted() {
     console.log(this.imgs.map(function (el) {
       return el.path;
-    })); // element.services.map(el=>el.name))
+    }));
+    console.log(this.images); // element.services.map(el=>el.name))
   }
 });
 
@@ -2200,6 +2145,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ListItem__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ListItem */ "./resources/js/components/ListItem.vue");
 /* harmony import */ var _ListContainer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ListContainer */ "./resources/js/components/ListContainer.vue");
 /* harmony import */ var _Mapp_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Mapp.vue */ "./resources/js/components/Mapp.vue");
+//
 //
 //
 //
@@ -29796,7 +29742,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.hooper[data-v-37b3d900]{\r\n  /* border:5px solid black; */\r\n  height:320px;;\r\n  width:100%;\n}\n.hooper-slide[data-v-37b3d900]{\r\n position:relative;\r\n /* border:2px solid red; */\r\n /* margin-right:10px;\r\n margin-left:10px; */\r\n /* height:350px;\r\n width:30%; */\n}\r\n\r\n/* .img-container-hooper{\r\n  position:relative;\r\n  border:2px solid red;\r\n  margin-right:10px;\r\n  margin-left:10px;\r\n  height:350px;\r\n  width:500px;\r\n} */\nimg[data-v-37b3d900]{\r\n\r\n  padding:10px;\r\n  position:absolute;\r\n  top:50%;\r\n  left:50%;\r\n  transform: translate(-50%, -50%);\r\n  width:100%;\r\n  overflow:hidden;\r\n  border-radius:15px;\n}\r\n\r\n", ""]);
+exports.push([module.i, "\n.hooper[data-v-37b3d900]{\n  /* border:5px solid black; */\n  height:320px;;\n  width:100%;\n}\n.hooper-slide[data-v-37b3d900]{\n position:relative;\n /* border:2px solid red; */\n /* margin-right:10px;\n margin-left:10px; */\n /* height:350px;\n width:30%; */\n}\n\n/* .img-container-hooper{\n  position:relative;\n  border:2px solid red;\n  margin-right:10px;\n  margin-left:10px;\n  height:350px;\n  width:500px;\n} */\nimg[data-v-37b3d900]{\n\n  padding:10px;\n  position:absolute;\n  top:50%;\n  left:50%;\n  transform: translate(-50%, -50%);\n  width:100%;\n  overflow:hidden;\n  border-radius:15px;\n}\n\n", ""]);
 
 // exports
 
@@ -29815,7 +29761,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\nul[data-v-4fd7a0b0]{\r\n  display:flex;\r\n  flex-direction: column;\r\n  list-style: none;\r\n  margin:0;\r\n  padding:0;\n}\r\n\r\n", ""]);
+exports.push([module.i, "\nul[data-v-4fd7a0b0]{\n  display:flex;\n  flex-direction: column;\n  list-style: none;\n  margin:0;\n  padding:0;\n}\n\n", ""]);
 
 // exports
 
@@ -29834,7 +29780,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.search-component-apartments-card[data-v-be0f3488]{\r\n  display: flex;\r\n  width:100%;\r\n  height:200px;\r\n  padding:10px;\r\n  border-bottom:1px solid lightgrey;\n}\n.search-component-apartments-card[data-v-be0f3488]:hover{\r\n  background-color: #e1f4f5;\r\n  cursor:pointer;\n}\n.search-component-apartment-img-box[data-v-be0f3488]{\r\n  position: relative;\r\n  min-width:180px;\r\n  max-width:180px;\r\n  height:180px;\r\n  border-radius:10px;\r\n  overflow:hidden;\n}\n.search-component-apartment-img-box img[data-v-be0f3488]{\r\n  height:100%;\r\n  position:absolute;\r\n  top:50%;\r\n  left:50%;\r\n  transform:translate(-50%, -50%)\n}\n.search-component-apartment-features[data-v-be0f3488]{\r\n  width:100%;\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: space-between;\r\n  padding:5px;\r\n  margin-left: 20px;\n}\n.tinies-container[data-v-be0f3488]{\r\n  width:100%;\r\n  display: flex;\r\n  justify-content: space-between;\r\n  list-style: none;\n}\n.apartment-description-search-component[data-v-be0f3488]{\r\n  height:75px;\r\n  width:100%;\r\n  overflow:hidden;\r\n  text-overflow:ellipsis;\n}\n.price-tag-search-component[data-v-be0f3488]{\r\n  height:30px;\n}\n.price-tag-search-component[data-v-be0f3488]{\r\n  display:flex;\r\n  justify-content: flex-end;\n}\r\n\r\n", ""]);
+exports.push([module.i, "\n.search-component-apartments-card[data-v-be0f3488]{\n  display: flex;\n  width:100%;\n  height:200px;\n  padding:10px;\n  border-bottom:1px solid lightgrey;\n}\n.search-component-apartments-card[data-v-be0f3488]:hover{\n  background-color: #e1f4f5;\n  cursor:pointer;\n}\n.search-component-apartment-img-box[data-v-be0f3488]{\n  position: relative;\n  min-width:180px;\n  max-width:180px;\n  height:180px;\n  border-radius:10px;\n  overflow:hidden;\n}\n.search-component-apartment-img-box img[data-v-be0f3488]{\n  height:100%;\n  position:absolute;\n  top:50%;\n  left:50%;\n  transform:translate(-50%, -50%)\n}\n.search-component-apartment-features[data-v-be0f3488]{\n  width:100%;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  padding:5px;\n  margin-left: 20px;\n}\n.tinies-container[data-v-be0f3488]{\n  width:100%;\n  display: flex;\n  justify-content: space-between;\n  list-style: none;\n}\n.apartment-description-search-component[data-v-be0f3488]{\n  height:75px;\n  width:100%;\n  overflow:hidden;\n  text-overflow:ellipsis;\n}\n.price-tag-search-component[data-v-be0f3488]{\n  height:30px;\n}\n.price-tag-search-component[data-v-be0f3488]{\n  display:flex;\n  justify-content: flex-end;\n}\n\n", ""]);
 
 // exports
 
@@ -29853,7 +29799,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.sistemazione[data-v-b9c20fb8]{\r\n  margin-top:25px;\n}\r\n/* .container{\r\n  margin-left: auto;\r\n  margin-right: auto;\r\n} */\n.search-component-row[data-v-b9c20fb8]{\r\n  width:100%;\r\n  display: flex;\n}\n.filter-results[data-v-b9c20fb8]{\r\n  height:100vh;\r\n  padding-left:20px;\r\n  padding-right:20px;\r\n  width:50%;\n}\r\n\r\n/* .sistemazione{\r\n  margin-top:50px;\r\n} */\n.service-filters[data-v-b9c20fb8]{\r\n  justify-content: space-between;\r\n  margin-top:25px;\r\n  /* margin-top:50px;\r\n  margin-bottom:50px; */\n}\n.services-filters[data-v-b9c20fb8]{\r\n  margin-top:15px;\n}\r\n\r\n/* .services-filters ul li{\r\n  align-items: center;\r\n} */\n.results-list[data-v-b9c20fb8]{\r\n  height:calc(100vh - 255px);\r\n  overflow-y: hidden;\r\n  overflow-y: scroll;\r\n  border-top:1px solid lightgrey;\n}\n*[data-v-b9c20fb8] {\r\n  margin: 0;\r\n  padding: 0;\r\n  box-sizing: border-box;\n}\nul[data-v-b9c20fb8]{\r\n  list-style: none;\r\n  display:flex;\r\n  flex-wrap: wrap;\n}\nul li[data-v-b9c20fb8]{\r\n  display: flex;\r\n  flex-wrap: nowrap;\r\n  align-items: center;\r\n  height:40px;\r\n  min-width: 150px;\r\n  line-height: 40px;\n}\nul li label[data-v-b9c20fb8]{\r\n  margin-left:5px;\n}\n.basic-filters[data-v-b9c20fb8]{\r\n  justify-content: space-between;\n}\n.basic-filters label[data-v-b9c20fb8]{\r\n  line-height: 40px;\n}\n.basic-filters input[data-v-b9c20fb8]{\r\n  margin-left:5px;\r\n  border:1px solid lightgrey;\r\n  border-radius: 10px;\r\n  width:75px;\n}\n.basic-filters li[data-v-b9c20fb8]{\r\n  margin-top: 10px;\n};\n.search-results[data-v-b9c20fb8] {\r\n  width: 55%;\r\n  padding: 3em;\r\n  padding-right: 1em;\n}\n.search-results h1[data-v-b9c20fb8] {\r\n  margin-bottom: 1.1em;\n}\n.search-results .search-filters ul button[data-v-b9c20fb8] {\n}\n.search-results .search-filters ul button[data-v-b9c20fb8]:hover {\r\n  border: 1px solid black;\n}\n.mappa-container[data-v-b9c20fb8]{\r\n  flex:2;\r\n  /* border:2px solid red; */\n}\n.noresult-container[data-v-b9c20fb8]{\r\n  height:50%;\r\n  width:100%;\r\n  position: relative;\n}\n.no-results[data-v-b9c20fb8]{\r\n  position: absolute;\r\n  top:50%;\r\n  left:50%;\r\n  transform:translate(-50%,-50%)\n}\r\n\r\n", ""]);
+exports.push([module.i, "\n.sistemazione[data-v-b9c20fb8]{\n  margin-top:25px;\n}\n/* .container{\n  margin-left: auto;\n  margin-right: auto;\n} */\n.search-component-row[data-v-b9c20fb8]{\n  width:100%;\n  display: flex;\n}\n.filter-results[data-v-b9c20fb8]{\n  height:100vh;\n  padding-left:20px;\n  padding-right:20px;\n  width:50%;\n}\n\n/* .sistemazione{\n  margin-top:50px;\n} */\n.service-filters[data-v-b9c20fb8]{\n  justify-content: space-between;\n  margin-top:25px;\n  /* margin-top:50px;\n  margin-bottom:50px; */\n}\n.services-filters[data-v-b9c20fb8]{\n  margin-top:15px;\n}\n\n/* .services-filters ul li{\n  align-items: center;\n} */\n.results-list[data-v-b9c20fb8]{\n  height:calc(100vh - 255px);\n  overflow-y: hidden;\n  overflow-y: scroll;\n  border-top:1px solid lightgrey;\n}\n*[data-v-b9c20fb8] {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n}\nul[data-v-b9c20fb8]{\n  list-style: none;\n  display:flex;\n  flex-wrap: wrap;\n}\nul li[data-v-b9c20fb8]{\n  display: flex;\n  flex-wrap: nowrap;\n  align-items: center;\n  height:40px;\n  min-width: 150px;\n  line-height: 40px;\n}\nul li label[data-v-b9c20fb8]{\n  margin-left:5px;\n}\n.basic-filters[data-v-b9c20fb8]{\n  justify-content: space-between;\n}\n.basic-filters label[data-v-b9c20fb8]{\n  line-height: 40px;\n}\n.basic-filters input[data-v-b9c20fb8]{\n  margin-left:5px;\n  border:1px solid lightgrey;\n  border-radius: 10px;\n  width:75px;\n}\n.basic-filters li[data-v-b9c20fb8]{\n  margin-top: 10px;\n};\n.search-results[data-v-b9c20fb8] {\n  width: 55%;\n  padding: 3em;\n  padding-right: 1em;\n}\n.search-results h1[data-v-b9c20fb8] {\n  margin-bottom: 1.1em;\n}\n.search-results .search-filters ul button[data-v-b9c20fb8] {\n}\n.search-results .search-filters ul button[data-v-b9c20fb8]:hover {\n  border: 1px solid black;\n}\n.mappa-container[data-v-b9c20fb8]{\n  flex:2;\n  /* border:2px solid red; */\n}\n.noresult-container[data-v-b9c20fb8]{\n  height:50%;\n  width:100%;\n  position: relative;\n}\n.no-results[data-v-b9c20fb8]{\n  position: absolute;\n  top:50%;\n  left:50%;\n  transform:translate(-50%,-50%)\n}\n\n", ""]);
 
 // exports
 
@@ -29872,7 +29818,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n*[data-v-b91a6428] {box-sizing: border-box;}\n.container[data-v-b91a6428] {\r\n  position:relative;\r\n  display: block;\r\n  margin:auto;\r\n  text-align: center;\r\n  background-color: #f2f2f2;\r\n  padding: 20px;\r\n  width: 100%;\r\n  border-radius: 15px;\n}\n.message-component-close-button[data-v-b91a6428]{\r\n  position:absolute;\r\n  right:20px;\r\n  top:10px;\r\n  border:0px;\r\n  font-size: 20px;\r\n  color:lightgrey;\r\n  cursor:pointer;\r\n  line-height: 20px;\r\n  height: 20px;\r\n  width:20px;\r\n  border-radius: 5px;\n}\n.message-component-close-button[data-v-b91a6428]:hover{\r\n  background-color: grey;\n}\n.inputs-container-message-component[data-v-b91a6428]{\r\n  display:flex;\n}\n.submit-container-message-component[data-v-b91a6428]{\r\n  display:flex;\r\n  justify-content: flex-end;\n}\nlabel[data-v-b91a6428] {\r\n  float: left;\r\n  font-size: 15px;\n}\ninput[type=text][data-v-b91a6428], [type=email][data-v-b91a6428],textarea[data-v-b91a6428] {\r\n  width: 100%;\r\n  padding: 12px;\r\n  border: 1px solid #ccc;\r\n  border-radius: 4px;\r\n  box-sizing: border-box;\r\n  margin-top: 6px;\r\n  margin-bottom: 10px;\r\n  resize: vertical;\n}\ninput[type=submit][data-v-b91a6428] {\r\n  background-color: #FF385C;\r\n  color: white;\r\n  padding: 12px 20px;\r\n  border: none;\r\n  border-radius: 4px;\r\n  cursor: pointer;\n}\ninput[type=submit][data-v-b91a6428]:hover {\r\n  background-color: #45a049;\n}\r\n", ""]);
+exports.push([module.i, "\n*[data-v-b91a6428] {box-sizing: border-box;}\n.container[data-v-b91a6428] {\n  position:relative;\n  display: block;\n  margin:auto;\n  text-align: center;\n  background-color: #f2f2f2;\n  padding: 20px;\n  width: 100%;\n  border-radius: 15px;\n}\n.message-component-close-button[data-v-b91a6428]{\n  position:absolute;\n  right:20px;\n  top:10px;\n  border:0px;\n  font-size: 20px;\n  color:lightgrey;\n  cursor:pointer;\n  line-height: 20px;\n  height: 20px;\n  width:20px;\n  border-radius: 5px;\n}\n.message-component-close-button[data-v-b91a6428]:hover{\n  background-color: grey;\n}\n.inputs-container-message-component[data-v-b91a6428]{\n  display:flex;\n}\n.submit-container-message-component[data-v-b91a6428]{\n  display:flex;\n  justify-content: flex-end;\n}\nlabel[data-v-b91a6428] {\n  float: left;\n  font-size: 15px;\n}\ninput[type=text][data-v-b91a6428], [type=email][data-v-b91a6428],textarea[data-v-b91a6428] {\n  width: 100%;\n  padding: 12px;\n  border: 1px solid #ccc;\n  border-radius: 4px;\n  box-sizing: border-box;\n  margin-top: 6px;\n  margin-bottom: 10px;\n  resize: vertical;\n}\ninput[type=submit][data-v-b91a6428] {\n  background-color: #FF385C;\n  color: white;\n  padding: 12px 20px;\n  border: none;\n  border-radius: 4px;\n  cursor: pointer;\n}\ninput[type=submit][data-v-b91a6428]:hover {\n  background-color: #45a049;\n}\n", ""]);
 
 // exports
 
@@ -29891,7 +29837,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.modal-mask {\r\nposition: fixed;\r\nz-index: 9998;\r\ntop: 0;\r\nleft: 0;\r\nwidth: 100%;\r\nheight: 100%;\r\nbackground-color: rgba(0, 0, 0, .5);\r\ndisplay: table;\r\ntransition: opacity .3s ease;\n}\n.modal-message-component{\r\n  display:flex;\n}\n.modal-message-component-button{\r\n  height:40px;\r\n  width:160px;\r\n  border-radius: 10px;\r\n  background-color: white;\n}\n.modal-wrapper {\r\ndisplay: table-cell;\r\nvertical-align: middle;\n}\n.modal-container {\r\nwidth: 300px;\r\nmargin: 0px auto;\r\npadding: 20px 30px;\r\nbackground-color: #fff;\r\nborder-radius: 2px;\r\nbox-shadow: 0 2px 8px rgba(0, 0, 0, .33);\r\ntransition: all .3s ease;\r\nfont-family: Helvetica, Arial, sans-serif;\n}\n.modal-header h3 {\r\nmargin-top: 0;\r\ncolor: #42b983;\n}\n.modal-body {\r\nmargin: 20px 0;\n}\n.modal-default-button {\r\nfloat: right;\n}\r\n\r\n/*\r\n* The following styles are auto-applied to elements with\r\n* transition=\"modal\" when their visibility is toggled\r\n* by Vue.js.\r\n*\r\n* You can easily play with the modal transition by editing\r\n* these styles.\r\n*/\n.modal-enter {\r\nopacity: 0;\n}\n.modal-leave-active {\r\nopacity: 0;\n}\n.modal-enter .modal-container,\r\n.modal-leave-active .modal-container {\r\ntransform: scale(1.1);\n}\r\n\r\n", ""]);
+exports.push([module.i, "\n.modal-mask {\nposition: fixed;\nz-index: 9998;\ntop: 0;\nleft: 0;\nwidth: 100%;\nheight: 100%;\nbackground-color: rgba(0, 0, 0, .5);\ndisplay: table;\ntransition: opacity .3s ease;\n}\n.modal-message-component{\n  display:flex;\n}\n.modal-message-component-button{\n  height:40px;\n  width:160px;\n  border-radius: 10px;\n  background-color: white;\n}\n.modal-wrapper {\ndisplay: table-cell;\nvertical-align: middle;\n}\n.modal-container {\nwidth: 300px;\nmargin: 0px auto;\npadding: 20px 30px;\nbackground-color: #fff;\nborder-radius: 2px;\nbox-shadow: 0 2px 8px rgba(0, 0, 0, .33);\ntransition: all .3s ease;\nfont-family: Helvetica, Arial, sans-serif;\n}\n.modal-header h3 {\nmargin-top: 0;\ncolor: #42b983;\n}\n.modal-body {\nmargin: 20px 0;\n}\n.modal-default-button {\nfloat: right;\n}\n\n/*\n* The following styles are auto-applied to elements with\n* transition=\"modal\" when their visibility is toggled\n* by Vue.js.\n*\n* You can easily play with the modal transition by editing\n* these styles.\n*/\n.modal-enter {\nopacity: 0;\n}\n.modal-leave-active {\nopacity: 0;\n}\n.modal-enter .modal-container,\n.modal-leave-active .modal-container {\ntransform: scale(1.1);\n}\n\n", ""]);
 
 // exports
 
@@ -29910,7 +29856,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n#amount[data-v-04c873d0],#creditCardNumber[data-v-04c873d0], #creditCardNumber[data-v-04c873d0], #cvv[data-v-04c873d0], #expireDate[data-v-04c873d0]{\r\n  height:30px;\r\n  border:1px solid lightgrey;\r\n  border-radius:5px;\n}\n.p-el[data-v-04c873d0]{\r\n  margin-top: 10px;\n}\n.sponsor-amount-container[data-v-04c873d0]{\r\n  display:flex;\r\n  align-items: center;\r\n  justify-content: space-between;\r\n  margin-top: 15px;\n}\n.checkbox-container[data-v-04c873d0]{\r\ndisplay:flex;\r\nflex-direction: column;\r\nborder:2px solid pink;\r\nborder-radius: 10px;\r\npadding:10px;\n}\n.input-amount-container[data-v-04c873d0]{\r\n  display:flex;\r\n  align-items: center;\n}\n.valuta[data-v-04c873d0]{\r\n  margin-right: 10px;\n}\n.payment-container[data-v-04c873d0]{\r\n  padding:20px;\r\n  border: 1px solid lightgray;\r\n  border-radius: 10px;\n}\n.ed-cvv-container[data-v-04c873d0]{\r\n  display:flex;\n}\n.credit-card-button[data-v-04c873d0]{\r\n  cursor:pointer;\r\n  width:100%;\r\n  height:45px;\r\n  color:white;\r\n  font-weight: 600;\r\n  font-size: 15px;\r\n  background-color:#4287f5;\r\n  border:0px;\r\n  border-radius:5px;\n}\n.credit-card-button[data-v-04c873d0]:hover{\r\n  opacity:0.8;\n}\n.hide[data-v-04c873d0]{\r\n  display:none;\n}\n.display[data-v-04c873d0]{\r\n  display:block;\n}\n.success[data-v-04c873d0]{\r\n  border:1px solid lightgrey;\r\n  width:100%;\r\n  background-color: green;\r\n  height:90px;\r\n  border-radius:10px;\r\n  font-size: 15px;;\r\n  font-weight: 600;\r\n  color: white;\n}\n.sponsored[data-v-04c873d0]{\r\n  border:2px solid pink;\r\n  border-radius: 10px;\r\n  height:45px;\r\n  display:flex;\r\n  justify-content: center;\r\n  align-items: center;\n}\r\n\r\n", ""]);
+exports.push([module.i, "\n#amount[data-v-04c873d0],#creditCardNumber[data-v-04c873d0], #creditCardNumber[data-v-04c873d0], #cvv[data-v-04c873d0], #expireDate[data-v-04c873d0]{\n  height:30px;\n  border:1px solid lightgrey;\n  border-radius:5px;\n}\n.p-el[data-v-04c873d0]{\n  margin-top: 10px;\n}\n.sponsor-amount-container[data-v-04c873d0]{\n  display:flex;\n  align-items: center;\n  justify-content: space-between;\n  margin-top: 15px;\n}\n.checkbox-container[data-v-04c873d0]{\ndisplay:flex;\nflex-direction: column;\nborder:2px solid pink;\nborder-radius: 10px;\npadding:10px;\n}\n.input-amount-container[data-v-04c873d0]{\n  display:flex;\n  align-items: center;\n}\n.valuta[data-v-04c873d0]{\n  margin-right: 10px;\n}\n.payment-container[data-v-04c873d0]{\n  padding:20px;\n  border: 1px solid lightgray;\n  border-radius: 10px;\n}\n.ed-cvv-container[data-v-04c873d0]{\n  display:flex;\n}\n.credit-card-button[data-v-04c873d0]{\n  cursor:pointer;\n  width:100%;\n  height:45px;\n  color:white;\n  font-weight: 600;\n  font-size: 15px;\n  background-color:#4287f5;\n  border:0px;\n  border-radius:5px;\n}\n.credit-card-button[data-v-04c873d0]:hover{\n  opacity:0.8;\n}\n.hide[data-v-04c873d0]{\n  display:none;\n}\n.display[data-v-04c873d0]{\n  display:block;\n}\n.success[data-v-04c873d0]{\n  border:1px solid lightgrey;\n  width:100%;\n  background-color: green;\n  height:90px;\n  border-radius:10px;\n  font-size: 15px;;\n  font-weight: 600;\n  color: white;\n}\n.sponsored[data-v-04c873d0]{\n  border:2px solid pink;\n  border-radius: 10px;\n  height:45px;\n  display:flex;\n  justify-content: center;\n  align-items: center;\n}\n\n", ""]);
 
 // exports
 
@@ -29929,7 +29875,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.sequential-image-component-box[data-v-145c762a]{\r\n  border-radius:10px;\r\n  margin-right: 30px;\r\n  margin-top:10px;\r\n  margin-bottom:10px;\n}\n.sequential-image-component-box[data-v-145c762a]:hover{\r\n  transition: 0.5s;\r\n  box-shadow: 0 0 10px black;\n}\n.sequential-img-container[data-v-145c762a]{\r\n  border-bottom: 0px;\r\n  overflow:hidden;\r\n  height:150px;\r\n  width:298px;\r\n  border-top-left-radius:10px;\r\n  border-top-right-radius:10px;\r\n  position:relative;\n}\n.sequential-img-details-container[data-v-145c762a]{\r\n  border:1px solid grey;\r\n  width:298px;\r\n  border-top: 0px;\r\n  padding:5px;\r\n  border-bottom-left-radius:10px;\r\n  border-bottom-right-radius:10px;\n}\n.micro-details-header[data-v-145c762a]{\r\n  display: flex;\r\n  justify-content: space-between;\r\n  margin-top:5px;\n}\n.micro-details-header h4[data-v-145c762a]{\r\n  font-weight: 400;\r\n  color:grey;\n}\n.sponsored-description[data-v-145c762a]{\r\n  margin-top:5px;\r\n  text-overflow: hidden;\r\n  font-size: 12px;\r\n  margin-bottom:5px;\n}\n.sponsored-description ul[data-v-145c762a]{\r\n  margin-top: 10px;\r\n  list-style:none;\r\n  display: flex;\r\n  justify-content: space-between;\r\n  color:darkgrey;\n}\n.micro-details-sponsored-price[data-v-145c762a]{\r\n  color:grey;\n}\n.sequential-img-container img[data-v-145c762a]{\r\n    width:298px;\r\n    position:absolute;\r\n    top:50%;\r\n    left:50%;\r\n    transform:translate(-50%, -50%);\n}\r\n\r\n", ""]);
+exports.push([module.i, "\n.sequential-image-component-box[data-v-145c762a]{\n  border-radius:10px;\n  margin-right: 30px;\n  margin-top:10px;\n  margin-bottom:10px;\n}\n.sequential-image-component-box[data-v-145c762a]:hover{\n  transition: 0.5s;\n  box-shadow: 0 0 10px black;\n}\n.sequential-img-container[data-v-145c762a]{\n  border-bottom: 0px;\n  overflow:hidden;\n  height:150px;\n  width:298px;\n  border-top-left-radius:10px;\n  border-top-right-radius:10px;\n  position:relative;\n}\n.sequential-img-details-container[data-v-145c762a]{\n  border:1px solid grey;\n  width:298px;\n  border-top: 0px;\n  padding:5px;\n  border-bottom-left-radius:10px;\n  border-bottom-right-radius:10px;\n}\n.micro-details-header[data-v-145c762a]{\n  display: flex;\n  justify-content: space-between;\n  margin-top:5px;\n}\n.micro-details-header h4[data-v-145c762a]{\n  font-weight: 400;\n  color:grey;\n}\n.sponsored-description[data-v-145c762a]{\n  margin-top:5px;\n  text-overflow: hidden;\n  font-size: 12px;\n  margin-bottom:5px;\n}\n.sponsored-description ul[data-v-145c762a]{\n  margin-top: 10px;\n  list-style:none;\n  display: flex;\n  justify-content: space-between;\n  color:darkgrey;\n}\n.micro-details-sponsored-price[data-v-145c762a]{\n  color:grey;\n}\n.sequential-img-container img[data-v-145c762a]{\n    width:298px;\n    position:absolute;\n    top:50%;\n    left:50%;\n    transform:translate(-50%, -50%);\n}\n\n", ""]);
 
 // exports
 
@@ -89227,10 +89173,10 @@ var render = function() {
     "hooper",
     { attrs: { group: "group1", settings: _vm.hooperSettings } },
     [
-      _vm._l(_vm.images, function(slide, indx) {
+      _vm._l(_vm.images, function(image, indx) {
         return _c("slide", { key: indx, attrs: { index: indx } }, [
           _c("div", { staticClass: "img-container-hooper" }, [
-            _c("img", { attrs: { src: slide.path, alt: "" } })
+            _c("img", { attrs: { src: "../".concat(image), alt: "" } })
           ])
         ])
       }),
@@ -103447,8 +103393,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Boolean\BackEnd\boolbnb\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Boolean\BackEnd\boolbnb\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/aj/Desktop/Courses/repository/bool-airbnb/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/aj/Desktop/Courses/repository/bool-airbnb/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

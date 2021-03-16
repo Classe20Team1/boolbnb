@@ -1,75 +1,17 @@
 <template>
 
-      <!-- <hooper group="group1" >
-
-        <slide>
-
-          <div class="img-container">
-
-            <img src="https://upload.wikimedia.org/wikipedia/commons/5/50/Bodiam-castle-10My8-1197.jpg" alt="">
-
-          </div>
-
-        </slide>
-
-      </hooper> -->
-
 
       <hooper group="group1" :settings="hooperSettings">
 
-        <slide v-for="(slide, indx) in images" :key="indx" :index="indx">
+        <slide v-for="(image, indx) in images" :key="indx" :index="indx">
 
           <div class="img-container-hooper">
 
-            <img :src="slide.path" alt="">
+            <img :src="'../'.concat(image)" alt="">
 
           </div>
 
         </slide>
-
-        <!-- <slide>
-
-          <div class="img-container-hooper">
-
-            <img src="https://upload.wikimedia.org/wikipedia/commons/5/50/Bodiam-castle-10My8-1197.jpg" alt="">
-
-          </div>
-
-        </slide>
-
-        <slide>
-
-          <div class="img-container-hooper">
-
-            <img src="https://upload.wikimedia.org/wikipedia/commons/5/50/Bodiam-castle-10My8-1197.jpg" alt="">
-
-          </div>
-
-        </slide>
-
-        <slide>
-
-          <div class="img-container-hooper">
-
-            <img src="https://upload.wikimedia.org/wikipedia/commons/5/50/Bodiam-castle-10My8-1197.jpg" alt="">
-
-          </div>
-
-        </slide>
-
-        <slide>
-
-          <div class="img-container-hooper">
-
-            <img src="https://upload.wikimedia.org/wikipedia/commons/5/50/Bodiam-castle-10My8-1197.jpg" alt="">
-
-          </div>
-
-        </slide> -->
-
-
-
-
 
 
 
@@ -107,19 +49,18 @@
       hooperSettings: {
         itemsToShow: this.numofitems,
         centerMode: false,
-        infiniteScroll:true,
+        infiniteScroll:false,
         autoPlay: true,
         playSpeed: 3500,
-
-
       },
 
-      images:this.imgs,
+      images:this.imgs.map(el=>el.path),
     };
   },
 
   mounted(){
     console.log(this.imgs.map(el=>el.path))
+    console.log(this.images)
     // element.services.map(el=>el.name))
   }
 }
@@ -150,6 +91,7 @@
   height:350px;
   width:500px;
 } */
+
 
 img{
 

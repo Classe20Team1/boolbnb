@@ -67,15 +67,21 @@
               <h4>Servizi e altre opzioni</h4>
 
                   <ul class="apt-basics-list services-edit">
-                      <?php
-                      $array = array("fa-wifi", "fa-dog", "fa-car", "fa-swimmer", "fa-concierge-bell", "fa-hot-tub", "fa-water");
-                      ?>
+
+                    <?php
+                        $array = array("fa-wifi", "fa-dog", "fa-car", "fa-swimmer", "fa-concierge-bell", "fa-hot-tub", "fa-water");
+                        ?>
+
                   @foreach ($services as $service)
 
-                      <li>
-                          <i class="fas {{ $array[$service->id -1] }} fa-2x {{ $apartment->services->contains($service) ? 'colorblue' : 'colorgrey' }}"></i>
-                          <div>{{$service->name}}</div>
-                      </li>
+
+                  <li>
+
+                      <i class="fas {{ $array[$service->id -1] }} fa-2x {{ $apartment->services->contains($service) ? 'colorblue' : 'colorgrey' }}"></i>
+                      <div>{{$service->name}}</div>
+
+                  </li>
+
 
                   @endforeach
 

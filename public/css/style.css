@@ -343,6 +343,7 @@ nav .nav-user {
   margin-bottom: 2em;
 }
 .city-card {
+  max-width: 280px;
   padding: 1em 0;
   /* object-fit: cover;
   object-position: 50% 50%; */
@@ -357,8 +358,8 @@ nav .nav-user {
 } */
 
 .city-card img {
-  width: 550px;
-  height: 350px;
+  width: 100%;
+  height: 180px;
   margin-bottom: 1em;
   border-radius: 1.5em;
 }
@@ -489,7 +490,6 @@ footer ul {
   list-style: none;
   margin-bottom: 2em;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
 }
 
@@ -705,10 +705,6 @@ footer ul li a:hover {
   margin-bottom: 1.5em;
 }
 
-.services-list {
-  padding-top: 2em;
-}
-
 .services-list h4 {
   margin-bottom: 1em;
 }
@@ -803,17 +799,15 @@ footer ul li a:hover {
 .dashboard-sections {
   padding: 1em 0;
   display: flex;
-  flex-wrap: wrap;
   margin-bottom: 45px;
 }
 
 .dashboard-card {
   padding: 1.5em 1em;
-  width: 327px;
+  width: calc(100% / 3);
   cursor: pointer;
   border-radius: .5em;
   box-shadow: 0px 0px 1px 1px lightgrey;
-  margin-bottom: 10px;
 }
 .dashboard-card:not(:last-child){
   margin-right: 1em;
@@ -857,7 +851,6 @@ footer ul li a:hover {
   border-radius: 1em;
   box-shadow: 0 0 1px 1px lightgrey;
   margin-bottom: 1em;
-  width: 1020px;
 }
 /* .my-apt-card > div {
   height: 100px;
@@ -1258,6 +1251,56 @@ footer ul li a:hover {
   overflow-x: scroll;
 }
 
+#hooper{
+  /* border:2px solid green; */
+  display: flex;
+  flex-wrap: wrap;
+  width:40%;
+  /* height:600px; */
+}
+
+/* #modal{
+  height:100%;
+} */
+
+.my-apartment-info-container{
+  display: flex;
+  justify-content: spac;
+}
+
+.services-list{
+  width:50%;
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between;
+  margin-left: 30px;
+}
+
+.apt-basics-list{
+  display:flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.apt-basics-list li{
+  width:150px;
+  margin-bottom:10px;
+  margin-top:10px;
+}
+
+/* .service-list-low-section{
+  display: flex;
+} */
+
+.service-list-low-section-right{
+  display: flex;
+  justify-content: center;
+  /* align-items: center;
+  height:100%; */
+}
+
+
+
 /* .sequential-component-container{
   width:100%;
 } */
@@ -1304,5 +1347,3 @@ display:flex;
   height: 180px;
   margin-bottom: 1em;
 }
-
-@
