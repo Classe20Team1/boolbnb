@@ -7,8 +7,8 @@
 
                       <div class="sequential-img-container">
 
-                          <!-- <img :src="element.cover_img" alt="apartment-preview"> -->
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStl0EeTGdYArc_vE0kzAE9aj_iaTaDYIqTcQ&usqp=CAU" alt="">
+                          <img :src="element.cover_img" alt="apartment-preview">
+                        <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStl0EeTGdYArc_vE0kzAE9aj_iaTaDYIqTcQ&usqp=CAU" alt=""> -->
 
 
                       </div>
@@ -18,11 +18,15 @@
 
                                           <div class="micro-details-header">
 
-                                                <h4> {{element.title}} </h4>
+                                                <div class="micro-details-header-title-container">
+
+                                                      <h4> {{element.title}} </h4>
+
+                                                </div>
 
                                                 <div class="micro-details-sponsored-price">
 
-                                                      {{element.price}} € a notte
+                                                      {{element.price/100}} € a notte
                                                 </div>
 
                                           </div>
@@ -117,8 +121,15 @@ export default{
   margin-top:5px;
 }
 
+.micro-details-header-title-container{
+  height:35px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .micro-details-header h4{
   font-weight: 400;
+  font-style: 10px;
   color:grey;
 }
 
@@ -148,5 +159,6 @@ export default{
     left:50%;
     transform:translate(-50%, -50%);
 }
+
 
 </style>

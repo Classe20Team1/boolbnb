@@ -49,7 +49,7 @@
       hooperSettings: {
         itemsToShow: this.numofitems,
         centerMode: false,
-        infiniteScroll:false,
+        infiniteScroll:true,
         autoPlay: true,
         playSpeed: 3500,
       },

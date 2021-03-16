@@ -2033,7 +2033,7 @@ __webpack_require__.r(__webpack_exports__);
       hooperSettings: {
         itemsToShow: this.numofitems,
         centerMode: false,
-        infiniteScroll: false,
+        infiniteScroll: true,
         autoPlay: true,
         playSpeed: 3500
       },
@@ -2883,6 +2883,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_sequential_entrance__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-sequential-entrance */ "./node_modules/vue-sequential-entrance/index.js");
 /* harmony import */ var vue_sequential_entrance_vue_sequential_entrance_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-sequential-entrance/vue-sequential-entrance.css */ "./node_modules/vue-sequential-entrance/vue-sequential-entrance.css");
 /* harmony import */ var vue_sequential_entrance_vue_sequential_entrance_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue_sequential_entrance_vue_sequential_entrance_css__WEBPACK_IMPORTED_MODULE_1__);
+//
+//
+//
+//
 //
 //
 //
@@ -29875,7 +29879,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.sequential-image-component-box[data-v-145c762a]{\n  border-radius:10px;\n  margin-right: 30px;\n  margin-top:10px;\n  margin-bottom:10px;\n}\n.sequential-image-component-box[data-v-145c762a]:hover{\n  transition: 0.5s;\n  box-shadow: 0 0 10px black;\n}\n.sequential-img-container[data-v-145c762a]{\n  border-bottom: 0px;\n  overflow:hidden;\n  height:150px;\n  width:298px;\n  border-top-left-radius:10px;\n  border-top-right-radius:10px;\n  position:relative;\n}\n.sequential-img-details-container[data-v-145c762a]{\n  border:1px solid grey;\n  width:298px;\n  border-top: 0px;\n  padding:5px;\n  border-bottom-left-radius:10px;\n  border-bottom-right-radius:10px;\n}\n.micro-details-header[data-v-145c762a]{\n  display: flex;\n  justify-content: space-between;\n  margin-top:5px;\n}\n.micro-details-header h4[data-v-145c762a]{\n  font-weight: 400;\n  color:grey;\n}\n.sponsored-description[data-v-145c762a]{\n  margin-top:5px;\n  text-overflow: hidden;\n  font-size: 12px;\n  margin-bottom:5px;\n}\n.sponsored-description ul[data-v-145c762a]{\n  margin-top: 10px;\n  list-style:none;\n  display: flex;\n  justify-content: space-between;\n  color:darkgrey;\n}\n.micro-details-sponsored-price[data-v-145c762a]{\n  color:grey;\n}\n.sequential-img-container img[data-v-145c762a]{\n    width:298px;\n    position:absolute;\n    top:50%;\n    left:50%;\n    transform:translate(-50%, -50%);\n}\n\n", ""]);
+exports.push([module.i, "\n.sequential-image-component-box[data-v-145c762a]{\n  border-radius:10px;\n  margin-right: 30px;\n  margin-top:10px;\n  margin-bottom:10px;\n}\n.sequential-image-component-box[data-v-145c762a]:hover{\n  transition: 0.5s;\n  box-shadow: 0 0 10px black;\n}\n.sequential-img-container[data-v-145c762a]{\n  border-bottom: 0px;\n  overflow:hidden;\n  height:150px;\n  width:298px;\n  border-top-left-radius:10px;\n  border-top-right-radius:10px;\n  position:relative;\n}\n.sequential-img-details-container[data-v-145c762a]{\n  border:1px solid grey;\n  width:298px;\n  border-top: 0px;\n  padding:5px;\n  border-bottom-left-radius:10px;\n  border-bottom-right-radius:10px;\n}\n.micro-details-header[data-v-145c762a]{\n  display: flex;\n  justify-content: space-between;\n  margin-top:5px;\n}\n.micro-details-header-title-container[data-v-145c762a]{\n  height:35px;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.micro-details-header h4[data-v-145c762a]{\n  font-weight: 400;\n  font-style: 10px;\n  color:grey;\n}\n.sponsored-description[data-v-145c762a]{\n  margin-top:5px;\n  text-overflow: hidden;\n  font-size: 12px;\n  margin-bottom:5px;\n}\n.sponsored-description ul[data-v-145c762a]{\n  margin-top: 10px;\n  list-style:none;\n  display: flex;\n  justify-content: space-between;\n  color:darkgrey;\n}\n.micro-details-sponsored-price[data-v-145c762a]{\n  color:grey;\n}\n.sequential-img-container img[data-v-145c762a]{\n    width:298px;\n    position:absolute;\n    top:50%;\n    left:50%;\n    transform:translate(-50%, -50%);\n}\n\n\n", ""]);
 
 // exports
 
@@ -90015,23 +90019,23 @@ var render = function() {
         [
           _c("div", { staticClass: "sequential-img-container" }, [
             _c("img", {
-              attrs: {
-                src:
-                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStl0EeTGdYArc_vE0kzAE9aj_iaTaDYIqTcQ&usqp=CAU",
-                alt: ""
-              }
+              attrs: { src: element.cover_img, alt: "apartment-preview" }
             })
           ]),
           _vm._v(" "),
           _c("div", {}, [
             _c("div", { staticClass: "sequential-img-details-container" }, [
               _c("div", { staticClass: "micro-details-header" }, [
-                _c("h4", [_vm._v(" " + _vm._s(element.title) + " ")]),
+                _c(
+                  "div",
+                  { staticClass: "micro-details-header-title-container" },
+                  [_c("h4", [_vm._v(" " + _vm._s(element.title) + " ")])]
+                ),
                 _vm._v(" "),
                 _c("div", { staticClass: "micro-details-sponsored-price" }, [
                   _vm._v(
                     "\n\n                                              " +
-                      _vm._s(element.price) +
+                      _vm._s(element.price / 100) +
                       " € a notte\n                                        "
                   )
                 ])
