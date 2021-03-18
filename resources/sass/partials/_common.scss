@@ -1,0 +1,82 @@
+// HELPERS
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container{
+  width:1190px;
+  margin-right: auto;
+  margin-left:auto;
+}
+
+.row{
+  width:100%;
+}
+
+.row::after{
+  content:"";
+  display: table;
+  clear:both;
+}
+
+.d-flex{
+  display:flex
+}
+
+.jcsb{
+  justify-content: space-between;
+}
+
+.relative{
+  position:relative;
+}
+
+.mt-50{
+  margin-top: 50px;
+}
+
+// DBUG
+.red-border{
+  border:2px solid red;
+}
+
+.green-border{
+  border:2px solid green;
+}
+
+.orange-border{
+  border:2px solid orange;
+}
+
+.black-border{
+  border:2px solid black;
+}
+
+.blue-border{
+  border:2px solid blue;
+}
+
+// GENERAL
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+}
+
+// MEDIA QUERIES
+@media screen and (max-width: 1190px) {
+  .container {
+    width:100%;
+    padding-right: 70px;
+    padding-left: 70px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .container {
+    padding-right: 10px;
+    padding-left: 10px;
+
+  }
+}

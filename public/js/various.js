@@ -1,22 +1,3 @@
-// window.onscroll = function(){
-//
-//    if(window.scrollY >= 600) { // change target to number
-//       document.getElementById('navi').style.position = 'relative';
-//       document.getElementById('navi').css("top" , 600)
-//    }
-//    if(window.scrollY === 750){
-//      // document.getElementById('navi').style.position = 'absolute';
-//      // document.getElementById('navi').style.top='600';
-//       // $("#navi").fadeOut(1000);
-//    }
-//    else{
-//      document.getElementById('navi').style.position = 'fixed';
-//
-//
-//    }
-//
-// };
-
 $.fn.followTo = function (pos) {
     var $this = this,
         $window = $(window);
@@ -36,4 +17,55 @@ $.fn.followTo = function (pos) {
     });
 };
 
-$('#navi').followTo(752);
+$('#navi').followTo(650);
+
+$( "#login-button" ).click(function() {
+  $( "#login-list" ).slideToggle(300);
+});
+
+
+var bodyFormData = new FormData();
+
+function search(){
+
+      axios.post(
+        "search",
+        {
+          "city":JSON.stringify("genova"),
+        },
+        // {
+        //   headers: {
+        //   "Content-type": "application/json; charset=UTF-8",
+        //   }
+        // }
+
+      )
+    .then(response => {
+       console.log(response)
+
+      }
+    )
+    }
+
+
+// function searched(){
+//
+//     $.ajaxSetup({
+//         headers: {
+//             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+//         }
+//     });
+//
+//     $.ajax({
+//         url:"search",
+//         data:{"genova"},
+//         type:'post',
+//         success:  function (response) {
+//             alert(response);
+//         },
+//         error: function(x,xs,xt){
+//             console.log(x, xs , xt);
+//
+//         }
+//     })
+//   };

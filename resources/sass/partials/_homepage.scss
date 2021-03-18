@@ -1,0 +1,58 @@
+// HERO
+.hero{
+  display: flex;
+  flex-direction: column;
+  background-image: url('/img/jumbotrone.jpg');
+  justify-content:center;
+  height:750px;
+  background-position: bottom;
+  background-size:cover;
+
+  .hero-title-container{
+    color: white;
+    width:50%;
+    height:100%;
+    h1{
+      font-size: 50px;
+      line-height: 75px;
+    }
+  }
+}
+
+
+
+// APPARTAMENTI IN EVIDENZA
+
+// STILE IN COMPONENTE VUE:SEQUENTIAL
+#sequential span{
+  display:flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  width:100%;
+  overflow-x: scroll;
+}
+
+// CITTÀ IN EVIDENZA
+.cities-cards-container {
+  display: flex;
+  justify-content: space-between;
+  // margin-top: 2em;
+  width: 100%;
+  // margin-bottom: 2em;
+}
+
+.city-group{
+
+}
+
+
+// MEDIA QUERIES
+@media screen and (max-width: 768px) {
+
+    .hero-title-container {
+      margin-left: auto;
+      margin-right: auto;
+      width:100%;
+      text-align: center;
+    }
+  }

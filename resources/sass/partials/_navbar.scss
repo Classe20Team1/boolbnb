@@ -1,0 +1,115 @@
+nav{
+  background-color: white;
+  width:100%;
+}
+
+.section-nav{
+  height:100px;
+  align-items: center;
+}
+
+  .logo-container img{
+    height:90px;
+  }
+
+// SEARCHBAR
+.search-bar-form{
+  font-size: 12px;
+  border:1px solid lightgrey;
+  height:60px;
+  align-items: center;
+  border-radius: 32px;
+  padding:5px;
+}
+
+.searchbar-el{
+  margin-left: 20px;
+
+  button{
+    height:50px;
+    width:50px;
+    border:0px;
+    background-color:$bnbpink;
+    color:white;
+    font-size: 20px;
+    border-radius: 50%;
+  }
+
+  button:hover{
+    cursor:pointer;
+    background: $hooverbnbpink;
+  }
+
+  input{
+    border:0px;
+  }
+}
+
+// LOGIN
+.right-nav-menu-button{
+  background-color: white;
+  color:grey;
+  height:60px;
+  border-radius: 30px;
+  border:1px solid lightgrey;
+  justify-content: center;
+  align-items: center;
+  cursor:pointer;
+
+  .user-icon{
+    font-size: 40px;
+    margin:10px;
+  }
+
+  .bar-icon{
+    font-size: 25px;
+    margin-left:20px;
+  }
+}
+
+.login-list-container{
+  display:none;
+  position:absolute;
+  background-color: white;
+  top:90px;
+  right:0px;
+  border:1px solid lightgrey;
+  border-radius: 10px;
+  width:112px;
+
+  ul{
+    list-style: none;
+    padding-top:10px;
+    padding-bottom:10px;
+
+    span{
+      padding-left: 10px;
+    }
+
+    li{
+      height:40px;
+      line-height: 40px;
+      padding-left: 10px;
+
+      form button{
+        background-color:Transparent;
+        border:0px;
+        line-height: 40px;
+        font-size: 16px;
+      }
+    }
+    
+    li:hover{
+      background-color: lightgrey;
+    }
+  }
+}
+
+// MEDIA QUERIES
+
+@media screen and (max-width: 768px) {
+
+    .nav-el:first-child, .search-bar-guest-input {
+      display:none;
+    }
+  }

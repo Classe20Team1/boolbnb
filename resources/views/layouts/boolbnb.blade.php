@@ -2,124 +2,163 @@
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
+
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BoolBnb - @yield('title')</title>
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous"> -->
-    <script src="https://js.braintreegateway.com/web/dropin/1.26.1/js/dropin.js"></script>
-    <!-- BootStrap -->
-    {{-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> --}}
-    <!-- Scripts -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>BoolBnb - @yield('title')</title>
 
-    <script  src="https://api.tomtom.com/maps-sdk-for-web/cdn/5.x/5.64.0/maps/maps-web.min.js"></script>
-    <script  src="https://api.tomtom.com/maps-sdk-for-web/cdn/5.x/5.64.0/services/services-web.min.js"></script>
-    <script src="{{ asset('js/app.js') }}" defer></script>
-    <!-- TOMTOM style -->
-    <link  rel='stylesheet'  type='text/css'  href='https://api.tomtom.com/maps-sdk-for-web/cdn/5.x/5.64.0/maps/maps.css'>
+        <!-- Scripts -->
 
+        <!-- JQUERY -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+        <!-- TOMTOM -->
+        <script  src="https://api.tomtom.com/maps-sdk-for-web/cdn/5.x/5.64.0/maps/maps-web.min.js"></script>
+        <script  src="https://api.tomtom.com/maps-sdk-for-web/cdn/5.x/5.64.0/services/services-web.min.js"></script>
+
+        <!-- BRAINTREE -->
+        <script src="https://js.braintreegateway.com/web/dropin/1.26.1/js/dropin.js"></script>
+
+        <!-- MYJS -->
+        <script src="{{ asset('js/app.js') }}" defer></script>
+
+        <!-- Styles -->
+
+        <!-- TOMTOM style -->
+        <link  rel='stylesheet'  type='text/css'  href='https://api.tomtom.com/maps-sdk-for-web/cdn/5.x/5.64.0/maps/maps.css'>
+
+        <!-- FONTS -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
+
+        <!-- FONTAWESOME -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+
+        <!-- MYSTYLE -->
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/app.css">
 
   </head>
+
   <body>
+
     <nav id="navi">
-      <div class="nav-logo-box">
-        <a href="/">
-          <img src="{{ asset('img/logobnb.jpg') }}" alt="logo">
-        </a>
-      </div>
-      <div class="nav-contents">
-        <div class="search-bar">
-          <form class="search-bar-form" action="{{ route('search')}}" method="post">
-              @csrf
-              @method('post')
-            <div class="left-input">
-              <label for="city">Dove</label><br>
-              <input type="text" id="city" name="city" value="" placeholder="Dove vuoi andare?" required>
-            </div>
-            <div class="right-input">
-              <div class="">
-                <label for="guests">Posti letto</label><br>
-                <input type="number" id="guests" name="guests" step="1" value="1">
-              </div>
-              <div class="">
-                <button type="submit" name="submit">
-                  <i class="fas fa-search"></i>
-                </button>
-              </div>
-            </div>
-          </form>
-        </div>
-        <!-- <ul>
-          <li>
-            Appartamenti
-            <div class="underline"></div>
-          </li>
-          <li>
-            Ricerca avanzata
-            <div class="underline"></div>
-          </li>
-        </ul> -->
-      </div>
-      <div class="nav-user">
-        <ul class="nav-right-list-2">
 
-              @guest
-                  <li class="nav-item mg-nav-1">
-                      <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                  </li>
-                  @if (Route::has('register'))
-                      <li class="nav-item">
-                          <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                      </li>
-                  @endif
-                  @else
-                  <li class="nav-item logged dropdown">
-                      <a class="nav-link dropdown-toggle mg-nav-1" href="/admin" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
-                          {{ Auth::user()->username }} &dtrif;
-                      </a>
-                      <div class="nav-dropdown">
-                        <ul>
-                          <li class="dropdown-helper">
-                            <a href="/admin">
-                              Dashboard
-                            </a>
-                          </li>
-                          <li>
-                            <a class="dropdown-item" href="{{ route('logout') }}"
-                                onclick="event.preventDefault();
-                                document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
-                            </a>
+        <div class="row">
 
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+              <section class="container d-flex section-nav jcsb relative">
+
+                    <!-- NAV LOGO -->
+                    <div class="nav-el">
+
+                        <div class="logo-container">
+
+                              <a href="/"> <img src="{{ asset('img/logobnb.jpg') }}" alt="logo"> </a>
+
+                        </div>
+
+                    </div>
+
+                    <!-- SEARCHBAR -->
+                    <div class="nav-el">
+
+                          <form class="search-bar-form d-flex jcsb" action="{{ route('search')}}" method="post">
                                 @csrf
-                            </form>
-                          </li>
-                        </ul>
-                      </div>
-                      <!-- <a class="dropdown-item" href="{{ route('logout') }}"
-                          onclick="event.preventDefault();
-                                        document.getElementById('logout-form').submit();">
-                          {{ __('Logout') }}
-                      </a>
+                                @method('post')
 
-                      <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                          @csrf
-                      </form> -->
+                                <div class="searchbar-el">
 
-                  </li>
-              @endguest
-            </a>
+                                    <label for="city">Dove</label><br>
+                                    <input type="text" id="city" name="city" value="" placeholder="Dove vuoi andare?" required>
 
-        </ul>
-      </div>
+                                </div>
+
+                                <div class="searchbar-el search-bar-guest-input">
+
+                                    <label for="guests">Ospiti</label><br>
+                                    <input type="text" id="guests" name="guests" placeholder="Aggiungi ospiti">
+
+                                </div>
+
+                                <div class="searchbar-el">
+
+                                    <button type="submit" name="submit">
+                                    <i class="fas fa-search"></i>
+                                    </button>
+
+                                </div>
+
+                          </form>
+
+
+                    </div>
+
+                    <!-- LOGIN -->
+                    <div class="nav-el">
+
+                          <button id="login-button" class="right-nav-menu-button d-flex">
+
+                              <i class="fa fa-bars user-icon bar-icon" aria-hidden="true"></i>
+                              <i class="fa fa-user-circle user-icon" aria-hidden="true"></i>
+
+                          </button>
+
+                    </div>
+
+                    <div id="login-list" class="login-list-container">
+
+                      <ul class="nav-right-list-2">
+
+                            @guest
+
+                                  <li class="nav-item mg-nav-1">
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                  </li>
+
+                                @if (Route::has('register'))
+                                  <li class="nav-item">
+
+                                      <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+
+                                  </li>
+
+                                @endif
+
+                                @else
+                                <span> Ciao {{ Auth::user()->username }}! </span>
+
+                                <li class="dropdown-helper">
+
+                                   <a href="/admin">Dashboard</a>
+
+                                </li>
+
+                                <li>
+
+                                      <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                                          @csrf
+                                          <button type="submit" name="button">{{ __('Logout') }}</button>
+                                      </form>
+
+
+                                </li>
+
+                            @endguest
+
+                      </ul>
+
+                    </div>
+
+              </section>
+
+        </div>
+
     </nav>
+
+
 
     <main>
       @yield('content')

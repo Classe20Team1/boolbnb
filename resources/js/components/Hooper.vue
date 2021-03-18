@@ -50,7 +50,7 @@
         itemsToShow: this.numofitems,
         centerMode: false,
         infiniteScroll:true,
-        autoPlay: true,
+        // autoPlay: true,
         playSpeed: 3500,
       },
 

@@ -85,6 +85,7 @@ export default{
 
 
 .sequential-image-component-box{
+  cursor: pointer;
   border-radius:10px;
   margin-right: 30px;
   margin-top:10px;

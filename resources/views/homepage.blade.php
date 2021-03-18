@@ -7,163 +7,130 @@
 @section('content')
 <div class="aligner">
 
-  <header>
-    <div class="hero">
+  <!-- HERO -->
+  <header class="hero row">
 
+          <div class="container">
 
-        <div class="hero-title-container">
+              <div class="hero-title-container">
 
-                <h1>Viaggia dove vuoi.<br>Grazie agli host puoi.</h1>
-
-        </div>
-        <!-- <div class="hero-img-box">
-        <img src="{{ asset('img/jumbotrone.jpg') }}" alt="logo">
-          <h1>Viaggia dove vuoi.</h1>
-
-      </div> -->
-
-
-      <!-- <div class="search-bar">
-        <form class="search-bar-form" action="{{ route('search')}}" method="post">
-            @csrf
-            @method('post')
-          <div class="left-input">
-            <label for="city">Dove</label><br>
-            <input type="text" id="city" name="city" value="" placeholder="Dove vuoi andare?" required>
-          </div>
-          <div class="right-input">
-            <div class="">
-              <label for="guests">Posti letto</label><br>
-              <input type="number" id="guests" name="guests" step="1" value="1">
-            </div>
-            <div class="">
-              <button type="submit" name="submit">
-                <i class="fas fa-search"></i>
-              </button>
-            </div>
-          </div>
-        </form>
-      </div> -->
-    </div>
-  </header>
-
-
-  <section class="home-content">
-
-
-    <div class="appartamenti-in-evidenza-section">
-
-          <h1>Appartamenti in evidenza</h1>
-
-          <div class="sequential-component-container">
-
-              <div id="sequential">
-
-                    <sequential :array="{{ $apartments }}"></sequential>
+                      <h1>Viaggia dove vuoi.<br>Grazie agli host puoi.</h1>
 
               </div>
 
           </div>
 
-    </div>
+  </header>
 
+  <!-- APPARTAMENTI IN EVIDENZA -->
+  <section class="row mt-50 appartamenti-in-evidenza-section">
 
-    <h1>Una casa ovunque nel mondo</h1>
+            <div class="container">
 
-    <div class="cities-cards-container">
+                  <h1>Appartamenti in evidenza</h1>
 
-      <div class="city-card mg-card">
+                  <div class="mt-50 sequential-component-container">
 
-                <form action="{{ route('search') }}" name="city" id="city" method='post' required>
+                      <div id="sequential">
 
-                      <button style='background-color: white; border: none'type="submit" name='city' id='city' value='Milano'>
+                            <sequential :array="{{ $apartments }}"></sequential>
 
-                              @csrf
-                              @method('post')
-                              <img src="{{ asset('img/milan.jpg') }}" alt="logo">
-                              <h3 class="city-card-label">Milano</h5>
+                      </div>
 
-                      </button>
+                  </div>
 
-                </form>
-
-      </div>
-
-      <div class="city-card mg-card">
-
-            <form action="{{ route('search') }}" name="city" id="city" method='post' required>
-
-                    <button style='background-color: white; border: none'type="submit" name='city' id='city' value='Napoli'>
-
-                      @csrf
-                      @method('post')
-                      <img src="{{ asset('img/naples.jpg') }}" alt="logo">
-                      <h3 class="city-card-label">Napoli</h5>
-
-                    </button>
-
-            </form>
-
-      </div>
-
-      <div class="city-card mg-card">
-
-        <form action="{{ route('search') }}" name="city" id="city"  method='post' required>
-
-              <button style='background-color: white; border: none'type="submit" name='city' id='city' value='Roma'>
-
-                      @csrf
-                      @method('post')
-                      <img src="{{ asset('img/rome.jpg') }}" alt="logo">
-                      <h3 class="city-card-label">Roma</h5>
-
-              </button>
-
-        </form>
-
-      </div>
-
-      <div class="city-card">
-
-
-          <form action="{{ route('search') }}" name="city" id="city"  method='post' required>
-
-                <button style='background-color: white; border: none'type="submit" name='city' id='city' value='Venezia'>
-
-                        @csrf
-                        @method('post')
-                        <img src="{{ asset('img/venice.jpg') }}" alt="logo">
-                        <h3 class="city-card-label">Venezia</h5>
-
-                </button>
-
-          </form>
-
-      </div>
-
-    </div>
-
-    <!-- <div class="sponsored-apt-container">
-
-
-        @foreach($apartments as $appart)
-
-          <div class="sponsored-card">
-            <img src="{{ asset($appart->cover_img) }}" alt="apartment-preview">
-            {{ $appart->title }}
-            <div class="sponsored-description">
-             <b>Descrizione:</b> {{ $appart->description}}
             </div>
-            <div class="sponsored-price">
-             <b> Prezzo a Notte:</b> {{ $appart->price }} €
+
+  </section>
+
+  <!-- CITTÀ IN EVIDENZA -->
+  <section class="row mt-50">
+
+            <div class="container">
+
+                  <h1>Una casa ovunque nel mondo</h1>
+
+                  <div class="mt-50 cities-cards-container">
+
+                            <div class="city-card mg-card">
+
+                                      <form action="{{ route('search') }}" name="city" id="city" method='post' required>
+
+                                            <button style='background-color: white; border: none'type="submit" name='city' id='city' value='Milano'>
+
+                                                    @csrf
+                                                    @method('post')
+                                                    <img src="{{ asset('img/milan.jpg') }}" alt="logo">
+                                                    <h3 class="city-card-label">Milano</h5>
+
+                                            </button>
+
+                                      </form>
+
+                                </div>
+
+                            <meta name="csrf-token" content="{{ csrf_token() }}">
+
+                            <input onclick="search()" type="submit" name="city"></input>
+
+                            <div class="city-card mg-card">
+
+                                      <form action="{{ route('search') }}" name="city" id="city" method='post' required>
+
+                                              <button style='background-color: white; border: none'type="submit" name='city' id='city' value='Napoli'>
+
+                                                @csrf
+                                                @method('post')
+                                                <img src="{{ asset('img/naples.jpg') }}" alt="logo">
+                                                <h3 class="city-card-label">Napoli</h5>
+
+                                              </button>
+
+                                      </form>
+
+                                </div>
+
+                            <div class="city-card mg-card">
+
+                                  <form action="{{ route('search') }}" name="city" id="city"  method='post' required>
+
+                                        <button style='background-color: white; border: none'type="submit" name='city' id='city' value='Roma'>
+
+                                                @csrf
+                                                @method('post')
+                                                <img src="{{ asset('img/rome.jpg') }}" alt="logo">
+                                                <h3 class="city-card-label">Roma</h5>
+
+                                        </button>
+
+                                  </form>
+
+                            </div>
+
+                            <div class="city-card">
+
+                                <form action="{{ route('search') }}" name="city" id="city"  method='post' required>
+
+                                      <button style='background-color: white; border: none'type="submit" name='city' id='city' value='Venezia'>
+
+                                              @csrf
+                                              @method('post')
+                                              <img src="{{ asset('img/venice.jpg') }}" alt="logo">
+                                              <h3 class="city-card-label">Venezia</h5>
+
+                                      </button>
+
+                                </form>
+
+                            </div>
+
+                  </div>
+
             </div>
-            <i class="fas fa-star sponsored-icon"></i>
-          </div>
 
-        @endforeach
+  </section>
 
 
-    </div> -->
 
     <div class="host-poster-box">
 
@@ -180,6 +147,6 @@
       <img class="airbnb-img" src='https://s3.eu-central-1.amazonaws.com/centaur-wp/marketingweek/prod/content/uploads/2014/11/Brand_Case_Study3.gif?auto=compress,format&q=60&w=1002&h=563' alt="">
 
     </div>
-  </section class="home-content">
+
 </div>
 @endsection

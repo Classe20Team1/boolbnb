@@ -315,7 +315,7 @@ class ApartmentsController extends Controller
     public function search(Request $request)
     {
 
-        $usersearch = $request->city;
+        $usersearch = $request->input('city');
         $response = file_get_contents('https://api.tomtom.com/search/2/geocode/'. $usersearch .'.json?limit=1&key=' . env('TOMTOM_KEY'));
 
         $response = json_decode($response, true);
