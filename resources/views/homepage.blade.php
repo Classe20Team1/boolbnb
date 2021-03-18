@@ -50,47 +50,43 @@
 
                   <h1>Una casa ovunque nel mondo</h1>
 
-                  <div class="mt-50 cities-cards-container">
+                  <div class="mt-50 cities-cards-container d-flex jcsb">
 
-                            <div class="city-card mg-card">
+                        <div class="city-card">
 
-                                      <form action="{{ route('search') }}" name="city" id="city" method='post' required>
+                              <form action="{{ route('search') }}" name="city" id="city" method='post' required>
 
-                                            <button style='background-color: white; border: none'type="submit" name='city' id='city' value='Milano'>
+                                    <button style='background-color: white; border: none'type="submit" name='city' id='city' value='Milano'>
 
-                                                    @csrf
-                                                    @method('post')
-                                                    <img src="{{ asset('img/milan.jpg') }}" alt="logo">
-                                                    <h3 class="city-card-label">Milano</h5>
+                                            @csrf
+                                            @method('post')
+                                            <img src="{{ asset('img/milan.jpg') }}" alt="logo">
+                                            <h3 class="city-card-label">Milano</h5>
 
-                                            </button>
+                                    </button>
 
-                                      </form>
+                              </form>
 
-                                </div>
+                        </div>
 
-                            <meta name="csrf-token" content="{{ csrf_token() }}">
+                        <div class="city-card">
 
-                            <input onclick="search()" type="submit" name="city"></input>
+                              <form action="{{ route('search') }}" name="city" id="city" method='post' required>
 
-                            <div class="city-card mg-card">
+                                      <button style='background-color: white; border: none'type="submit" name='city' id='city' value='Napoli'>
 
-                                      <form action="{{ route('search') }}" name="city" id="city" method='post' required>
+                                        @csrf
+                                        @method('post')
+                                        <img src="{{ asset('img/naples.jpg') }}" alt="logo">
+                                        <h3 class="city-card-label">Napoli</h5>
 
-                                              <button style='background-color: white; border: none'type="submit" name='city' id='city' value='Napoli'>
+                                      </button>
 
-                                                @csrf
-                                                @method('post')
-                                                <img src="{{ asset('img/naples.jpg') }}" alt="logo">
-                                                <h3 class="city-card-label">Napoli</h5>
+                              </form>
 
-                                              </button>
+                        </div>
 
-                                      </form>
-
-                                </div>
-
-                            <div class="city-card mg-card">
+                        <div class="city-card">
 
                                   <form action="{{ route('search') }}" name="city" id="city"  method='post' required>
 
@@ -107,7 +103,7 @@
 
                             </div>
 
-                            <div class="city-card">
+                        <div class="city-card">
 
                                 <form action="{{ route('search') }}" name="city" id="city"  method='post' required>
 
@@ -130,23 +126,32 @@
 
   </section>
 
+  <section class="row mt-50">
 
+            <div class="container">
 
-    <div class="host-poster-box">
+                  <div class="host-poster-container d-flex">
 
-      <div class="">
-        <h1>Il tuo mondo merita di essere condiviso</h1>
-        <h5>Trasforma lo spazio sin più in una nuova opportunità.</h5>
-        <button type="button" name="button">
-          <a href="{{ route('register') }}" class="host-link">
-            Diventa host
-          </a>
-        </button>
-      </div>
+                        <div class="host-poster-text-container d-flex">
 
-      <img class="airbnb-img" src='https://s3.eu-central-1.amazonaws.com/centaur-wp/marketingweek/prod/content/uploads/2014/11/Brand_Case_Study3.gif?auto=compress,format&q=60&w=1002&h=563' alt="">
+                              <h1>Il tuo mondo merita di essere condiviso</h1>
+                              <h5>Trasforma lo spazio in più in una nuova opportunità.</h5>
 
-    </div>
+                              <button type="button" name="button">
+                                <a href="{{ route('register') }}" class="host-link">Diventa host</a>
+                              </button>
+
+                        </div>
+
+                        <div class="host-poster-img-container">
+
+                        </div>
+
+                  </div>
+
+          </div>
+
+  </section>
 
 </div>
 @endsection

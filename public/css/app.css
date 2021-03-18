@@ -218,9 +218,80 @@ nav {
 }
 
 .cities-cards-container {
-  display: flex;
-  justify-content: space-between;
   width: 100%;
+}
+
+.cities-cards-container .city-card {
+  width: 100%;
+}
+
+.cities-cards-container .city-card button {
+  padding: 10px;
+  cursor: pointer;
+  height: 300px;
+}
+
+.cities-cards-container .city-card img {
+  border-radius: 15px;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.host-poster-container {
+  height: 400px;
+  color: white;
+  background-color: #FF5A60;
+  border-radius: 20px;
+}
+
+.host-poster-container .host-poster-text-container {
+  padding: 50px;
+  width: 40%;
+  flex-direction: column;
+  justify-content: space-around;
+  border-right: 2px solid white;
+}
+
+.host-poster-container .host-poster-text-container button {
+  width: 80%;
+  min-width: 90px;
+  height: 50px;
+  background-color: #FF5A60;
+  border: 2px solid white;
+  color: white;
+  border-radius: 25px;
+}
+
+.host-poster-container .host-poster-text-container button a {
+  color: white;
+  font-weight: bold;
+}
+
+.host-poster-container .host-poster-text-container button:hover {
+  background-color: white;
+}
+
+.host-poster-container .host-poster-text-container button:hover a {
+  color: #FF5A60;
+}
+
+.host-poster-container .host-poster-img-container {
+  border-radius: 20px;
+  background-image: url("https://s3.eu-central-1.amazonaws.com/centaur-wp/marketingweek/prod/content/uploads/2014/11/Brand_Case_Study3.gif?auto=compress,format&q=60&w=1002&h=563");
+  width: 60%;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 960px) {
+  .city-card:nth-child(2) {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -229,6 +300,19 @@ nav {
     margin-right: auto;
     width: 100%;
     text-align: center;
+  }
+
+  .host-poster-text-container {
+    text-align: center;
+    align-items: center;
+  }
+
+  .host-poster-text-container h1 {
+    display: none;
+  }
+
+  .city-card:nth-child(1) {
+    display: none;
   }
 }
 

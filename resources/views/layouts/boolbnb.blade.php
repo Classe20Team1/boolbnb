@@ -164,7 +164,7 @@
       @yield('content')
     </main>
 
-    <footer>
+    <footer class="mt-50">
       <h3>Classe 20 Team 1</h3>
       <ul>
         <li>
