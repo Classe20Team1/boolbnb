@@ -434,7 +434,7 @@ nav > div {
   text-decoration: underline;
 } */
 
-.colorblue{
+/* .colorblue{
   color: #FF385C;
 }
 .colorgrey{
@@ -448,7 +448,7 @@ nav > div {
   border-radius: 1em;
   font-size: 1.1em;
   cursor: pointer;
-}
+} */
 
 footer {
   background-color: #DCDCDC;
@@ -490,7 +490,7 @@ footer ul li a:hover {
 }
 
 /* Ricerca avanzata */
-.advanced-search {
+/* .advanced-search {
   display: flex;
 }
 
@@ -499,7 +499,7 @@ footer ul li a:hover {
   width: 55%;
   padding: 3em;
   padding-right: 1em;
-}
+} */
 
 /* .search-results h5 {
   margin-bottom: 1em;
@@ -587,10 +587,10 @@ footer ul li a:hover {
   justify-content: flex-end;
 }
 
-.map-box {
+/* .map-box {
   width: 45%;
   background-image: url("/img/map-example.png");
-}
+} */
 
 /* Apartment Details */
 .apartment-details {
@@ -756,7 +756,7 @@ footer ul li a:hover {
   color: black;
 }
 
-.dashboard-container {
+/* .dashboard-container {
   color: grey;
   padding: 3em 7.5em;
   padding-right: 9em;
@@ -820,7 +820,7 @@ footer ul li a:hover {
 .myapt-list-container {
   padding: 3em 7.5em;
   padding-right: 9em;
-}
+} */
 
 .myapt-list-container h2 {
   color: #484848;

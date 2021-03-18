@@ -112,6 +112,7 @@
 
 
 .apartment-description-search-component{
+  font-size: 15px;
   height:75px;
   width:100%;
   overflow:hidden;

@@ -40,6 +40,8 @@ Vue.component('modal', require('./components/Modal.vue').default);
 
 Vue.component('my-hooper', require('./components/Hooper.vue').default);
 
+Vue.component('my-dashboard', require('./components/Dashboard.vue').default);
+
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -73,4 +75,8 @@ const modal = new Vue({
 
 const hooper = new Vue({
     el: '#hooper',
+});
+
+const dashboard = new Vue({
+    el: '#dashboard',
 });

@@ -1,8 +1,8 @@
 <template>
 
-<div id = "app" class="container">
+<div id = "app">
 
-    <div class="search-component-row">
+    <div class="row d-flex">
 
           <div class="filter-results">
 
@@ -56,7 +56,13 @@
 
                       </div>
 
-                      <div class="service-filters">
+                      <div class="toggle-services-button-container">
+
+                            <button id="services-button" class="toggle-services-button" type="button" name="button">Mostra più filtri</button>
+
+                      </div>
+
+                      <div id="services-list" class="service-filters">
 
                               <h5>SERVIZI ED ALTRE OPZIONI</h5>
 
@@ -73,7 +79,7 @@
 
                       </div>
 
-
+                      <!-- <div class="results-container"> -->
 
                       <div class="results-list">
 
@@ -100,13 +106,15 @@
 
                       </div>
 
+                      <!-- </div> -->
+
 
 
 
 
           </div>
 
-              <div id="myMap" class="mappa-container">
+              <div id="myMap" class="mappa-container d-flex">
 
                     <Mapp :markersinfo = "filterByServices" :usersearch = "userSearch" :ctrlat = "centerMap.latit" :ctrlon = "centerMap.longit"/>
 
@@ -209,62 +217,68 @@
 
 
 <style scoped>
+
+/* .results-container{
+  height:100%;
+  border:2px solid pink;
+
+} */
+
+.row{
+  height:calc(100vh - 100px);
+  overflow-y: hidden;
+}
 .sistemazione{
   margin-top:25px;
 }
-/* .container{
-  margin-left: auto;
-  margin-right: auto;
-} */
-
-.search-component-row{
-  width:100%;
-  display: flex;
-}
 
 .filter-results{
-  height:100vh;
+  border:2px solid red;
+  height:100%;
   padding-left:20px;
   padding-right:20px;
-  width:50%;
+  flex:1;
 }
-
-/* .sistemazione{
-  margin-top:50px;
-} */
 
 .service-filters{
   justify-content: space-between;
-  margin-top:25px;
-  /* margin-top:50px;
-  margin-bottom:50px; */
+  display:none;
+}
+
+.toggle-services-button-container{
+  width:100%;
+  height:20px;
+  margin-bottom: 10px;
+}
+
+.toggle-services-button{
+  height:100%;
+  width:100%;
+  border:1px solid lightgrey;
+  background-color: white;
+  border-radius: 10px;
 }
 
 .services-filters{
   margin-top:15px;
+  display: flex;
+  justify-content:space-between;
 }
-
-/* .services-filters ul li{
-  align-items: center;
-} */
 
 .results-list{
-  height:calc(100vh - 255px);
-  overflow-y: hidden;
+  border:2px solid green;
+  /* height:100%; */
+  height:calc(100% - 150px);
+  /* overflow-y: hidden; */
   overflow-y: scroll;
   border-top:1px solid lightgrey;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
 }
 
 ul{
   list-style: none;
   display:flex;
   flex-wrap: wrap;
+  width:100%;
 }
 
 ul li{
@@ -272,7 +286,6 @@ ul li{
   flex-wrap: nowrap;
   align-items: center;
   height:40px;
-  min-width: 150px;
   line-height: 40px;
 }
 
@@ -292,7 +305,8 @@ ul li label{
   margin-left:5px;
   border:1px solid lightgrey;
   border-radius: 10px;
-  width:75px;
+  height:30px;
+  width:30px;
 }
 
 .basic-filters li{
@@ -309,16 +323,12 @@ ul li label{
   margin-bottom: 1.1em;
 }
 
-.search-results .search-filters ul button {
-
-}
 .search-results .search-filters ul button:hover {
   border: 1px solid black;
 }
 
 .mappa-container{
-  flex:2;
-  /* border:2px solid red; */
+  flex:1;
 }
 
 .noresult-container{
@@ -332,6 +342,22 @@ ul li label{
   top:50%;
   left:50%;
   transform:translate(-50%,-50%)
+}
+
+/* .search-component-apartments-card:last-child{
+  margin-bottom: 500px;
+} */
+
+@media screen and (max-width: 960px) {
+.mappa-container{
+  display:none;
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+
+
 }
 
 </style>

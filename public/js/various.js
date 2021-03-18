@@ -17,10 +17,15 @@ $.fn.followTo = function (pos) {
     });
 };
 
-$('#navi').followTo(650);
+$('#navi').followTo(750);
 
 $( "#login-button" ).click(function() {
   $( "#login-list" ).slideToggle(300);
+});
+
+$( "#services-button" ).click(function() {
+  $( "#services-list" ).slideToggle(300);
+  $(this).text( $("#services-button").text() == 'Mostra più filtri' ? "Mostra meno filtri" : "Mostra più filtri");
 });
 
 
