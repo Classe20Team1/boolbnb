@@ -2016,10 +2016,38 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Dashboard",
+  props: ['user'],
   data: function data() {
-    return {};
+    return {
+      userId: this.user.id
+    };
+  },
+  methods: {
+    getIndex: function getIndex() {
+      axios.post("http://localhost:8000/api/admin/apartments", {
+        "id": this.userId
+      }, {
+        headers: {
+          "Content-type": "application/json; charset=UTF-8"
+        }
+      }).then(function (response) {
+        console.log(response);
+      });
+    }
+  },
+  created: function created() {
+    console.log(this.userId);
   }
 });
 
@@ -89265,32 +89293,48 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("section", { staticClass: "dashboard-control-container" }, [
+    _c("h2", [_vm._v("Dashboard")]),
+    _vm._v(" "),
+    _c("div", { staticClass: "dashboard-username" }),
+    _vm._v(" "),
+    _c("ul", { staticClass: "button-list-container d-flex" }, [
+      _c("li", { staticClass: "dashboard-card" }),
+      _vm._v(" "),
+      _c("li", { staticClass: "dashboard-card" }, [
+        _c(
+          "button",
+          {
+            on: {
+              click: function($event) {
+                return _vm.getIndex()
+              }
+            }
+          },
+          [
+            _c("i", { staticClass: "fas fa-house-user" }),
+            _vm._v(" "),
+            _c("span", {}, [_vm._v("I miei appartamenti")])
+          ]
+        )
+      ]),
+      _vm._v(" "),
+      _c("li", { staticClass: "dashboard-card" }),
+      _vm._v(" "),
+      _vm._m(0)
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("section", { staticClass: "dashboard-control-container" }, [
-      _c("h2", [_vm._v("Dashboard")]),
-      _vm._v(" "),
-      _c("div", { staticClass: "dashboard-username" }),
-      _vm._v(" "),
-      _c("ul", { staticClass: "button-list-container d-flex" }, [
-        _c("li", { staticClass: "dashboard-card" }),
+    return _c("li", { staticClass: "dashboard-card" }, [
+      _c("button", { attrs: { href: "" } }, [
+        _c("i", { staticClass: "fas fa-plus-circle" }),
         _vm._v(" "),
-        _c("li", { staticClass: "dashboard-card" }),
-        _vm._v(" "),
-        _c("li", { staticClass: "dashboard-card" }),
-        _vm._v(" "),
-        _c("li", { staticClass: "dashboard-card" }, [
-          _c("button", { attrs: { href: "" } }, [
-            _c("i", { staticClass: "fas fa-plus-circle" }),
-            _vm._v(" "),
-            _c("span", {}, [_vm._v("Statistiche")])
-          ])
-        ])
+        _c("span", {}, [_vm._v("Statistiche")])
       ])
     ])
   }

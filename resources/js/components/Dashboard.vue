@@ -30,6 +30,15 @@
 
             </button> -->
 
+            <button v-on:click="getIndex()">
+
+                  <i class="fas fa-house-user"></i>
+                  <span class="">I miei appartamenti</span>
+
+            </button>
+
+
+
         </li>
 
         <li class="dashboard-card">
@@ -63,20 +72,43 @@
 
 export default{
   name: "Dashboard",
+  props:['user'],
 
 
   data(){
           return{
+
+            userId:this.user.id,
 
           }
   },
 
   methods:{
     getIndex: function(){
-      axios.get("http://localhost:8000/api/search/apartments",
+      axios.post("http://localhost:8000/api/admin/apartments",
+      {
+        "id":this.userId,
+
+      },
+      {
+        headers: {
+        "Content-type": "application/json; charset=UTF-8",
+        }
+      },
     )
-    }
-  }
+      .then(response => {
+          console.log(response)
+      })
+    },
+  },
+
+  created() {
+
+
+    console.log(this.userId)
+
+
+  },
 
 }
 

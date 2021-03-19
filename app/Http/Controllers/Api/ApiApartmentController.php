@@ -8,6 +8,11 @@ use App\Position;
 use App\Apartment;
 use App\Http\Resources\ServiceResource;
 
+use Illuminate\Support\Facades\Auth;
+use App\User;
+use App\Sponsor;
+
+
 class ApiApartmentController extends Controller
 {
     public function search(Request $request)
@@ -34,5 +39,21 @@ class ApiApartmentController extends Controller
         ->orderBy("active", 'desc')
         ->find($arrayId)
         ->where('beds', '>=', $request->guests));
+    }
+
+    public function index(Request $request)
+    {
+        // $user = Auth::guard('api')->id();
+        // $user = User::find($id);
+        // $user = User::find(Auth::user()->id);
+        // $user = Auth::user();
+        // $apartments = $user->apartments;
+        // $sponsors = Sponsor::active();
+        // $array_sponsored = [];
+        // foreach ($sponsors as $sponsor) {
+        //     array_push($array_sponsored, $sponsor->apartment_id);
+        // }
+        
+        return response()->json($request);
     }
 }

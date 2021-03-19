@@ -2,6 +2,12 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+use App\User;
+use App\Apartment;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
+use App\Sponsor;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +26,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::post('search/apartments','Api\ApiApartmentController@search');
 Route::get('services', 'Api\ServiceController@index');
+
+Route::post('admin/apartments','Api\ApiApartmentController@index');
